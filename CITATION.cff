@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use CourtDyn or its protocols, please cite the paper below."
+title: "CourtDyn: a dynamics question-answering benchmark and four diagnostic protocols for vision-language models"
+abstract: >-
+  Reproducibility package for "Order Without Magnitude: Fine-tuned
+  Vision-Language Models Read Image-Plane Motion in Court Dynamics Question
+  Answering". Contains the question generator, the four diagnostic protocols,
+  the intervention builders, deterministic scorers, frozen per-cell results,
+  sanitized per-item model outputs, and the CourtDyn-native LoRA adapter. Source imagery is
+  not redistributed; see NOTICE.md.
+type: software
+license: MIT
+authors:
+  - family-names: Ji
+    given-names: Jun
+    orcid: "https://orcid.org/0000-0003-3194-2183"
+    affiliation: "College of Computer Science and Technology, Qingdao University"
+    email: junji@qdu.edu.cn
+  - family-names: Li
+    given-names: Yi
+    orcid: "https://orcid.org/0000-0002-4185-3152"
+    affiliation: "College of Computer Science and Technology, Qingdao University"
+  - family-names: Zhang
+    given-names: Xiaolei
+    orcid: "https://orcid.org/0000-0002-0122-4554"
+    affiliation: "College of Computer Science and Technology, Qingdao University"
+  - family-names: Sui
+    given-names: Yi
+    orcid: "https://orcid.org/0009-0001-8081-5183"
+    affiliation: "College of Computer Science and Technology, Qingdao University"
+    email: suiyi@qdu.edu.cn
+keywords:
+  - vision-language models
+  - spatial reasoning
+  - video question answering
+  - benchmark design
+  - sports analytics
+
+version: 1.0.0
+date-released: 2026-09-09
+doi: "10.5281/zenodo.22668000"
+repository-code: "https://github.com/Jun-Jason-Ji/order-without-magnitude"

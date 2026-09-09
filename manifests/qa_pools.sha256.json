@@ -1,0 +1,347 @@
+{
+ "schema": "courtdyn-pool-manifest-v1",
+ "generated": "2026-09-08 20:41:55",
+ "why_hashes_only": "TeamTrack's dataset licence is not publicly stated and Human-M3 is single-user / no-redistribution, so the QA pools (whose answers derive from those annotations) are not redistributed. Rebuild them with code/generator and code/interventions, then check against these digests.",
+ "pools": {
+  "results/courtdyn/qa_dyn_v1.json": {
+   "sha256": "8d181b967afe74d5dd35c0213abc7564af98cc4b526bea1924add2894e9471ce",
+   "bytes": 576299
+  },
+  "results/courtdyn/qa_dyn_v1.manifest.json": {
+   "sha256": "d9da21680cb223ced1d174dda59677dfa4ba1735fb1dd6a75291d614ed2d1231",
+   "bytes": 2633
+  },
+  "results/courtdyn/qa_dyn_v1_cf_prior.json": {
+   "sha256": "566d4a4cfce42ebb872efa7a9b566a6bb7e8fe9878241388e616a995c9a2f01e",
+   "bytes": 364368
+  },
+  "results/courtdyn/qa_dyn_v1_declut.json": {
+   "sha256": "7a0a66aeaf937ded04c1e56a30443da713251ccc2412dfaf051eb1dd89820119",
+   "bytes": 325185
+  },
+  "results/courtdyn/qa_dyn_v1_declut.manifest.json": {
+   "sha256": "34d8a61bf87f2cadcc80b992457a283e95dd960cf88b476da90eeb1474874b25",
+   "bytes": 810
+  },
+  "results/courtdyn/qa_dyn_v1_noprior.json": {
+   "sha256": "6cb4a52d0ce0c8cec40c1c8bd0a4b7e44f84edb8e0a0460de611a99f745f3eb2",
+   "bytes": 452656
+  },
+  "results/courtdyn/qa_dyn_v1_paired_accel.json": {
+   "sha256": "3625f2c851ed1adac5e926791a5508932ff09fff125305b1b5b452d9ddf85cc5",
+   "bytes": 129541
+  },
+  "results/courtdyn/qa_dyn_v1_paired_faster.json": {
+   "sha256": "099e7fec1939c5a2ad358d55b3ef9aa088fe7c93d5bc5bb85cf6e9ff91112355",
+   "bytes": 119364
+  },
+  "results/courtdyn/qa_dyn_v1_zoom2.json": {
+   "sha256": "ee0ea059e8170d3118c216b418e1d76e6484f007c5a192425a4b6a1b29171793",
+   "bytes": 288785
+  },
+  "results/courtdyn/qa_dyn_v1_zoom2.manifest.json": {
+   "sha256": "3ef6c4e86b048c19e3e76b719a8af60a559323a2755328e665409f92aa3b961d",
+   "bytes": 462
+  },
+  "results/courtdyn/seq_hm3_basketball1_split1_camera_0/qa_dyn_v1.json": {
+   "sha256": "318b8b17e23db771d280084eb4f6b34fb7a4dd84b4e71fbe0619f34c5eac7681",
+   "bytes": 237686
+  },
+  "results/courtdyn/seq_hm3_basketball1_split1_camera_0/qa_dyn_v1.manifest.json": {
+   "sha256": "d302943f8034c0f48c72999a28db0e42fc3eeef68e103a4a0d28d7f6b40330b4",
+   "bytes": 1245
+  },
+  "results/courtdyn/seq_hm3_basketball1_split1_camera_1/qa_dyn_v1.json": {
+   "sha256": "844678642de329cbf54755593b305dd3fc10c92d00e9c6ee161f468325f96aeb",
+   "bytes": 233728
+  },
+  "results/courtdyn/seq_hm3_basketball1_split1_camera_1/qa_dyn_v1.manifest.json": {
+   "sha256": "7bc968ca2e2f8ab4b63e1505128aed03e6abee8eedf069761a35f6c4141f7cd5",
+   "bytes": 1245
+  },
+  "results/courtdyn/seq_hm3_basketball1_split1_camera_2/qa_dyn_v1.json": {
+   "sha256": "a9b4e9dafa8c8211f6e84da31e013faa52428f46014b7a196a2d22ccd96538fe",
+   "bytes": 237800
+  },
+  "results/courtdyn/seq_hm3_basketball1_split1_camera_2/qa_dyn_v1.manifest.json": {
+   "sha256": "934751379beaeaf6827ce4dc356c987b82edfe73913f749de8e17305c5381811",
+   "bytes": 1245
+  },
+  "results/courtdyn/seq_hm3_basketball1_split1_camera_3/qa_dyn_v1.json": {
+   "sha256": "b2628c0fc29b42e170cd4768f230adcbbe29d2f46017ecc7255c23c39f9cd240",
+   "bytes": 237702
+  },
+  "results/courtdyn/seq_hm3_basketball1_split1_camera_3/qa_dyn_v1.manifest.json": {
+   "sha256": "5fe95411b446742218ba82169d6e2eef0460c18b9a66ea6a2020f0758602a6ac",
+   "bytes": 1245
+  },
+  "results/courtdyn/seq_hm3_basketball1_split2_camera_0/qa_dyn_v1.json": {
+   "sha256": "9e37cc9040b14c852688820aba3e2def61a4bfff0a2ab18f433a146096e6c123",
+   "bytes": 215714
+  },
+  "results/courtdyn/seq_hm3_basketball1_split2_camera_0/qa_dyn_v1.manifest.json": {
+   "sha256": "ff9505b84d3134fb1bf44bd2471117d217236f79a100ccafb7a7866931befc60",
+   "bytes": 1242
+  },
+  "results/courtdyn/seq_hm3_basketball1_split2_camera_1/qa_dyn_v1.json": {
+   "sha256": "183aee8dc3a615e0094a3c70ad267db7199248d4a69ae6620785dcd5ceace78d",
+   "bytes": 229975
+  },
+  "results/courtdyn/seq_hm3_basketball1_split2_camera_1/qa_dyn_v1.manifest.json": {
+   "sha256": "904b838434276959dbc4ee176ac307ad57997478c94abd7d355404c05ceef9fd",
+   "bytes": 1243
+  },
+  "results/courtdyn/seq_hm3_basketball1_split2_camera_2/qa_dyn_v1.json": {
+   "sha256": "f842dd136ba09671bf127e55b24fdff29f38f462b2518141d7a3be0902175c3d",
+   "bytes": 230207
+  },
+  "results/courtdyn/seq_hm3_basketball1_split2_camera_2/qa_dyn_v1.manifest.json": {
+   "sha256": "0b63757f92a900dc79ed0d62de41bf925fa3eb100b8d80595e0368d9b65313e3",
+   "bytes": 1244
+  },
+  "results/courtdyn/seq_hm3_basketball1_split2_camera_3/qa_dyn_v1.json": {
+   "sha256": "e26f100a1dc562d99129bde7402827a604dd641a33c7258a32ce3ae2bccc9e59",
+   "bytes": 230235
+  },
+  "results/courtdyn/seq_hm3_basketball1_split2_camera_3/qa_dyn_v1.manifest.json": {
+   "sha256": "34a92be374fc0f98b36381f5c64d06a0fcb676b7d5a12c940d79fbc5129aeaa5",
+   "bytes": 1244
+  },
+  "results/courtdyn/seq_hm3_basketball2_camera_0/qa_dyn_v1.json": {
+   "sha256": "f00a6dee860129056cf7e07cc6ebccdd0d8e20416ff058c6749be6e07ad104f9",
+   "bytes": 283123
+  },
+  "results/courtdyn/seq_hm3_basketball2_camera_0/qa_dyn_v1.manifest.json": {
+   "sha256": "ad6fc466aca6adc2c0c5c22aa52831664d3f8901a44ca07aba67e9e1dd4cd50b",
+   "bytes": 1231
+  },
+  "results/courtdyn/seq_hm3_basketball2_camera_1/qa_dyn_v1.json": {
+   "sha256": "1782ed7cab19c4f85c781075792acbe25dba3329fc41784baa4e33e04634e33b",
+   "bytes": 282805
+  },
+  "results/courtdyn/seq_hm3_basketball2_camera_1/qa_dyn_v1.manifest.json": {
+   "sha256": "08ecbba4e9e4a16bbe18a79b2c0da4e4be915c232a0c2c33d3d03007479a1af2",
+   "bytes": 1230
+  },
+  "results/courtdyn/seq_hm3_basketball2_camera_2/qa_dyn_v1.json": {
+   "sha256": "ca402057b739241ed263773afbf0eb1cc52115d1e8c3549c9c7666244cb2e853",
+   "bytes": 282803
+  },
+  "results/courtdyn/seq_hm3_basketball2_camera_2/qa_dyn_v1.manifest.json": {
+   "sha256": "aae702840e0a19be4d0793e242aa47db706c37b4e3a63f6222688c7db457ca56",
+   "bytes": 1230
+  },
+  "results/courtdyn/seq_Q1_side_0-30/qa_dyn_v1.json": {
+   "sha256": "bcc5bcfd4bc7e48a3dbd9916567b639b71ee047b9a28bb87876e1ab2b2482225",
+   "bytes": 610471
+  },
+  "results/courtdyn/seq_Q1_side_0-30/qa_dyn_v1.manifest.json": {
+   "sha256": "a3d4209df9488b5e3ed7e95cf4c088d5bbd1f29fef6d87ef598b86ddda6b2cad",
+   "bytes": 2630
+  },
+  "results/courtdyn/seq_Q1_side_0-30/qa_dyn_v1_cf_prior.json": {
+   "sha256": "bf0335f17413e5e8b50beaa8b52e313dc50e0d32487c402db97a0f8d7c6bcdaf",
+   "bytes": 402461
+  },
+  "results/courtdyn/seq_Q1_side_0-30/qa_dyn_v1_paired_accel.json": {
+   "sha256": "8aa4dcaf1320facfb3d7d81814acbfbc67f52211cecc6b91281ae57194601468",
+   "bytes": 129225
+  },
+  "results/courtdyn/seq_Q1_side_0-30/qa_dyn_v1_paired_faster.json": {
+   "sha256": "d84de5ba1822514fe2eaada74d4dec91e2050344ec440f9cb1f22b94549eb5a4",
+   "bytes": 119251
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1.json": {
+   "sha256": "c8ec43fa242a8ee5072ce4b6b7c865067e80158241a51517b8607457bcd5c468",
+   "bytes": 591848
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1.manifest.json": {
+   "sha256": "2ad9783ad2a5cafd74f69415896e9dc123f92b3fe514d99b9eaa92bde737a1d3",
+   "bytes": 2624
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_cf_prior.json": {
+   "sha256": "d3924db37c545f44d5b6f37c13952f97109e0eb2a44283e075f68e3a28138ba0",
+   "bytes": 394105
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_declut.json": {
+   "sha256": "7cd1e98594b13248e0a572a99c84d694f4629e1c8ece7c3405e530810e80dd78",
+   "bytes": 323906
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_declut.manifest.json": {
+   "sha256": "2f51d5ca4089064795ccaa05d85b469c0059439a89e81b507c7b03b4d094e71e",
+   "bytes": 806
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_noprior.json": {
+   "sha256": "e3531e77beaa450e5be9ac91b4a71e7a6b9166f5e39201e8f9e1a1af8274007d",
+   "bytes": 331984
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_paired_accel.json": {
+   "sha256": "6fb588cc85a0ccdd7fbc35f41c4eef7792e297ab34d83bbab9ca02649d48bc20",
+   "bytes": 128821
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_paired_faster.json": {
+   "sha256": "f069f88b464fc81e2fe61c47a03e6e8e91e1cd65676f144cf4dc64999370567e",
+   "bytes": 108747
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_pxunit.json": {
+   "sha256": "8bde7ec02f7380c99887c4adb91979418cd2e829fc9127cdd1c57da0bd8ec7ed",
+   "bytes": 233607
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_pxunit.manifest.json": {
+   "sha256": "890f0c957e217a818e2323e3ee552ecf6db1ff1ea3d6b9ca60f93ebdce287303",
+   "bytes": 1110
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_ruler.json": {
+   "sha256": "ebeca5e24f344d9f28b96c7063cfa37812916f8fd7d559e790111a32b2106b81",
+   "bytes": 253150
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_ruler.manifest.json": {
+   "sha256": "16e19cae044d19b30ccc9aa922a05d6e2755d8190af333943595321d788147d2",
+   "bytes": 1418
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_zoom2.json": {
+   "sha256": "0d7c00d2e0ac45a1df25b1f4752b0c20e95b8551d0129f6b7de01190dc9018af",
+   "bytes": 287506
+  },
+  "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_zoom2.manifest.json": {
+   "sha256": "9b36ad5c1b33c58ece2c1a4a1f88514a584abb212151b0b981655b3d7d13845b",
+   "bytes": 458
+  },
+  "results/courtdyn/seq_Q2_side_300-330/qa_dyn_v1.json": {
+   "sha256": "19374c432cb64160baddea0d71c5d09f841d8e1f0f070e34417ad6c8527fc86a",
+   "bytes": 610678
+  },
+  "results/courtdyn/seq_Q2_side_300-330/qa_dyn_v1.manifest.json": {
+   "sha256": "3b62124a288c4630a82ea8e7fa92764cddd6719404386db9e655a92c6db1aa37",
+   "bytes": 2634
+  },
+  "results/courtdyn/seq_Q2_side_300-330/qa_dyn_v1_cf_prior.json": {
+   "sha256": "1e7b6b98bc728f067c49c234b0263b8cda63e955d46c99238cd1f377b3cca5b2",
+   "bytes": 402124
+  },
+  "results/courtdyn/seq_Q2_side_300-330/qa_dyn_v1_paired_accel.json": {
+   "sha256": "1349edaa6ff9ae8fecb4cf0f9bb32db34ba997aa69a3d59e4c39c4e85338c439",
+   "bytes": 129561
+  },
+  "results/courtdyn/seq_Q2_side_300-330/qa_dyn_v1_paired_faster.json": {
+   "sha256": "a2f05d3a64e23b1ee55819f4dd4601d798844b6c51bed4499083ae15d9aec1fe",
+   "bytes": 119362
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1.json": {
+   "sha256": "62f697866e7f356425bbb4f1e2e0640ca73ac18a3c419f94738c72cf4c837d7d",
+   "bytes": 573314
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1.manifest.json": {
+   "sha256": "f4d13295454ed9c8800b6a89ffd2c07f7f43c89c2bd07e8faa1d6322bdcaba1b",
+   "bytes": 2631
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_cf_prior.json": {
+   "sha256": "1aa09e18df7b2df2b808887852c135e6b7d8bdec2c4690550ad3106b7f0045db",
+   "bytes": 361621
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_declut.json": {
+   "sha256": "d60317bf9122c00db595b9470d14b94566d2f580bdaa4af6074ef516ab56595a",
+   "bytes": 324349
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_declut.manifest.json": {
+   "sha256": "e23240fe34d3619ab783ad631b493dd76b94f9d6a533a8922a29041c7a037564",
+   "bytes": 809
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_noprior.json": {
+   "sha256": "cce2d5382a9381ed40d19e6b63d8b0a1a4702d1a8214f7563708c793c146d37a",
+   "bytes": 304206
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_paired_accel.json": {
+   "sha256": "e64973cde4cbef4a2586b64fb9b5986c7c7ea6d269681c66c609243acf10fa0b",
+   "bytes": 129283
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_paired_faster.json": {
+   "sha256": "cc1b1758d2b8c71acc778f067f045afb69b02a2688d6154e7d916473e80a389f",
+   "bytes": 119203
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_pxunit.json": {
+   "sha256": "b23b173ea8bd7d1553687d001c0948a7b35321578be812e7f2248a4cd3da1a7a",
+   "bytes": 234241
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_pxunit.manifest.json": {
+   "sha256": "9d9c0dd99f1f1dbda41395e393d59db723e8f1890896b373235a160569007177",
+   "bytes": 1116
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_ruler.json": {
+   "sha256": "777c98bc651cf9a2b8994a6aef37b92df39b7291c5154ac35e4086a250150b5e",
+   "bytes": 253818
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_ruler.manifest.json": {
+   "sha256": "7e66ad9dbe4e47b3338e697ffc4c05f5a4c07732d1932806b3cdba14e7b57214",
+   "bytes": 1424
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_zoom2.json": {
+   "sha256": "c1d3786f3d97a865c5b8b0ccaa347d5d6d5473b0bc85b43309ad475a970cfa75",
+   "bytes": 287949
+  },
+  "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_zoom2.manifest.json": {
+   "sha256": "d0b7f0d95e41d63286b26366a1f375af37168c5d89b517149ae50950ff405066",
+   "bytes": 461
+  },
+  "results/courtdyn/seq_Q4_side_570-600/qa_dyn_v1.json": {
+   "sha256": "1c782ada07fdeed9c6b462ef3c2e24350d7abb41af570a2094349603241d7cc4",
+   "bytes": 545970
+  },
+  "results/courtdyn/seq_Q4_side_570-600/qa_dyn_v1.manifest.json": {
+   "sha256": "36340708a736b44da34ee8cb820ad0d6d1dc162fba9193c6490453243f1c75a4",
+   "bytes": 2631
+  },
+  "results/courtdyn/seq_Q4_side_570-600/qa_dyn_v1_cf_prior.json": {
+   "sha256": "9e728091fa96afa950a172308d84e992a1568022881589134fbbedf0a34a2456",
+   "bytes": 376127
+  },
+  "results/courtdyn/seq_Q4_side_570-600/qa_dyn_v1_paired_accel.json": {
+   "sha256": "015f28879d32f9131028af68c1f2f40d12c12ec12ec520827eba1a24994f288f",
+   "bytes": 129529
+  },
+  "results/courtdyn/seq_Q4_side_570-600/qa_dyn_v1_paired_faster.json": {
+   "sha256": "d7c7aa8572f0d88b97788e2cd843bde722b87f993aade338ca5e9cfd3af7a40d",
+   "bytes": 78355
+  },
+  "results/courtdyn/seq_Q4_top_0-30/qa_dyn_v1.json": {
+   "sha256": "3eaa89452bace170e72c490aba680863de68fe6789b8e927b0f9e32aed931941",
+   "bytes": 581483
+  },
+  "results/courtdyn/seq_Q4_top_0-30/qa_dyn_v1.manifest.json": {
+   "sha256": "aba3dd0c2fb61a5c5dbe3196bab0cc81a7e969dcdbfda35495ce705e52135503",
+   "bytes": 2626
+  },
+  "results/courtdyn/seq_Q4_top_0-30/qa_dyn_v1_cf_prior.json": {
+   "sha256": "89ee6bb62ea4aa0b426b0c4c8f767be72ca1858244fcb9073ebe3d3dd603e587",
+   "bytes": 371424
+  },
+  "results/courtdyn/seq_Q4_top_0-30/qa_dyn_v1_declut.json": {
+   "sha256": "5537df9c323c068c87ed8a67d5db2d48fe5c69358458229bd960192aea951caf",
+   "bytes": 323995
+  },
+  "results/courtdyn/seq_Q4_top_0-30/qa_dyn_v1_declut.manifest.json": {
+   "sha256": "f12b4681d46845d462720e0360f4165fa5af42c91e4632ba355b5918ad53c2cd",
+   "bytes": 806
+  },
+  "results/courtdyn/seq_Q4_top_0-30/qa_dyn_v1_noprior.json": {
+   "sha256": "e0b5a102273c2e51654ecec019b083e397b66bc83ffea140dc50f8a07919ee94",
+   "bytes": 312505
+  },
+  "results/courtdyn/seq_Q4_top_0-30/qa_dyn_v1_paired_accel.json": {
+   "sha256": "9dd221466850f948e3c65925572b1444062e8fcb3494f103f2f2a89bf360842c",
+   "bytes": 128919
+  },
+  "results/courtdyn/seq_Q4_top_0-30/qa_dyn_v1_paired_faster.json": {
+   "sha256": "05b08c4a5aea3a33585341cd48e9fd5ee6898d8a916423efc53ed4e4685f3ae2",
+   "bytes": 118897
+  },
+  "results/courtdyn/seq_Q4_top_0-30/qa_dyn_v1_zoom2.json": {
+   "sha256": "f7046bf85f1698a93a486a07d27e4f8fc288c8757be4b1343aae2df810385b72",
+   "bytes": 287595
+  },
+  "results/courtdyn/seq_Q4_top_0-30/qa_dyn_v1_zoom2.manifest.json": {
+   "sha256": "a4028ce094869175af7699f96b3bc02398bf05a3a8f1d67a4d0e47547f7907f7",
+   "bytes": 458
+  }
+ }
+}

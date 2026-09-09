@@ -1,0 +1,373 @@
+{
+ "schema": "courtdyn-hm3-v1",
+ "generated": "2026-09-07 19:39:16",
+ "seqs": {
+  "hm3_basketball1_split1_camera_0": {
+   "const": {
+    "speed": 77.86324786324786,
+    "path": 74.78632478632478
+   },
+   "cells": {
+    "sft@full@speed": {
+     "n": 117,
+     "rho": 0.17508464684047492,
+     "tmra": 38.46153846153847,
+     "pred_median": 0.3
+    },
+    "sft@full@path": {
+     "n": 117,
+     "rho": 0.17773013828904047,
+     "tmra": 51.19658119658119,
+     "pred_median": 1.0
+    },
+    "grpo@full@speed": {
+     "n": 117,
+     "rho": 0.16954439284287964,
+     "tmra": 63.931623931623925,
+     "pred_median": 0.6
+    },
+    "grpo@full@path": {
+     "n": 117,
+     "rho": 0.23817163415567658,
+     "tmra": 59.572649572649574,
+     "pred_median": 3.0
+    },
+    "base@full@speed": {
+     "n": 117,
+     "rho": 0.29644188940384525,
+     "tmra": 18.803418803418804,
+     "pred_median": 0.1
+    },
+    "base@full@path": {
+     "n": 117,
+     "rho": 0.38868876699986965,
+     "tmra": 11.282051282051283,
+     "pred_median": 0.1
+    },
+    "qwen25vl7b@full@speed": {
+     "n": 117,
+     "rho": 0.28860816783839327,
+     "tmra": 47.008547008547005,
+     "pred_median": 1.5
+    },
+    "qwen25vl7b@full@path": {
+     "n": 117,
+     "rho": 0.14996467037081568,
+     "tmra": 14.529914529914532,
+     "pred_median": 5.6
+    },
+    "sft@static4@speed": {
+     "n": 117,
+     "rho": 0.03434070135459196,
+     "tmra": 21.88034188034188,
+     "pred_median": 0.1
+    },
+    "sft@static4@path": {
+     "n": 117,
+     "rho": 0.0853231140044087,
+     "tmra": 15.726495726495726,
+     "pred_median": 0.2
+    },
+    "grpo@static4@speed": {
+     "n": 117,
+     "rho": -0.07180993199564918,
+     "tmra": 27.60683760683761,
+     "pred_median": 0.1
+    },
+    "grpo@static4@path": {
+     "n": 117,
+     "rho": 0.1657014239187359,
+     "tmra": 19.230769230769234,
+     "pred_median": 0.3
+    }
+   },
+   "rho_px_world": {
+    "speed": 0.6459873589138685,
+    "path": 0.6479368550317212
+   }
+  },
+  "hm3_basketball1_split1_camera_1": {
+   "const": {
+    "speed": 77.82608695652175,
+    "path": 74.78260869565217
+   },
+   "cells": {
+    "sft@full@speed": {
+     "n": 115,
+     "rho": -0.003000372220112429,
+     "tmra": 63.47826086956522,
+     "pred_median": 0.6
+    },
+    "sft@full@path": {
+     "n": 115,
+     "rho": 0.20519063538943502,
+     "tmra": 70.34782608695652,
+     "pred_median": 2.0
+    },
+    "grpo@full@speed": {
+     "n": 115,
+     "rho": 0.033795955174430244,
+     "tmra": 57.21739130434783,
+     "pred_median": 1.3
+    },
+    "grpo@full@path": {
+     "n": 115,
+     "rho": 0.19545382299557887,
+     "tmra": 21.73913043478261,
+     "pred_median": 4.9
+    }
+   },
+   "rho_px_world": {
+    "speed": 0.20818889335946497,
+    "path": 0.2101350632909265
+   }
+  },
+  "hm3_basketball1_split1_camera_2": {
+   "const": {
+    "speed": 77.86324786324786,
+    "path": 74.78632478632478
+   },
+   "cells": {
+    "sft@full@speed": {
+     "n": 117,
+     "rho": 0.18397181843587512,
+     "tmra": 51.28205128205128,
+     "pred_median": 0.4
+    },
+    "sft@full@path": {
+     "n": 117,
+     "rho": 0.33960322838981094,
+     "tmra": 66.49572649572649,
+     "pred_median": 1.4
+    },
+    "grpo@full@speed": {
+     "n": 117,
+     "rho": 0.3299256552595402,
+     "tmra": 75.98290598290598,
+     "pred_median": 1.1
+    },
+    "grpo@full@path": {
+     "n": 117,
+     "rho": 0.4034657645730569,
+     "tmra": 49.31623931623932,
+     "pred_median": 3.1
+    },
+    "sft@static4@speed": {
+     "n": 117,
+     "rho": 0.39043700903277967,
+     "tmra": 17.35042735042735,
+     "pred_median": 0.1
+    },
+    "sft@static4@path": {
+     "n": 117,
+     "rho": 0.251858606010462,
+     "tmra": 15.213675213675215,
+     "pred_median": 0.2
+    },
+    "grpo@static4@speed": {
+     "n": 117,
+     "rho": 0.3373373587616594,
+     "tmra": 20.0,
+     "pred_median": 0.1
+    },
+    "grpo@static4@path": {
+     "n": 117,
+     "rho": 0.2194921463338034,
+     "tmra": 18.71794871794872,
+     "pred_median": 0.3
+    }
+   },
+   "rho_px_world": {
+    "speed": 0.49159230666960924,
+    "path": 0.49289017583282085
+   }
+  },
+  "hm3_basketball1_split1_camera_3": {
+   "const": {
+    "speed": 77.86324786324786,
+    "path": 74.78632478632478
+   },
+   "cells": {
+    "sft@full@speed": {
+     "n": 117,
+     "rho": 0.3326753990812144,
+     "tmra": 39.65811965811966,
+     "pred_median": 0.3
+    },
+    "sft@full@path": {
+     "n": 117,
+     "rho": 0.25197209195780534,
+     "tmra": 43.333333333333336,
+     "pred_median": 1.0
+    },
+    "grpo@full@speed": {
+     "n": 117,
+     "rho": 0.34273845563911964,
+     "tmra": 62.39316239316239,
+     "pred_median": 0.6
+    },
+    "grpo@full@path": {
+     "n": 117,
+     "rho": 0.24932119648283774,
+     "tmra": 60.76923076923077,
+     "pred_median": 2.1
+    }
+   },
+   "rho_px_world": {
+    "speed": 0.5344966968709773,
+    "path": 0.5368455334174556
+   }
+  },
+  "hm3_basketball1_split2_camera_0": {
+   "const": {
+    "speed": 71.68224299065422,
+    "path": 67.66355140186916
+   },
+   "cells": {},
+   "rho_px_world": {
+    "speed": 0.5486593833826827,
+    "path": 0.5517664660337019
+   }
+  },
+  "hm3_basketball1_split2_camera_1": {
+   "const": {
+    "speed": 71.3157894736842,
+    "path": 67.10526315789474
+   },
+   "cells": {},
+   "rho_px_world": {
+    "speed": 0.5799881917860549,
+    "path": 0.5832491509606696
+   }
+  },
+  "hm3_basketball1_split2_camera_2": {
+   "const": {
+    "speed": 71.3157894736842,
+    "path": 67.10526315789474
+   },
+   "cells": {},
+   "rho_px_world": {
+    "speed": 0.6900578479953301,
+    "path": 0.6968088603888454
+   }
+  },
+  "hm3_basketball1_split2_camera_3": {
+   "const": {
+    "speed": 71.3157894736842,
+    "path": 67.10526315789474
+   },
+   "cells": {},
+   "rho_px_world": {
+    "speed": 0.7142297691801862,
+    "path": 0.7075793049083848
+   }
+  },
+  "hm3_basketball2_camera_0": {
+   "const": {
+    "speed": 60.07142857142858,
+    "path": 54.214285714285715
+   },
+   "cells": {
+    "sft@full@speed": {
+     "n": 140,
+     "rho": 0.4799209052190743,
+     "tmra": 37.357142857142854,
+     "pred_median": 0.4
+    },
+    "sft@full@path": {
+     "n": 140,
+     "rho": 0.5028653318300492,
+     "tmra": 48.0,
+     "pred_median": 1.2
+    },
+    "grpo@full@speed": {
+     "n": 140,
+     "rho": 0.441004982732014,
+     "tmra": 57.714285714285715,
+     "pred_median": 1.0
+    },
+    "grpo@full@path": {
+     "n": 140,
+     "rho": 0.46121574009885163,
+     "tmra": 57.07142857142857,
+     "pred_median": 3.1
+    },
+    "sft@static4@speed": {
+     "n": 140,
+     "rho": 0.2777622750657388,
+     "tmra": 18.785714285714285,
+     "pred_median": 0.1
+    },
+    "sft@static4@path": {
+     "n": 140,
+     "rho": 0.1289807584211976,
+     "tmra": 18.357142857142858,
+     "pred_median": 0.2
+    },
+    "grpo@static4@speed": {
+     "n": 140,
+     "rho": 0.18308906562309213,
+     "tmra": 19.28571428571429,
+     "pred_median": 0.0
+    },
+    "grpo@static4@path": {
+     "n": 140,
+     "rho": 0.16705113827530765,
+     "tmra": 18.5,
+     "pred_median": 0.1
+    }
+   },
+   "rho_px_world": {
+    "speed": 0.5036464147108699,
+    "path": 0.49521197154936847
+   }
+  },
+  "hm3_basketball2_camera_1": {
+   "const": {
+    "speed": 60.07142857142858,
+    "path": 54.214285714285715
+   },
+   "cells": {},
+   "rho_px_world": {
+    "speed": 0.7778254741676516,
+    "path": 0.7826661203691629
+   }
+  },
+  "hm3_basketball2_camera_2": {
+   "const": {
+    "speed": 60.07142857142858,
+    "path": 54.214285714285715
+   },
+   "cells": {
+    "sft@full@speed": {
+     "n": 140,
+     "rho": 0.25194694448397836,
+     "tmra": 39.85714285714286,
+     "pred_median": 0.4
+    },
+    "sft@full@path": {
+     "n": 140,
+     "rho": 0.34252494875063544,
+     "tmra": 44.57142857142857,
+     "pred_median": 1.0
+    },
+    "grpo@full@speed": {
+     "n": 140,
+     "rho": 0.3490330515888614,
+     "tmra": 56.07142857142857,
+     "pred_median": 0.95
+    },
+    "grpo@full@path": {
+     "n": 140,
+     "rho": 0.36196523662222285,
+     "tmra": 54.85714285714286,
+     "pred_median": 3.1
+    }
+   },
+   "rho_px_world": {
+    "speed": 0.5426591968248675,
+    "path": 0.5397196071034807
+   }
+  }
+ }
+}
