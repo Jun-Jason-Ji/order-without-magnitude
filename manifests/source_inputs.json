@@ -1,0 +1,93 @@
+{
+  "Q4_side_480-510": {
+    "dataset": "TeamTrack",
+    "relative_sequence_dir": "basketball_side/test/Q4_side_480-510",
+    "gt_sha256": "36789ab122c99cec32c222bec4098c76ee917c629e53f44cea54971811cf3739",
+    "video_sha256": "f16677a9d0b28fc3fdc6b3bfc052a50947b42f7326856a0b0e963ea3c8399606",
+    "generator_params": {
+      "win_s": 2.0,
+      "hop_s": 1.0,
+      "n_frames": 4,
+      "max_per_family": 140,
+      "render_width": 960
+    }
+  },
+  "Q1_side_0-30": {
+    "dataset": "TeamTrack",
+    "relative_sequence_dir": "basketball_side/train/Q1_side_0-30",
+    "gt_sha256": "45ab8cc86e3f78396804e1927db46d7f26c2a4e8a8e88e5f1ad395c98e7dacb8",
+    "video_sha256": "d58d1508bbcbd92be825027bbfe7ab5257956ee1788d78b663f890f9f61cc6c5",
+    "generator_params": {
+      "win_s": 2.0,
+      "hop_s": 1.0,
+      "n_frames": 4,
+      "max_per_family": 140,
+      "render_width": 960
+    }
+  },
+  "Q1_top_0-30": {
+    "dataset": "TeamTrack",
+    "relative_sequence_dir": "basketball_top/train/Q1_top_0-30",
+    "gt_sha256": "0eb5041a5aa73269e231df4914fc4381bace2517e7a377c5d77ab898ade2e1bf",
+    "video_sha256": "b36530c5b4a2381235952498f8e8ac54466540a3f671d16c04a8d10810b301fa",
+    "generator_params": {
+      "win_s": 2.0,
+      "hop_s": 1.0,
+      "n_frames": 4,
+      "max_per_family": 140,
+      "render_width": 960
+    }
+  },
+  "Q2_side_300-330": {
+    "dataset": "TeamTrack",
+    "relative_sequence_dir": "basketball_side/train/Q2_side_300-330",
+    "gt_sha256": "7b2d472905b2fb154ed6b17cb4dc90fa0c53477959aae16520557c9f13203e84",
+    "video_sha256": "ca722e7c2125bccab80422f97699325f7311c48feef75cc7179ac07fd794500a",
+    "generator_params": {
+      "win_s": 2.0,
+      "hop_s": 1.0,
+      "n_frames": 4,
+      "max_per_family": 140,
+      "render_width": 960
+    }
+  },
+  "Q2_top_480-510": {
+    "dataset": "TeamTrack",
+    "relative_sequence_dir": "basketball_top/train/Q2_top_480-510",
+    "gt_sha256": "685db2836f2071b6616189f6fbdb6fe3fec0a118888596b36beb98fce3c560e3",
+    "video_sha256": "6f1a42d01d3d0665064f051eea22f955e0cb23000109ab7909cba7be11e3723f",
+    "generator_params": {
+      "win_s": 2.0,
+      "hop_s": 1.0,
+      "n_frames": 4,
+      "max_per_family": 140,
+      "render_width": 960
+    }
+  },
+  "Q4_side_570-600": {
+    "dataset": "TeamTrack",
+    "relative_sequence_dir": "basketball_side/test/Q4_side_570-600",
+    "gt_sha256": "d7fa3b5dc98013fbda1699a1b2285c7334161a545cd36c193f1276669cba2627",
+    "video_sha256": "625bac356d97c690f4ae0a9d7063aac37d6a5310bf6dc3cbd6703d245178c5d9",
+    "generator_params": {
+      "win_s": 2.0,
+      "hop_s": 1.0,
+      "n_frames": 4,
+      "max_per_family": 140,
+      "render_width": 960
+    }
+  },
+  "Q4_top_0-30": {
+    "dataset": "TeamTrack",
+    "relative_sequence_dir": "basketball_top/train/Q4_top_0-30",
+    "gt_sha256": "5d96439fbfa24cd8e0e641e22ae1f2896466f6f81d2d0e41833cbff78dfe153e",
+    "video_sha256": "fc661ffd7dd12e677a6536de5a97919c68745ad05851971009590513501121ed",
+    "generator_params": {
+      "win_s": 2.0,
+      "hop_s": 1.0,
+      "n_frames": 4,
+      "max_per_family": 140,
+      "render_width": 960
+    }
+  }
+}

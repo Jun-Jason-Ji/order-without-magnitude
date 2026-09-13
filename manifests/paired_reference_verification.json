@@ -1,0 +1,21 @@
+{
+  "schema": "courtdyn-paired-reference-export-verification-v1",
+  "status": "PASS",
+  "execution_plan_sha256": "b927a3b3a61a7c9b0eb8e6ffd37e8615c444b3d467394fca3a666a45bd7eb430",
+  "analysis_sha256": "70cbe927b1db5a4534e33cd03a72e9d593ac9c4b3bc083d9a6dbffd610ab8520",
+  "report_sha256": "af84e3f642b15cac5709b7612988751e127ef7f49765c9e22949e33d7cd3f6d6",
+  "summary_sha256": "b13aaa98d50cdc6c28b9b3fafffbe726ce0be4419f5003fe458af60c592c8467",
+  "scorer_sha256": "7ce22763755b18b6159ce354cbf9834985a0b4df132b98346aebdd4459918ce4",
+  "verifier_sha256": "62827d3de49821ea82f79a68c3c28f27df19348f7a10df77bf167d941f016aee",
+  "cpu_replay_exact": true,
+  "public_content_checked": true,
+  "analysis_correction": {
+    "rule": "unique-seven-target-modules-same-set-only",
+    "completion_receipt_sha256": "33477051e6bb262f367aef73d5aedb87ffb6c41c5bab91c5bf22411124f17303",
+    "compatibility_receipt_sha256": "09fb370d5798ec5265d68ab05b63a9f9f6c17b502f6f61bb06b6727291b781a4",
+    "compatibility_tool_sha256": "f28672bf5087d57119f750e7b4d76d38471902f2bb472d802a06c210a80fa065",
+    "original_pipeline_state_sha256": "7bb35162847d704d47476a020fd94233efd8e09c820aecbf821b6306a10e9a86",
+    "original_failure_analysis_sha256": "68ddb36214043fe7641d205b83f740364bc39d19d57770f23da2d7df845990ed",
+    "corrected_analysis_sha256": "70cbe927b1db5a4534e33cd03a72e9d593ac9c4b3bc083d9a6dbffd610ab8520"
+  }
+}

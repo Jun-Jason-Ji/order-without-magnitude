@@ -1,0 +1,37 @@
+[
+  [
+    "basketball_side",
+    "train",
+    "Q1_side_0-30"
+  ],
+  [
+    "basketball_side",
+    "train",
+    "Q2_side_300-330"
+  ],
+  [
+    "basketball_side",
+    "test",
+    "Q4_side_480-510"
+  ],
+  [
+    "basketball_side",
+    "test",
+    "Q4_side_570-600"
+  ],
+  [
+    "basketball_top",
+    "train",
+    "Q1_top_0-30"
+  ],
+  [
+    "basketball_top",
+    "train",
+    "Q2_top_480-510"
+  ],
+  [
+    "basketball_top",
+    "train",
+    "Q4_top_0-30"
+  ]
+]

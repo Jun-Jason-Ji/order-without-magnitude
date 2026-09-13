@@ -1,0 +1,41 @@
+{
+  "schema": "courtdyn-homography-hashes-v1",
+  "files": {
+    "results/courtdyn/homography/H_Q1_side_0-30.json": {
+      "sha256": "f58e5ef116fafe088541d396649c2ee8954b8b6d70e83180d1928275308c0216",
+      "bytes": 6571,
+      "line_endings": "CRLF"
+    },
+    "results/courtdyn/homography/H_Q1_top_0-30.json": {
+      "sha256": "f127909c272650882f54bf45c7bc61744171cda2611c3ddedce0900f3f1a9069",
+      "bytes": 6772,
+      "line_endings": "CRLF"
+    },
+    "results/courtdyn/homography/H_Q2_side_300-330.json": {
+      "sha256": "d0fb7a5b4fa54e77975102e1ef68cb1c6bdabac6ea3bb741edbcbaa99e935be8",
+      "bytes": 6558,
+      "line_endings": "CRLF"
+    },
+    "results/courtdyn/homography/H_Q2_top_480-510.json": {
+      "sha256": "be58ff06c749bc3a58aae64494cdaea0e945bd1ab63eb53ebe42183243541557",
+      "bytes": 6593,
+      "line_endings": "CRLF"
+    },
+    "results/courtdyn/homography/H_Q4_side_480-510.json": {
+      "sha256": "e228d5901c746abc70d539e0507ec2aded172cc4e873e63a1f960ebc961721ab",
+      "bytes": 6572,
+      "line_endings": "CRLF"
+    },
+    "results/courtdyn/homography/H_Q4_side_570-600.json": {
+      "sha256": "501d7c1a45a53e515dc58d2f1fe7e4d64950e8b65c2d7915984f659f255d6e9c",
+      "bytes": 6567,
+      "line_endings": "CRLF"
+    },
+    "results/courtdyn/homography/H_Q4_top_0-30.json": {
+      "sha256": "fc39e653e02b84c7aab7fee476b63993de4b27c9ef3efbdcaf7831496afa3e09",
+      "bytes": 6732,
+      "line_endings": "CRLF"
+    }
+  },
+  "note": "H files are withheld; built timestamps change when recalibrating. Compare numerical H separately."
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Rank Agreement and Unit Responsiveness in a Fine-Tuned Vision–Language Model: A CourtDyn Case Study",
+  "authors": [
+    {
+      "name": "Jun Ji",
+      "orcid": "0000-0003-3194-2183",
+      "affiliation": "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China",
+      "email": "junji@qdu.edu.cn",
+      "corresponding": false
+    },
+    {
+      "name": "Bowen Tan",
+      "orcid": "0009-0007-0554-9261",
+      "affiliation": "The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China",
+      "email": "btanab@connect.ust.hk",
+      "corresponding": false
+    },
+    {
+      "name": "Yi Li",
+      "orcid": "0000-0002-4185-3152",
+      "affiliation": "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China",
+      "email": "ly2005@qdu.edu.cn",
+      "corresponding": false
+    },
+    {
+      "name": "Xiaolei Zhang",
+      "orcid": "0000-0002-0122-4554",
+      "affiliation": "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China",
+      "email": "zhangxiaolei@qdu.edu.cn",
+      "corresponding": false
+    },
+    {
+      "name": "Yi Sui",
+      "orcid": "0009-0001-8081-5183",
+      "affiliation": "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China",
+      "email": "suiyi@qdu.edu.cn",
+      "corresponding": true
+    }
+  ],
+  "source": "paper2/manuscript/main.tex",
+  "source_sha256": "ef88004efebb311e35497aa3fff5959fdede8ff5ab85b5b6bb314ae9227dfe78"
+}

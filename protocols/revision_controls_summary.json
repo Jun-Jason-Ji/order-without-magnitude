@@ -1,0 +1,43 @@
+{
+  "status": "PREPARED_NOT_RUN",
+  "protocol": "courtdyn-revision-controls-v1",
+  "test_sequences": [
+    "Q2_top_480-510",
+    "Q1_top_0-30"
+  ],
+  "visual_cells": 12,
+  "visual_items": 3360,
+  "arithmetic_items": 12,
+  "training_items_per_convention": 1120,
+  "training_conventions": [
+    "v1",
+    "v3"
+  ],
+  "training_images_checked": 2249,
+  "canvas": [
+    960,
+    540
+  ],
+  "manipulations": [
+    "unit m/cm/px",
+    "height cue retained/removed"
+  ],
+  "checks": [
+    "item/frame identity",
+    "prompt unit-only comparison",
+    "height-only comparison",
+    "actual canvas dimensions",
+    "frozen rounded references",
+    "scaled T/epsilon",
+    "event-disjoint training",
+    "decoded training images",
+    "homography/track/seqinfo source hashes",
+    "v3 metadata references"
+  ],
+  "limitations": [
+    "No new inference or training has run.",
+    "Q1 remains event-overlapped for the frozen original model.",
+    "New event-isolated pools still use the same game.",
+    "Generated data require original data permissions."
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "status": "PASS",
+  "n_checks": 22,
+  "python": "3.14.6 (tags/v3.14.6:c63aec6, Jun 10 2026, 10:26:10) [MSC v.1944 64 bit (AMD64)]",
+  "scope": "clean cwd; isolated interpreter paths; installed CPU packages reused; synthetic data only",
+  "not_validated": [
+    "fresh dependency installation",
+    "real video calibration",
+    "GPU inference/training",
+    "all withheld pool hashes",
+    "online v1.0.0 archive"
+  ],
+  "checks": [
+    {
+      "name": "tools/build_courtdyn_qa.py --help",
+      "returncode": 0,
+      "output": "usage: build_courtdyn_qa.py [-h] [--seq_dir SEQ_DIR] [--out_dir OUT_DIR]\n                            [--frame_dir FRAME_DIR] [--win_s WIN_S]\n                            [--hop_s HOP_S] [--n_frames N_FRAMES]\n                            [--max_per_family MAX_PER_FAMILY] [--dry_run]\n                            [--accel_visual] [--accel_visual_zoom]\n\noptions:\n  -h, --help            show this help message and exit\n  --seq_dir SEQ_DIR\n  --out_dir OUT_DIR\n  --frame_dir FRAME_DIR\n  --win_s WIN_S         窗口时长 (秒)\n  --hop_s HOP_S         窗口步进 (秒)\n  --n_frames N_FRAMES   每题帧数; 8GB 卡上 4 帧是吞吐/信息的折中\n  --max_per_family MAX_PER_FAMILY\n                        每个 QA 家族封顶 (成对家族按对计, 不拆对)\n  --dry_run             只算 QA, 不抽帧\n  --accel_visual        只构建 accel 家族的视觉侧最小对 (v2 修复版), 写出\n                        qa_dyn_v2_paired_accel_vis.json; v1 的任何产物都不动\n  --accel_visual_zoom   构建 accel 视觉侧最小对的放大对照臂 (固定 640² 裁剪 -> 448²), 写\n                        qa_dyn_v2_paired_accel_vis_zoom.json\n"
+    },
+    {
+      "name": "tools/build_courtdyn_zoom2.py --help",
+      "returncode": 0,
+      "output": "usage: build_courtdyn_zoom2.py [-h] --seq SEQ\n\noptions:\n  -h, --help  show this help message and exit\n  --seq SEQ\n"
+    },
+    {
+      "name": "tools/build_courtdyn_declut.py --help",
+      "returncode": 0,
+      "output": "usage: build_courtdyn_declut.py [-h] --seq SEQ\n\noptions:\n  -h, --help  show this help message and exit\n  --seq SEQ\n"
+    },
+    {
+      "name": "tools/build_courtdyn_ruler.py --help",
+      "returncode": 0,
+      "output": "usage: build_courtdyn_ruler.py [-h] --seq SEQ --variant {ruler,pxunit}\n                               [--out OUT] [--allow_uneven_scale]\n\noptions:\n  -h, --help            show this help message and exit\n  --seq SEQ\n  --variant {ruler,pxunit}\n  --out OUT\n  --allow_uneven_scale  侧视片段上强行构造 ruler 臂 (默认拒绝)\n"
+    },
+    {
+      "name": "tools/build_courtdyn_noprior.py --help",
+      "returncode": 0,
+      "output": "usage: build_courtdyn_noprior.py [-h] --qa_json QA_JSON [--out OUT]\n\noptions:\n  -h, --help         show this help message and exit\n  --qa_json QA_JSON\n  --out OUT\n"
+    },
+    {
+      "name": "tools/build_courtdyn_hm3.py --help",
+      "returncode": 0,
+      "output": "usage: build_courtdyn_hm3.py [-h] [--clip CLIP] [--all] [--limit LIMIT]\n\noptions:\n  -h, --help     show this help message and exit\n  --clip CLIP    basketball1/split1/camera_0 形式; 省略则用 --all\n  --all\n  --limit LIMIT\n"
+    },
+    {
+      "name": "tools/build_courtdyn_native_sft.py --help",
+      "returncode": 0,
+      "output": "usage: build_courtdyn_native_sft.py [-h]\n                                    [--split {event-holdout,legacy-cross-view}]\n                                    [--dry-run]\n\nbuild_courtdyn_native_sft.py — 给论文 2 主结论造一条**不属于论文 1**的模型臂 (T33 / N8)。 动机 ----\nT28 (递尺子 / 换单位) 的模型只有 base + 论文 1 的三个适配器 + 公开 7B, 而 base 被提示扰乱、 7B 是退化输出 (恒定\n1.5, distinct 塌到 1-2) —— 主结论\"有序无量\"的**肯定那半**目前没有外部复现。 盘上又没有第四个能跑的多模态模型 (9B 装不进\n8 GB, SmolVLM2 答字母 \"A\")。 于是换一条更硬的路: **我们自己在 CourtDyn 上从 base 直接训一个 LoRA**\n(不是从论文 1 的适配器续训), 再问它同样的问题。它要检验的命题比公开模型臂更强: 即使把模型直接训在 CourtDyn 的米制答案上, 换个单位问,\n它依然不做换算。 划分 (2026-09-12 审计修正) ------------------------ 默认 event-holdout：排除\nQ1_side_0-30，因为原视频及轨迹证实它与测试 Q1_top_0-30 含同一开场事件。训练为其余 3 条侧视 + Q4_top_0-30，共\n1120 QA。 留出 Q1_top_0-30 / Q2_top_480-510。这仍是同一场比赛内的事件划分，不是比赛留出。 显式 --split\nlegacy-cross-view 仅重建旧 1400 QA 清单（有测试事件跨机位重叠）， 不得称为 event\nholdout。两个模式都写新文件，保留冻结旧训练池和原模型。 只保留 speed / path 两个家族, 与评测臂一致 (timing 没有可用 v3,\n不进主结论)。 图片路径 -------- 各片段的帧在各自目录下 (data/courtdyn/frames_<seq>/, 原片段在\ndata/courtdyn/frames/), 而训练脚本只收一个 --img_root。所以这里把 image_ids 重写成\n\"frames_<seq>/<name>\", img_root 统一指向 data/courtdyn。 用法: python\ntools/build_courtdyn_native_sft.py 产物:\nresults/courtdyn/courtdyn_native_sft_train_event_holdout.json (+ manifest)\n本工具只准备训练池，不训练模型；冻结旧模型结果不能作为新划分的结果。\n\noptions:\n  -h, --help            show this help message and exit\n  --split {event-holdout,legacy-cross-view}\n  --dry-run             validate and report without writing\n"
+    },
+    {
+      "name": "tools/calibrate_court_homography.py --help",
+      "returncode": 0,
+      "output": "usage: calibrate_court_homography.py [-h] --seq_dir SEQ_DIR [SEQ_DIR ...]\n                                     [--out_dir OUT_DIR] [--n_frames N_FRAMES]\n\noptions:\n  -h, --help            show this help message and exit\n  --seq_dir SEQ_DIR [SEQ_DIR ...]\n  --out_dir OUT_DIR\n  --n_frames N_FRAMES\n"
+    },
+    {
+      "name": "eval/evaluate.py --help",
+      "returncode": 0,
+      "output": "usage: evaluate.py [-h] --file_path FILE_PATH [--output_folder OUTPUT_FOLDER]\n                   [--save_per_qa_output] [--ground_truth_self_check]\n                   [--metric_version {legacy_v1,floor_v2}]\n\noptions:\n  -h, --help            show this help message and exit\n  --file_path FILE_PATH\n                        prediction json (含 answer + vlm_answer + category)\n  --output_folder OUTPUT_FOLDER\n  --save_per_qa_output\n  --ground_truth_self_check\n                        显式用 answer 作为缺失 prediction，仅供 evaluator 自检\n  --metric_version {legacy_v1,floor_v2}\n                        legacy_v1 只复现旧表；新实验须显式用 floor_v2\n"
+    },
+    {
+      "name": "eval/run_bench.py --help",
+      "returncode": 0,
+      "output": "path MODEL_PATH\n                        Qwen3-VL 模型路径(基础或微调后)\n  --bench_dir BENCH_DIR\n  --output_folder OUTPUT_FOLDER\n  --dry_run             不加载模型, 仅校验解压+数据格式\n  --load_4bit           bitsandbytes NF4 量化加载 (8GB 显存机器用)\n  --limit LIMIT         随机抽样 N 条评测 (0=全量), seed=42 可复现\n  --resume              从 output_folder/predictions_partial.json 断点续跑\n  --adapter ADAPTER     LoRA 适配器目录 (评微调模型时给, --model_path 仍指基座)\n  --max_pixels MAX_PIXELS\n                        图片像素预算上限; 评 QLoRA 适配器请用训练时的 200704 (448²)\n  --qa_json QA_JSON     直接指定 QA 文件 (如篮球 qa_real.json), 跳过 bench_dir 布局\n  --img_root IMG_ROOT   图片根目录 (image_id 相对它解析), 跳过解压逻辑\n  --blank_images        反 reward-hacking 对照: 图片换同尺寸灰板, 测答案先验\n  --cross_images        反 reward-hacking 对照: 问题不变，换成确定性错配的另一张真实图片\n  --allow_missing_images\n                        仅诊断：允许缺图并以空预测计分；正式冻结评测禁用\n  --reference_prompt {basketball_28x15,none,soccer_105x68}\n                        零训练 metric-reference prompt 基线（仅公开球场尺寸）\n  --reference_text_file REFERENCE_TEXT_FILE\n                        自定义 reference 文本；与 --reference_prompt 非 none 互斥\n  --frame_mode {full,single,single_v2,static4,shuffle}\n                        多帧题 (QA 带 image_ids) 的帧条件对照: full=按时序全部; single=只给第一帧\n                        (⚠ 题面仍说 N 帧, 有提示/输入不匹配, 保留只为复现 T18/T19);\n                        single_v2=只给第一帧且题面改成单帧措辞; static4=首帧重复 N 次 (预算=full,\n                        运动=0); shuffle=打乱顺序 (时序敏感性对照, seed=42)。对单帧 QA 无影响。\n  --metric_version {legacy_v1,floor_v2}\n                        旧队列用 legacy_v1；PR 冻结协议的新结果用 floor_v2\n  --max_new_tokens MAX_NEW_TOKENS\n                        生成 token 上限；默认保持历史评测的 128\n"
+    },
+    {
+      "name": "eval/llm_extract.py --help",
+      "returncode": 0,
+      "output": "usage: llm_extract.py [-h] --pred PRED --output_folder OUTPUT_FOLDER\n                      [--model_path MODEL_PATH] [--load_4bit] [--all]\n                      [--metric_version {legacy_v1,floor_v2}]\n\noptions:\n  -h, --help            show this help message and exit\n  --pred PRED\n  --output_folder OUTPUT_FOLDER\n  --model_path MODEL_PATH\n  --load_4bit\n  --all                 全量过 LLM (默认只处理不合格式的)\n  --metric_version {legacy_v1,floor_v2}\n                        新 PR 比较显式使用 floor_v2；默认仅兼容历史队列\n"
+    },
+    {
+      "name": "eval/paired_relational_scorer.py --help",
+      "returncode": 0,
+      "output": "usage: paired_relational_scorer.py [-h] {score,summarize} ...\n\npositional arguments:\n  {score,summarize}\n\noptions:\n  -h, --help         show this help message and exit\n"
+    },
+    {
+      "name": "train/train_qlora.py --help",
+      "returncode": 0,
+      "output": "ls MAX_PIXELS] [--vision_lora]\n                      [--gpu_throttle GPU_THROTTLE] [--save_steps SAVE_STEPS]\n                      [--smoke]\n\noptions:\n  -h, --help            show this help message and exit\n  --model_path MODEL_PATH\n  --output_dir OUTPUT_DIR\n  --num_samples NUM_SAMPLES\n                        抽样数；0=使用全部可用样本\n  --qa_json QA_JSON     target-SFT/general QA:\n                        list[image_id,question,answer,category]\n  --img_root IMG_ROOT   --qa_json 中 image_id 的图片根目录\n  --init_adapter INIT_ADAPTER\n                        从已有可训练 LoRA 开始（公平 target-SFT 应指向 source-SFT）\n  --allow_base_init     诊断专用：允许 target QA 从 base 新建 LoRA；正式公平基线禁用\n  --budget_slice {source_sft,prompt_matched,optimizer_update_matched,applied_completion_label_token_matched,diagnostic}\n                        冻结 target-SFT 公平性切片；正式 target QA 必须显式给出\n  --soccer_synloc_training\n                        启用 SynLoc calibration-only provenance 硬门；GSR QA 会被拒绝\n  --validate_only       仅在 CPU 上校验/抽样训练 JSON 与图片路径，不加载模型\n  --allow_drop_invalid  允许丢坏样本（仅诊断；正式 target-SFT 禁止）\n  --max_steps MAX_STEPS\n  --num_train_epochs NUM_TRAIN_EPOCHS\n                        --max_steps<0 时使用的 epoch 数；prompt-matched 默认 1\n  --seed SEED           数据顺序与 Trainer 随机种子\n  --lr LR\n  --grad_accum GRAD_ACCUM\n  --lora_r LORA_R\n  --max_pixels MAX_PIXELS\n  --vision_lora         LoRA 同时挂到视觉塔 (blocks attn.qkv/proj + mlp.linear_fc1/2\n                        + merger); 默认视觉塔冻结\n  --gpu_throttle GPU_THROTTLE\n                        GPU 占空比上限 (0-1, 如 0.8 = 每步后睡步时的 25%, 给桌面留渲染窗口; 0=不限)\n  --save_steps SAVE_STEPS\n  --smoke               32 样本 8 步冒烟测试\n"
+    },
+    {
+      "name": "tools/audit_paper2_evidence.py --help",
+      "returncode": 0,
+      "output": "usage: audit_paper2_evidence.py [-h] [--bootstrap-reps BOOTSTRAP_REPS]\n                                [--processor] [--skip-bootstrap]\n                                [--model MODEL]\n\nPost-review, CPU-only evidence audit; never writes frozen result artifacts.\nRun with the existing research Python environment (numpy/scipy/cv2; optional\ntransformers/torch for --processor). Outputs belong to paper2/audit only. The\ntemporal block bootstrap is exploratory within-clip sensitivity analysis, not\npreregistered inference and not evidence of independent event generalization.\n\noptions:\n  -h, --help            show this help message and exit\n  --bootstrap-reps BOOTSTRAP_REPS\n  --processor\n  --skip-bootstrap      reuse existing paired statistics; do not overwrite\n                        them\n  --model MODEL\n"
+    },
+    {
+      "name": "tools/rebuild_paper2_statistics.py --help",
+      "returncode": 0,
+      "output": "usage: rebuild_paper2_statistics.py [-h] --workspace WORKSPACE --out OUT\n                                    [--paired]\n                                    [--bootstrap-reps BOOTSTRAP_REPS]\n                                    [--check-reference CHECK_REFERENCE]\n\nRebuild aggregate paper2 controls from independently authorized local inputs.\nUses code beside this script and data under --workspace. No weights,\ninference, network calls, manuscript changes, images, or per-item exports are\nperformed. Public sanitized predictions alone are insufficient: the original\nquestion-key alignment and licensed source inputs must first be reconstructed\nand verified.\n\noptions:\n  -h, --help            show this help message and exit\n  --workspace WORKSPACE\n  --out OUT             New aggregate output directory\n  --paired              Also rebuild 48 paired/bootstrap cells\n  --bootstrap-reps BOOTSTRAP_REPS\n  --check-reference CHECK_REFERENCE\n                        Compare native-control numerical fields\n"
+    },
+    {
+      "name": "tools/prepare_courtdyn_revision_experiments.py --help",
+      "returncode": 0,
+      "output": "usage: prepare_courtdyn_revision_experiments.py [-h] [--out-dir OUT_DIR]\n\nPrepare, but do not run, the controlled follow-up experiments for paper2.\nOutputs are local derived data: do not redistribute the generated question\npools. Original pools, frozen predictions and trained checkpoints are never\noverwritten.\n\noptions:\n  -h, --help         show this help message and exit\n  --out-dir OUT_DIR\n"
+    },
+    {
+      "name": "tools/run_courtdyn_revision_controls.py --help",
+      "returncode": 0,
+      "output": "usage: run_courtdyn_revision_controls.py [-h] [--inputs INPUTS] [--seq SEQ]\n                                         [--arms ARMS [ARMS ...]]\n                                         [--arithmetic]\n                                         [--frame-mode {full,static4}]\n                                         [--resume] [--run]\n                                         [--model-path MODEL_PATH]\n                                         [--adapter ADAPTER] [--output OUTPUT]\n\nValidate or explicitly run the follow-up unit controls with the frozen model.\nDefault is CPU validation only. --run requires an idle CUDA device and does\nnot start a service, wait in a background queue, or modify any existing\nresult.\n\noptions:\n  -h, --help            show this help message and exit\n  --inputs INPUTS\n  --seq SEQ\n  --arms ARMS [ARMS ...]\n  --arithmetic\n  --frame-mode {full,static4}\n  --resume              Append only to a verified identical incomplete run.\n  --run\n  --model-path MODEL_PATH\n  --adapter ADAPTER\n  --output OUTPUT\n"
+    },
+    {
+      "name": "paper2/audit/quick_quality_20260912/statistics/analyze_existing_controls.py --help",
+      "returncode": 0,
+      "output": "usage: analyze_existing_controls.py [-h] [--output-dir OUTPUT_DIR]\n\nPost-hoc CPU-only analyses of frozen CourtDyn predictions. Run from any\ndirectory with the existing research Python (numpy/scipy). Writes only beside\nthis script. No training, inference, or frozen-file edits. The two analyses\nare auxiliary no-prior decomposition and within-trajectory speed/path\nconsistency; neither supplies independent-event replication.\n\noptions:\n  -h, --help            show this help message and exit\n  --output-dir OUTPUT_DIR\n                        New aggregate-output directory; frozen inputs are read\n                        only.\n"
+    },
+    {
+      "name": "core analysis imports",
+      "returncode": 0,
+      "output": "bundle imports resolved\n"
+    },
+    {
+      "name": "synthetic trajectory generation",
+      "returncode": 0,
+      "output": "[courtdyn 19:59:54] 序列 synthetic: 180 帧 @ 30.00fps (6.0s), 1920x1080\n[courtdyn 19:59:54] 生成 12 条 QA; 统计: cap_dynamics_path_player=8->6, cap_dynamics_speed_player=8->6, n_dynamics_path_player=6, n_dynamics_speed_player=6, n_items=12, n_players=2, n_visual_pairs=0, n_windows=4\n[courtdyn 19:59:54] --- dynamics_path_player (n=6)\n    Q: The 4 frames are consecutive samples from one basketball clip spanning 2.0 seconds, in chronological order. Assume a typical player on this court is 1.93 m tall. How far does the player marked with the red box travel along the floor over the whole clip, in meters? Output only the number, one decimal place.\n    A: 1.0\n[courtdyn 19:59:54] --- dynamics_speed_player (n=6)\n    Q: The 4 frames are consecutive samples from one basketball clip spanning 2.0 seconds, in chronological order. Assume a typical player on this court is 1.93 m tall. What is the average speed of the player marked with the red box, in meters per second? Output only the number, one decimal place.\n    A: 0.5\n"
+    },
+    {
+      "name": "synthetic evaluator",
+      "returncode": 0,
+      "output": "[eval] ===== CourtSI-Bench summary =====\n  total pairs : 2\n  exact acc   : 0.5000\n  T-MRA (num) : 0.5000\n  per-group:\n    speed          n=    2 acc=0.5000 tmra=0.5000\n[eval] summary -> $SCRATCH\\scored\\summary.json\n"
+    },
+    {
+      "name": "missing-prediction penalization",
+      "summary": {
+        "n_total": 2,
+        "metric_version": "floor_v2",
+        "n_prediction_present": 1,
+        "prediction_coverage": 0.5,
+        "n_parse_failure_numeric": 1,
+        "exact_accuracy": 0.5,
+        "tmra_overall": 0.5,
+        "per_group": {
+          "speed": {
+            "n": 2,
+            "exact_accuracy": 0.5,
+            "tmra": 0.5
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "n_train": 1400,
+  "n_per_seq": {
+    "Q1_side_0-30": 280,
+    "Q2_side_300-330": 280,
+    "Q4_side_570-600": 280,
+    "Q4_side_480-510": 280,
+    "Q4_top_0-30": 280
+  },
+  "all_questions_and_answers_match_v1": true,
+  "v1_matches_per_seq": {
+    "Q1_side_0-30": 280,
+    "Q2_side_300-330": 280,
+    "Q4_side_570-600": 280,
+    "Q4_side_480-510": 280,
+    "Q4_top_0-30": 280
+  },
+  "mismatches": [],
+  "training_file_sha256": "42c5e3d655e9b45095033577924373817b4479bbf5decb7c073fc59f683b4e2a",
+  "sequence_id_frame_intersection": 0,
+  "event_sync_status": "Q1 event overlap supported by source-video inspection and collective-trajectory alignment; see evidence_event_alignment.json. Exact camera clock offset/person identity not certified.",
+  "source_video_info": {
+    "Q1_side_0-30": {
+      "name": "Q1_side_0-30",
+      "fps": 23.976023976023978,
+      "width": 3840,
+      "height": 2160,
+      "length": 720
+    },
+    "Q1_top_0-30": {
+      "name": "Q1_top_0-30",
+      "fps": 29.97002997002997,
+      "width": 3840,
+      "height": 2160,
+      "length": 900
+    }
+  }
+}

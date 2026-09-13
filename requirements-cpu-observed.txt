@@ -1,0 +1,6 @@
+# Observed audit environment; this is NOT the frozen training environment.
+numpy==2.5.1
+scipy==1.18.0
+opencv-python==5.0.0.93
+matplotlib==3.11.0
+Pillow==12.3.0

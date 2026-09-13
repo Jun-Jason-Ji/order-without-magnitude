@@ -1,0 +1,10 @@
+{
+  "scope": "Descriptive cross-view event corroboration using existing per-view court homographies and MOT foot points; 180-degree top court rotation follows the visible court orientation. Not person-ID matching, certified clock synchronization, or a new metric calibration.",
+  "interpretation": "Visual event inspection plus matching collective trajectories supports overlapping opening game events across the two clips. Exact camera clock offset and individual player identity were not certified.",
+  "time_basis": "Source frame index round(t * seqinfo fps) + 1 for MOT; contact images use zero-based index round(t * seqinfo fps). Packed MP4 fps is not used.",
+  "n_time_samples": 58,
+  "centroid_pearson_x": 0.9999282566661368,
+  "centroid_pearson_y": 0.9336677038497078,
+  "median_centroid_distance_m": 0.7828634027784438,
+  "median_of_timepoint_matched_distances_m": 0.7932090154037805
+}

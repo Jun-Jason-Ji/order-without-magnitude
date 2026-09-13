@@ -1,0 +1,46 @@
+{
+  "scope": "Paper 1 real-metric Human-M3 800-item pool vs Paper 2 reported four basketball1/split1 cameras; source frames, not identically rendered inputs or identical QA.",
+  "paper1_items": 800,
+  "paper1_unique_camera_frames": 712,
+  "paper2_unique_camera_frames": 224,
+  "shared_camera_frames": 73,
+  "per_camera": [
+    {
+      "group": "basketball1/split1/camera_0",
+      "paper2_qa": 234,
+      "paper2_unique_source_frames": 56,
+      "paper1_unique_source_frames_same_group": 62,
+      "shared_camera_frame_count": 19,
+      "all_shared_frames_resolve_to_identical_original_image_paths": true,
+      "paper2_qa_with_at_least_one_shared_source_frame": 154
+    },
+    {
+      "group": "basketball1/split1/camera_1",
+      "paper2_qa": 230,
+      "paper2_unique_source_frames": 56,
+      "paper1_unique_source_frames_same_group": 68,
+      "shared_camera_frame_count": 15,
+      "all_shared_frames_resolve_to_identical_original_image_paths": true,
+      "paper2_qa_with_at_least_one_shared_source_frame": 182
+    },
+    {
+      "group": "basketball1/split1/camera_2",
+      "paper2_qa": 234,
+      "paper2_unique_source_frames": 56,
+      "paper1_unique_source_frames_same_group": 61,
+      "shared_camera_frame_count": 18,
+      "all_shared_frames_resolve_to_identical_original_image_paths": true,
+      "paper2_qa_with_at_least_one_shared_source_frame": 188
+    },
+    {
+      "group": "basketball1/split1/camera_3",
+      "paper2_qa": 234,
+      "paper2_unique_source_frames": 56,
+      "paper1_unique_source_frames_same_group": 68,
+      "shared_camera_frame_count": 21,
+      "all_shared_frames_resolve_to_identical_original_image_paths": true,
+      "paper2_qa_with_at_least_one_shared_source_frame": 186
+    }
+  ],
+  "paper1_sha256": "088809683b191fa05a4cf106cec6f5b2c704da438e5604da44aed355668e289d"
+}

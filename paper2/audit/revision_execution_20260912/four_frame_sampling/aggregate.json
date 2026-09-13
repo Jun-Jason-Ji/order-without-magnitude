@@ -1,0 +1,1415 @@
+{
+  "schema": "courtdyn-four-smoothed-samples-v1",
+  "status": "PASS",
+  "created_utc": "2026-09-12T12:04:26+00:00",
+  "scope": "CPU annotation-trajectory subsampling audit only. No image coordinate detection and no model inference.",
+  "method": {
+    "smoothing": "Original image-plane footpoint moving average over available annotations within +/-5 frames, before homography.",
+    "dense_path": "Original STRIDE=5 inclusive sampling; endpoint appended if needed.",
+    "four_sample_path": "Original meta.frames, same smoothed coordinates and endpoints; three Euclidean chords.",
+    "speed": "Corresponding path divided by (f1-f0)/source_fps, not nominal 2 seconds.",
+    "ground": "Existing H_img2court_m and CourtPlane.foot_series_m, unchanged.",
+    "pixel": "Existing DQ.foot_series coordinates times 960/source_width; no processor-size claim.",
+    "reference": "Original T.seq_ctx: one-decimal v3, unrounded recomputed rendered-pixel target; verify stored pixel answer rounding.",
+    "tmra": "Original T.tmra/E.t_mra_scalar; format prediction and GT to one decimal; original T/floor, both multiplied by clip K only for pixel.",
+    "rho_primary": "Serialize the four-point answer to requested one decimal; compare against original scoring reference. Additional unrounded rank values are labeled separately.",
+    "ratio": "Four-point path divided by exact dense path before answer rounding; speed has the same per-trajectory ratio.",
+    "coverage": "Availability and each original T-MRA threshold; no model parse success claim.",
+    "loss_interpretation": "Chord deficits along smoothed annotations, not proof of actual physical bends rather than annotation noise."
+  },
+  "runtime": {
+    "python": "3.14.6",
+    "numpy": "2.5.1",
+    "scipy": "1.18.0"
+  },
+  "synthetic_geometry_checks": [
+    {
+      "case": "straight",
+      "four_over_dense": 1.0,
+      "affine_ground_scale_check": "PASS"
+    },
+    {
+      "case": "curved",
+      "four_over_dense": 0.8503006452922328,
+      "affine_ground_scale_check": "PASS"
+    }
+  ],
+  "sequences": [
+    {
+      "sequence": "Q2_top_480-510",
+      "event_scope": "primary within-game temporal holdout",
+      "questions": 280,
+      "unique_trajectory_window_pairs": 180,
+      "paired_speed_path_intersection": 100,
+      "source_image_dimensions": [
+        3840,
+        2160
+      ],
+      "rendered_image_dimensions": [
+        960,
+        540
+      ],
+      "fps": 29.97002997002997,
+      "duration_seconds": {
+        "n": 280,
+        "median": 2.0020000000000002,
+        "iqr": [
+          2.0020000000000002,
+          2.0020000000000002
+        ],
+        "min_max": [
+          2.0020000000000002,
+          2.0020000000000002
+        ]
+      },
+      "four_sample_offsets": [
+        [
+          0,
+          20,
+          40,
+          60
+        ]
+      ],
+      "dense_point_counts": [
+        13
+      ],
+      "smoothing_annotation_counts_per_point": {
+        "n": 3640,
+        "median": 11.0,
+        "iqr": [
+          11.0,
+          11.0
+        ],
+        "min_max": [
+          11.0,
+          11.0
+        ]
+      },
+      "method_checks_passed_question_count": {
+        "dense_functions_and_projection_order": 280,
+        "frozen_reference_conventions": 280
+      },
+      "unavailable_question_reasons": {}
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "event_scope": "cross-view event overlap for original native checkpoint",
+      "questions": 280,
+      "unique_trajectory_window_pairs": 159,
+      "paired_speed_path_intersection": 121,
+      "source_image_dimensions": [
+        3840,
+        2160
+      ],
+      "rendered_image_dimensions": [
+        960,
+        540
+      ],
+      "fps": 29.97002997002997,
+      "duration_seconds": {
+        "n": 280,
+        "median": 2.0020000000000002,
+        "iqr": [
+          2.0020000000000002,
+          2.0020000000000002
+        ],
+        "min_max": [
+          2.0020000000000002,
+          2.0020000000000002
+        ]
+      },
+      "four_sample_offsets": [
+        [
+          0,
+          20,
+          40,
+          60
+        ]
+      ],
+      "dense_point_counts": [
+        13
+      ],
+      "smoothing_annotation_counts_per_point": {
+        "n": 3640,
+        "median": 11.0,
+        "iqr": [
+          11.0,
+          11.0
+        ],
+        "min_max": [
+          11.0,
+          11.0
+        ]
+      },
+      "method_checks_passed_question_count": {
+        "dense_functions_and_projection_order": 280,
+        "frozen_reference_conventions": 280
+      },
+      "unavailable_question_reasons": {}
+    }
+  ],
+  "cells": [
+    {
+      "sequence": "Q2_top_480-510",
+      "family": "speed",
+      "unit": "v3_ground",
+      "cohort_questions": 140,
+      "available_questions": 140,
+      "coverage_fraction": 1.0,
+      "positive_dense_denominators": 140,
+      "T": 0.3,
+      "denominator_floor": 1.0,
+      "K_for_pixel_tolerance_only": null,
+      "ratio_four_to_dense_exact": {
+        "n": 140,
+        "median": 0.9896478463731795,
+        "iqr": [
+          0.9658717214944069,
+          0.9978720801978364
+        ],
+        "min_max": [
+          0.7733219818041698,
+          0.999995363931967
+        ]
+      },
+      "relative_length_deficit": {
+        "n": 140,
+        "median": 0.01035215362682057,
+        "iqr": [
+          0.002127919802163619,
+          0.03412827850559308
+        ],
+        "min_max": [
+          4.636068033025964e-06,
+          0.22667801819583022
+        ]
+      },
+      "absolute_target_deficit": {
+        "n": 140,
+        "median": 0.008949044939526085,
+        "iqr": [
+          0.002822234722447081,
+          0.028036585131727187
+        ],
+        "min_max": [
+          5.8597145959904395e-06,
+          0.09793972490268488
+        ]
+      },
+      "smoothed_path_chord_deficit_positive_count": 140,
+      "deficit_exceeds_one_percent_count": 71,
+      "deficit_exceeds_five_percent_count": 27,
+      "deficit_exceeds_ten_percent_count": 7,
+      "deficit_exceeds_twenty_percent_count": 2,
+      "descriptive_relative_deficit_bins": [
+        {
+          "lower_inclusive": 0.0,
+          "upper_exclusive": 0.01,
+          "count": 69
+        },
+        {
+          "lower_inclusive": 0.01,
+          "upper_exclusive": 0.05,
+          "count": 44
+        },
+        {
+          "lower_inclusive": 0.05,
+          "upper_exclusive": 0.1,
+          "count": 20
+        },
+        {
+          "lower_inclusive": 0.1,
+          "upper_exclusive": 0.2,
+          "count": 5
+        },
+        {
+          "lower_inclusive": 0.2,
+          "upper_exclusive": 0.5,
+          "count": 2
+        },
+        {
+          "lower_inclusive": 0.5,
+          "upper_exclusive": null,
+          "count": 0
+        }
+      ],
+      "gap_index_relative_deficit_medians": [
+        0.001693687350708138,
+        0.0010998626851606763,
+        0.0021680634425728304
+      ],
+      "tmra": 100.0,
+      "dense_identity_tmra": 100.0,
+      "tmra_deficit_from_dense_identity": 0.0,
+      "tmra_100_count": 140,
+      "tmra_zero_count": 0,
+      "within_absolute_T_count_after_rounding": 140,
+      "coverage_by_original_tmra_threshold": [
+        {
+          "theta": 0.5,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.55,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.6,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.65,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.7,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.75,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.8,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.85,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.9,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.95,
+          "count": 140,
+          "total": 140
+        }
+      ],
+      "rho_one_decimal_answer_vs_original_scoring_reference": 0.9980470167385759,
+      "rho_unrounded_answer_vs_original_scoring_reference": 0.9980826721725078,
+      "rho_unrounded_four_vs_unrounded_dense": 0.9988454221425292,
+      "rho_dense_one_decimal_vs_original_scoring_reference": 1.0,
+      "reference_median_constant_tmra": 63.78571428571429
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "family": "speed",
+      "unit": "rendered_pixel",
+      "cohort_questions": 140,
+      "available_questions": 140,
+      "coverage_fraction": 1.0,
+      "positive_dense_denominators": 140,
+      "T": 8.2494,
+      "denominator_floor": 27.498,
+      "K_for_pixel_tolerance_only": 27.498,
+      "ratio_four_to_dense_exact": {
+        "n": 140,
+        "median": 0.9894814395779792,
+        "iqr": [
+          0.9651105216524205,
+          0.9977427217383036
+        ],
+        "min_max": [
+          0.7779138533808176,
+          0.9999950579091778
+        ]
+      },
+      "relative_length_deficit": {
+        "n": 140,
+        "median": 0.010518560422020873,
+        "iqr": [
+          0.002257278261696416,
+          0.034889478347579495
+        ],
+        "min_max": [
+          4.942090822246392e-06,
+          0.22208614661918236
+        ]
+      },
+      "absolute_target_deficit": {
+        "n": 140,
+        "median": 0.250444075547648,
+        "iqr": [
+          0.08185276093193217,
+          0.7725714707950058
+        ],
+        "min_max": [
+          0.0001696015736953882,
+          2.68794396353187
+        ]
+      },
+      "smoothed_path_chord_deficit_positive_count": 140,
+      "deficit_exceeds_one_percent_count": 72,
+      "deficit_exceeds_five_percent_count": 27,
+      "deficit_exceeds_ten_percent_count": 7,
+      "deficit_exceeds_twenty_percent_count": 2,
+      "descriptive_relative_deficit_bins": [
+        {
+          "lower_inclusive": 0.0,
+          "upper_exclusive": 0.01,
+          "count": 68
+        },
+        {
+          "lower_inclusive": 0.01,
+          "upper_exclusive": 0.05,
+          "count": 45
+        },
+        {
+          "lower_inclusive": 0.05,
+          "upper_exclusive": 0.1,
+          "count": 20
+        },
+        {
+          "lower_inclusive": 0.1,
+          "upper_exclusive": 0.2,
+          "count": 5
+        },
+        {
+          "lower_inclusive": 0.2,
+          "upper_exclusive": 0.5,
+          "count": 2
+        },
+        {
+          "lower_inclusive": 0.5,
+          "upper_exclusive": null,
+          "count": 0
+        }
+      ],
+      "gap_index_relative_deficit_medians": [
+        0.0018054508520571055,
+        0.001142683483123864,
+        0.002166916512267922
+      ],
+      "tmra": 100.0,
+      "dense_identity_tmra": 100.0,
+      "tmra_deficit_from_dense_identity": 0.0,
+      "tmra_100_count": 140,
+      "tmra_zero_count": 0,
+      "within_absolute_T_count_after_rounding": 140,
+      "coverage_by_original_tmra_threshold": [
+        {
+          "theta": 0.5,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.55,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.6,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.65,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.7,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.75,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.8,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.85,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.9,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.95,
+          "count": 140,
+          "total": 140
+        }
+      ],
+      "rho_one_decimal_answer_vs_original_scoring_reference": 0.998916465293345,
+      "rho_unrounded_answer_vs_original_scoring_reference": 0.9989022763552078,
+      "rho_unrounded_four_vs_unrounded_dense": 0.9989022763552078,
+      "rho_dense_one_decimal_vs_original_scoring_reference": 0.9999803195019504,
+      "reference_median_constant_tmra": 65.42857142857143
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "family": "path",
+      "unit": "v3_ground",
+      "cohort_questions": 140,
+      "available_questions": 140,
+      "coverage_fraction": 1.0,
+      "positive_dense_denominators": 140,
+      "T": 0.5,
+      "denominator_floor": 2.0,
+      "K_for_pixel_tolerance_only": null,
+      "ratio_four_to_dense_exact": {
+        "n": 140,
+        "median": 0.9908246828524307,
+        "iqr": [
+          0.9603545592853594,
+          0.9984757868703917
+        ],
+        "min_max": [
+          0.7884317168086544,
+          0.999995363931967
+        ]
+      },
+      "relative_length_deficit": {
+        "n": 140,
+        "median": 0.009175317147569306,
+        "iqr": [
+          0.001524213129608265,
+          0.03964544071464063
+        ],
+        "min_max": [
+          4.636068033025964e-06,
+          0.21156828319134557
+        ]
+      },
+      "absolute_target_deficit": {
+        "n": 140,
+        "median": 0.01750285101715554,
+        "iqr": [
+          0.004952730300956054,
+          0.054524316360932634
+        ],
+        "min_max": [
+          1.1731148620963694e-05,
+          0.6975982671143903
+        ]
+      },
+      "smoothed_path_chord_deficit_positive_count": 140,
+      "deficit_exceeds_one_percent_count": 69,
+      "deficit_exceeds_five_percent_count": 29,
+      "deficit_exceeds_ten_percent_count": 8,
+      "deficit_exceeds_twenty_percent_count": 1,
+      "descriptive_relative_deficit_bins": [
+        {
+          "lower_inclusive": 0.0,
+          "upper_exclusive": 0.01,
+          "count": 71
+        },
+        {
+          "lower_inclusive": 0.01,
+          "upper_exclusive": 0.05,
+          "count": 40
+        },
+        {
+          "lower_inclusive": 0.05,
+          "upper_exclusive": 0.1,
+          "count": 21
+        },
+        {
+          "lower_inclusive": 0.1,
+          "upper_exclusive": 0.2,
+          "count": 7
+        },
+        {
+          "lower_inclusive": 0.2,
+          "upper_exclusive": 0.5,
+          "count": 1
+        },
+        {
+          "lower_inclusive": 0.5,
+          "upper_exclusive": null,
+          "count": 0
+        }
+      ],
+      "gap_index_relative_deficit_medians": [
+        0.0012520049911314344,
+        0.0010998626851606763,
+        0.0018090049381242605
+      ],
+      "tmra": 100.0,
+      "dense_identity_tmra": 100.0,
+      "tmra_deficit_from_dense_identity": 0.0,
+      "tmra_100_count": 140,
+      "tmra_zero_count": 0,
+      "within_absolute_T_count_after_rounding": 139,
+      "coverage_by_original_tmra_threshold": [
+        {
+          "theta": 0.5,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.55,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.6,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.65,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.7,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.75,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.8,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.85,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.9,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.95,
+          "count": 140,
+          "total": 140
+        }
+      ],
+      "rho_one_decimal_answer_vs_original_scoring_reference": 0.9982557318498988,
+      "rho_unrounded_answer_vs_original_scoring_reference": 0.9984589618253136,
+      "rho_unrounded_four_vs_unrounded_dense": 0.9987142201132713,
+      "rho_dense_one_decimal_vs_original_scoring_reference": 1.0,
+      "reference_median_constant_tmra": 53.28571428571428
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "family": "path",
+      "unit": "rendered_pixel",
+      "cohort_questions": 140,
+      "available_questions": 140,
+      "coverage_fraction": 1.0,
+      "positive_dense_denominators": 140,
+      "T": 13.749,
+      "denominator_floor": 54.996,
+      "K_for_pixel_tolerance_only": 27.498,
+      "ratio_four_to_dense_exact": {
+        "n": 140,
+        "median": 0.9905453395695014,
+        "iqr": [
+          0.9597576801717866,
+          0.9984945565663527
+        ],
+        "min_max": [
+          0.788698479813752,
+          0.9999950579091778
+        ]
+      },
+      "relative_length_deficit": {
+        "n": 140,
+        "median": 0.009454660430498585,
+        "iqr": [
+          0.0015054434336473355,
+          0.04024231982821333
+        ],
+        "min_max": [
+          4.942090822246392e-06,
+          0.21130152018624804
+        ]
+      },
+      "absolute_target_deficit": {
+        "n": 140,
+        "median": 0.49198049774030217,
+        "iqr": [
+          0.14225809602745354,
+          1.5355355873891892
+        ],
+        "min_max": [
+          0.00033954235054522997,
+          18.480499640629134
+        ]
+      },
+      "smoothed_path_chord_deficit_positive_count": 140,
+      "deficit_exceeds_one_percent_count": 69,
+      "deficit_exceeds_five_percent_count": 29,
+      "deficit_exceeds_ten_percent_count": 8,
+      "deficit_exceeds_twenty_percent_count": 1,
+      "descriptive_relative_deficit_bins": [
+        {
+          "lower_inclusive": 0.0,
+          "upper_exclusive": 0.01,
+          "count": 71
+        },
+        {
+          "lower_inclusive": 0.01,
+          "upper_exclusive": 0.05,
+          "count": 40
+        },
+        {
+          "lower_inclusive": 0.05,
+          "upper_exclusive": 0.1,
+          "count": 21
+        },
+        {
+          "lower_inclusive": 0.1,
+          "upper_exclusive": 0.2,
+          "count": 7
+        },
+        {
+          "lower_inclusive": 0.2,
+          "upper_exclusive": 0.5,
+          "count": 1
+        },
+        {
+          "lower_inclusive": 0.5,
+          "upper_exclusive": null,
+          "count": 0
+        }
+      ],
+      "gap_index_relative_deficit_medians": [
+        0.0013145734532704302,
+        0.001142683483123864,
+        0.0018603433646352157
+      ],
+      "tmra": 100.0,
+      "dense_identity_tmra": 100.0,
+      "tmra_deficit_from_dense_identity": 0.0,
+      "tmra_100_count": 140,
+      "tmra_zero_count": 0,
+      "within_absolute_T_count_after_rounding": 139,
+      "coverage_by_original_tmra_threshold": [
+        {
+          "theta": 0.5,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.55,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.6,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.65,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.7,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.75,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.8,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.85,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.9,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.95,
+          "count": 140,
+          "total": 140
+        }
+      ],
+      "rho_one_decimal_answer_vs_original_scoring_reference": 0.998609252417118,
+      "rho_unrounded_answer_vs_original_scoring_reference": 0.9986092584898649,
+      "rho_unrounded_four_vs_unrounded_dense": 0.9986092584898649,
+      "rho_dense_one_decimal_vs_original_scoring_reference": 0.9999945332338384,
+      "reference_median_constant_tmra": 51.78571428571429
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "family": "speed",
+      "unit": "v3_ground",
+      "cohort_questions": 140,
+      "available_questions": 140,
+      "coverage_fraction": 1.0,
+      "positive_dense_denominators": 140,
+      "T": 0.3,
+      "denominator_floor": 1.0,
+      "K_for_pixel_tolerance_only": null,
+      "ratio_four_to_dense_exact": {
+        "n": 140,
+        "median": 0.9793950778642322,
+        "iqr": [
+          0.9506890798632718,
+          0.997331218015481
+        ],
+        "min_max": [
+          0.6678669433667582,
+          0.9999360601945493
+        ]
+      },
+      "relative_length_deficit": {
+        "n": 140,
+        "median": 0.020604922135767867,
+        "iqr": [
+          0.0026687819845190863,
+          0.04931092013672825
+        ],
+        "min_max": [
+          6.393980545071898e-05,
+          0.3321330566332418
+        ]
+      },
+      "absolute_target_deficit": {
+        "n": 140,
+        "median": 0.02077328401249523,
+        "iqr": [
+          0.005400564469029437,
+          0.048582129925902426
+        ],
+        "min_max": [
+          0.00023392266740085432,
+          0.20567763670137884
+        ]
+      },
+      "smoothed_path_chord_deficit_positive_count": 140,
+      "deficit_exceeds_one_percent_count": 83,
+      "deficit_exceeds_five_percent_count": 33,
+      "deficit_exceeds_ten_percent_count": 14,
+      "deficit_exceeds_twenty_percent_count": 6,
+      "descriptive_relative_deficit_bins": [
+        {
+          "lower_inclusive": 0.0,
+          "upper_exclusive": 0.01,
+          "count": 57
+        },
+        {
+          "lower_inclusive": 0.01,
+          "upper_exclusive": 0.05,
+          "count": 50
+        },
+        {
+          "lower_inclusive": 0.05,
+          "upper_exclusive": 0.1,
+          "count": 19
+        },
+        {
+          "lower_inclusive": 0.1,
+          "upper_exclusive": 0.2,
+          "count": 8
+        },
+        {
+          "lower_inclusive": 0.2,
+          "upper_exclusive": 0.5,
+          "count": 6
+        },
+        {
+          "lower_inclusive": 0.5,
+          "upper_exclusive": null,
+          "count": 0
+        }
+      ],
+      "gap_index_relative_deficit_medians": [
+        0.0023683939883777302,
+        0.0018864237270350113,
+        0.0020590736374947274
+      ],
+      "tmra": 100.0,
+      "dense_identity_tmra": 100.0,
+      "tmra_deficit_from_dense_identity": 0.0,
+      "tmra_100_count": 140,
+      "tmra_zero_count": 0,
+      "within_absolute_T_count_after_rounding": 140,
+      "coverage_by_original_tmra_threshold": [
+        {
+          "theta": 0.5,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.55,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.6,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.65,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.7,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.75,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.8,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.85,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.9,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.95,
+          "count": 140,
+          "total": 140
+        }
+      ],
+      "rho_one_decimal_answer_vs_original_scoring_reference": 0.9978000948272748,
+      "rho_unrounded_answer_vs_original_scoring_reference": 0.9984618769629586,
+      "rho_unrounded_four_vs_unrounded_dense": 0.998626752093766,
+      "rho_dense_one_decimal_vs_original_scoring_reference": 1.0,
+      "reference_median_constant_tmra": 43.0
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "family": "speed",
+      "unit": "rendered_pixel",
+      "cohort_questions": 140,
+      "available_questions": 140,
+      "coverage_fraction": 1.0,
+      "positive_dense_denominators": 140,
+      "T": 8.1183,
+      "denominator_floor": 27.061,
+      "K_for_pixel_tolerance_only": 27.061,
+      "ratio_four_to_dense_exact": {
+        "n": 140,
+        "median": 0.9791891655833818,
+        "iqr": [
+          0.9509990680149457,
+          0.9972459303945471
+        ],
+        "min_max": [
+          0.6659877631883214,
+          0.999933402135782
+        ]
+      },
+      "relative_length_deficit": {
+        "n": 140,
+        "median": 0.02081083441661824,
+        "iqr": [
+          0.0027540696054529357,
+          0.049000931985054286
+        ],
+        "min_max": [
+          6.659786421803204e-05,
+          0.3340122368116786
+        ]
+      },
+      "absolute_target_deficit": {
+        "n": 140,
+        "median": 0.5684843414519811,
+        "iqr": [
+          0.15068739086845184,
+          1.3459821173898767
+        ],
+        "min_max": [
+          0.006534758783473649,
+          5.491982262908433
+        ]
+      },
+      "smoothed_path_chord_deficit_positive_count": 140,
+      "deficit_exceeds_one_percent_count": 84,
+      "deficit_exceeds_five_percent_count": 34,
+      "deficit_exceeds_ten_percent_count": 14,
+      "deficit_exceeds_twenty_percent_count": 6,
+      "descriptive_relative_deficit_bins": [
+        {
+          "lower_inclusive": 0.0,
+          "upper_exclusive": 0.01,
+          "count": 56
+        },
+        {
+          "lower_inclusive": 0.01,
+          "upper_exclusive": 0.05,
+          "count": 50
+        },
+        {
+          "lower_inclusive": 0.05,
+          "upper_exclusive": 0.1,
+          "count": 20
+        },
+        {
+          "lower_inclusive": 0.1,
+          "upper_exclusive": 0.2,
+          "count": 8
+        },
+        {
+          "lower_inclusive": 0.2,
+          "upper_exclusive": 0.5,
+          "count": 6
+        },
+        {
+          "lower_inclusive": 0.5,
+          "upper_exclusive": null,
+          "count": 0
+        }
+      ],
+      "gap_index_relative_deficit_medians": [
+        0.002454439615356524,
+        0.0018734698440562708,
+        0.0020556022723081987
+      ],
+      "tmra": 100.0,
+      "dense_identity_tmra": 100.0,
+      "tmra_deficit_from_dense_identity": 0.0,
+      "tmra_100_count": 140,
+      "tmra_zero_count": 0,
+      "within_absolute_T_count_after_rounding": 140,
+      "coverage_by_original_tmra_threshold": [
+        {
+          "theta": 0.5,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.55,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.6,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.65,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.7,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.75,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.8,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.85,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.9,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.95,
+          "count": 140,
+          "total": 140
+        }
+      ],
+      "rho_one_decimal_answer_vs_original_scoring_reference": 0.9986300187120214,
+      "rho_unrounded_answer_vs_original_scoring_reference": 0.9986529924996176,
+      "rho_unrounded_four_vs_unrounded_dense": 0.9986529924996176,
+      "rho_dense_one_decimal_vs_original_scoring_reference": 0.9999803195019504,
+      "reference_median_constant_tmra": 43.785714285714285
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "family": "path",
+      "unit": "v3_ground",
+      "cohort_questions": 140,
+      "available_questions": 140,
+      "coverage_fraction": 1.0,
+      "positive_dense_denominators": 140,
+      "T": 0.5,
+      "denominator_floor": 2.0,
+      "K_for_pixel_tolerance_only": null,
+      "ratio_four_to_dense_exact": {
+        "n": 140,
+        "median": 0.9856902621386383,
+        "iqr": [
+          0.9519448800059278,
+          0.9984076067050573
+        ],
+        "min_max": [
+          0.6678669433667582,
+          0.9999360601945493
+        ]
+      },
+      "relative_length_deficit": {
+        "n": 140,
+        "median": 0.014309737861361749,
+        "iqr": [
+          0.0015923932949426234,
+          0.04805511999407219
+        ],
+        "min_max": [
+          6.393980545071898e-05,
+          0.3321330566332418
+        ]
+      },
+      "absolute_target_deficit": {
+        "n": 140,
+        "median": 0.036810171344362264,
+        "iqr": [
+          0.008112713204431854,
+          0.07881825375478241
+        ],
+        "min_max": [
+          0.0004683131801366258,
+          0.4117666286761601
+        ]
+      },
+      "smoothed_path_chord_deficit_positive_count": 140,
+      "deficit_exceeds_one_percent_count": 75,
+      "deficit_exceeds_five_percent_count": 31,
+      "deficit_exceeds_ten_percent_count": 13,
+      "deficit_exceeds_twenty_percent_count": 5,
+      "descriptive_relative_deficit_bins": [
+        {
+          "lower_inclusive": 0.0,
+          "upper_exclusive": 0.01,
+          "count": 65
+        },
+        {
+          "lower_inclusive": 0.01,
+          "upper_exclusive": 0.05,
+          "count": 44
+        },
+        {
+          "lower_inclusive": 0.05,
+          "upper_exclusive": 0.1,
+          "count": 18
+        },
+        {
+          "lower_inclusive": 0.1,
+          "upper_exclusive": 0.2,
+          "count": 8
+        },
+        {
+          "lower_inclusive": 0.2,
+          "upper_exclusive": 0.5,
+          "count": 5
+        },
+        {
+          "lower_inclusive": 0.5,
+          "upper_exclusive": null,
+          "count": 0
+        }
+      ],
+      "gap_index_relative_deficit_medians": [
+        0.0016284407869846967,
+        0.001560897351521181,
+        0.0016550666259813006
+      ],
+      "tmra": 100.0,
+      "dense_identity_tmra": 100.0,
+      "tmra_deficit_from_dense_identity": 0.0,
+      "tmra_100_count": 140,
+      "tmra_zero_count": 0,
+      "within_absolute_T_count_after_rounding": 140,
+      "coverage_by_original_tmra_threshold": [
+        {
+          "theta": 0.5,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.55,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.6,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.65,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.7,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.75,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.8,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.85,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.9,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.95,
+          "count": 140,
+          "total": 140
+        }
+      ],
+      "rho_one_decimal_answer_vs_original_scoring_reference": 0.9987267598121493,
+      "rho_unrounded_answer_vs_original_scoring_reference": 0.9988058157903464,
+      "rho_unrounded_four_vs_unrounded_dense": 0.9989897443747131,
+      "rho_dense_one_decimal_vs_original_scoring_reference": 1.0,
+      "reference_median_constant_tmra": 35.0
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "family": "path",
+      "unit": "rendered_pixel",
+      "cohort_questions": 140,
+      "available_questions": 140,
+      "coverage_fraction": 1.0,
+      "positive_dense_denominators": 140,
+      "T": 13.5305,
+      "denominator_floor": 54.122,
+      "K_for_pixel_tolerance_only": 27.061,
+      "ratio_four_to_dense_exact": {
+        "n": 140,
+        "median": 0.9858442067216814,
+        "iqr": [
+          0.9518643716777622,
+          0.9983640421765416
+        ],
+        "min_max": [
+          0.6659877631883214,
+          0.999933402135782
+        ]
+      },
+      "relative_length_deficit": {
+        "n": 140,
+        "median": 0.014155793278318618,
+        "iqr": [
+          0.001635957823458406,
+          0.04813562832223789
+        ],
+        "min_max": [
+          6.659786421803204e-05,
+          0.3340122368116786
+        ]
+      },
+      "absolute_target_deficit": {
+        "n": 140,
+        "median": 1.01604250765417,
+        "iqr": [
+          0.2246658508617294,
+          2.167274564649814
+        ],
+        "min_max": [
+          0.01308258708453991,
+          10.994948490342686
+        ]
+      },
+      "smoothed_path_chord_deficit_positive_count": 140,
+      "deficit_exceeds_one_percent_count": 76,
+      "deficit_exceeds_five_percent_count": 32,
+      "deficit_exceeds_ten_percent_count": 13,
+      "deficit_exceeds_twenty_percent_count": 5,
+      "descriptive_relative_deficit_bins": [
+        {
+          "lower_inclusive": 0.0,
+          "upper_exclusive": 0.01,
+          "count": 64
+        },
+        {
+          "lower_inclusive": 0.01,
+          "upper_exclusive": 0.05,
+          "count": 44
+        },
+        {
+          "lower_inclusive": 0.05,
+          "upper_exclusive": 0.1,
+          "count": 19
+        },
+        {
+          "lower_inclusive": 0.1,
+          "upper_exclusive": 0.2,
+          "count": 8
+        },
+        {
+          "lower_inclusive": 0.2,
+          "upper_exclusive": 0.5,
+          "count": 5
+        },
+        {
+          "lower_inclusive": 0.5,
+          "upper_exclusive": null,
+          "count": 0
+        }
+      ],
+      "gap_index_relative_deficit_medians": [
+        0.0016033645089981344,
+        0.0015655090906782742,
+        0.0016782318613834464
+      ],
+      "tmra": 100.0,
+      "dense_identity_tmra": 100.0,
+      "tmra_deficit_from_dense_identity": 0.0,
+      "tmra_100_count": 140,
+      "tmra_zero_count": 0,
+      "within_absolute_T_count_after_rounding": 140,
+      "coverage_by_original_tmra_threshold": [
+        {
+          "theta": 0.5,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.55,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.6,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.65,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.7,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.75,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.8,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.85,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.9,
+          "count": 140,
+          "total": 140
+        },
+        {
+          "theta": 0.95,
+          "count": 140,
+          "total": 140
+        }
+      ],
+      "rho_one_decimal_answer_vs_original_scoring_reference": 0.9988979005466593,
+      "rho_unrounded_answer_vs_original_scoring_reference": 0.998889156152282,
+      "rho_unrounded_four_vs_unrounded_dense": 0.998889156152282,
+      "rho_dense_one_decimal_vs_original_scoring_reference": 0.9999868797110033,
+      "reference_median_constant_tmra": 35.14285714285714
+    }
+  ],
+  "source_sha256": {
+    "engine/dynamics_qa.py": "80be53eb5d1ede22c7b78a45faa1f29a60bb2c97bd1678f793c2b91ea209b9c4",
+    "engine/court_homography.py": "434a1bf9acae34e5bc6da33a23741f7967c1ba4d5cfc1c4706489eef4e8b9520",
+    "eval/evaluate.py": "64c75b0723d3cfc4ba987a0d6ead1fec29fdc4bef8488b00aab30ca734db0457",
+    "tools/summarize_courtdyn_t28.py": "7122b4b75f5af03869f7fda81ba1cd3594d4f954e7da68338fff99e22eaec46c",
+    "tools/summarize_courtdyn_v2.py": "1e67844703060fac51a50cceb7eda0f5929d125e61bb249180f0871a1f02105a",
+    "tools/courtdyn_pixel_reader.py": "7f5ab6dd7b1548a02d5b13cd38814dfe6219b1e0a8252033325a28e224ae4b0b",
+    "tools/rescore_courtdyn_homography.py": "bca4b2cb5c97c561458c7a6635b06a15f2a868210746060ac16d169a0b0dcb6d",
+    "tools/summarize_courtdyn_t26.py": "ca511232f9e5081a6e0683327f007665d942ba8421794bb5d37a1834cac4e7f2",
+    "tools/summarize_courtdyn_seqs.py": "96a5e63ab4e9eb30e7acc00f66835f8fb2c39c4da42b90a8193f74e37282e50d",
+    "tools/build_courtdyn_ruler.py": "60b6c7d64e1e57f0cd2c4005bb7ae9a8ecbd826590de630997a1080866718bbf",
+    "tools/build_courtdyn_qa.py": "5b74239a476d31de6c1c5366b4e630da2752ac272dbacfa016315b0f191b4388",
+    "results/courtdyn/teamtrack_probe_hits.json": "cc512e5c6e546d5f941bf9dd0d370083ec2fa499da4e318a7c6fad667ac54ff8",
+    "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1.json": "62f697866e7f356425bbb4f1e2e0640ca73ac18a3c419f94738c72cf4c837d7d",
+    "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_pxunit.json": "b23b173ea8bd7d1553687d001c0948a7b35321578be812e7f2248a4cd3da1a7a",
+    "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1_ruler.manifest.json": "7e66ad9dbe4e47b3338e697ffc4c05f5a4c07732d1932806b3cdba14e7b57214",
+    "results/courtdyn/homography/H_Q2_top_480-510.json": "be58ff06c749bc3a58aae64494cdaea0e945bd1ab63eb53ebe42183243541557",
+    "data/external_validation/teamtrack/teamtrack-mot/teamtrack-mot/basketball_top/train/Q2_top_480-510/seqinfo.ini": "a9df0f1541db6cd3e66645eac968f27c0ea76e7adf8c08c4c43ce0bc86c4f448",
+    "data/external_validation/teamtrack/teamtrack-mot/teamtrack-mot/basketball_top/train/Q2_top_480-510/gt/gt.txt": "685db2836f2071b6616189f6fbdb6fe3fec0a118888596b36beb98fce3c560e3",
+    "results/courtdyn/t33_Q2_top_480-510_main_full_cdnative_parsed/predictions.json": "f1073978e138aa9dd1d149c224ee49899f58f68ae43cd0192f4a7dd299180493",
+    "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1.json": "c8ec43fa242a8ee5072ce4b6b7c865067e80158241a51517b8607457bcd5c468",
+    "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_pxunit.json": "8bde7ec02f7380c99887c4adb91979418cd2e829fc9127cdd1c57da0bd8ec7ed",
+    "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1_ruler.manifest.json": "16e19cae044d19b30ccc9aa922a05d6e2755d8190af333943595321d788147d2",
+    "results/courtdyn/homography/H_Q1_top_0-30.json": "f127909c272650882f54bf45c7bc61744171cda2611c3ddedce0900f3f1a9069",
+    "data/external_validation/teamtrack/teamtrack-mot/teamtrack-mot/basketball_top/train/Q1_top_0-30/seqinfo.ini": "60bdafb3ecd42a053b2f50ede8afb8b3813143b27ea1174ed1538009bebdb1d8",
+    "data/external_validation/teamtrack/teamtrack-mot/teamtrack-mot/basketball_top/train/Q1_top_0-30/gt/gt.txt": "0eb5041a5aa73269e231df4914fc4381bace2517e7a377c5d77ab898ade2e1bf",
+    "results/courtdyn/t33_Q1_top_0-30_main_full_cdnative_parsed/predictions.json": "aa4fbe1e5d119837a9cb76d090004d76c73179e3f799d8c1a3117130b140dee2"
+  },
+  "source_preservation_check": "PASS",
+  "script_sha256": "09c2036f1ebf76553fa8cdb48b7bb3ee08bac5a30381fc14da53f49f190f02d3",
+  "cautions": [
+    "Four sampled points use hidden neighboring annotation frames through the fixed smoothing convention; not an image-based oracle or proof of coordinate readability.",
+    "Dense reference is the original 13-point smoothed annotation polyline, not continuous true physical motion.",
+    "Every selected question remains unchanged; sampling estimates are separate audit values, not replacement GT.",
+    "Q1 event overlap applies to the historical native model; this deterministic geometry check does not create new independent events.",
+    "Questions and speed/path pairs share trajectories and time. No independent-event confidence intervals are claimed.",
+    "The PRIVATE item diagnostics contain restricted derived values and identifiers and must not enter public candidates."
+  ]
+}

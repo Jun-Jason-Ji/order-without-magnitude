@@ -1,0 +1,26 @@
+{
+  "schema": "courtdyn-revision-execution-provenance-v1",
+  "status": "COMPLETE",
+  "execution_plan_sha256": "b927a3b3a61a7c9b0eb8e6ffd37e8615c444b3d467394fca3a666a45bd7eb430",
+  "analysis_sha256": "70cbe927b1db5a4534e33cd03a72e9d593ac9c4b3bc083d9a6dbffd610ab8520",
+  "new_model_experiments": true,
+  "visual_predictions": 6160,
+  "arithmetic_predictions": 36,
+  "paired_training_runs": 2,
+  "paired_training_samples_each": 1120,
+  "paired_optimizer_steps_each": 70,
+  "seed": 42,
+  "public_release": false,
+  "candidate_doi": null,
+  "original_pipeline_status": "FAILED",
+  "analysis_correction": {
+    "rule": "unique-seven-target-modules-same-set-only",
+    "completion_receipt_sha256": "33477051e6bb262f367aef73d5aedb87ffb6c41c5bab91c5bf22411124f17303",
+    "compatibility_receipt_sha256": "09fb370d5798ec5265d68ab05b63a9f9f6c17b502f6f61bb06b6727291b781a4",
+    "compatibility_tool_sha256": "f28672bf5087d57119f750e7b4d76d38471902f2bb472d802a06c210a80fa065",
+    "original_pipeline_state_sha256": "7bb35162847d704d47476a020fd94233efd8e09c820aecbf821b6306a10e9a86",
+    "original_failure_analysis_sha256": "68ddb36214043fe7641d205b83f740364bc39d19d57770f23da2d7df845990ed",
+    "corrected_analysis_sha256": "70cbe927b1db5a4534e33cd03a72e9d593ac9c4b3bc083d9a6dbffd610ab8520"
+  },
+  "aggregate_sha256": "96dd5d25305b4902922888c7957215af85cdcaf2a60fcc705a13dcfe80dd32c2"
+}

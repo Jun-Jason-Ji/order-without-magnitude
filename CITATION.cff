@@ -1,42 +1,54 @@
 cff-version: 1.2.0
-message: "If you use CourtDyn or its protocols, please cite the paper below."
-title: "CourtDyn: a dynamics question-answering benchmark and four diagnostic protocols for vision-language models"
-abstract: >-
-  Reproducibility package for "Order Without Magnitude: Fine-tuned
-  Vision-Language Models Read Image-Plane Motion in Court Dynamics Question
-  Answering". Contains the question generator, the four diagnostic protocols,
-  the intervention builders, deterministic scorers, frozen per-cell results,
-  sanitized per-item model outputs, and the CourtDyn-native LoRA adapter. Source imagery is
-  not redistributed; see NOTICE.md.
+message: "Please cite this version for the corrected code and P1/P2 aggregate results."
 type: software
+title: "CourtDyn: corrected code and P1/P2 aggregate results"
+version: "1.1.0"
+abstract: "Source-code and aggregate-only release. No model weights or source-derived individual records are supplied. See NOTICE.md."
+doi: "10.5281/zenodo.22731710"
+repository-code: "https://github.com/Jun-Jason-Ji/order-without-magnitude"
 license: MIT
 authors:
-  - family-names: Ji
-    given-names: Jun
+  - family-names: "Ji"
+    given-names: "Jun"
     orcid: "https://orcid.org/0000-0003-3194-2183"
-    affiliation: "College of Computer Science and Technology, Qingdao University"
-    email: junji@qdu.edu.cn
-  - family-names: Li
-    given-names: Yi
+    affiliation: "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China"
+  - family-names: "Tan"
+    given-names: "Bowen"
+    orcid: "https://orcid.org/0009-0007-0554-9261"
+    affiliation: "The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China"
+  - family-names: "Li"
+    given-names: "Yi"
     orcid: "https://orcid.org/0000-0002-4185-3152"
-    affiliation: "College of Computer Science and Technology, Qingdao University"
-  - family-names: Zhang
-    given-names: Xiaolei
+    affiliation: "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China"
+  - family-names: "Zhang"
+    given-names: "Xiaolei"
     orcid: "https://orcid.org/0000-0002-0122-4554"
-    affiliation: "College of Computer Science and Technology, Qingdao University"
-  - family-names: Sui
-    given-names: Yi
+    affiliation: "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China"
+  - family-names: "Sui"
+    given-names: "Yi"
     orcid: "https://orcid.org/0009-0001-8081-5183"
-    affiliation: "College of Computer Science and Technology, Qingdao University"
-    email: suiyi@qdu.edu.cn
-keywords:
-  - vision-language models
-  - spatial reasoning
-  - video question answering
-  - benchmark design
-  - sports analytics
-
-version: 1.0.0
-date-released: 2026-09-09
-doi: "10.5281/zenodo.22668000"
-repository-code: "https://github.com/Jun-Jason-Ji/order-without-magnitude"
+    affiliation: "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China"
+preferred-citation:
+  type: article
+  title: "Rank Agreement and Unit Responsiveness in a Fine-Tuned Vision–Language Model: A CourtDyn Case Study"
+  authors:
+    - family-names: "Ji"
+      given-names: "Jun"
+      orcid: "https://orcid.org/0000-0003-3194-2183"
+      affiliation: "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China"
+    - family-names: "Tan"
+      given-names: "Bowen"
+      orcid: "https://orcid.org/0009-0007-0554-9261"
+      affiliation: "The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China"
+    - family-names: "Li"
+      given-names: "Yi"
+      orcid: "https://orcid.org/0000-0002-4185-3152"
+      affiliation: "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China"
+    - family-names: "Zhang"
+      given-names: "Xiaolei"
+      orcid: "https://orcid.org/0000-0002-0122-4554"
+      affiliation: "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China"
+    - family-names: "Sui"
+      given-names: "Yi"
+      orcid: "https://orcid.org/0009-0001-8081-5183"
+      affiliation: "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China"

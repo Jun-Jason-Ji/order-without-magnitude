@@ -1,13 +1,29 @@
-# Release boundaries and attribution
+# Release scope and redistribution notice
 
-This is a derived evaluation resource, not a new source-image collection.
+Original code retains the existing MIT license and named copyright holders in
+`LICENSE`. The associated manuscript's author order is separately recorded; adding
+a paper author is not an assertion that they own all earlier software copyright.
 
-- Original code: MIT (LICENSE).
-- Aggregate statistics and model outputs: supplied as research artifacts; no license to third-party datasets is granted. No blanket CC0 claim is made over third-party-derived content.
-- CourtDyn-native LoRA: derived from Qwen/Qwen3.5-4B, Apache-2.0. Weight bytes unchanged. See models/courtdyn-native-sft/LICENSE in the artifacts archive. Processor/tokenizer must be acquired from the base-model publisher.
+Version 1.1.0 distributes only original code, aggregate statistical findings,
+input digests, source sequence path mappings, and reconstruction documentation.
+It omits source videos/images/annotations, generated QA or training pools,
+homography matrices, frame/trajectory identifiers, contact sheets, individual
+predictions and scores, model/adapter weights, and per-item reference outputs.
+The new `revision_controls_20260912` derived input directory is not copied.
 
-TeamTrack source data and derived QA pools are withheld because redistribution permission has not been established. Human-M3 source data and derived QA pools are withheld under the source release's access restrictions. Obtain authorization independently. No source imagery, annotations, per-item ground truth, questions, trajectory metadata or per-item scores are distributed in the public prediction files. Row-level quality-control verdicts and training auxiliary files are excluded as well.
+The previously recorded restrictions remain in force: TeamTrack data redistribution
+permission was not established in the project audit; Human-M3 was subject to its
+separate restricted access terms. Obtain inputs independently under applicable
+terms. Dataset code or website licenses do not automatically license dataset
+content. Digests and sequence mappings grant no data access or redistribution rights.
 
-Prediction files contain only model outputs, status flags, source-row ordering and opaque verification digests. Aggregate results retain statistical summaries, not per-item annotation tables. Complete scoring requires licensed local reconstruction; see README.md.
+Public v1.0.0 is a separate sanitized historical snapshot. Its DOI identifies that
+snapshot, not version 1.1.0. Its sanitized output rows alone lack the QA/ground
+truth and alignment needed by the original scoring scripts. Do not substitute the
+author's unsanitized `release_heavy` or local prediction directories into any public
+update. The historical native adapter remains subject to its Apache-2.0 backbone
+terms; there are no weights in version 1.1.0.
 
-Attribution: Scott et al., TeamTrack: A Dataset for Multi-Sport Multi-Object Tracking in Full-pitch Videos (CVPRW 2024), arXiv:2404.13868. Fan et al., Human-M3: A Multi-view Multi-modal Dataset for 3D Human Pose Estimation in Outdoor Scenes (2023), arXiv:2308.00628. Qwen Team, Qwen3.5-4B.
+Event-alignment and Human-M3 summaries omit individual time samples / shared frame
+IDs. Aggregate counts are evidence of source overlap, not a grant of source-data
+rights. Cite TeamTrack and Human-M3 when using their inputs. Version 1.1.0 has separate metadata and preserves the historical snapshot.

@@ -1,0 +1,181 @@
+{
+  "schema": "paper2-native-controls-independent-audit-v1",
+  "scope": "CPU-only re-evaluation of original T33 full and T34 first-frame predictions. Both arms use the same paired item set and v3 ground truth; original v1 results retained as a separately labelled historical reference. No model inference or frozen result mutation.",
+  "source_model_training_items": 1400,
+  "source_model": "models/courtdyn-native-sft",
+  "ground_truth": "Recompute CourtPlane answers directly from MOT tracks, original per-item windows and original sequence fps; use current frozen homography.",
+  "rho_implementation": "scipy.stats.spearmanr on finite paired rows; undefined constant predictions remain null",
+  "rounding": "rho uses float parsed predictions and rounded v3 answer returned by recompute_answer; T-MRA uses one decimal place for both answers, matching scorer",
+  "cells": [
+    {
+      "seq": "Q1_top_0-30",
+      "family": "speed",
+      "n_pool": 140,
+      "n_full_valid": 140,
+      "n_static4_valid": 140,
+      "n_common": 140,
+      "v3": {
+        "full_rho": 0.7057525128654898,
+        "static4_rho": 0.01522458799016245,
+        "delta_full_minus_static4": 0.6905279248753273,
+        "full_tmra": 69.28571428571428,
+        "static4_tmra": 22.78571428571429,
+        "test_constant_tmra": 43.0
+      },
+      "historical_v1": {
+        "full_rho": 0.7224750296538845,
+        "static4_rho": 0.025246405129978403,
+        "delta_full_minus_static4": 0.6972286245239061
+      },
+      "n_distinct": {
+        "full": 11,
+        "static4": 3
+      },
+      "event_overlap": true,
+      "paired_keys_sha256": "3fb9eead5ef38658a7c12a7ee5a95bc9d2958783a8ac88d29ff1b394917b0f4d"
+    },
+    {
+      "seq": "Q1_top_0-30",
+      "family": "path",
+      "n_pool": 140,
+      "n_full_valid": 140,
+      "n_static4_valid": 140,
+      "n_common": 140,
+      "v3": {
+        "full_rho": 0.6802863694583254,
+        "static4_rho": -0.03612455571521967,
+        "delta_full_minus_static4": 0.7164109251735451,
+        "full_tmra": 52.85714285714286,
+        "static4_tmra": 29.714285714285715,
+        "test_constant_tmra": 35.0
+      },
+      "historical_v1": {
+        "full_rho": 0.6914288005500238,
+        "static4_rho": -0.049433891272521936,
+        "delta_full_minus_static4": 0.7408626918225457
+      },
+      "n_distinct": {
+        "full": 13,
+        "static4": 3
+      },
+      "event_overlap": true,
+      "paired_keys_sha256": "c426de53acb6af807f26d681bdbf9cd2c88813e943ccf70c0aaebc9448152493"
+    },
+    {
+      "seq": "Q2_top_480-510",
+      "family": "speed",
+      "n_pool": 140,
+      "n_full_valid": 140,
+      "n_static4_valid": 140,
+      "n_common": 140,
+      "v3": {
+        "full_rho": 0.7640862346945954,
+        "static4_rho": 0.17581756351396777,
+        "delta_full_minus_static4": 0.5882686711806275,
+        "full_tmra": 80.35714285714286,
+        "static4_tmra": 33.42857142857143,
+        "test_constant_tmra": 63.78571428571429
+      },
+      "historical_v1": {
+        "full_rho": 0.7384083176070017,
+        "static4_rho": 0.15968565670525856,
+        "delta_full_minus_static4": 0.5787226609017431
+      },
+      "n_distinct": {
+        "full": 9,
+        "static4": 3
+      },
+      "event_overlap": false,
+      "paired_keys_sha256": "39bd08794b9dc461cdf874630a5c2a9bd71ac6501b7583ccc168428a8cbbd5c4"
+    },
+    {
+      "seq": "Q2_top_480-510",
+      "family": "path",
+      "n_pool": 140,
+      "n_full_valid": 140,
+      "n_static4_valid": 140,
+      "n_common": 140,
+      "v3": {
+        "full_rho": 0.7600235934827603,
+        "static4_rho": -0.053693225497839586,
+        "delta_full_minus_static4": 0.8137168189805999,
+        "full_tmra": 73.07142857142857,
+        "static4_tmra": 43.857142857142854,
+        "test_constant_tmra": 53.28571428571428
+      },
+      "historical_v1": {
+        "full_rho": 0.7468929939118638,
+        "static4_rho": -0.06360484841578992,
+        "delta_full_minus_static4": 0.8104978423276538
+      },
+      "n_distinct": {
+        "full": 13,
+        "static4": 3
+      },
+      "event_overlap": false,
+      "paired_keys_sha256": "62d8473befc1c32812387202bb16b5876f62bbafddef02a7ce6fa9b09945dfc9"
+    }
+  ],
+  "sources": [
+    {
+      "seq": "Q1_top_0-30",
+      "fps": 29.97002997002997,
+      "files": [
+        {
+          "path": "results/courtdyn/seq_Q1_top_0-30/qa_dyn_v1.json",
+          "sha256": "c8ec43fa242a8ee5072ce4b6b7c865067e80158241a51517b8607457bcd5c468"
+        },
+        {
+          "path": "results/courtdyn/homography/H_Q1_top_0-30.json",
+          "sha256": "f127909c272650882f54bf45c7bc61744171cda2611c3ddedce0900f3f1a9069"
+        },
+        {
+          "path": "results/courtdyn/t33_Q1_top_0-30_main_full_cdnative_parsed/predictions.json",
+          "sha256": "aa4fbe1e5d119837a9cb76d090004d76c73179e3f799d8c1a3117130b140dee2"
+        },
+        {
+          "path": "results/courtdyn/t34_Q1_top_0-30_main_static4_cdnative_parsed/predictions.json",
+          "sha256": "558610c1998424d1a142e6d2c34a8948ace23cb0e3a9c60012b9406cc9f07e07"
+        },
+        {
+          "path": "data/external_validation/teamtrack/teamtrack-mot/teamtrack-mot/basketball_top/train/Q1_top_0-30/gt/gt.txt",
+          "sha256": "0eb5041a5aa73269e231df4914fc4381bace2517e7a377c5d77ab898ade2e1bf"
+        },
+        {
+          "path": "data/external_validation/teamtrack/teamtrack-mot/teamtrack-mot/basketball_top/train/Q1_top_0-30/seqinfo.ini",
+          "sha256": "60bdafb3ecd42a053b2f50ede8afb8b3813143b27ea1174ed1538009bebdb1d8"
+        }
+      ]
+    },
+    {
+      "seq": "Q2_top_480-510",
+      "fps": 29.97002997002997,
+      "files": [
+        {
+          "path": "results/courtdyn/seq_Q2_top_480-510/qa_dyn_v1.json",
+          "sha256": "62f697866e7f356425bbb4f1e2e0640ca73ac18a3c419f94738c72cf4c837d7d"
+        },
+        {
+          "path": "results/courtdyn/homography/H_Q2_top_480-510.json",
+          "sha256": "be58ff06c749bc3a58aae64494cdaea0e945bd1ab63eb53ebe42183243541557"
+        },
+        {
+          "path": "results/courtdyn/t33_Q2_top_480-510_main_full_cdnative_parsed/predictions.json",
+          "sha256": "f1073978e138aa9dd1d149c224ee49899f58f68ae43cd0192f4a7dd299180493"
+        },
+        {
+          "path": "results/courtdyn/t34_Q2_top_480-510_main_static4_cdnative_parsed/predictions.json",
+          "sha256": "aa6cda73ff1a7851c28e58bec3841fe5ba299c9c3e77849c952669709b794a23"
+        },
+        {
+          "path": "data/external_validation/teamtrack/teamtrack-mot/teamtrack-mot/basketball_top/train/Q2_top_480-510/gt/gt.txt",
+          "sha256": "685db2836f2071b6616189f6fbdb6fe3fec0a118888596b36beb98fce3c560e3"
+        },
+        {
+          "path": "data/external_validation/teamtrack/teamtrack-mot/teamtrack-mot/basketball_top/train/Q2_top_480-510/seqinfo.ini",
+          "sha256": "a9df0f1541db6cd3e66645eac968f27c0ea76e7adf8c08c4c43ce0bc86c4f448"
+        }
+      ]
+    }
+  ]
+}

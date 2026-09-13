@@ -1,0 +1,4813 @@
+{
+  "status": "Exploratory post-review sensitivity, not preregistered; no equivalence margin was fixed.",
+  "bootstrap": {
+    "seed": 20260912,
+    "replicates": 2000,
+    "method": "Paired non-overlapping 5-s and 10-s bins of window start, resampled as whole clusters including all tracks. Paired models/targets use exactly the same sampled rows; quantiles are NumPy linear quantiles; undefined constant-output correlations are excluded and counts retained.",
+    "limitations": "Only 3-6 clusters per 30-s clip; adjacent bins can share boundary frames, tracks span bins, no independent-match uncertainty. These intervals cannot establish equivalence or population generalization."
+  },
+  "cells": [
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "sft",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        1.0,
+        1.0
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.5924067541282462,
+      "arm_rho_native_target": 0.5830819201266946,
+      "arm_rho_v3_same_target": 0.5830819201266946,
+      "delta_rho_native_targets": -0.009324834001551596,
+      "delta_rho_v3_same_target": -0.009324834001551596,
+      "full_rho_v1_same_items": 0.5859401679274644,
+      "score_delta_native_targets": -0.6428571428571429,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            11,
+            26,
+            26,
+            37,
+            24,
+            16
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08267447147596058,
+              0.039554670168441386
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08267447147596058,
+              0.039554670168441386
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -2.9166666666666665,
+              1.6395977691397654
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            37,
+            63,
+            40
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.06641616035390208,
+              0.042491895541496794
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.06641616035390208,
+              0.042491895541496794
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -1.4285714285714286,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "sft",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.8759590792838875,
+      "ratio_q1_q3": [
+        0.7368421052631579,
+        1.0
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.7970949308783368,
+      "arm_rho_native_target": 0.7719707917835941,
+      "arm_rho_v3_same_target": 0.7719707917835941,
+      "delta_rho_native_targets": -0.02512413909474276,
+      "delta_rho_v3_same_target": -0.02512413909474276,
+      "full_rho_v1_same_items": 0.7958439628043273,
+      "score_delta_native_targets": -7.714285714285714,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            8,
+            22,
+            22,
+            38,
+            33,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07071596478009362,
+              0.004745589709079942
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07071596478009362,
+              0.004745589709079942
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.7916666666666666,
+              0.9166666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -12.018173358899165,
+              -3.7301587301587302
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            30,
+            60,
+            50
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.032357130744201434,
+              0.024535698206394563
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.032357130744201434,
+              0.024535698206394563
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8582887700534758,
+              0.9166666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -11.0,
+              -1.3333333333333333
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "sft",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 2.0,
+      "ratio_q1_q3": [
+        1.4,
+        2.5
+      ],
+      "ratio_of_medians": 2.5,
+      "full_rho_v3": 0.5924067541282462,
+      "arm_rho_native_target": 0.5159363580208361,
+      "arm_rho_v3_same_target": 0.5190125032727315,
+      "delta_rho_native_targets": -0.07647039610741002,
+      "delta_rho_v3_same_target": -0.07339425085551465,
+      "full_rho_v1_same_items": 0.5859401679274644,
+      "score_delta_native_targets": -20.571428571428573,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            11,
+            26,
+            26,
+            37,
+            24,
+            16
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.21867077924362727,
+              0.02055786363073564
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.223239720059273,
+              0.029064682645148762
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.7499999999999998,
+              2.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -25.574837188412307,
+              -13.629547496070067
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            37,
+            63,
+            40
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.2207423020486351,
+              0.05674745028599404
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.230640173960579,
+              0.07104461737738055
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.7499999999999998,
+              2.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -25.405405405405407,
+              -13.5
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "sft",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        0.8359288097886541,
+        1.3678571428571429
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.7970949308783368,
+      "arm_rho_native_target": 0.7656451243010407,
+      "arm_rho_v3_same_target": 0.7662882240341516,
+      "delta_rho_native_targets": -0.031449806577296124,
+      "delta_rho_v3_same_target": -0.030806706844185183,
+      "full_rho_v1_same_items": 0.7958439628043273,
+      "score_delta_native_targets": -36.714285714285715,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            8,
+            22,
+            22,
+            38,
+            33,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.1282682435216157,
+              0.04927499099244115
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.12591333809218475,
+              0.04860810338421562
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -47.577639751552795,
+              -21.25
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            30,
+            60,
+            50
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.05465182249572664,
+              0.03337190701858883
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.05167623694953449,
+              0.034602275852336994
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -48.0,
+              -21.2
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "grpo",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        0.9333333333333332,
+        1.0
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.5898636512566425,
+      "arm_rho_native_target": 0.5524963753462593,
+      "arm_rho_v3_same_target": 0.5524963753462593,
+      "delta_rho_native_targets": -0.037367275910383246,
+      "delta_rho_v3_same_target": -0.037367275910383246,
+      "full_rho_v1_same_items": 0.5742688205590233,
+      "score_delta_native_targets": -2.7142857142857144,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            11,
+            26,
+            26,
+            37,
+            24,
+            16
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08538621124594614,
+              0.0011573181139580928
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08538621124594614,
+              0.0011573181139580928
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -5.962732919254658,
+              1.7557251908396947
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            37,
+            63,
+            40
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08674248578118116,
+              0.03416245011816174
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08674248578118116,
+              0.03416245011816174
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -6.666666666666667,
+              2.972972972972973
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "grpo",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.7916666666666666,
+      "ratio_q1_q3": [
+        0.725,
+        0.8600524716929026
+      ],
+      "ratio_of_medians": 0.7560975609756099,
+      "full_rho_v3": 0.7715892400921561,
+      "arm_rho_native_target": 0.7593671526640685,
+      "arm_rho_v3_same_target": 0.7593671526640685,
+      "delta_rho_native_targets": -0.012222087428087614,
+      "delta_rho_v3_same_target": -0.012222087428087614,
+      "full_rho_v1_same_items": 0.7726765224920578,
+      "score_delta_native_targets": 10.357142857142858,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            8,
+            22,
+            22,
+            38,
+            33,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.040635401884739686,
+              0.008293390721965666
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.040635401884739686,
+              0.008293390721965666
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.7560975609756099,
+              0.8122750899640144
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -2.0730449507389164,
+              21.666666666666668
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            30,
+            60,
+            50
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.05274133191736907,
+              0.014476331904257567
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.05274133191736907,
+              0.014476331904257567
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.7441202090592335,
+              0.8198360655737704
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -4.0,
+              20.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "grpo",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.3,
+      "ratio_q1_q3": [
+        1.105263157894737,
+        1.471153846153846
+      ],
+      "ratio_of_medians": 1.4615384615384615,
+      "full_rho_v3": 0.5898636512566425,
+      "arm_rho_native_target": 0.6369023586356556,
+      "arm_rho_v3_same_target": 0.6379579291636169,
+      "delta_rho_native_targets": 0.047038707379013056,
+      "delta_rho_v3_same_target": 0.0480942779069744,
+      "full_rho_v1_same_items": 0.5742688205590233,
+      "score_delta_native_targets": -40.57142857142857,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            11,
+            26,
+            26,
+            37,
+            24,
+            16
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.011948939418920501,
+              0.12603867809696462
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.012238874859179794,
+              0.11290632253717031
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.1874999999999998,
+              1.409150717703349
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -51.86868686868687,
+              -22.857142857142858
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            37,
+            63,
+            40
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.02998089793818337,
+              0.19781639143897553
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.030388491380560434,
+              0.1852321615093029
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.1463815789473684,
+              1.3636363636363635
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -56.19047619047619,
+              -15.945945945945946
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "grpo",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0327868852459017,
+      "ratio_q1_q3": [
+        0.9718309859154931,
+        1.178186274509804
+      ],
+      "ratio_of_medians": 1.1951219512195124,
+      "full_rho_v3": 0.7715892400921561,
+      "arm_rho_native_target": 0.7507673652876766,
+      "arm_rho_v3_same_target": 0.7529737287462707,
+      "delta_rho_native_targets": -0.0208218748044795,
+      "delta_rho_v3_same_target": -0.01861551134588546,
+      "full_rho_v1_same_items": 0.7726765224920578,
+      "score_delta_native_targets": -35.785714285714285,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            8,
+            22,
+            22,
+            38,
+            33,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.06576143795174405,
+              0.03942113466811126
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.06249615005193709,
+              0.04310238386003129
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0937108395989976
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -54.74452554744526,
+              -17.733152173913076
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            30,
+            60,
+            50
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07720080474852042,
+              0.0276068575631494
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07080112373419856,
+              0.02953041545331825
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0936716791979952
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -59.8,
+              -7.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "tsft",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        0.9375,
+        1.125
+      ],
+      "ratio_of_medians": 1.1,
+      "full_rho_v3": 0.3396116464463796,
+      "arm_rho_native_target": 0.47751673535986155,
+      "arm_rho_v3_same_target": 0.47751673535986155,
+      "delta_rho_native_targets": 0.13790508891348197,
+      "delta_rho_v3_same_target": 0.13790508891348197,
+      "full_rho_v1_same_items": 0.3219197725437481,
+      "score_delta_native_targets": 2.857142857142857,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            11,
+            26,
+            26,
+            37,
+            24,
+            16
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.050538746704313436,
+              0.19781898836518322
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.050538746704313436,
+              0.19781898836518322
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.22900763358778625,
+              5.666666666666667
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            37,
+            63,
+            40
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.028588137981882034,
+              0.13863120077736724
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.028588137981882034,
+              0.13863120077736724
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.1125
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -1.3513513513513513,
+              6.25
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "tsft",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.9615384615384615,
+      "ratio_q1_q3": [
+        0.8821969696969697,
+        1.0
+      ],
+      "ratio_of_medians": 0.9615384615384615,
+      "full_rho_v3": 0.7439168567685536,
+      "arm_rho_native_target": 0.7439679965007919,
+      "arm_rho_v3_same_target": 0.7439679965007919,
+      "delta_rho_native_targets": 5.113973223835888e-05,
+      "delta_rho_v3_same_target": 5.113973223835888e-05,
+      "full_rho_v1_same_items": 0.7483523732949136,
+      "score_delta_native_targets": -0.5714285714285714,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            8,
+            22,
+            22,
+            38,
+            33,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.03265386601276343,
+              0.06406766880962766
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.03265386601276343,
+              0.06406766880962766
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.9615384615384615,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -4.37125748502994,
+              4.343434343434343
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            30,
+            60,
+            50
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.04716819882491441,
+              0.07929156816774052
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.04716819882491441,
+              0.07929156816774052
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.9615384615384615,
+              0.9615384615384615
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -4.0,
+              5.333333333333333
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "tsft",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.3,
+      "ratio_q1_q3": [
+        1.0952380952380951,
+        1.7293233082706765
+      ],
+      "ratio_of_medians": 1.3,
+      "full_rho_v3": 0.3396116464463796,
+      "arm_rho_native_target": 0.5217923759796497,
+      "arm_rho_v3_same_target": 0.5245510222140655,
+      "delta_rho_native_targets": 0.18218072953327008,
+      "delta_rho_v3_same_target": 0.18493937576768588,
+      "full_rho_v1_same_items": 0.3219197725437481,
+      "score_delta_native_targets": -34.42857142857143,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            11,
+            26,
+            26,
+            37,
+            24,
+            16
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.07817842520589273,
+              0.2950336229987662
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.08259226988566162,
+              0.2971868514284929
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.1818181818181817,
+              1.4374999999999998
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -44.41340782122905,
+              -18.88888888888889
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            37,
+            63,
+            40
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.08879629795879451,
+              0.333418003421343
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.09324861080714197,
+              0.3333442680626507
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.2777777777777777,
+              1.3333333333333333
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -46.19047619047619,
+              -18.91891891891892
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "tsft",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.2692307692307692,
+      "ratio_q1_q3": [
+        1.15,
+        1.5246153846153847
+      ],
+      "ratio_of_medians": 1.2692307692307692,
+      "full_rho_v3": 0.7439168567685536,
+      "arm_rho_native_target": 0.7717586819992031,
+      "arm_rho_v3_same_target": 0.7727468781244533,
+      "delta_rho_native_targets": 0.027841825230649486,
+      "delta_rho_v3_same_target": 0.028830021355899738,
+      "full_rho_v1_same_items": 0.7483523732949136,
+      "score_delta_native_targets": -45.357142857142854,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            8,
+            22,
+            22,
+            38,
+            33,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.029469480760388023,
+              0.1774761453882157
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.03043926733884532,
+              0.18553164749933704
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.2692307692307692,
+              1.3199999999999998
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -55.736040609137056,
+              -29.494949494949495
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            30,
+            60,
+            50
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.03599409534876985,
+              0.23971378367351315
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.03618440725842886,
+              0.24876095707590262
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.2692307692307692,
+              1.3199999999999998
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -59.333333333333336,
+              -16.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "cdnative",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.9,
+      "ratio_q1_q3": [
+        0.7,
+        1.0
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.7057525128654898,
+      "arm_rho_native_target": 0.6627841829792895,
+      "arm_rho_v3_same_target": 0.6627841829792895,
+      "delta_rho_native_targets": -0.04296832988620025,
+      "delta_rho_v3_same_target": -0.04296832988620025,
+      "full_rho_v1_same_items": 0.7224750296538845,
+      "score_delta_native_targets": -3.5,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            11,
+            26,
+            26,
+            37,
+            24,
+            16
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.10705420807296301,
+              0.03328816604138484
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.10705420807296301,
+              0.03328816604138484
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8333333333333334,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -10.0,
+              4.583946078431369
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            37,
+            63,
+            40
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07891688811282971,
+              0.06941093820275157
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07891688811282971,
+              0.06941093820275157
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8333333333333334,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -9.5,
+              7.837837837837838
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "cdnative",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.6666666666666666,
+      "ratio_q1_q3": [
+        0.5,
+        0.84375
+      ],
+      "ratio_of_medians": 0.6666666666666666,
+      "full_rho_v3": 0.6802863694583254,
+      "arm_rho_native_target": 0.6220000023811252,
+      "arm_rho_v3_same_target": 0.6220000023811252,
+      "delta_rho_native_targets": -0.05828636707720025,
+      "delta_rho_v3_same_target": -0.05828636707720025,
+      "full_rho_v1_same_items": 0.6914288005500238,
+      "score_delta_native_targets": -3.2857142857142856,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            8,
+            22,
+            22,
+            38,
+            33,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.23331391604487994,
+              0.11908668546222456
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.23331391604487994,
+              0.11908668546222456
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.6666666666666666,
+              0.6666666666666666
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -15.0,
+              15.869565217391305
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            30,
+            60,
+            50
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.18253115168468714,
+              0.2033785608746123
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.18253115168468714,
+              0.2033785608746123
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.6666666666666666,
+              0.6666666666666666
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -13.2,
+              28.333333333333332
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "cdnative",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0833333333333335,
+      "ratio_q1_q3": [
+        1.0,
+        1.4041666666666666
+      ],
+      "ratio_of_medians": 1.6,
+      "full_rho_v3": 0.7057525128654898,
+      "arm_rho_native_target": 0.6764427358031171,
+      "arm_rho_v3_same_target": 0.6779191643975873,
+      "delta_rho_native_targets": -0.0293097770623727,
+      "delta_rho_v3_same_target": -0.02783334846790253,
+      "full_rho_v1_same_items": 0.7224750296538845,
+      "score_delta_native_targets": -52.714285714285715,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            11,
+            26,
+            26,
+            37,
+            24,
+            16
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.10109963084663265,
+              0.027860881652643554
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.10106573986050982,
+              0.027923994895114528
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0710784313725492,
+              1.1111111111111112
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -63.19277108433735,
+              -36.47540983606557
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            37,
+            63,
+            40
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.10120207546113957,
+              0.021226115113349375
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.10865121354597385,
+              0.027884560115524648
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.1111111111111112
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -64.76190476190476,
+              -26.216216216216218
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "cdnative",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.6153846153846154,
+      "ratio_q1_q3": [
+        0.5333333333333333,
+        1.0
+      ],
+      "ratio_of_medians": 0.6,
+      "full_rho_v3": 0.6802863694583254,
+      "arm_rho_native_target": 0.5986998632476354,
+      "arm_rho_v3_same_target": 0.601033119292087,
+      "delta_rho_native_targets": -0.08158650621069008,
+      "delta_rho_v3_same_target": -0.07925325016623841,
+      "full_rho_v1_same_items": 0.6914288005500238,
+      "score_delta_native_targets": -40.785714285714285,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            8,
+            22,
+            22,
+            38,
+            33,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.1724620789207898,
+              0.07313702186336413
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.17066269412691876,
+              0.07529887386305689
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.6,
+              0.8
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -55.380710659898476,
+              -15.07425840288747
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            30,
+            60,
+            50
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.1042244474049463,
+              0.2447969439151999
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.10475164440109763,
+              0.2462677954867527
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.6,
+              0.6628205128205128
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -59.666666666666664,
+              2.6666666666666665
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "base",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 33,
+      "n_valid_arm": 16,
+      "n_common": 5,
+      "n_positive_full_ratio": 5,
+      "ratio_median": 1.875,
+      "ratio_q1_q3": [
+        1.0,
+        6.666666666666667
+      ],
+      "ratio_of_medians": 5.0,
+      "full_rho_v3": -0.20519567041703082,
+      "arm_rho_native_target": 0.0,
+      "arm_rho_v3_same_target": 0.0,
+      "delta_rho_native_targets": 0.20519567041703082,
+      "delta_rho_v3_same_target": 0.20519567041703082,
+      "full_rho_v1_same_items": -0.20519567041703082,
+      "score_delta_native_targets": 42.0,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 2,
+          "cluster_sizes": [
+            1,
+            4
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1506,
+            "percentile_95": [
+              0.20519567041703082,
+              0.7378647873726218
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1506,
+            "percentile_95": [
+              0.20519567041703082,
+              0.7378647873726218
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.4375,
+              15.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              27.5,
+              100.0
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 2,
+          "cluster_sizes": [
+            1,
+            4
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1476,
+            "percentile_95": [
+              0.20519567041703082,
+              0.7378647873726218
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1476,
+            "percentile_95": [
+              0.20519567041703082,
+              0.7378647873726218
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.4375,
+              15.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              27.5,
+              100.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "base",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 118,
+      "n_valid_arm": 58,
+      "n_common": 53,
+      "n_positive_full_ratio": 53,
+      "ratio_median": 1.3333333333333335,
+      "ratio_q1_q3": [
+        1.0,
+        2.9999999999999996
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.3396721606791692,
+      "arm_rho_native_target": 0.31705603350960526,
+      "arm_rho_v3_same_target": 0.31705603350960526,
+      "delta_rho_native_targets": -0.02261612716956396,
+      "delta_rho_v3_same_target": -0.02261612716956396,
+      "full_rho_v1_same_items": 0.36142103633852274,
+      "score_delta_native_targets": 7.547169811320755,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            7,
+            9,
+            10,
+            12,
+            10,
+            5
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.20899395060453896,
+              0.2968005360215138
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.20899395060453896,
+              0.2968005360215138
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.3333333333333335
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.46511627906976744,
+              17.972831505483512
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            16,
+            22,
+            15
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.14353657140930381,
+              0.46132170220032626
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.14353657140930381,
+              0.46132170220032626
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.3333333333333335
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.6666666666666666,
+              16.818181818181817
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "base",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 33,
+      "n_valid_arm": 18,
+      "n_common": 6,
+      "n_positive_full_ratio": 6,
+      "ratio_median": 0.0,
+      "ratio_q1_q3": [
+        0.0,
+        0.44999999999999996
+      ],
+      "ratio_of_medians": 0.0,
+      "full_rho_v3": -0.16903085094570333,
+      "arm_rho_native_target": -0.7775419143502353,
+      "arm_rho_v3_same_target": -0.7775419143502353,
+      "delta_rho_native_targets": -0.608511063404532,
+      "delta_rho_v3_same_target": -0.608511063404532,
+      "full_rho_v1_same_items": -0.16903085094570333,
+      "score_delta_native_targets": -6.666666666666667,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 4,
+          "cluster_sizes": [
+            2,
+            1,
+            2,
+            1
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1393,
+            "percentile_95": [
+              -0.6350528962771204,
+              0.0
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1393,
+            "percentile_95": [
+              -0.6350528962771204,
+              0.0
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.0,
+              0.6
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -63.333333333333336,
+              55.714285714285715
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 2,
+          "cluster_sizes": [
+            3,
+            3
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1513,
+            "percentile_95": [
+              -0.608511063404532,
+              -0.5000000000000001
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1513,
+            "percentile_95": [
+              -0.608511063404532,
+              -0.5000000000000001
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.0,
+              0.6
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -43.333333333333336,
+              30.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "base",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 118,
+      "n_valid_arm": 85,
+      "n_common": 77,
+      "n_positive_full_ratio": 77,
+      "ratio_median": 33.333333333333336,
+      "ratio_q1_q3": [
+        33.333333333333336,
+        100.0
+      ],
+      "ratio_of_medians": 33.333333333333336,
+      "full_rho_v3": 0.30968828050039376,
+      "arm_rho_native_target": 0.09107915547518777,
+      "arm_rho_v3_same_target": 0.09493741491737769,
+      "delta_rho_native_targets": -0.218609125025206,
+      "delta_rho_v3_same_target": -0.2147508655830161,
+      "full_rho_v1_same_items": 0.3359548622300626,
+      "score_delta_native_targets": 5.974025974025974,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            6,
+            11,
+            16,
+            23,
+            11,
+            10
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.4682500156971839,
+              0.06633463514925675
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.46813458557639526,
+              0.0689831905295869
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              33.333333333333336,
+              40.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              2.727272727272727,
+              10.76923076923077
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            17,
+            39,
+            21
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.7388321894754668,
+              -0.07433312139882306
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.7403414304468432,
+              -0.07144754541243406
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              33.333333333333336,
+              100.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              2.8205128205128207,
+              11.176470588235293
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "qwen25vl7b",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.8666666666666667,
+      "ratio_q1_q3": [
+        0.8666666666666667,
+        0.8666666666666667
+      ],
+      "ratio_of_medians": 0.8666666666666667,
+      "full_rho_v3": 0.22097049440918923,
+      "arm_rho_native_target": 0.04844271423230011,
+      "arm_rho_v3_same_target": 0.04844271423230011,
+      "delta_rho_native_targets": -0.17252778017688913,
+      "delta_rho_v3_same_target": -0.17252778017688913,
+      "full_rho_v1_same_items": 0.22920471328536535,
+      "score_delta_native_targets": 11.071428571428571,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            11,
+            26,
+            26,
+            37,
+            24,
+            16
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1814,
+            "percentile_95": [
+              -0.27438639767293116,
+              -0.010582623549383233
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1814,
+            "percentile_95": [
+              -0.27438639767293116,
+              -0.010582623549383233
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8666666666666667,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              3.135876872839032,
+              21.9672131147541
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            37,
+            63,
+            40
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1921,
+            "percentile_95": [
+              -0.18101976715398804,
+              -0.06119043177330022
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1921,
+            "percentile_95": [
+              -0.18101976715398804,
+              -0.06119043177330022
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8666666666666667,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              9.365079365079366,
+              13.5
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "qwen25vl7b",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.8666666666666667,
+      "ratio_q1_q3": [
+        0.2,
+        0.8666666666666667
+      ],
+      "ratio_of_medians": 0.8666666666666667,
+      "full_rho_v3": 0.06404475134100071,
+      "arm_rho_native_target": null,
+      "arm_rho_v3_same_target": null,
+      "delta_rho_native_targets": null,
+      "delta_rho_v3_same_target": null,
+      "full_rho_v1_same_items": 0.10658408113604127,
+      "score_delta_native_targets": -1.0714285714285714,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            8,
+            22,
+            22,
+            38,
+            33,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.22807017543859648,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -23.395132488479263,
+              17.2
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            30,
+            60,
+            50
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.23010651629072681,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -23.0,
+              18.333333333333332
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "qwen25vl7b",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.8666666666666667,
+      "ratio_q1_q3": [
+        0.23214285714285718,
+        0.8666666666666667
+      ],
+      "ratio_of_medians": 0.8666666666666667,
+      "full_rho_v3": 0.22097049440918923,
+      "arm_rho_native_target": 0.13279022525967107,
+      "arm_rho_v3_same_target": 0.12766437561760832,
+      "delta_rho_native_targets": -0.08818026914951815,
+      "delta_rho_v3_same_target": -0.0933061187915809,
+      "full_rho_v1_same_items": 0.22920471328536535,
+      "score_delta_native_targets": -17.714285714285715,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            11,
+            26,
+            26,
+            37,
+            24,
+            16
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.19402789344165908,
+              0.01872407426656203
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.19461610533672555,
+              0.014848268006308535
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.6,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -28.8535500995355,
+              -2.770727306375506
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            37,
+            63,
+            40
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.1732270081520353,
+              0.08894460288536968
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.17410609475994124,
+              0.09321359397840534
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.7333333333333334,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -28.73015873015873,
+              3.2432432432432434
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q1_top_0-30",
+      "model": "qwen25vl7b",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        0.26668233082706766,
+        1.0
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.06404475134100071,
+      "arm_rho_native_target": -0.009376734908159589,
+      "arm_rho_v3_same_target": -0.011996226592699355,
+      "delta_rho_native_targets": -0.0734214862491603,
+      "delta_rho_v3_same_target": -0.07604097793370007,
+      "full_rho_v1_same_items": 0.10658408113604127,
+      "score_delta_native_targets": -25.571428571428573,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            8,
+            22,
+            22,
+            38,
+            33,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.23742852654049063,
+              0.22208676082366596
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.23885875655273742,
+              0.2206281494835663
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -38.19444444444444,
+              -13.586206896551724
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            30,
+            60,
+            50
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.21416735585254248,
+              0.400403126858271
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.21324629986342647,
+              0.39667865188316415
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -37.6,
+              -11.333333333333334
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "sft",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        0.7499999999999999,
+        1.0
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.5319542770799902,
+      "arm_rho_native_target": 0.5183050773197962,
+      "arm_rho_v3_same_target": 0.5183050773197962,
+      "delta_rho_native_targets": -0.013649199760193964,
+      "delta_rho_v3_same_target": -0.013649199760193964,
+      "full_rho_v1_same_items": 0.5087444311459773,
+      "score_delta_native_targets": -2.142857142857143,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            25,
+            28,
+            27,
+            22,
+            25,
+            13
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.14818384492901143,
+              0.08924232457593156
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.14818384492901143,
+              0.08924232457593156
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -3.0,
+              -1.518987341772152
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            53,
+            49,
+            38
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.1578581376673006,
+              0.03553941678487854
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.1578581376673006,
+              0.03553941678487854
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -2.8947368421052633,
+              -1.320754716981132
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "sft",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.8863636363636362,
+      "ratio_q1_q3": [
+        0.7142857142857143,
+        1.0
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.6676862656528834,
+      "arm_rho_native_target": 0.6710333885250525,
+      "arm_rho_v3_same_target": 0.6710333885250525,
+      "delta_rho_native_targets": 0.003347122872169095,
+      "delta_rho_v3_same_target": 0.003347122872169095,
+      "full_rho_v1_same_items": 0.6607427335240056,
+      "score_delta_native_targets": -8.142857142857142,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            22,
+            27,
+            28,
+            24,
+            28,
+            11
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07443015960594865,
+              0.05837932184691785
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07443015960594865,
+              0.05837932184691785
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.82046875,
+              0.95
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -10.344827586206897,
+              -5.724747474747485
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            49,
+            52,
+            39
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07891534000060318,
+              0.07038710445456908
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07891534000060318,
+              0.07038710445456908
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8333333333333334,
+              0.975
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -11.020408163265307,
+              -5.128205128205129
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "sft",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.4999999999999998,
+      "ratio_q1_q3": [
+        1.0750000000000002,
+        2.25
+      ],
+      "ratio_of_medians": 1.4999999999999998,
+      "full_rho_v3": 0.5319542770799902,
+      "arm_rho_native_target": 0.5794406500761966,
+      "arm_rho_v3_same_target": 0.5706858998089803,
+      "delta_rho_native_targets": 0.047486372996206394,
+      "delta_rho_v3_same_target": 0.03873162272899011,
+      "full_rho_v1_same_items": 0.5087444311459773,
+      "score_delta_native_targets": -23.5,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            25,
+            28,
+            27,
+            22,
+            25,
+            13
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.06431388811118899,
+              0.15569818287428033
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08229287266883012,
+              0.15192765856318918
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.3658333333333335,
+              1.6666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -25.891472868217054,
+              -21.16813387954328
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            53,
+            49,
+            38
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.02616908070902635,
+              0.07423663792656598
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.04723400875335493,
+              0.06877998034123933
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.3333333333333335,
+              1.6666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -26.57894736842105,
+              -19.591836734693878
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "sft",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        1.0,
+        1.4
+      ],
+      "ratio_of_medians": 1.4,
+      "full_rho_v3": 0.6676862656528834,
+      "arm_rho_native_target": 0.6633248502166422,
+      "arm_rho_v3_same_target": 0.6622862724318237,
+      "delta_rho_native_targets": -0.004361415436241134,
+      "delta_rho_v3_same_target": -0.005399993221059662,
+      "full_rho_v1_same_items": 0.6607427335240056,
+      "score_delta_native_targets": -36.57142857142857,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            22,
+            27,
+            28,
+            24,
+            28,
+            11
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.06593295211201178,
+              0.057907310281470725
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.06559749017602069,
+              0.05579601885480079
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.1874999999999998
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -42.166666666666664,
+              -29.805825242718445
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            49,
+            52,
+            39
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.046893661185792634,
+              0.038682313118103495
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.04910681746354528,
+              0.03852620090361214
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.1666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -45.714285714285715,
+              -30.576923076923077
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "grpo",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        0.7767857142857143,
+        1.0
+      ],
+      "ratio_of_medians": 1.1,
+      "full_rho_v3": 0.5997188419828617,
+      "arm_rho_native_target": 0.5143281308996489,
+      "arm_rho_v3_same_target": 0.5143281308996489,
+      "delta_rho_native_targets": -0.08539071108321283,
+      "delta_rho_v3_same_target": -0.08539071108321283,
+      "full_rho_v1_same_items": 0.5779348309343406,
+      "score_delta_native_targets": -7.571428571428571,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            25,
+            28,
+            27,
+            22,
+            25,
+            13
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.1438605620479058,
+              -0.006799653418262002
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.1438605620479058,
+              -0.006799653418262002
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -10.400067114093961,
+              -4.8992946171757294
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            53,
+            49,
+            38
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.14924495798642978,
+              0.0017118478557265338
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.14924495798642978,
+              0.0017118478557265338
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -8.36734693877551,
+              -6.052631578947368
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "grpo",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.7958333333333334,
+      "ratio_q1_q3": [
+        0.6825127334465195,
+        0.9047619047619047
+      ],
+      "ratio_of_medians": 0.6774193548387097,
+      "full_rho_v3": 0.6222565360754274,
+      "arm_rho_native_target": 0.6237537602758126,
+      "arm_rho_v3_same_target": 0.6237537602758126,
+      "delta_rho_native_targets": 0.0014972242003852276,
+      "delta_rho_v3_same_target": 0.0014972242003852276,
+      "full_rho_v1_same_items": 0.6150352813043776,
+      "score_delta_native_targets": 13.0,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            22,
+            27,
+            28,
+            24,
+            28,
+            11
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.0428784181437919,
+              0.02802719658599684
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.0428784181437919,
+              0.02802719658599684
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.76,
+              0.8260869565217391
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              5.0322847682119205,
+              21.328125
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            49,
+            52,
+            39
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.055202632259897966,
+              0.03647696870534667
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.055202632259897966,
+              0.03647696870534667
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.7580487804878049,
+              0.8260869565217391
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              6.730769230769231,
+              20.76923076923077
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "grpo",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.3636363636363635,
+      "ratio_q1_q3": [
+        1.1,
+        1.727272727272727
+      ],
+      "ratio_of_medians": 1.3,
+      "full_rho_v3": 0.5997188419828617,
+      "arm_rho_native_target": 0.5723867874672781,
+      "arm_rho_v3_same_target": 0.5682401099953939,
+      "delta_rho_native_targets": -0.027332054515583626,
+      "delta_rho_v3_same_target": -0.03147873198746787,
+      "full_rho_v1_same_items": 0.5779348309343406,
+      "score_delta_native_targets": -50.214285714285715,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            25,
+            28,
+            27,
+            22,
+            25,
+            13
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.0854947967987103,
+              0.0329028381615567
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08728416203818079,
+              0.025314716849245873
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.2666666666666666,
+              1.4615384615384615
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -60.55555555555556,
+              -40.22222222222222
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            53,
+            49,
+            38
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.05991311263949295,
+              -0.010398212635639448
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07195364750680755,
+              -0.024822652236022424
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.2696969696969695,
+              1.4615384615384615
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -59.43396226415094,
+              -36.05263157894737
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "grpo",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        0.9047619047619047,
+        1.0996076721883172
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.6222565360754274,
+      "arm_rho_native_target": 0.6759007219670582,
+      "arm_rho_v3_same_target": 0.6707533768138612,
+      "delta_rho_native_targets": 0.05364418589163078,
+      "delta_rho_v3_same_target": 0.048496840738433744,
+      "full_rho_v1_same_items": 0.6150352813043776,
+      "score_delta_native_targets": -31.142857142857142,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            22,
+            27,
+            28,
+            24,
+            28,
+            11
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.003231335392760326,
+              0.1185483081483189
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.0038793982548125383,
+              0.11623500110327978
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.9756097560975611,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -42.32258064516129,
+              -13.165280785891104
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            49,
+            52,
+            39
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.022186408789333645,
+              0.11408739575341487
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.013934805304808062,
+              0.11054021906319239
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -44.03846153846154,
+              -6.666666666666667
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "tsft",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        0.8571428571428572,
+        1.0
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.5955200127659324,
+      "arm_rho_native_target": 0.6349185375527183,
+      "arm_rho_v3_same_target": 0.6349185375527183,
+      "delta_rho_native_targets": 0.03939852478678596,
+      "delta_rho_v3_same_target": 0.03939852478678596,
+      "full_rho_v1_same_items": 0.5933162419344785,
+      "score_delta_native_targets": -1.5714285714285714,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            25,
+            28,
+            27,
+            22,
+            25,
+            13
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.026224603272340663,
+              0.10544800963199458
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.026224603272340663,
+              0.10544800963199458
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -3.4265734265734267,
+              -0.15151515151515152
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            53,
+            49,
+            38
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.042162994797286246,
+              0.12892586751093116
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.042162994797286246,
+              0.12892586751093116
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -3.018867924528302,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "tsft",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.9615384615384615,
+      "ratio_q1_q3": [
+        0.8383333333333334,
+        1.0
+      ],
+      "ratio_of_medians": 0.9803921568627452,
+      "full_rho_v3": 0.6654331554434926,
+      "arm_rho_native_target": 0.6722698248229033,
+      "arm_rho_v3_same_target": 0.6722698248229033,
+      "delta_rho_native_targets": 0.0068366693794107425,
+      "delta_rho_v3_same_target": 0.0068366693794107425,
+      "full_rho_v1_same_items": 0.6531895881441327,
+      "score_delta_native_targets": 0.14285714285714285,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            22,
+            27,
+            28,
+            24,
+            28,
+            11
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.024708814987941863,
+              0.03219860218522741
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.024708814987941863,
+              0.03219860218522741
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.9615384615384615,
+              0.9615384615384615
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -2.857142857142857,
+              4.1690573770491675
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            49,
+            52,
+            39
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.027501245256572326,
+              0.04585519696812801
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.027501245256572326,
+              0.04585519696812801
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.9615384615384615,
+              0.9615384615384615
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -3.8461538461538463,
+              2.857142857142857
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "tsft",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0976190476190477,
+      "ratio_q1_q3": [
+        1.0,
+        1.8
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.5955200127659324,
+      "arm_rho_native_target": 0.6357801718780691,
+      "arm_rho_v3_same_target": 0.62783835848947,
+      "delta_rho_native_targets": 0.04026015911213676,
+      "delta_rho_v3_same_target": 0.032318345723537645,
+      "full_rho_v1_same_items": 0.5933162419344785,
+      "score_delta_native_targets": -45.142857142857146,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            25,
+            28,
+            27,
+            22,
+            25,
+            13
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.05223385519501449,
+              0.16977894535524218
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.0654428111554857,
+              0.1583626128971699
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.3
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -49.73390243902439,
+              -40.624878875968996
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            53,
+            49,
+            38
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.07215362521847835,
+              0.1451804260871819
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08553350855867947,
+              0.13291378712369756
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.3
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -49.62264150943396,
+              -40.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "tsft",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.25,
+      "ratio_q1_q3": [
+        1.0,
+        1.3333333333333335
+      ],
+      "ratio_of_medians": 0.9803921568627452,
+      "full_rho_v3": 0.6654331554434926,
+      "arm_rho_native_target": 0.7097484211446183,
+      "arm_rho_v3_same_target": 0.7056316470737818,
+      "delta_rho_native_targets": 0.04431526570112576,
+      "delta_rho_v3_same_target": 0.04019849163028921,
+      "full_rho_v1_same_items": 0.6531895881441327,
+      "score_delta_native_targets": -48.642857142857146,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            22,
+            27,
+            28,
+            24,
+            28,
+            11
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.0026670860455072156,
+              0.11197720510736964
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.008481680543947823,
+              0.10104122023680684
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.2166666666666666,
+              1.2692307692307692
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -53.67741935483871,
+              -39.25233644859813
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            49,
+            52,
+            39
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.0026531847959054833,
+              0.10306673435373465
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.01198598038218035,
+              0.09805328951889664
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.1844202898550724,
+              1.2692307692307692
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -54.80769230769231,
+              -37.17948717948718
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "cdnative",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        0.5555555555555556,
+        1.0
+      ],
+      "ratio_of_medians": 0.9,
+      "full_rho_v3": 0.7640862346945954,
+      "arm_rho_native_target": 0.6850669681890655,
+      "arm_rho_v3_same_target": 0.6850669681890655,
+      "delta_rho_native_targets": -0.07901926650552982,
+      "delta_rho_v3_same_target": -0.07901926650552982,
+      "full_rho_v1_same_items": 0.7384083176070017,
+      "score_delta_native_targets": -3.4285714285714284,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            25,
+            28,
+            27,
+            22,
+            25,
+            13
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.11071058576274062,
+              -0.05259333020025936
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.11071058576274062,
+              -0.05259333020025936
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.7999999999999999,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -8.219178082191782,
+              1.5126050420168067
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            53,
+            49,
+            38
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.11562243639139691,
+              -0.056410741223038796
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.11562243639139691,
+              -0.056410741223038796
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.9,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -6.938775510204081,
+              -1.0526315789473684
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "cdnative",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.6666666666666666,
+      "ratio_q1_q3": [
+        0.5,
+        1.0
+      ],
+      "ratio_of_medians": 0.5,
+      "full_rho_v3": 0.7600235934827603,
+      "arm_rho_native_target": 0.6962360069192164,
+      "arm_rho_v3_same_target": 0.6962360069192164,
+      "delta_rho_native_targets": -0.06378758656354389,
+      "delta_rho_v3_same_target": -0.06378758656354389,
+      "full_rho_v1_same_items": 0.7468929939118638,
+      "score_delta_native_targets": -5.357142857142857,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            22,
+            27,
+            28,
+            24,
+            28,
+            11
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.13545968695292726,
+              0.00842755952375751
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.13545968695292726,
+              0.00842755952375751
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.6,
+              0.8333333333333333
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -10.970149253731343,
+              0.43883162359439254
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            49,
+            52,
+            39
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.18147401405735675,
+              0.018801115213815667
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.18147401405735675,
+              0.018801115213815667
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.6,
+              0.6666666666666666
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -13.076923076923077,
+              2.6530612244897958
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "cdnative",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.1111111111111112,
+      "ratio_q1_q3": [
+        1.0,
+        1.6
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.7640862346945954,
+      "arm_rho_native_target": 0.7040476634056506,
+      "arm_rho_v3_same_target": 0.7055005770623167,
+      "delta_rho_native_targets": -0.06003857128894474,
+      "delta_rho_v3_same_target": -0.05858565763227863,
+      "full_rho_v1_same_items": 0.7384083176070017,
+      "score_delta_native_targets": -57.357142857142854,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            25,
+            28,
+            27,
+            22,
+            25,
+            13
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.0888822284057652,
+              -0.010709131766343805
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.0920399326612793,
+              -0.011740946943605168
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.1111111111111112,
+              1.1111111111111112
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -63.75038580246913,
+              -48.034188034188034
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            53,
+            49,
+            38
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.09315707633008097,
+              -0.007330842850325592
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.10247457738656562,
+              -0.0053637464787916755
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.1111111111111112,
+              1.1111111111111112
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -64.28571428571429,
+              -42.36842105263158
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "cdnative",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.625,
+      "ratio_q1_q3": [
+        0.5333333333333333,
+        1.0
+      ],
+      "ratio_of_medians": 0.8,
+      "full_rho_v3": 0.7600235934827603,
+      "arm_rho_native_target": 0.7314142759788045,
+      "arm_rho_v3_same_target": 0.7320939537723753,
+      "delta_rho_native_targets": -0.02860931750395579,
+      "delta_rho_v3_same_target": -0.02792963971038498,
+      "full_rho_v1_same_items": 0.7468929939118638,
+      "score_delta_native_targets": -52.0,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            22,
+            27,
+            28,
+            24,
+            28,
+            11
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.0843101770942682,
+              0.0333202141368405
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08148510197055324,
+              0.031452362488812224
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.6,
+              0.9512499999999932
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -57.2972972972973,
+              -45.669291338582674
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            49,
+            52,
+            39
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.08108311962565884,
+              0.025861525353116255
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.079798625120448,
+              0.02196120442849947
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.6,
+              0.9
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -59.61538461538461,
+              -41.53846153846154
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "base",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 34,
+      "n_valid_arm": 23,
+      "n_common": 10,
+      "n_positive_full_ratio": 7,
+      "ratio_median": 11.999999999999998,
+      "ratio_q1_q3": [
+        1.4999999999999998,
+        13.5
+      ],
+      "ratio_of_medians": 11.999999999999998,
+      "full_rho_v3": 0.4968495546826165,
+      "arm_rho_native_target": -0.15616503703096563,
+      "arm_rho_v3_same_target": -0.15616503703096563,
+      "delta_rho_native_targets": -0.6530145917135821,
+      "delta_rho_v3_same_target": -0.6530145917135821,
+      "full_rho_v1_same_items": 0.42301435161713,
+      "score_delta_native_targets": -1.0,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 5,
+          "cluster_sizes": [
+            3,
+            1,
+            2,
+            1,
+            3
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1847,
+            "percentile_95": [
+              -1.1810527419871168,
+              0.34193358139233293
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1847,
+            "percentile_95": [
+              -1.1810527419871168,
+              0.34193358139233293
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.0,
+              25.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -24.285714285714285,
+              15.555555555555555
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            4,
+            3,
+            3
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1923,
+            "percentile_95": [
+              -1.0906903271973034,
+              0.06628087996463838
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1923,
+            "percentile_95": [
+              -1.0906903271973034,
+              0.06628087996463838
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              7.499999999999999,
+              12.5
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -30.0,
+              23.333333333333332
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "base",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 124,
+      "n_valid_arm": 43,
+      "n_common": 41,
+      "n_positive_full_ratio": 41,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        1.0,
+        4.0
+      ],
+      "ratio_of_medians": 2.9999999999999996,
+      "full_rho_v3": 0.17299399707148194,
+      "arm_rho_native_target": 0.3199565588220865,
+      "arm_rho_v3_same_target": 0.3199565588220865,
+      "delta_rho_native_targets": 0.14696256175060457,
+      "delta_rho_v3_same_target": 0.14696256175060457,
+      "full_rho_v1_same_items": 0.18008421125440818,
+      "score_delta_native_targets": 2.4390243902439024,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            12,
+            3,
+            5,
+            4,
+            11,
+            6
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1969,
+            "percentile_95": [
+              -0.09516826825430139,
+              0.3188594456512328
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1969,
+            "percentile_95": [
+              -0.09516826825430139,
+              0.3188594456512328
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              2.9999999999999996
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.5882352941176471,
+              7.2727272727272725
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            15,
+            9,
+            17
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.09476487569526681,
+              0.1973514427112107
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.09476487569526681,
+              0.1973514427112107
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              4.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.5882352941176471,
+              8.88888888888889
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "base",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 34,
+      "n_valid_arm": 38,
+      "n_common": 9,
+      "n_positive_full_ratio": 8,
+      "ratio_median": 3.8333333333333335,
+      "ratio_q1_q3": [
+        0.0,
+        32.5
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": -0.22886885410853172,
+      "arm_rho_native_target": -0.12185435916898849,
+      "arm_rho_v3_same_target": -0.13181818181818183,
+      "delta_rho_native_targets": 0.10701449493954324,
+      "delta_rho_v3_same_target": 0.09705067229034989,
+      "full_rho_v1_same_items": -0.22004401320440156,
+      "score_delta_native_targets": -4.444444444444445,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 5,
+          "cluster_sizes": [
+            2,
+            3,
+            1,
+            1,
+            2
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1976,
+            "percentile_95": [
+              -0.7516866386965013,
+              1.41882024417952
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1976,
+            "percentile_95": [
+              -0.7123593523371036,
+              1.2502777258804139
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.0,
+              6.666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -8.333333333333334,
+              -2.0
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            2,
+            4,
+            3
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 1925,
+            "percentile_95": [
+              -0.4066773167955259,
+              0.5032342373975982
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 1925,
+            "percentile_95": [
+              -0.44005507893250917,
+              0.5
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              6.666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -5.0,
+              -3.3333333333333335
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "base",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 124,
+      "n_valid_arm": 83,
+      "n_common": 77,
+      "n_positive_full_ratio": 77,
+      "ratio_median": 100.0,
+      "ratio_q1_q3": [
+        33.333333333333336,
+        135.0
+      ],
+      "ratio_of_medians": 100.0,
+      "full_rho_v3": 0.2686639328071158,
+      "arm_rho_native_target": 0.24431886384670862,
+      "arm_rho_v3_same_target": 0.24464415448272045,
+      "delta_rho_native_targets": -0.024345068960407196,
+      "delta_rho_v3_same_target": -0.024019778324395363,
+      "full_rho_v1_same_items": 0.23893452756085912,
+      "score_delta_native_targets": 14.025974025974026,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            15,
+            9,
+            11,
+            11,
+            21,
+            10
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.19849339918871667,
+              0.14641843127344836
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.1997185621079093,
+              0.14398951297116808
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              100.0,
+              115.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              9.027777777777779,
+              21.26984126984127
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            24,
+            22,
+            31
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.10731345101313688,
+              0.18494836087888403
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.10719449844659104,
+              0.18153795185248225
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              100.0,
+              130.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              8.75,
+              25.0
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "qwen25vl7b",
+      "arm": "ruler",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.8666666666666667,
+      "ratio_q1_q3": [
+        0.8666666666666667,
+        0.8666666666666667
+      ],
+      "ratio_of_medians": 0.8666666666666667,
+      "full_rho_v3": 0.2450310365798623,
+      "arm_rho_native_target": null,
+      "arm_rho_v3_same_target": null,
+      "delta_rho_native_targets": null,
+      "delta_rho_v3_same_target": null,
+      "full_rho_v1_same_items": 0.23969921906327335,
+      "score_delta_native_targets": 11.0,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            25,
+            28,
+            27,
+            22,
+            25,
+            13
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8666666666666667,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              5.597014925373134,
+              16.220958696813238
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            53,
+            49,
+            38
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8666666666666667,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              5.1020408163265305,
+              18.49056603773585
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "qwen25vl7b",
+      "arm": "ruler",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.8666666666666667,
+      "ratio_q1_q3": [
+        0.8666666666666667,
+        0.8666666666666667
+      ],
+      "ratio_of_medians": 0.8666666666666667,
+      "full_rho_v3": 0.08022882067619554,
+      "arm_rho_native_target": null,
+      "arm_rho_v3_same_target": null,
+      "delta_rho_native_targets": null,
+      "delta_rho_v3_same_target": null,
+      "full_rho_v1_same_items": 0.10950287783559524,
+      "score_delta_native_targets": 4.571428571428571,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            22,
+            27,
+            28,
+            24,
+            28,
+            11
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8666666666666667,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -1.3159869327752538,
+              10.307583155961765
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            49,
+            52,
+            39
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 0,
+            "percentile_95": null
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8666666666666667,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -2.6923076923076925,
+              13.333333333333334
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "qwen25vl7b",
+      "arm": "pxunit",
+      "family": "speed",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 0.8666666666666667,
+      "ratio_q1_q3": [
+        0.23214285714285718,
+        0.8666666666666667
+      ],
+      "ratio_of_medians": 0.8666666666666667,
+      "full_rho_v3": 0.2450310365798623,
+      "arm_rho_native_target": 0.0037939141341229157,
+      "arm_rho_v3_same_target": 0.004657825209459177,
+      "delta_rho_native_targets": -0.2412371224457394,
+      "delta_rho_v3_same_target": -0.24037321137040313,
+      "full_rho_v1_same_items": 0.23969921906327335,
+      "score_delta_native_targets": -20.214285714285715,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            25,
+            28,
+            27,
+            22,
+            25,
+            13
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.3100322919703068,
+              -0.15067605163167144
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.3098718379115392,
+              -0.15496061364203365
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8666666666666667,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -32.95302013422819,
+              -5.203252032520325
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            53,
+            49,
+            38
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.26751387220709905,
+              -0.09358838491949989
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.2596017615922208,
+              -0.081998532239735
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              0.8666666666666667,
+              0.8666666666666667
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -33.673469387755105,
+              0.2631578947368421
+            ]
+          }
+        }
+      }
+    },
+    {
+      "sequence": "Q2_top_480-510",
+      "model": "qwen25vl7b",
+      "arm": "pxunit",
+      "family": "path",
+      "n_pool": 140,
+      "n_valid_full": 140,
+      "n_valid_arm": 140,
+      "n_common": 140,
+      "n_positive_full_ratio": 140,
+      "ratio_median": 1.0,
+      "ratio_q1_q3": [
+        1.0,
+        1.0
+      ],
+      "ratio_of_medians": 1.0,
+      "full_rho_v3": 0.08022882067619554,
+      "arm_rho_native_target": -0.14000132883475913,
+      "arm_rho_v3_same_target": -0.14108366937044547,
+      "delta_rho_native_targets": -0.22023014951095465,
+      "delta_rho_v3_same_target": -0.221312490046641,
+      "full_rho_v1_same_items": 0.10950287783559524,
+      "score_delta_native_targets": -28.285714285714285,
+      "temporal_blocks": {
+        "5": {
+          "n_clusters": 6,
+          "cluster_sizes": [
+            22,
+            27,
+            28,
+            24,
+            28,
+            11
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.44623427064210364,
+              -0.0016697917793346562
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.44144468036950524,
+              -0.00863881773642411
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -38.6986301369863,
+              -18.79310344827586
+            ]
+          }
+        },
+        "10": {
+          "n_clusters": 3,
+          "cluster_sizes": [
+            49,
+            52,
+            39
+          ],
+          "delta_rho_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.32870329523088526,
+              -0.024212099684585528
+            ]
+          },
+          "delta_rho_v3_same_target": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -0.33045012678537344,
+              -0.03750992232246751
+            ]
+          },
+          "median_paired_ratio": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              1.0,
+              1.0
+            ]
+          },
+          "score_delta_native_targets": {
+            "valid_replicates": 2000,
+            "percentile_95": [
+              -32.6530612244898,
+              -17.17948717948718
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

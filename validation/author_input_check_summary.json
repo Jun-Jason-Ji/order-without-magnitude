@@ -1,0 +1,20 @@
+{
+  "checked_utc_date": "2026-09-12",
+  "publication_status": "UNPUBLISHED",
+  "clean_cwd_smoke_checks": 22,
+  "native_control_cells": 4,
+  "native_reference_numeric_checks": 64,
+  "paired_cells": 48,
+  "paired_bootstrap_replicates": 2000,
+  "paired_numeric_fields_compared": 2404,
+  "maximum_allowed_absolute_difference": 1e-10,
+  "numeric_mismatches": 0,
+  "paired_algorithm_sha256": "8d1c8da72b34884e72a8f1a3bf3b206bdfe16421cd54224571a39e60e4d5cdfb",
+  "scope": "Existing authorized local inputs and installed CPU dependencies; no fresh environment, public archive hydration, model inference or training.",
+  "not_validated": [
+    "public clean-room reconstruction",
+    "full GPU reproduction",
+    "corrected 1120-item model outcomes",
+    "new revision control outcomes"
+  ]
+}

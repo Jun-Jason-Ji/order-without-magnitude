@@ -34,9 +34,9 @@ MAIN = "Q4_side_480-510"
 FAMS = ["speed", "path"]
 # 论文用色: 视角用形状区分, 模型用颜色; 全部色盲安全, 灰度可辨
 CLR = {"sft": "#1b6ca8", "grpo": "#c8471f", "base": "#8a8f8c", "qwen25vl7b": "#5c9e31",
-       "tsft": "#7b4ea3"}
+       "tsft": "#7b4ea3", "cdnative": "#b08015"}
 LBL = {"sft": "source-SFT", "grpo": "GRPO-v3", "base": "base 4B",
-       "qwen25vl7b": "Qwen2.5-VL-7B", "tsft": "target-SFT"}
+       "qwen25vl7b": "Qwen2.5-VL-7B", "tsft": "target-SFT", "cdnative": "CD-native"}
 plt.rcParams.update({"font.size": 8.5, "axes.linewidth": .7, "xtick.major.width": .7,
                      "ytick.major.width": .7, "axes.spines.top": False,
                      "axes.spines.right": False, "figure.dpi": 160,
@@ -111,13 +111,13 @@ def fig_viewpoint(out):
                 Line2D([], [], marker="o", ls="", mfc="white", mec="#444", label="first frame x4")]
     fig.legend(handles=handles, loc="lower center", ncol=6, frameon=False,
                bbox_to_anchor=(.5, -.06), fontsize=7.5)
-    fig.suptitle("Viewpoint decides the ordering: multi-frame motion is read overhead, not consistently from the side", fontsize=10, y=.99)
+    fig.suptitle("Rank agreement varies with viewpoint and temporal content (v1 ground truth)", fontsize=10, y=.99)
     fig.tight_layout()
     save(fig, out, "fig1_viewpoint_rho")
 
 
 # ---------------------------------------------------------------- fig 2
-def fig_constant(out):
+def fig_constant(out, refresh_tally=False):
     import eval.evaluate as E
     from engine import dynamics_qa as DQ
     from engine.court_homography import CourtPlane, recompute_answer
@@ -184,20 +184,25 @@ def fig_constant(out):
     tally = {u: [(seq_of, view, fam, mk, round(dy, 1), round(x, 1))
                  for (x, dy, mk, view, seq_of, fam) in rows]
              for u, rows in detail.items()}
-    with io.open(os.path.join(CD, "_const_tally.json"), "w", encoding="utf-8") as f:
-        json.dump(tally, f, ensure_ascii=False)
+    if refresh_tally:
+        with io.open(os.path.join(CD, "_const_tally.json"), "w", encoding="utf-8") as f:
+            json.dump(tally, f, ensure_ascii=False)
+    else:
+        frozen_tally = jload(os.path.join(CD, "_const_tally.json"))
+        if frozen_tally != {u: [list(row) for row in rows] for u, rows in tally.items()}:
+            raise ValueError("Recomputed constant tally differs from the frozen result; review before refreshing")
     for u in ("v1", "v3"):
         n_above = sum(1 for r in tally[u] if r[4] > 0)
         print(f"  fig2 tally {u}: {len(tally[u])} 格, {n_above} 格高于常数基线")
 
     fig, axes = plt.subplots(1, 2, figsize=(7.4, 3.1), sharey=True)
     for ax, unit, title in zip(axes, ("v1", "v3"),
-                               ("v1 (the height ruler the prompt states)", "v3 (court homography)")):
+                               ("v1 (box-height heuristic)", "v3 (court homography)")):
         for x, y, mk, view in pts[unit]:
             ax.plot(x, y, "o" if view == "top" else "^", ms=4.6, color=CLR[mk],
                     alpha=.85, mew=0)
         ax.axhline(0, color="#333", lw=.8)
-        ax.set_xlabel("constant-median baseline T-MRA of that clip")
+        ax.set_xlabel("test-label median constant T-MRA of that clip")
         ax.set_title(f"{title} - {len(pts[unit])} cells", fontsize=9)
         ax.grid(axis="y", color="#e6eae8", lw=.6)
         ax.set_axisbelow(True)
@@ -208,7 +213,7 @@ def fig_constant(out):
                 Line2D([], [], marker="^", ls="", color="#555", label="side")]
     fig.legend(handles=handles, loc="lower center", ncol=6, frameon=False,
                bbox_to_anchor=(.5, -.13), fontsize=7.5)
-    fig.suptitle("Above zero = beats the no-image constant; position tracks the clip's GT spread, not model ability",
+    fig.suptitle("Model advantage over a test-distribution constant depends on the scoring convention",
                  fontsize=9.5, y=1.02)
     fig.tight_layout()
     save(fig, out, "fig2_constant_vs_gt")
@@ -247,7 +252,7 @@ def fig_multiview(out):
         ax.set_xlabel("camera")
     axes[0].set_ylabel("Spearman rho")
     fig.legend(loc="lower center", ncol=3, frameon=False, bbox_to_anchor=(.5, -.22), fontsize=7.5)
-    fig.suptitle("Same world motion, different cameras: identical GT, rho(pixel, world) spans 0.21-0.65",
+    fig.suptitle("Human-M3: pixel-world coupling and model rank agreement by camera",
                  fontsize=9.5, y=1.02)
     fig.tight_layout()
     save(fig, out, "fig3_multiview" + ("" if any_model else "_gt_only"))
@@ -291,8 +296,8 @@ def fig_zoom(out):
             ax.plot(i + (0.13 if side else -0.13), y, marker="s" if side else "o",
                     ms=4.6, mfc="none" if side else CLR[m], mec=CLR[m], mew=1.1,
                     ls="none", zorder=4)
-    for y, ls, clr, lbl in ((1.0, "--", "#555", "1.0  ruler used / world units read"),
-                            (2.0, ":", "#c8471f", "2.0  pixel displacement read")):
+    for y, ls, clr, lbl in ((1.0, "--", "#555", "1.0  unchanged prediction reference"),
+                            (2.0, ":", "#c8471f", "2.0  doubled prediction reference")):
         ax.axhline(y, color=clr, lw=.9, ls=ls, zorder=1)
         ax.text(len(rows) - .45, y, "  " + lbl, va="bottom", ha="right", fontsize=7.2, color=clr)
     # 红线 12: 公开 7B 的 1.00 是恒定输出 1.5 造成的退化值, 不能读成 "用了尺子"。
@@ -300,15 +305,15 @@ def fig_zoom(out):
     q = [i for i, (m, _, _) in enumerate(rows) if m == "qwen25vl7b"]
     if q:
         ax.axvspan(min(q) - .45, max(q) + .45, color="#999", alpha=.10, zorder=0)
-        ax.annotate("degenerate: 7B emits a constant 1.5\nin both arms — ratio 1.0 is not ruler use",
+        ax.annotate("A ratio of 1 alone does not establish scale use;\nconstant outputs can also produce it",
                     xy=((min(q) + max(q)) / 2, 0.52), ha="center", va="center",
                     fontsize=6.6, color="#555")
     ax.set_xticks(range(len(rows)))
     ax.set_xticklabels([f"{LBL[m]}\n{f}" for m, f, _ in rows], fontsize=7.2)
-    ax.set_ylabel("median  pred(zoom2) / pred(full)")
+    ax.set_ylabel("median paired pred(zoom2) / pred(full)")
     ax.set_ylim(0.4, 2.25)
     ax.set_title("2x zoom: pixel displacement doubles, world quantity unchanged\n"
-                 "every cell falls between the two pre-registered criteria", fontsize=9.5)
+                 "clip-level ratios for the tested models", fontsize=9.5)
     ax.legend(handles=[Line2D([], [], marker="o", ls="none", mfc="#444", mec="#444", ms=4.6,
                               label="top-view clip"),
                        Line2D([], [], marker="s", ls="none", mfc="none", mec="#444", ms=4.6,
@@ -320,9 +325,9 @@ def fig_zoom(out):
 
 
 def fig_ruler(out):
-    """fig5 (T28): 递尺子臂 + 换单位臂并排 —— 一张图说完 "给了不用, 换了不动"。
+    """fig5 (T28): clip-level scale cue and pixel-unit question variants.
 
-    左: ruler/full 预测中位比, 参考线 1.0 = 尺子递过去等于没递。
+    左: 同题 ruler/full 预测比的中位数, 参考线 1.0 仅表示中位比为 1。
     右: pred(像素口径)/pred(米口径), 对数轴; 若模型真的在做单位换算, 该比值应落在 K≈27 那条带上,
         实测却挤在 1 附近 —— 两者差一个数量级, 这是本篇最干净的一格。
     base 4B 不画: ruler 臂比值 1.88/12.00 来自 n_ratio 仅个位数的可解析预测, 且它 ρ 变负 (见 §一 E1b-T28)。
@@ -332,17 +337,17 @@ def fig_ruler(out):
         return print("  ! fig5: T28 还没汇总, 略过")
     seqs = d["seqs"]
     clips = list(seqs)
-    groups = [(m, f) for m in ("sft", "grpo", "tsft") for f in FAMS]
+    groups = [(m, f) for m in ("sft", "grpo", "tsft", "cdnative") for f in FAMS]
     Ks = [seqs[c].get("k_px_per_m") for c in clips if seqs[c].get("k_px_per_m")]
     if not Ks:
         return print("  ! fig5: 缺 k_px_per_m, 略过")
 
-    fig, axes = plt.subplots(1, 2, figsize=(7.4, 3.2))
+    fig, axes = plt.subplots(1, 2, figsize=(7.4, 3.6))
     for ax, (arm, getter, title, ylab) in zip(axes, (
             ("ruler", lambda cell: cell.get("ratio"),
-             "(a) hand the model a correct ruler", "median  pred(ruler) / pred(full)"),
+             "(a) provide a clip-level scale cue", "median paired pred(ruler) / pred(full)"),
             ("pxunit", lambda cell: cell.get("ratio_to_full"),
-             "(b) ask the question in pixels instead of metres", "median  pred(pixels) / pred(metres)"))):
+             "(b) ask in pixels instead of metres", "median paired pred(pixels) / pred(metres)"))):
         drawn = 0
         for i, (m, f) in enumerate(groups):
             ys = []
@@ -359,39 +364,48 @@ def fig_ruler(out):
                 ax.plot(i + (j - (len(ys) - 1) / 2) * .22, y, marker="o", ms=4.6,
                         mfc=CLR[m], mec=CLR[m], ls="none", zorder=4)
         ax.set_xticks(range(len(groups)))
-        ax.set_xticklabels([f"{LBL[m].replace('source-','').replace('target-','t-')}\n{f}"
-                            for m, f in groups], fontsize=6.8)
+        ax.set_xticklabels([f for m, f in groups], fontsize=7)
+        for group_index, model in enumerate(("sft", "grpo", "tsft", "cdnative")):
+            ax.text(group_index * 2 + .5, -.17, LBL[model],
+                    transform=ax.get_xaxis_transform(), ha="center", fontsize=7)
         ax.set_title(title, fontsize=8.8)
         ax.set_ylabel(ylab, fontsize=7.8)
         ax.axhline(1.0, color="#555", lw=.9, ls="--", zorder=1)
         if arm == "ruler":
             ax.set_ylim(.6, 1.5)
-            ax.text(len(groups) - .5, 1.0, "  1.0  the handed ruler changed nothing",
+            ax.text(len(groups) - .5, 1.0, "  1.0  paired ratio reference",
                     ha="right", va="bottom", fontsize=7, color="#555")
         else:
             ax.set_yscale("log")
-            ax.set_ylim(.7, 60)
+            ax.set_ylim(.5, 60)
             ax.axhspan(min(Ks), max(Ks), color="#c8471f", alpha=.13, zorder=0)
-            ax.text(len(groups) - .5, sum(Ks) / len(Ks), "  K = 27  if units were converted",
+            ax.text(len(groups) - .5, sum(Ks) / len(Ks), "  K = 27  rendered-coordinate reference",
                     ha="right", va="center", fontsize=7, color="#c8471f")
             ax.set_yticks([1, 2, 5, 10, 27, 50])
             ax.set_yticklabels(["1", "2", "5", "10", "27", "50"], fontsize=7)
         if not drawn:
             return print(f"  ! fig5: {arm} 臂没有可用比值, 略过")
-    fig.suptitle("T28: the scale channel never runs — order survives, magnitude does not",
+    fig.suptitle("Prediction changes under an explicit scale cue and an answer-unit swap",
                  fontsize=9.5, y=1.005)
-    fig.tight_layout()
+    fig.text(.5, .01, "Each dot represents one overhead clip; horizontal marks show the median over clips",
+             ha="center", fontsize=7)
+    fig.tight_layout(rect=(0, .02, 1, 1))
     save(fig, out, "fig5_ruler_and_units")
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default=os.path.join(ROOT, "paper2", "figs"))
+    ap.add_argument("--refresh-constant-tally", action="store_true",
+                    help="Explicitly regenerate _const_tally.json; default verifies and preserves it")
     args = ap.parse_args()
     print(f"[figs] -> {args.out}")
     for fn in (fig_viewpoint, fig_constant, fig_multiview, fig_zoom, fig_ruler):
         try:
-            fn(args.out)
+            if fn == fig_constant:
+                fn(args.out, refresh_tally=args.refresh_constant_tally)
+            else:
+                fn(args.out)
         except Exception as e:
             print(f"  ! {fn.__name__} 失败: {e!r}")
 
