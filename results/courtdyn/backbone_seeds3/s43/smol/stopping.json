@@ -1,0 +1,14 @@
+{
+ "backbone": "smol",
+ "seed": 43,
+ "k_star": 4,
+ "degenerate_at_cap": true,
+ "schedule": "fixed to seed-42 selection (dev stopping rule not re-run)",
+ "seed42_stopping": "results/courtdyn/backbone2_r2/smol/stopping.json",
+ "machine": "A100-40GB (ERRATA 3; seed-42 cells were run on the local RTX 5060)",
+ "base_model_dir": "$A100/base_models/hf/hub/models--HuggingFaceTB--SmolVLM2-2.2B-Instruct/snapshots/482adb537c021c86670beed01cd58990d01e72e4",
+ "base_model_snapshot": "482adb537c021c86670beed01cd58990d01e72e4",
+ "prereg_rules_sha256": "a259c9e07ecf2b095fcf67ae66113dbb8addcc53e7e91041cecfb725042bf2cb",
+ "recorded_at_utc": "2026-10-05T05:59:55.685550+00:00",
+ "test_cells_evaluated_before_this": false
+}

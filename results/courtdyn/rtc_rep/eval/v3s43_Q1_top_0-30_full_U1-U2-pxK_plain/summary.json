@@ -1,0 +1,80 @@
+{
+  "plain_U1": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 23.785714285714285,
+      "tmra_parsed": 23.785714285714285,
+      "spearman": 0.5509710672117775,
+      "n_distinct": 15,
+      "prediction_median": 1.7,
+      "reference_median": 10.875190603828596,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 23.857142857142858,
+      "tmra_parsed": 23.857142857142858,
+      "spearman": 0.5979624336760714,
+      "n_distinct": 7,
+      "prediction_median": 0.6,
+      "reference_median": 5.569769216906773,
+      "degenerate": false
+    }
+  },
+  "plain_U2": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 11.071428571428571,
+      "tmra_parsed": 11.071428571428571,
+      "spearman": 0.7294688976399074,
+      "n_distinct": 19,
+      "prediction_median": 1.7,
+      "reference_median": 3314.7579899746997,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 30.857142857142858,
+      "tmra_parsed": 30.857142857142858,
+      "spearman": 0.6633576583532428,
+      "n_distinct": 11,
+      "prediction_median": 1.1,
+      "reference_median": 5.075978232665672,
+      "degenerate": false
+    }
+  },
+  "plain_pxK": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 11.785714285714286,
+      "tmra_parsed": 11.785714285714286,
+      "spearman": 0.6573312653787763,
+      "n_distinct": 11,
+      "prediction_median": 1.7,
+      "reference_median": 88.46724576701753,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 16.214285714285715,
+      "tmra_parsed": 16.214285714285715,
+      "spearman": 0.6062499044294553,
+      "n_distinct": 10,
+      "prediction_median": 1.1,
+      "reference_median": 42.23948467486589,
+      "degenerate": false
+    }
+  }
+}

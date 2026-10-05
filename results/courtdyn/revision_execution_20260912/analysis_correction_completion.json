@@ -1,0 +1,45 @@
+{
+  "schema": "courtdyn-revision-analysis-correction-completion-v1",
+  "status": "PASS",
+  "generated_at_utc": "2026-09-12T16:56:21.963075+00:00",
+  "experiment_status": "COMPLETE",
+  "original_pipeline_status": "FAILED",
+  "corrected_analysis_status": "PASS",
+  "execution_plan_sha256": "b927a3b3a61a7c9b0eb8e6ffd37e8615c444b3d467394fca3a666a45bd7eb430",
+  "original_state": {
+    "path": "results/courtdyn/revision_execution_20260912/state.json",
+    "sha256": "7bb35162847d704d47476a020fd94233efd8e09c820aecbf821b6306a10e9a86"
+  },
+  "original_analysis": {
+    "path": "results/courtdyn/revision_execution_20260912/analysis/analysis.json",
+    "sha256": "68ddb36214043fe7641d205b83f740364bc39d19d57770f23da2d7df845990ed"
+  },
+  "corrected_analysis": {
+    "path": "results/courtdyn/revision_execution_20260912/analysis_order_compatible/analysis.json",
+    "sha256": "70cbe927b1db5a4534e33cd03a72e9d593ac9c4b3bc083d9a6dbffd610ab8520"
+  },
+  "compatibility_receipt": {
+    "path": "results/courtdyn/revision_execution_20260912/analysis_order_compatible/compatibility.json",
+    "sha256": "09fb370d5798ec5265d68ab05b63a9f9f6c17b502f6f61bb06b6727291b781a4"
+  },
+  "certifier": {
+    "path": "tools/certify_courtdyn_revision_completion.py",
+    "sha256": "f28e06c34b76e60b7922978296fddedbd5e18743c520de43e0bca0e27591ae52"
+  },
+  "stage_count": 11,
+  "evaluation_run_count": 9,
+  "new_training_runs": 2,
+  "visual_items": 6160,
+  "arithmetic_items": 36,
+  "original_state_preserved": true,
+  "asd_batch_restoration": "RESTORATION_REQUIRED",
+  "full_cpu_replay_exact": true,
+  "gpu_execution_performed": false,
+  "note": "All planned model stages completed. The original CPU configuration-order failure is preserved; only the reviewed set-order comparison was corrected.",
+  "asd_recovery": {
+    "path": "paper2/audit/revision_execution_20260912/asd_recovery_receipt.json",
+    "sha256": "d58dcda2eb4c2466469345076efd338a6d966a8614b837a9e5648620bb32697c",
+    "phase": "EXTERNAL_CONTINUATION_VERIFIED",
+    "validator_sha256": "31e7a58f95493eec57e6a83f7557a459f415d65192eac1221cd0112ac3afe77f"
+  }
+}

@@ -1,0 +1,21 @@
+{
+ "summary": {
+  "protocol": "courtdyn-backbone2-r2-dev-v1",
+  "note": "stopping-rule dev set; not a test cell"
+ },
+ "source_sha256": {
+  "courtdyn_native_sft_train.json": "42c5e3d655e9b45095033577924373817b4479bbf5decb7c073fc59f683b4e2a"
+ },
+ "arithmetic_file": null,
+ "cells": [
+  {
+   "seq": "Q1_side_0-30",
+   "arm": "legacy_m",
+   "items": 280,
+   "file": "Q1_side_0-30/legacy_m.json",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_side_0-30",
+   "event_overlap": true,
+   "sha256": "e6adfb0ea78dff1bf0aada7cc2bc8e6acc962e1db29f66080c6ca766a3a832a5"
+  }
+ ]
+}

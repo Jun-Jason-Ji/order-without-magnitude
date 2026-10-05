@@ -1,0 +1,615 @@
+{
+ "metre_only": [
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "speed",
+   "x": 0.7,
+   "R": 1.0,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "path",
+   "x": 0.68,
+   "R": 1.02,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "speed",
+   "x": 0.69,
+   "R": 1.11,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "path",
+   "x": 0.72,
+   "R": 1.0,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "speed",
+   "x": 0.76,
+   "R": 1.11,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "path",
+   "x": 0.79,
+   "R": 1.0,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "speed",
+   "x": 0.71,
+   "R": 1.56,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "path",
+   "x": 0.69,
+   "R": 1.14,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "speed",
+   "x": 0.66,
+   "R": 1.67,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "path",
+   "x": 0.72,
+   "R": 1.0,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "speed",
+   "x": 0.66,
+   "R": 1.56,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "path",
+   "x": 0.71,
+   "R": 1.29,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "speed",
+   "x": 0.76,
+   "R": 1.57,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "path",
+   "x": 0.77,
+   "R": 1.0,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "speed",
+   "x": 0.74,
+   "R": 1.38,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "path",
+   "x": 0.8,
+   "R": 1.0,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "speed",
+   "x": 0.71,
+   "R": 1.57,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "family": "path",
+   "x": 0.78,
+   "R": 1.08,
+   "degenerate": false
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.2626109079994218,
+   "R": 1.0,
+   "degenerate": false,
+   "backbone": "Qwen2.5-VL-3B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.2950237655555621,
+   "R": 1.0,
+   "degenerate": false,
+   "backbone": "Qwen2.5-VL-3B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.42550242966047946,
+   "R": 1.0,
+   "degenerate": false,
+   "backbone": "Qwen2.5-VL-3B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": 0.5095833302260381,
+   "R": 0.6296296296296295,
+   "degenerate": false,
+   "backbone": "Qwen2.5-VL-3B"
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.0628310741549253,
+   "R": 1.4999999999999998,
+   "degenerate": true,
+   "backbone": "SmolVLM2-2.2B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.09929963386817194,
+   "R": 0.7894736842105263,
+   "degenerate": true,
+   "backbone": "SmolVLM2-2.2B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.18717180285134083,
+   "R": 1.253968253968254,
+   "degenerate": true,
+   "backbone": "SmolVLM2-2.2B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": 0.068041414809213,
+   "R": 0.7894736842105263,
+   "degenerate": true,
+   "backbone": "SmolVLM2-2.2B"
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.33196874796597503,
+   "R": 2.2,
+   "degenerate": true,
+   "backbone": "InternVL3-2B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.45484196132372534,
+   "R": 1.0952380952380951,
+   "degenerate": false,
+   "backbone": "InternVL3-2B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.6794585966872095,
+   "R": 3.666666666666667,
+   "degenerate": false,
+   "backbone": "InternVL3-2B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": 0.7111740390312561,
+   "R": 1.2,
+   "degenerate": false,
+   "backbone": "InternVL3-2B"
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.38107967537956294,
+   "R": 1.0,
+   "degenerate": false,
+   "backbone": "Pixtral-12B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.36311670416137903,
+   "R": 1.0,
+   "degenerate": false,
+   "backbone": "Pixtral-12B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.6325601560925033,
+   "R": 1.05,
+   "degenerate": false,
+   "backbone": "Pixtral-12B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": 0.6265615537671672,
+   "R": 1.0,
+   "degenerate": false,
+   "backbone": "Pixtral-12B"
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.2250545196583624,
+   "R": 1.2857142857142858,
+   "degenerate": true,
+   "backbone": "Idefics3-8B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.10162802262059559,
+   "R": 1.0,
+   "degenerate": true,
+   "backbone": "Idefics3-8B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.05361936004436979,
+   "R": 1.4285714285714286,
+   "degenerate": true,
+   "backbone": "Idefics3-8B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": -0.000279567399573642,
+   "R": 1.0,
+   "degenerate": false,
+   "backbone": "Idefics3-8B"
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.314110575934041,
+   "R": 12.212121212121211,
+   "degenerate": false,
+   "backbone": "Gemma3-12B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.5097047453029709,
+   "R": 98.9375,
+   "degenerate": false,
+   "backbone": "Gemma3-12B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.33604187155540327,
+   "R": 2.0208333333333335,
+   "degenerate": false,
+   "backbone": "Gemma3-12B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": 0.39512942482787866,
+   "R": 13.909090909090908,
+   "degenerate": false,
+   "backbone": "Gemma3-12B"
+  }
+ ],
+ "mixed_unit": [
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.0743619764663105,
+   "R": 100.0,
+   "degenerate": false,
+   "backbone": "Qwen2.5-VL-3B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.06981047354560148,
+   "R": 100.0,
+   "degenerate": true,
+   "backbone": "Qwen2.5-VL-3B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.4500224557522377,
+   "R": 100.0,
+   "degenerate": false,
+   "backbone": "Qwen2.5-VL-3B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": -0.09967746098972123,
+   "R": 100.0,
+   "degenerate": false,
+   "backbone": "Qwen2.5-VL-3B"
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.10524858259762708,
+   "R": 142.85714285714286,
+   "degenerate": true,
+   "backbone": "SmolVLM2-2.2B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.2575496433784825,
+   "R": 52.631578947368425,
+   "degenerate": true,
+   "backbone": "SmolVLM2-2.2B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.11805322915952264,
+   "R": 142.85714285714286,
+   "degenerate": true,
+   "backbone": "SmolVLM2-2.2B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": 0.013582441201723288,
+   "R": 63.15789473684211,
+   "degenerate": true,
+   "backbone": "SmolVLM2-2.2B"
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.34120009421809483,
+   "R": 166.66666666666669,
+   "degenerate": true,
+   "backbone": "InternVL3-2B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.4454982834142129,
+   "R": 92.3076923076923,
+   "degenerate": false,
+   "backbone": "InternVL3-2B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.66236021850237,
+   "R": 166.66666666666669,
+   "degenerate": true,
+   "backbone": "InternVL3-2B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": 0.6518264673332421,
+   "R": 99.99999999999999,
+   "degenerate": false,
+   "backbone": "InternVL3-2B"
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.21862870233906362,
+   "R": 142.85714285714286,
+   "degenerate": false,
+   "backbone": "Pixtral-12B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.3610579129902445,
+   "R": 100.0,
+   "degenerate": false,
+   "backbone": "Pixtral-12B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.19204985224965557,
+   "R": 142.85714285714286,
+   "degenerate": true,
+   "backbone": "Pixtral-12B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": 0.5511300052766421,
+   "R": 100.0,
+   "degenerate": false,
+   "backbone": "Pixtral-12B"
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": -0.04672320103060246,
+   "R": 150.0,
+   "degenerate": false,
+   "backbone": "Idefics3-8B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.2742196392379821,
+   "R": 115.38461538461539,
+   "degenerate": false,
+   "backbone": "Idefics3-8B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.11479004955816359,
+   "R": 157.14285714285714,
+   "degenerate": false,
+   "backbone": "Idefics3-8B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": 0.1743928327305018,
+   "R": 115.38461538461539,
+   "degenerate": false,
+   "backbone": "Idefics3-8B"
+  },
+  {
+   "cell": "Q1_top_0-30/speed",
+   "family": "speed",
+   "x": 0.003148165284127221,
+   "R": 122.22222222222221,
+   "degenerate": true,
+   "backbone": "Gemma3-12B"
+  },
+  {
+   "cell": "Q1_top_0-30/path",
+   "family": "path",
+   "x": 0.3444171615620087,
+   "R": 99.99999999999999,
+   "degenerate": false,
+   "backbone": "Gemma3-12B"
+  },
+  {
+   "cell": "Q2_top_480-510/speed",
+   "family": "speed",
+   "x": 0.13956866092964013,
+   "R": 122.22222222222221,
+   "degenerate": true,
+   "backbone": "Gemma3-12B"
+  },
+  {
+   "cell": "Q2_top_480-510/path",
+   "family": "path",
+   "x": 0.31767580234577747,
+   "R": 92.3076923076923,
+   "degenerate": false,
+   "backbone": "Gemma3-12B"
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q1/speed/s42",
+   "family": "speed",
+   "x": 0.3679685707465394,
+   "R": 183.33333333333334,
+   "degenerate": true
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q1/speed/s43",
+   "family": "speed",
+   "x": null,
+   "R": 183.33333333333334,
+   "degenerate": true
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q1/speed/s44",
+   "family": "speed",
+   "x": null,
+   "R": 183.33333333333334,
+   "degenerate": true
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q1/path/s42",
+   "family": "path",
+   "x": 0.6898482083674593,
+   "R": 100.0,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q1/path/s43",
+   "family": "path",
+   "x": 0.6425081144505844,
+   "R": 76.19047619047619,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q1/path/s44",
+   "family": "path",
+   "x": 0.6379584590309723,
+   "R": 99.99999999999999,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q2/speed/s42",
+   "family": "speed",
+   "x": 0.6139802961610823,
+   "R": 250.0,
+   "degenerate": true
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q2/speed/s43",
+   "family": "speed",
+   "x": 0.14894266678991608,
+   "R": 183.33333333333334,
+   "degenerate": true
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q2/speed/s44",
+   "family": "speed",
+   "x": 0.2693643660254251,
+   "R": 183.33333333333334,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q2/path/s42",
+   "family": "path",
+   "x": 0.7037559390153544,
+   "R": 99.99999999999999,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q2/path/s43",
+   "family": "path",
+   "x": 0.6421789737308788,
+   "R": 76.19047619047619,
+   "degenerate": false
+  },
+  {
+   "backbone": "Qwen3.5-4B",
+   "cell": "Q2/path/s44",
+   "family": "path",
+   "x": 0.6962967611125499,
+   "R": 99.99999999999999,
+   "degenerate": false
+  }
+ ],
+ "omitted_rho_undefined": {
+  "(b) Mixed-unit adapters|Qwen3.5-4B": 2
+ }
+}

@@ -1,0 +1,84 @@
+{
+  "m_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 60.5,
+      "tmra_parsed": 60.5,
+      "spearman": 0.708250452376755,
+      "n_distinct": 6,
+      "prediction_median": 1.4,
+      "reference_median": 2.309993371986738,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 73.5,
+      "tmra_parsed": 73.5,
+      "spearman": 0.6627129662282505,
+      "n_distinct": 5,
+      "prediction_median": 0.6,
+      "reference_median": 1.0656378356713443,
+      "degenerate": false
+    }
+  },
+  "cm_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 20.357142857142858,
+      "tmra_parsed": 20.357142857142858,
+      "spearman": 0.659288527131463,
+      "n_distinct": 7,
+      "prediction_median": 1.6,
+      "reference_median": 230.9993371986738,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 21.571428571428573,
+      "tmra_parsed": 21.571428571428573,
+      "spearman": 0.6152557372556807,
+      "n_distinct": 6,
+      "prediction_median": 1.4,
+      "reference_median": 106.56378356713444,
+      "degenerate": false
+    }
+  },
+  "px_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 22.071428571428573,
+      "tmra_parsed": 22.071428571428573,
+      "spearman": 0.6326638843956419,
+      "n_distinct": 8,
+      "prediction_median": 1.8,
+      "reference_median": 63.31294719233397,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 23.642857142857142,
+      "tmra_parsed": 23.642857142857142,
+      "spearman": 0.6213625884535723,
+      "n_distinct": 8,
+      "prediction_median": 1.4,
+      "reference_median": 29.555550576135758,
+      "degenerate": false
+    }
+  },
+  "arithmetic": {
+    "n": 12,
+    "correct": 7
+  }
+}

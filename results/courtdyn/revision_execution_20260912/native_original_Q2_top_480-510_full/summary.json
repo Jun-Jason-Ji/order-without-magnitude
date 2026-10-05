@@ -1,0 +1,102 @@
+{
+  "m_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 70.92857142857143,
+      "tmra_parsed": 70.92857142857143
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 77.85714285714286,
+      "tmra_parsed": 77.85714285714286
+    }
+  },
+  "cm_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 20.214285714285715,
+      "tmra_parsed": 20.214285714285715
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 21.285714285714285,
+      "tmra_parsed": 21.285714285714285
+    }
+  },
+  "px_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 21.642857142857142,
+      "tmra_parsed": 21.642857142857142
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 23.071428571428573,
+      "tmra_parsed": 23.071428571428573
+    }
+  },
+  "m_noheight": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 62.357142857142854,
+      "tmra_parsed": 62.357142857142854
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 78.57142857142857,
+      "tmra_parsed": 78.57142857142857
+    }
+  },
+  "cm_noheight": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 20.214285714285715,
+      "tmra_parsed": 20.214285714285715
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 21.285714285714285,
+      "tmra_parsed": 21.285714285714285
+    }
+  },
+  "px_noheight": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 21.5,
+      "tmra_parsed": 21.5
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 23.0,
+      "tmra_parsed": 23.0
+    }
+  },
+  "arithmetic": {
+    "n": 12,
+    "correct": 2
+  }
+}

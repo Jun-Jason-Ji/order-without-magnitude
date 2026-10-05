@@ -1,0 +1,3 @@
+local three-seed queue stopped 2026-10-05T10:24:44Z after Qwen2.5-VL-3B seed 44
+trigger: train_smol_v3_s43
+ERRATA 6: smol seeds 43/44 run on the A100; any local output of these groups is discarded

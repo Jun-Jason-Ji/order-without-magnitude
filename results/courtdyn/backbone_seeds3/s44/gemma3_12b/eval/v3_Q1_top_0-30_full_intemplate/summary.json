@@ -1,0 +1,54 @@
+{
+  "legacy_m": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 35.357142857142854,
+      "tmra_parsed": 35.357142857142854,
+      "spearman": 0.5330774822975429,
+      "n_distinct": 21,
+      "prediction_median": 3.1,
+      "reference_median": 3.3147579899746997,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 53.357142857142854,
+      "tmra_parsed": 53.357142857142854,
+      "spearman": 0.3462070799183733,
+      "n_distinct": 15,
+      "prediction_median": 1.1,
+      "reference_median": 1.547158115807437,
+      "degenerate": false
+    }
+  },
+  "legacy_cm": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 12.142857142857142,
+      "tmra_parsed": 12.142857142857142,
+      "spearman": 0.4419093756250058,
+      "n_distinct": 17,
+      "prediction_median": 11.1,
+      "reference_median": 331.47579899747,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 29.5,
+      "tmra_parsed": 29.5,
+      "spearman": 0.27684832863547026,
+      "n_distinct": 24,
+      "prediction_median": 15.3,
+      "reference_median": 154.71581158074372,
+      "degenerate": false
+    }
+  }
+}

@@ -4,7 +4,7 @@ Original code retains the existing MIT license and named copyright holders in
 `LICENSE`. The associated manuscript's author order is separately recorded; adding
 a paper author is not an assertion that they own all earlier software copyright.
 
-Version 1.1.0 distributes only original code, aggregate statistical findings,
+Version 2.0.0 distributes only original code, aggregate statistical findings,
 input digests, source sequence path mappings, and reconstruction documentation.
 It omits source videos/images/annotations, generated QA or training pools,
 homography matrices, frame/trajectory identifiers, contact sheets, individual
@@ -26,4 +26,14 @@ terms; there are no weights in version 1.1.0.
 
 Event-alignment and Human-M3 summaries omit individual time samples / shared frame
 IDs. Aggregate counts are evidence of source overlap, not a grant of source-data
-rights. Cite TeamTrack and Human-M3 when using their inputs. Version 1.1.0 has separate metadata and preserves the historical snapshot.
+rights. Cite TeamTrack and Human-M3 when using their inputs. Version 2.0.0 has separate metadata and preserves the historical snapshot.
+
+## Version 2.0.0
+
+The same boundary applies to every new record (rounds 1-6 of the backbone replication, RTC, the
+hidden-state probe, the mixed-unit control, the soccer venue and the zero-shot sweep): verdicts,
+per-cell summaries, stopping and schedule records, run receipts (local paths replaced by
+placeholders) and the preregistered rules are included; per-item prediction rows, question pools,
+frames, hidden-state features and adapter weights are not. Backbone weights are the public
+checkpoints named with their revisions in protocols/; Gemma 3 and the Llama 3.2 record are subject
+to their own licences. Nothing here grants access to TeamTrack or SoccerNet-GSR data.

@@ -1,0 +1,197 @@
+{
+ "summary": {
+  "protocol": "courtdyn-rtc-units-v1",
+  "note": "explicit-control rows; unit phrase / ruler / output sentence changed"
+ },
+ "source_sha256": {
+  "Q1_top_0-30/m_height.json": "81e6016c990935050332dd4d0d47009f181de02c8f5cc0773dd4ea458b611675",
+  "Q1_top_0-30/cm_height.json": "cfdc8db2043a94005920107c28c41117419d3c14278a7eae94d145ff7cf8248d",
+  "Q1_top_0-30/px_height.json": "ab32879766dd5aa2b2c69cfca1e106383793baac1d337dcf79bdc2b7d4e321f9",
+  "Q2_top_480-510/m_height.json": "5fbde08d7c365789bf8227b0e41c48c3d3933b22284f0901b80446550f124bca",
+  "Q2_top_480-510/cm_height.json": "91216450cd42720965cd60541cc4375792613b11d87e1637050fc79c2cd04909",
+  "Q2_top_480-510/px_height.json": "e2738a87e784b26744df1fe3bd4b33f71e21125d0f665a9d6652f1b35ee959f0"
+ },
+ "cells": [
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "plain_m",
+   "items": 280,
+   "file": "Q1_top_0-30/plain_m.json",
+   "sha256": "81e6016c990935050332dd4d0d47009f181de02c8f5cc0773dd4ea458b611675",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "plain_cm",
+   "items": 280,
+   "file": "Q1_top_0-30/plain_cm.json",
+   "sha256": "cfdc8db2043a94005920107c28c41117419d3c14278a7eae94d145ff7cf8248d",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "plain_U1",
+   "items": 280,
+   "file": "Q1_top_0-30/plain_U1.json",
+   "sha256": "4f6e2168914b7dba05218718bb6c7119ea3670b6a899a86b79a61adc0878eedc",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "plain_U2",
+   "items": 280,
+   "file": "Q1_top_0-30/plain_U2.json",
+   "sha256": "98f6c41ab90dcc52006d2dd3a67321fc4dbc22725fa27bf02fbd0bfd7c94c823",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "plain_pxK",
+   "items": 280,
+   "file": "Q1_top_0-30/plain_pxK.json",
+   "sha256": "4a2391595e2efd8caf5152299d99dae37eb82069411e1f4199352415b4bfa062",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "rtc_m",
+   "items": 280,
+   "file": "Q1_top_0-30/rtc_m.json",
+   "sha256": "33768bf60f0cd2b3d3013f5cb1a4b9715ba8b3cf77d45b1accc95784c090b754",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "rtc_cm",
+   "items": 280,
+   "file": "Q1_top_0-30/rtc_cm.json",
+   "sha256": "ccd17bda31b2df492127cc50bd31996f80bd052585c665832a12979dfe0b44da",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "rtc_U1",
+   "items": 280,
+   "file": "Q1_top_0-30/rtc_U1.json",
+   "sha256": "606ca031e7317895db09a4f566d08c0d41dddcfb88048e156e2217d6f4717651",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "rtc_U2",
+   "items": 280,
+   "file": "Q1_top_0-30/rtc_U2.json",
+   "sha256": "396e73127bb1fb237d16089b38b3cdb1390d518666902401b9601f8b926093a9",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "rtc_pxK",
+   "items": 280,
+   "file": "Q1_top_0-30/rtc_pxK.json",
+   "sha256": "b8932a3bbf5037f7639529076d4063e93982c280e6a9b98bbd99a694a95188e3",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "plain_m",
+   "items": 280,
+   "file": "Q2_top_480-510/plain_m.json",
+   "sha256": "5fbde08d7c365789bf8227b0e41c48c3d3933b22284f0901b80446550f124bca",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "plain_cm",
+   "items": 280,
+   "file": "Q2_top_480-510/plain_cm.json",
+   "sha256": "91216450cd42720965cd60541cc4375792613b11d87e1637050fc79c2cd04909",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "plain_U1",
+   "items": 280,
+   "file": "Q2_top_480-510/plain_U1.json",
+   "sha256": "a4a76917c72bae3c718322f332cd6a28b8db42edf345e1597cb8da690f6b1c1c",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "plain_U2",
+   "items": 280,
+   "file": "Q2_top_480-510/plain_U2.json",
+   "sha256": "b82733c8ee4501287b1af3edb430608bcb103bd49384e36b69c077c07f8a30fa",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "plain_pxK",
+   "items": 280,
+   "file": "Q2_top_480-510/plain_pxK.json",
+   "sha256": "6ef335c61e18457de53e446735596f310744ff0f333a797ec464316c1b93a4de",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "rtc_m",
+   "items": 280,
+   "file": "Q2_top_480-510/rtc_m.json",
+   "sha256": "b5ddcccf3088c12758c5d4151d12a4e8158741dd4b0f92546e6c3541c96e996c",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "rtc_cm",
+   "items": 280,
+   "file": "Q2_top_480-510/rtc_cm.json",
+   "sha256": "27e24acc9291c0119c07f695b9f2d25284d7173f414318b54f7ebc44509029de",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "rtc_U1",
+   "items": 280,
+   "file": "Q2_top_480-510/rtc_U1.json",
+   "sha256": "5a7a6cbf4fcc5ee15171600052fa0e89ab48c4fa32c758e1a319ccbecfa695ca",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "rtc_U2",
+   "items": 280,
+   "file": "Q2_top_480-510/rtc_U2.json",
+   "sha256": "a80ae029a117a31642451eab3ff90866265fb70a1a1d1575b907ab7ea8592ab9",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "rtc_pxK",
+   "items": 280,
+   "file": "Q2_top_480-510/rtc_pxK.json",
+   "sha256": "a43d5a6c5e0420dcabf346ae16f7a6271d8853460cb2ffbc4235b87277d93a8a",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false
+  }
+ ],
+ "arithmetic_file": null
+}

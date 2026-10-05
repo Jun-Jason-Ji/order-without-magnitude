@@ -1,0 +1,87 @@
+{
+  "protocol": "courtdyn-m1-intemplate-v1+a100-v1",
+  "label": "mixunit",
+  "seq": "Q1_top_0-30",
+  "arms": [
+    "legacy_m",
+    "legacy_cm"
+  ],
+  "frame_mode": "full",
+  "model_path": "$A100/base_models/hf/hub/models--mistral-experimental--pixtral-12b/snapshots/c2756cbbb9422eba9f6c5c439a214b0392dfc998",
+  "adapter": "$A100/models/courtdyn-pixtral_12b-mixunit-r2ep4-s42/checkpoint-140",
+  "precision": "nf4",
+  "max_pixels": 200704,
+  "max_new_tokens": 128,
+  "decoding": "greedy",
+  "strict_parse": true,
+  "input_manifest_sha256": "632874cd4282067d4562afebfa1cf49c47d096b95d5935f5561f4e55cfa14dc2",
+  "input_cells": [
+    {
+      "arm": "legacy_m",
+      "file": "Q1_top_0-30/legacy_m.json",
+      "sha256": "4754c5d55d4629f594967049f25165ca8e19f1e2d41892632797b4568141bd6f",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q1_top_0-30"
+    },
+    {
+      "arm": "legacy_cm",
+      "file": "Q1_top_0-30/legacy_cm.json",
+      "sha256": "f65ebf2336c97ba82b5caf3cf303e206ac7217a49b071c3acb55e6fd6303f0d8",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q1_top_0-30"
+    }
+  ],
+  "arithmetic": false,
+  "arithmetic_sha256": null,
+  "score": "per-item scale-aware T-MRA; invalid parses score zero over all items",
+  "code_sha256": {
+    "a100/eval_controls.py": "8edf5ff2988bf27de370628728713d83109214dbaac475469c5fe91d44f702bf",
+    "a100/model_families.py": "91ae2d0d6010d41f396cae4d3e4922a1d5cbbcb7ab08f19bd90f73bc409784e8",
+    "a100/config.py": "fe86fe33ebb34fd2fdf731518d5216f03858286017668dc2c9d1d45fc4e1792c",
+    "eval/run_bench.py": "d32de2cde55e99d1a78e6d9c22eec1f6dd9f994af671544c45a596ace4134c5d"
+  },
+  "adapter_sha256": "f960a3fed0142e303f4a15013a04c608284ba09c0fc1f9189a0fda33dfe63242",
+  "runtime": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "gpu": {
+    "name": "NVIDIA A100-PCIE-40GB",
+    "memory_used_mib": 9153,
+    "memory_total_mib": 40960,
+    "compute_processes": 1
+  },
+  "loader": {
+    "model_family": "pixtral",
+    "precision": "nf4",
+    "generation_suffix": "\nGive ONLY the final answer in the required format. Do not explain.",
+    "max_new_tokens": 128,
+    "do_sample": false,
+    "loader": "a100.eval_controls.build_infer",
+    "processor_policy": {
+      "size": {
+        "longest_edge": 512
+      }
+    },
+    "processor_observed": {
+      "size": {
+        "height": null,
+        "width": null,
+        "longest_edge": 512,
+        "shortest_edge": null,
+        "max_height": null,
+        "max_width": null
+      },
+      "do_resize": true,
+      "patch_size": {
+        "height": 16,
+        "width": 16
+      }
+    },
+    "dtype": "torch.bfloat16"
+  },
+  "started_at": "2026-09-28T13:47:35.163702+00:00"
+}

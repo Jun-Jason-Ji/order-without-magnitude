@@ -1,0 +1,38 @@
+{
+ "speed": {
+  "n_targets": 280,
+  "prefix_greedy": 110,
+  "mode": 90.0,
+  "prefix_greedy_fine": 109,
+  "share_at_prefix_greedy": {
+   "s42": 0.5928571428571429,
+   "s43": 0.9928571428571429,
+   "s44": 0.9571428571428572,
+   "fine": 0.0
+  },
+  "distinct_answers": {
+   "s42": 2,
+   "s43": 2,
+   "s44": 3,
+   "fine": 3
+  }
+ },
+ "path": {
+  "n_targets": 280,
+  "prefix_greedy": 140,
+  "mode": 220.0,
+  "prefix_greedy_fine": 140,
+  "share_at_prefix_greedy": {
+   "s42": 0.2392857142857143,
+   "s43": 0.02142857142857143,
+   "s44": 0.5178571428571429,
+   "fine": 0.04642857142857143
+  },
+  "distinct_answers": {
+   "s42": 8,
+   "s43": 6,
+   "s44": 5,
+   "fine": 10
+  }
+ }
+}

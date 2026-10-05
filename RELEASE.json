@@ -1,7 +1,11 @@
 {
-  "version": "1.1.0",
-  "doi": "10.5281/zenodo.22731710",
-  "scope": "corrected code and aggregate results",
-  "historical_doi": "10.5281/zenodo.22668000",
-  "associated_manuscript_sha256": "ef88004efebb311e35497aa3fff5959fdede8ff5ab85b5b6bb314ae9227dfe78"
+  "version": "2.0.0",
+  "concept_doi": "10.5281/zenodo.22667999",
+  "version_doi": "10.5281/zenodo.23171323",
+  "previous_version_doi": "10.5281/zenodo.22731710",
+  "scope": "code, preregistered protocols and aggregate results",
+  "repository": "https://github.com/Jun-Jason-Ji/order-without-magnitude",
+  "associated_manuscript": "Order without Magnitude: Single-Unit Fine-Tuning Can Make Vision-Language Models Rank Motion but Ignore the Requested Unit",
+  "associated_manuscript_sha256": "78881bddb0513d607588a5076240136814744b0db72b4ffda90ec408f9fcc6a7",
+  "built_utc": "2026-10-05T20:23:38+00:00"
 }

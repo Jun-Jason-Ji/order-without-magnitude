@@ -1,0 +1,293 @@
+{
+ "rules_sha256": "a259c9e07ecf2b095fcf67ae66113dbb8addcc53e7e91041cecfb725042bf2cb",
+ "backbones": {
+  "qwen25vl3b": {
+   "R1": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "replicates",
+     "44": "intermediate"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R2_E": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "LIMITED",
+     "44": "intermediate"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R2_T": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "intermediate",
+     "44": "intermediate"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R3": {
+    "per_seed": {
+     "42": "replicates",
+     "43": "replicates",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "holds at all three seeds"
+   },
+   "R4": {
+    "per_seed": {
+     "42": "LIMITED",
+     "43": "replicates",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "holds at two of three seeds"
+   },
+   "descriptive_only": false
+  },
+  "internvl3_2b": {
+   "R1": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "replicates",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "holds at two of three seeds"
+   },
+   "R2_E": {
+    "per_seed": {
+     "42": "LIMITED",
+     "43": "LIMITED",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R2_T": {
+    "per_seed": {
+     "42": "replicates",
+     "43": "LIMITED",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "holds at two of three seeds"
+   },
+   "R3": {
+    "per_seed": {
+     "42": "fails",
+     "43": "fails",
+     "44": "fails"
+    },
+    "n_seeds_judged": 3,
+    "label": "fails across seeds"
+   },
+   "R4": {
+    "per_seed": {
+     "42": "replicates",
+     "43": "replicates",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "holds at all three seeds"
+   },
+   "descriptive_only": false
+  },
+  "smol": {
+   "R1": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "intermediate",
+     "44": "LIMITED"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R2_E": {
+    "per_seed": {
+     "42": "LIMITED",
+     "43": "LIMITED",
+     "44": "LIMITED"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R2_T": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "LIMITED",
+     "44": "LIMITED"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R3": {
+    "per_seed": {
+     "42": "fails",
+     "43": "fails",
+     "44": "fails"
+    },
+    "n_seeds_judged": 3,
+    "label": "fails across seeds"
+   },
+   "R4": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "intermediate",
+     "44": "intermediate"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "descriptive_only": true
+  },
+  "pixtral_12b": {
+   "R1": {
+    "per_seed": {
+     "42": "replicates",
+     "43": "replicates",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "holds at all three seeds"
+   },
+   "R2_E": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "replicates",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "holds at two of three seeds"
+   },
+   "R2_T": {
+    "per_seed": {
+     "42": "LIMITED",
+     "43": "intermediate",
+     "44": "LIMITED"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R3": {
+    "per_seed": {
+     "42": "replicates",
+     "43": "fails",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "seed-dependent"
+   },
+   "R4": {
+    "per_seed": {
+     "42": "LIMITED",
+     "43": "replicates",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "holds at two of three seeds"
+   },
+   "descriptive_only": false
+  },
+  "idefics3_8b": {
+   "R1": {
+    "per_seed": {
+     "42": "LIMITED",
+     "43": "replicates",
+     "44": "intermediate"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R2_E": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "intermediate",
+     "44": "LIMITED"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R2_T": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "intermediate",
+     "44": "intermediate"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R3": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "replicates",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "holds at two of three seeds"
+   },
+   "R4": {
+    "per_seed": {
+     "42": "LIMITED",
+     "43": "replicates",
+     "44": "intermediate"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "descriptive_only": false
+  },
+  "gemma3_12b": {
+   "R1": {
+    "per_seed": {
+     "42": "fails",
+     "43": "intermediate",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "seed-dependent"
+   },
+   "R2_E": {
+    "per_seed": {
+     "42": "LIMITED",
+     "43": "LIMITED",
+     "44": "LIMITED"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R2_T": {
+    "per_seed": {
+     "42": "intermediate",
+     "43": "intermediate",
+     "44": "intermediate"
+    },
+    "n_seeds_judged": 3,
+    "label": "not established"
+   },
+   "R3": {
+    "per_seed": {
+     "42": "fails",
+     "43": "fails",
+     "44": "fails"
+    },
+    "n_seeds_judged": 3,
+    "label": "fails across seeds"
+   },
+   "R4": {
+    "per_seed": {
+     "42": "replicates",
+     "43": "replicates",
+     "44": "replicates"
+    },
+    "n_seeds_judged": 3,
+    "label": "holds at all three seeds"
+   },
+   "descriptive_only": false
+  }
+ }
+}

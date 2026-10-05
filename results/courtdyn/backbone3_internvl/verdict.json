@@ -1,0 +1,244 @@
+{
+ "preregistered_at_utc": "2026-09-28T02:33:17.327749+00:00",
+ "rules_sha256": "8408a84bd433285e8c623957fd268fb962ba565f8ecee87db37e39b09e110bd6",
+ "degeneracy_reading": "R1: metre OR centimetre arm <= 2 distinct; R2: centimetre arm; R4: metre arm (full) and rho defined in both",
+ "backbones": {
+  "internvl3_2b": {
+   "cells": {
+    "Q1_top_0-30/speed": {
+     "v3_E": {
+      "rho_m": 0.33196874796597503,
+      "distinct_m": 8,
+      "distinct_cm": 2,
+      "R": 2.2,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.21365271356663948
+     },
+     "mix_E": {
+      "rho_m": 0.26498605587630236,
+      "distinct_m": 6,
+      "distinct_cm": 2,
+      "R": 166.66666666666669,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.34120009421809483
+     },
+     "v3_T": {
+      "rho_m": 0.33343095971692677,
+      "distinct_m": 10,
+      "distinct_cm": 1,
+      "R": 1.8333333333333335,
+      "n_pairs": 140,
+      "posthoc_rho_cm": null
+     },
+     "mix_T": {
+      "rho_m": 0.3027452432085611,
+      "distinct_m": 6,
+      "distinct_cm": 2,
+      "R": 142.85714285714286,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.2634260831673432
+     },
+     "v3_static4": {
+      "n_common": 140,
+      "rho_full": 0.33196874796597503,
+      "rho_static4": 0.04375720961362996,
+      "distinct_full": 8,
+      "distinct_static4": 7,
+      "delta": 0.2882115383523451
+     },
+     "base_E": {
+      "rho_m": null,
+      "distinct_m": 1,
+      "distinct_cm": 1,
+      "R": 1.25,
+      "n_pairs": 140,
+      "posthoc_rho_cm": null
+     }
+    },
+    "Q1_top_0-30/path": {
+     "v3_E": {
+      "rho_m": 0.45484196132372534,
+      "distinct_m": 11,
+      "distinct_cm": 7,
+      "R": 1.0952380952380951,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.4030669887860583
+     },
+     "mix_E": {
+      "rho_m": 0.5007692117391358,
+      "distinct_m": 10,
+      "distinct_cm": 5,
+      "R": 92.3076923076923,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.4454982834142129
+     },
+     "v3_T": {
+      "rho_m": 0.5031082921445411,
+      "distinct_m": 10,
+      "distinct_cm": 27,
+      "R": 16.541666666666668,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.3665040267967829
+     },
+     "mix_T": {
+      "rho_m": 0.5061684008724482,
+      "distinct_m": 11,
+      "distinct_cm": 7,
+      "R": 95.65217391304348,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.532973403532977
+     },
+     "v3_static4": {
+      "n_common": 140,
+      "rho_full": 0.45484196132372534,
+      "rho_static4": 0.03252866942434386,
+      "distinct_full": 11,
+      "distinct_static4": 6,
+      "delta": 0.4223132918993815
+     },
+     "base_E": {
+      "rho_m": 0.08165552376974686,
+      "distinct_m": 3,
+      "distinct_cm": 7,
+      "R": 1.0,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.11822523319397586
+     }
+    },
+    "Q2_top_480-510/speed": {
+     "v3_E": {
+      "rho_m": 0.6794585966872095,
+      "distinct_m": 9,
+      "distinct_cm": 3,
+      "R": 3.666666666666667,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.041306991503204514
+     },
+     "mix_E": {
+      "rho_m": 0.5608126848733161,
+      "distinct_m": 6,
+      "distinct_cm": 2,
+      "R": 166.66666666666669,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.66236021850237
+     },
+     "v3_T": {
+      "rho_m": 0.7069735846325877,
+      "distinct_m": 9,
+      "distinct_cm": 2,
+      "R": 1.8333333333333335,
+      "n_pairs": 140,
+      "posthoc_rho_cm": -0.12907477664921604
+     },
+     "mix_T": {
+      "rho_m": 0.7267375751088171,
+      "distinct_m": 5,
+      "distinct_cm": 3,
+      "R": 142.85714285714286,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.7115291968792984
+     },
+     "v3_static4": {
+      "n_common": 140,
+      "rho_full": 0.6794585966872095,
+      "rho_static4": 0.4202166606095185,
+      "distinct_full": 9,
+      "distinct_static4": 6,
+      "delta": 0.259241936077691
+     },
+     "base_E": {
+      "rho_m": null,
+      "distinct_m": 1,
+      "distinct_cm": 1,
+      "R": 1.25,
+      "n_pairs": 140,
+      "posthoc_rho_cm": null
+     }
+    },
+    "Q2_top_480-510/path": {
+     "v3_E": {
+      "rho_m": 0.7111740390312561,
+      "distinct_m": 11,
+      "distinct_cm": 6,
+      "R": 1.2,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.47539021592112735
+     },
+     "mix_E": {
+      "rho_m": 0.7300961356696491,
+      "distinct_m": 11,
+      "distinct_cm": 5,
+      "R": 99.99999999999999,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.6518264673332421
+     },
+     "v3_T": {
+      "rho_m": 0.7473494654608531,
+      "distinct_m": 11,
+      "distinct_cm": 28,
+      "R": 17.0,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.6556112462473856
+     },
+     "mix_T": {
+      "rho_m": 0.7194031149862651,
+      "distinct_m": 10,
+      "distinct_cm": 7,
+      "R": 99.99999999999999,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.7311409444610683
+     },
+     "v3_static4": {
+      "n_common": 140,
+      "rho_full": 0.7111740390312561,
+      "rho_static4": 0.35985272432550924,
+      "distinct_full": 11,
+      "distinct_static4": 6,
+      "delta": 0.35132131470574685
+     },
+     "base_E": {
+      "rho_m": 0.3384453632322,
+      "distinct_m": 4,
+      "distinct_cm": 7,
+      "R": 1.142857142857143,
+      "n_pairs": 140,
+      "posthoc_rho_cm": 0.1275729169848109
+     }
+    }
+   },
+   "R1": "intermediate",
+   "R1_live": 3,
+   "R2_E": "LIMITED",
+   "R2_E_live": 2,
+   "R2_T": "replicates",
+   "R2_T_live": 3,
+   "R4_defined": 4,
+   "R4": "replicates",
+   "R3": {
+    "n_diagnostic": 246,
+    "accuracy": {
+     "base": 0.6422764227642277,
+     "v3": 0.7195121951219512,
+     "mixunit": 0.508130081300813
+    },
+    "v3": {
+     "only_base_correct": 15,
+     "only_arm_correct": 34,
+     "mcnemar_p": 0.009399241523873059,
+     "below_base": false
+    },
+    "mixunit": {
+     "only_base_correct": 61,
+     "only_arm_correct": 28,
+     "mcnemar_p": 0.0006102590502807981,
+     "below_base": true
+    },
+    "verdict": "fails"
+   },
+   "k_star": 2,
+   "degenerate_at_cap": false
+  }
+ },
+ "round1_rules_sha256": "42ed2ead18d80a34bf120fd4149327e69bd79e0fde793a3cd3fb07637505a907",
+ "r2_amendment": "R2 live cell counts toward replicates only if R >= 10 AND rho(cm answers, reference) >= 0.30"
+}

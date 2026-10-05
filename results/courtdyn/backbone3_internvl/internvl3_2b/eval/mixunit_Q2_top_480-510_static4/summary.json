@@ -1,0 +1,28 @@
+{
+  "m_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 38.785714285714285,
+      "tmra_parsed": 38.785714285714285,
+      "spearman": 0.12266348113435514,
+      "n_distinct": 6,
+      "prediction_median": 0.6,
+      "reference_median": 2.309993371986738,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 44.142857142857146,
+      "tmra_parsed": 44.142857142857146,
+      "spearman": 0.1838112830829902,
+      "n_distinct": 4,
+      "prediction_median": 0.3,
+      "reference_median": 1.0656378356713443,
+      "degenerate": false
+    }
+  }
+}

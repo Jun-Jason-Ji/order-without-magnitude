@@ -1,0 +1,524 @@
+[
+ {
+  "name": "SNGS-021",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Kick-off",
+  "camera_motion_px_median": 83.07725143432617,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-022",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Foul",
+  "camera_motion_px_median": 174.7889404296875,
+  "windows_measured": 28,
+  "frames_with_H": 736
+ },
+ {
+  "name": "SNGS-023",
+  "game_id": "2",
+  "visibility": "not shown",
+  "action": "Offside",
+  "camera_motion_px_median": 22.283784866333008,
+  "windows_measured": 27,
+  "frames_with_H": 749
+ },
+ {
+  "name": "SNGS-024",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Clearance",
+  "camera_motion_px_median": 317.43804931640625,
+  "windows_measured": 21,
+  "frames_with_H": 593
+ },
+ {
+  "name": "SNGS-025",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Corner",
+  "camera_motion_px_median": 111.11448669433594,
+  "windows_measured": 28,
+  "frames_with_H": 746
+ },
+ {
+  "name": "SNGS-026",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Shots on target",
+  "camera_motion_px_median": 168.94239044189453,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-027",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Direct free-kick",
+  "camera_motion_px_median": 88.68108367919922,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-028",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Shots off target",
+  "camera_motion_px_median": 205.8061752319336,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-029",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Yellow card",
+  "camera_motion_px_median": 124.53477096557617,
+  "windows_measured": 24,
+  "frames_with_H": 640
+ },
+ {
+  "name": "SNGS-030",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Direct free-kick",
+  "camera_motion_px_median": 28.754640579223633,
+  "windows_measured": 25,
+  "frames_with_H": 660
+ },
+ {
+  "name": "SNGS-031",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Shots off target",
+  "camera_motion_px_median": 95.56866836547852,
+  "windows_measured": 28,
+  "frames_with_H": 748
+ },
+ {
+  "name": "SNGS-032",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Clearance",
+  "camera_motion_px_median": 288.28753662109375,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-033",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Foul",
+  "camera_motion_px_median": 132.89813232421875,
+  "windows_measured": 15,
+  "frames_with_H": 462
+ },
+ {
+  "name": "SNGS-034",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Goal",
+  "camera_motion_px_median": 20.972745895385742,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-035",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Kick-off",
+  "camera_motion_px_median": 50.32010078430176,
+  "windows_measured": 14,
+  "frames_with_H": 376
+ },
+ {
+  "name": "SNGS-036",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Substitution",
+  "camera_motion_px_median": 27.221813201904297,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-037",
+  "game_id": "2",
+  "visibility": "visible",
+  "action": "Shots on target",
+  "camera_motion_px_median": 157.552978515625,
+  "windows_measured": 27,
+  "frames_with_H": 745
+ },
+ {
+  "name": "SNGS-038",
+  "game_id": "2",
+  "visibility": "not shown",
+  "action": "Offside",
+  "camera_motion_px_median": 22.672344207763672,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-039",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Shots off target",
+  "camera_motion_px_median": 88.61930465698242,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-040",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Corner",
+  "camera_motion_px_median": 156.65081024169922,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-041",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Clearance",
+  "camera_motion_px_median": 110.89655303955078,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-042",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Direct free-kick",
+  "camera_motion_px_median": 15.827902793884277,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-043",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Goal",
+  "camera_motion_px_median": 167.88807678222656,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-044",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Yellow card",
+  "camera_motion_px_median": 63.36242866516113,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-045",
+  "game_id": "3",
+  "visibility": "not shown",
+  "action": "Offside",
+  "camera_motion_px_median": 261.51629638671875,
+  "windows_measured": 22,
+  "frames_with_H": 591
+ },
+ {
+  "name": "SNGS-046",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Foul",
+  "camera_motion_px_median": 146.62660217285156,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-047",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Goal",
+  "camera_motion_px_median": 114.41436767578125,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-048",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Kick-off",
+  "camera_motion_px_median": 58.44735908508301,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-049",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Kick-off",
+  "camera_motion_px_median": 57.107269287109375,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-050",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Corner",
+  "camera_motion_px_median": 68.30662155151367,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-051",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Clearance",
+  "camera_motion_px_median": 68.36909294128418,
+  "windows_measured": 20,
+  "frames_with_H": 554
+ },
+ {
+  "name": "SNGS-052",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Shots off target",
+  "camera_motion_px_median": 122.09570693969727,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-053",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Offside",
+  "camera_motion_px_median": 42.64541816711426,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-054",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Goal",
+  "camera_motion_px_median": 146.11209106445312,
+  "windows_measured": 23,
+  "frames_with_H": 666
+ },
+ {
+  "name": "SNGS-055",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Foul",
+  "camera_motion_px_median": 164.68868255615234,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-056",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Goal",
+  "camera_motion_px_median": 0.6641667485237122,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-057",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Direct free-kick",
+  "camera_motion_px_median": 163.8312225341797,
+  "windows_measured": 28,
+  "frames_with_H": 748
+ },
+ {
+  "name": "SNGS-058",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Goal",
+  "camera_motion_px_median": 173.3257293701172,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-059",
+  "game_id": "3",
+  "visibility": "visible",
+  "action": "Yellow card",
+  "camera_motion_px_median": 122.47153854370117,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-078",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Clearance",
+  "camera_motion_px_median": 187.8783187866211,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-079",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Corner",
+  "camera_motion_px_median": 244.12884521484375,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-080",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Yellow card",
+  "camera_motion_px_median": 207.29159545898438,
+  "windows_measured": 21,
+  "frames_with_H": 582
+ },
+ {
+  "name": "SNGS-081",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Foul",
+  "camera_motion_px_median": 194.93759155273438,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-082",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Shots on target",
+  "camera_motion_px_median": 94.67655181884766,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-083",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Shots off target",
+  "camera_motion_px_median": 120.39411926269531,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-084",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Goal",
+  "camera_motion_px_median": 233.70342254638672,
+  "windows_measured": 28,
+  "frames_with_H": 747
+ },
+ {
+  "name": "SNGS-085",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Kick-off",
+  "camera_motion_px_median": 194.69589233398438,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-086",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Corner",
+  "camera_motion_px_median": 110.51180648803711,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-087",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Goal",
+  "camera_motion_px_median": 154.66205596923828,
+  "windows_measured": 28,
+  "frames_with_H": 737
+ },
+ {
+  "name": "SNGS-088",
+  "game_id": "5",
+  "visibility": "not shown",
+  "action": "Offside",
+  "camera_motion_px_median": 124.68124389648438,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-089",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Yellow card",
+  "camera_motion_px_median": 148.3297576904297,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-090",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Shots on target",
+  "camera_motion_px_median": 78.43495178222656,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-091",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Clearance",
+  "camera_motion_px_median": 81.68824005126953,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-092",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Foul",
+  "camera_motion_px_median": 166.28236389160156,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-093",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Direct free-kick",
+  "camera_motion_px_median": 124.23685455322266,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-094",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Goal",
+  "camera_motion_px_median": 162.14913177490234,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ },
+ {
+  "name": "SNGS-095",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Kick-off",
+  "camera_motion_px_median": 100.36327362060547,
+  "windows_measured": 22,
+  "frames_with_H": 646
+ },
+ {
+  "name": "SNGS-096",
+  "game_id": "5",
+  "visibility": "visible",
+  "action": "Substitution",
+  "camera_motion_px_median": 24.37635612487793,
+  "windows_measured": 28,
+  "frames_with_H": 750
+ }
+]

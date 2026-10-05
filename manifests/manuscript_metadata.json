@@ -1,5 +1,5 @@
 {
-  "title": "Rank Agreement and Unit Responsiveness in a Fine-Tuned Vision–Language Model: A CourtDyn Case Study",
+  "title": "Order without Magnitude: Single-Unit Fine-Tuning Can Make Vision-Language Models Rank Motion but Ignore the Requested Unit",
   "authors": [
     {
       "name": "Jun Ji",
@@ -11,8 +11,15 @@
     {
       "name": "Bowen Tan",
       "orcid": "0009-0007-0554-9261",
-      "affiliation": "The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China",
+      "affiliation": "Department of Computer Science and Engineering, The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China",
       "email": "btanab@connect.ust.hk",
+      "corresponding": false
+    },
+    {
+      "name": "Yizhou Zhao",
+      "orcid": "0009-0004-7515-6322",
+      "affiliation": "Renmin University of China, Beijing 100872, China",
+      "email": "yizhou-zhao@ruc.edu.cn",
       "corresponding": false
     },
     {
@@ -37,6 +44,7 @@
       "corresponding": true
     }
   ],
-  "source": "paper2/manuscript/main.tex",
-  "source_sha256": "ef88004efebb311e35497aa3fff5959fdede8ff5ab85b5b6bb314ae9227dfe78"
+  "source": "paper2/manuscript_v2/main.tex",
+  "source_sha256": "78881bddb0513d607588a5076240136814744b0db72b4ffda90ec408f9fcc6a7",
+  "supplementary_sha256": "8b67cfd7fa172cef5e9ccb442e7d6416a04bf7f1f39ee84286b946d9d927424c"
 }

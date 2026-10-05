@@ -1,0 +1,18 @@
+{
+  "m_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 29.357142857142858,
+      "tmra_parsed": 29.357142857142858
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 137,
+      "parse_rate": 0.9785714285714285,
+      "tmra_all_items": 26.571428571428573,
+      "tmra_parsed": 27.153284671532848
+    }
+  }
+}

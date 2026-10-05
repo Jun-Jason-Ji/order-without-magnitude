@@ -1,10 +1,10 @@
 cff-version: 1.2.0
-message: "Please cite this version for the corrected code and P1/P2 aggregate results."
+message: "Please cite the concept DOI (all versions) or this version."
 type: software
-title: "CourtDyn: corrected code and P1/P2 aggregate results"
-version: "1.1.0"
+title: "CourtDyn: code, protocols and aggregate results for Order without Magnitude (v2)"
+version: "2.0.0"
 abstract: "Source-code and aggregate-only release. No model weights or source-derived individual records are supplied. See NOTICE.md."
-doi: "10.5281/zenodo.22731710"
+doi: "10.5281/zenodo.23171323"
 repository-code: "https://github.com/Jun-Jason-Ji/order-without-magnitude"
 license: MIT
 authors:
@@ -15,7 +15,11 @@ authors:
   - family-names: "Tan"
     given-names: "Bowen"
     orcid: "https://orcid.org/0009-0007-0554-9261"
-    affiliation: "The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China"
+    affiliation: "Department of Computer Science and Engineering, The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China"
+  - family-names: "Zhao"
+    given-names: "Yizhou"
+    orcid: "https://orcid.org/0009-0004-7515-6322"
+    affiliation: "Renmin University of China, Beijing 100872, China"
   - family-names: "Li"
     given-names: "Yi"
     orcid: "https://orcid.org/0000-0002-4185-3152"
@@ -30,7 +34,7 @@ authors:
     affiliation: "College of Computer Science and Technology, Qingdao University, 308 Ningxia Road, Qingdao 266071, China"
 preferred-citation:
   type: article
-  title: "Rank Agreement and Unit Responsiveness in a Fine-Tuned Vision–Language Model: A CourtDyn Case Study"
+  title: "Order without Magnitude: Single-Unit Fine-Tuning Can Make Vision–Language Models Rank Motion but Ignore the Requested Unit"
   authors:
     - family-names: "Ji"
       given-names: "Jun"
@@ -39,7 +43,11 @@ preferred-citation:
     - family-names: "Tan"
       given-names: "Bowen"
       orcid: "https://orcid.org/0009-0007-0554-9261"
-      affiliation: "The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China"
+      affiliation: "Department of Computer Science and Engineering, The Hong Kong University of Science and Technology, Clear Water Bay, Kowloon, Hong Kong SAR, China"
+    - family-names: "Zhao"
+      given-names: "Yizhou"
+      orcid: "https://orcid.org/0009-0004-7515-6322"
+      affiliation: "Renmin University of China, Beijing 100872, China"
     - family-names: "Li"
       given-names: "Yi"
       orcid: "https://orcid.org/0000-0002-4185-3152"

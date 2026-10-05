@@ -1,0 +1,38 @@
+{
+ "backbone": "internvl3_2b",
+ "k_star": 2,
+ "degenerate_at_cap": false,
+ "rule": "parse >= 0.9 and >= 5 distinct per family on dev",
+ "trail": [
+  {
+   "epoch": 1,
+   "passes": false,
+   "families": {
+    "dynamics_path_player": {
+     "parse_rate": 1.0,
+     "n_distinct": 9
+    },
+    "dynamics_speed_player": {
+     "parse_rate": 1.0,
+     "n_distinct": 2
+    }
+   }
+  },
+  {
+   "epoch": 2,
+   "passes": true,
+   "families": {
+    "dynamics_path_player": {
+     "parse_rate": 1.0,
+     "n_distinct": 10
+    },
+    "dynamics_speed_player": {
+     "parse_rate": 1.0,
+     "n_distinct": 8
+    }
+   }
+  }
+ ],
+ "decided_at_utc": "2026-09-28T04:00:56.539105+00:00",
+ "test_cells_evaluated_before_decision": false
+}

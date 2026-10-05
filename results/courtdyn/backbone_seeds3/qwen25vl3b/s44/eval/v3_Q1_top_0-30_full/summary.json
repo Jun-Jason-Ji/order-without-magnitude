@@ -1,0 +1,80 @@
+{
+  "m_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 44.142857142857146,
+      "tmra_parsed": 44.142857142857146,
+      "spearman": 0.27897605787589586,
+      "n_distinct": 4,
+      "prediction_median": 1.7,
+      "reference_median": 3.3147579899746997,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 52.57142857142857,
+      "tmra_parsed": 52.57142857142857,
+      "spearman": 0.343200777673621,
+      "n_distinct": 4,
+      "prediction_median": 0.7,
+      "reference_median": 1.547158115807437,
+      "degenerate": false
+    }
+  },
+  "cm_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 11.142857142857142,
+      "tmra_parsed": 11.142857142857142,
+      "spearman": 0.1212335646361375,
+      "n_distinct": 3,
+      "prediction_median": 1.7,
+      "reference_median": 331.47579899747,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 14.928571428571429,
+      "tmra_parsed": 14.928571428571429,
+      "spearman": 0.2394472894573264,
+      "n_distinct": 2,
+      "prediction_median": 0.7,
+      "reference_median": 154.71581158074372,
+      "degenerate": true
+    }
+  },
+  "px_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 14.642857142857142,
+      "tmra_parsed": 14.642857142857142,
+      "spearman": 0.241687669387253,
+      "n_distinct": 5,
+      "prediction_median": 1.7,
+      "reference_median": 88.46724576701753,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 17.0,
+      "tmra_parsed": 17.0,
+      "spearman": 0.29749072792607,
+      "n_distinct": 4,
+      "prediction_median": 1.7,
+      "reference_median": 42.23948467486589,
+      "degenerate": false
+    }
+  }
+}

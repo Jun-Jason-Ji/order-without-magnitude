@@ -1,0 +1,90 @@
+{
+  "protocol": "courtdyn-revision-controls-v1",
+  "seq": "Q2_top_480-510",
+  "arms": [
+    "m_height",
+    "cm_height",
+    "px_height"
+  ],
+  "frame_mode": "full",
+  "input_cells": [
+    {
+      "arm": "m_height",
+      "file": "Q2_top_480-510\\m_height.json",
+      "sha256": "5fbde08d7c365789bf8227b0e41c48c3d3933b22284f0901b80446550f124bca"
+    },
+    {
+      "arm": "cm_height",
+      "file": "Q2_top_480-510\\cm_height.json",
+      "sha256": "91216450cd42720965cd60541cc4375792613b11d87e1637050fc79c2cd04909"
+    },
+    {
+      "arm": "px_height",
+      "file": "Q2_top_480-510\\px_height.json",
+      "sha256": "e2738a87e784b26744df1fe3bd4b33f71e21125d0f665a9d6652f1b35ee959f0"
+    }
+  ],
+  "input_manifest_sha256": "5e006494d9ec7fe49e0173b744b62c53c9cba19b6d8ccc00e4e48d57f909ee6c",
+  "arithmetic": true,
+  "arithmetic_sha256": "0d790a000d6d48c4c7caf6ac249135d5f3ff93bfe32ad582490a43781d768ef1",
+  "model_path": "$HF_HUB\\models--Qwen--Qwen3.5-4B\\snapshots\\851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "adapter": "$REPO\\models\\courtdyn-revision-v1-eventholdout-s42",
+  "max_pixels": 200704,
+  "max_new_tokens": 128,
+  "load_4bit": true,
+  "decoding": "greedy",
+  "strict_parse": true,
+  "score": "per-item scale-aware T-MRA; invalid parses receive zero in all-item score",
+  "adapter_sha256": "e3138a50d27959f56aeee21006fce78ae64622609e04e367005aa52ab5e52257",
+  "adapter_config_sha256": "c2e8c2c4a5f1a83c6ff395d33f7055eaffc8279aef64deb1d5236afca87f0bd2",
+  "model_config_sha256": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+  "code_sha256": {
+    "tools/run_courtdyn_revision_controls.py": "07f3cb7bc6b4af450df5487bab43976fa67b685dc43a21273a00e4e1ce4f4ac6",
+    "eval/run_bench.py": "d32de2cde55e99d1a78e6d9c22eec1f6dd9f994af671544c45a596ace4134c5d"
+  },
+  "runtime": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "generation_suffix": "\nGive ONLY the final answer in the required format. Do not explain.",
+  "vram_cap_fraction": 0.93,
+  "training_protocol_sha256": "65071b6f623535d47f1680a5108aeda357e5642b7becea992b8cd97d04ac744a",
+  "training_protocol": {
+    "schema_version": "sft-training-protocol-v1",
+    "qa_source": "$REPO\\results\\courtdyn\\revision_controls_20260912\\training\\event_holdout_v1.json",
+    "qa_source_sha256": "ce2ada39fb194a5d68b56f163afb7a699366dba02339a67ab72cfa6baaf1dfd7",
+    "image_root": "$REPO\\data\\courtdyn",
+    "selected_samples": 1120,
+    "ordered_sample_sequence_sha256": "6db349b2490f8eadd0bf557f0d8c7bf4411c261891f3104a789ed0a31e09e96d",
+    "allow_drop_invalid": false,
+    "model_path": "$HF_HUB\\models--Qwen--Qwen3.5-4B\\snapshots\\851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "model_config": {
+      "config.json": {
+        "bytes": 3161,
+        "sha256": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670"
+      }
+    },
+    "model_family": "qwen_vl",
+    "processor_policy": {
+      "max_pixels": 200704
+    },
+    "init_adapter": null,
+    "init_adapter_files": {},
+    "init_adapter_validation": {},
+    "seed": 42,
+    "num_samples_request": 0,
+    "max_steps": -1,
+    "num_train_epochs": 1.0,
+    "learning_rate": 0.0001,
+    "gradient_accumulation_steps": 16,
+    "max_pixels": 200704,
+    "vision_lora": false,
+    "allow_base_init": true,
+    "budget_slice": "diagnostic",
+    "initialization_seed_applied_before_model_load": true,
+    "soccer_synloc_training_gate": false
+  }
+}

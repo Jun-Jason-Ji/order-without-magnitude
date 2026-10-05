@@ -1,0 +1,80 @@
+{
+  "plain_U1": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 23.214285714285715,
+      "tmra_parsed": 23.214285714285715,
+      "spearman": 0.3962666484969179,
+      "n_distinct": 8,
+      "prediction_median": 1.2,
+      "reference_median": 10.875190603828596,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 28.214285714285715,
+      "tmra_parsed": 28.214285714285715,
+      "spearman": 0.26145858016817297,
+      "n_distinct": 4,
+      "prediction_median": 1.1,
+      "reference_median": 5.569769216906773,
+      "degenerate": false
+    }
+  },
+  "plain_U2": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 16.642857142857142,
+      "tmra_parsed": 16.642857142857142,
+      "spearman": 0.4659123347620095,
+      "n_distinct": 5,
+      "prediction_median": 120.0,
+      "reference_median": 3314.7579899746997,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 26.785714285714285,
+      "tmra_parsed": 26.785714285714285,
+      "spearman": 0.3648497434273977,
+      "n_distinct": 6,
+      "prediction_median": 0.7,
+      "reference_median": 5.075978232665672,
+      "degenerate": false
+    }
+  },
+  "plain_pxK": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 35.42857142857143,
+      "tmra_parsed": 35.42857142857143,
+      "spearman": 0.4532150655469233,
+      "n_distinct": 4,
+      "prediction_median": 120.0,
+      "reference_median": 88.46724576701753,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 12.214285714285714,
+      "tmra_parsed": 12.214285714285714,
+      "spearman": null,
+      "n_distinct": 1,
+      "prediction_median": 120.0,
+      "reference_median": 42.23948467486589,
+      "degenerate": true
+    }
+  }
+}

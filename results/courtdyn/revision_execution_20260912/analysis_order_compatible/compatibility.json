@@ -1,0 +1,133 @@
+{
+  "schema": "courtdyn-adapter-order-compatibility-v1",
+  "generated_utc": "2026-09-12T16:44:07.538820+00:00",
+  "status": "PASS",
+  "execution_plan_sha256": "b927a3b3a61a7c9b0eb8e6ffd37e8615c444b3d467394fca3a666a45bd7eb430",
+  "evidence": {
+    "rule": "unique-seven-target-modules-same-set-only",
+    "labels": [
+      "eventholdout_v1_s42",
+      "eventholdout_v3_s42"
+    ],
+    "execution_plan_sha256": "b927a3b3a61a7c9b0eb8e6ffd37e8615c444b3d467394fca3a666a45bd7eb430",
+    "frozen_analyzer_sha256": "37a2d98eefea7043fcb467aa5a223fced2c4474bc323e5f9bf5a2e561da1f6ea",
+    "compatibility_tool_sha256": "f28672bf5087d57119f750e7b4d76d38471902f2bb472d802a06c210a80fa065",
+    "adapter_configs": {
+      "eventholdout_v1_s42": {
+        "path": "models/courtdyn-revision-v1-eventholdout-s42/adapter_config.json",
+        "sha256": "c2e8c2c4a5f1a83c6ff395d33f7055eaffc8279aef64deb1d5236afca87f0bd2",
+        "original_target_modules": [
+          "o_proj",
+          "down_proj",
+          "v_proj",
+          "k_proj",
+          "gate_proj",
+          "q_proj",
+          "up_proj"
+        ]
+      },
+      "eventholdout_v3_s42": {
+        "path": "models/courtdyn-revision-v3-eventholdout-s42/adapter_config.json",
+        "sha256": "c89eef577c0d5ce9db2f7f7d7084611f23b28d2ee34b01531234cbf46c7f27b4",
+        "original_target_modules": [
+          "down_proj",
+          "k_proj",
+          "o_proj",
+          "up_proj",
+          "gate_proj",
+          "v_proj",
+          "q_proj"
+        ]
+      }
+    },
+    "canonical_target_modules": [
+      "down_proj",
+      "gate_proj",
+      "k_proj",
+      "o_proj",
+      "q_proj",
+      "up_proj",
+      "v_proj"
+    ],
+    "peft_version": "0.20.0",
+    "peft_source_sha256": {
+      "tuners/lora/config.py": {
+        "sha256": "bd3048b5d2ce364a98720ff48fed638c5819110ce53e3264a530cb5a9803dc31",
+        "lines": [
+          915,
+          917
+        ],
+        "observation": "LoraConfig converts a target_modules list to a set."
+      },
+      "config.py": {
+        "sha256": "9e1d9dd0979dc55112c4c39e0e9cd729bb444bd270697c620f52bf5d83b16ad7",
+        "lines": [
+          149,
+          153
+        ],
+        "observation": "save_pretrained converts sets to lists without sorting."
+      },
+      "tuners/tuners_utils.py": {
+        "sha256": "2f8f343737348014b71d775dda15a06dbe34df4190ed20afba8ad58ba471a5cf",
+        "lines": [
+          1927,
+          1933
+        ],
+        "observation": "Target matching uses membership or any matching suffix."
+      }
+    },
+    "scope": "Temporary configuration comparison only; raw inputs, recorded configuration order, source hashes, statistics, missing-data decisions and all other gates are unchanged."
+  },
+  "original_failure": {
+    "path": "$REPO\\results\\courtdyn\\revision_execution_20260912\\analysis\\analysis.json",
+    "sha256": "68ddb36214043fe7641d205b83f740364bc39d19d57770f23da2d7df845990ed",
+    "status": "FAIL",
+    "errors": [
+      "ValueError: P2 actual adapter configurations differ"
+    ]
+  },
+  "analysis_sha256": "70cbe927b1db5a4534e33cd03a72e9d593ac9c4b3bc083d9a6dbffd610ab8520",
+  "summary_sha256": "ef63119f4a60c1907b4260da826dbb98e0e951ce0f8853a689aaa93a6ddadd28",
+  "state_sha256_at_analysis": "7bb35162847d704d47476a020fd94233efd8e09c820aecbf821b6306a10e9a86",
+  "state_mutated": false,
+  "comparison_events": [
+    {
+      "labels": [
+        "eventholdout_v1_s42",
+        "eventholdout_v3_s42"
+      ],
+      "rule": "unique-seven-target-modules-same-set-only",
+      "original_target_modules": [
+        [
+          "o_proj",
+          "down_proj",
+          "v_proj",
+          "k_proj",
+          "gate_proj",
+          "q_proj",
+          "up_proj"
+        ],
+        [
+          "down_proj",
+          "k_proj",
+          "o_proj",
+          "up_proj",
+          "gate_proj",
+          "v_proj",
+          "q_proj"
+        ]
+      ],
+      "canonical_target_modules": [
+        "down_proj",
+        "gate_proj",
+        "k_proj",
+        "o_proj",
+        "q_proj",
+        "up_proj",
+        "v_proj"
+      ],
+      "original_method_returned": true,
+      "original_objects_restored": true
+    }
+  ]
+}

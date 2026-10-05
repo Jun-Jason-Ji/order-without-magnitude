@@ -1,0 +1,38 @@
+{
+ "backbone": "pixtral_12b",
+ "k_star": 2,
+ "degenerate_at_cap": false,
+ "rule": "parse >= 0.9 and >= 5 distinct per family on dev",
+ "trail": [
+  {
+   "epoch": 1,
+   "passes": false,
+   "families": {
+    "dynamics_path_player": {
+     "parse_rate": 1.0,
+     "n_distinct": 4
+    },
+    "dynamics_speed_player": {
+     "parse_rate": 1.0,
+     "n_distinct": 1
+    }
+   }
+  },
+  {
+   "epoch": 2,
+   "passes": true,
+   "families": {
+    "dynamics_path_player": {
+     "parse_rate": 1.0,
+     "n_distinct": 5
+    },
+    "dynamics_speed_player": {
+     "parse_rate": 1.0,
+     "n_distinct": 5
+    }
+   }
+  }
+ ],
+ "decided_at_utc": "2026-09-28T10:47:18.675598+00:00",
+ "test_cells_evaluated_before_decision": false
+}

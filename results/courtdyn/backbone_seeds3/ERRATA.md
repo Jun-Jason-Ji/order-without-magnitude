@@ -1,0 +1,36 @@
+# ERRATA to PREREGISTRATION.json (rules sha256 a259c9e0...)
+
+## 1. Training mechanism of the metre-only adapter (recorded 2026-09-29 16:15 UTC, before any local seeds3 stage started; the local queue was still waiting for rtc-rep)
+
+At seed 42 the LOCAL backbones (Qwen2.5-VL-3B, SmolVLM2-2.2B, InternVL3-2B) obtained their step-70k metre-only adapter by training one epoch at a time and resuming (Trainer resume_from_checkpoint restoring optimizer, scheduler, RNG and data position), because the dev stopping rule was evaluated after each epoch. The seeds-43/44 runs train to step 70k in one uninterrupted run under the same 280-step cosine schedule, which is how every mixed-unit adapter and every A100 adapter (seeds 42 and 43) was trained. The optimisation is the same; only checkpoint-and-resume boundaries differ. Disclosed here; no decision depends on it.
+
+## 2. Output layout
+A100 runs write results/courtdyn/backbone_seeds3/s<seed>/<key>/, local runs <key>/s<seed>/. tools/analyze_backbone_replication.py --round 6 reads both (commit f341bde). Cosmetic.
+
+## 3. Machine assignment of the local backbones (recorded 2026-09-30 10:32 UTC, before any Qwen2.5-VL-3B or SmolVLM2-2.2B seed-43/44 stage has run)
+
+Reason: the local laptop will only be able to run a few hours a day from now on (power). Assignment fixed now:
+- InternVL3-2B seeds 43 and 44 stay on the local RTX 5060 Laptop 8 GB (seed 43 complete; seed 44 in progress at the time of writing, train_internvl3_2b_mixunit_s44 running). They remain the record.
+- Qwen2.5-VL-3B and SmolVLM2-2.2B seeds 43 and 44 move to the A100-40GB (the machine of the Pixtral-12B / Gemma3-12B / Idefics3-8B runs), with the same frozen code (train/train_qlora.py via train_qlora_epochs.py under the durable wrapper train/train_durable.py, eval through the frozen NF4 loader), the same pools, recipe, NF4 evaluation, the same fixed k = 4 (280 steps) and unadapted-backbone cells reused from seed 42.
+- Their seed-42 cells were run locally, so for these two backbones seed variation is confounded with hardware (NF4 kernels / GPU numerics); this is stated as a limitation wherever their three-seed labels are reported. (For InternVL3-2B all three seeds are local; for the A100 backbones all three seeds are on the A100.)
+- The base-model snapshot used on the A100 is whatever the T36 sweep downloaded there; its revision hash is recorded in each stopping.json and reported next to the local seed-42 snapshot (Qwen2.5-VL-3B local 66285546...).
+- Any local run of these four groups (qwen25vl3b s43/s44, smol s43/s44), partial or complete, is discarded; the A100 run is the record. The local queue is stopped after InternVL3-2B seed 44 (tools/seeds3_local_stop_after_internvl.sh).
+No decision rule changes. Written before any of the moved stages exists on either machine.
+
+## 4. Qwen2.5-VL-3B and SmolVLM2-2.2B seeds 43/44 return to the local machine (recorded 2026-09-30 ~11:10 PDT / 18:10 UTC, before any of these stages ran anywhere)
+
+The A100 container lost its GPU on 2026-09-30 (~10:00 PDT; `No CUDA GPUs are available`), with the three-seed run at Pixtral-12B seed 44 stage 4/17 and the migrated groups of ERRATA 3 not started. The user decided to run those four groups on the local RTX 5060 after all (about 10 GPU-hours per day available), i.e. on the machine of their seed-42 runs, which removes the hardware confound stated in ERRATA 3. The A100 job `run_seeds3_local.sh` is cancelled and must not be resumed; if the A100 returns, `resume_seeds3.sh` (Pixtral seed 44, Idefics3-8B seeds 43/44) and the UnitDyn pilot are resumed, nothing else. The local queue continues from InternVL3-2B seed 44 into Qwen2.5-VL-3B 43 -> 44 -> SmolVLM2 43 -> 44 unchanged (tools/run_backbone_seeds3_local.py, launched 2026-09-29); the stop-watcher of ERRATA 3 was removed before any of these stages started. Submission plan: paper 2 is written with the seeds complete at submission; the preregistration appendix states which backbones have three, two or one seed, without claiming more.
+
+## 5. Checkpoint interval of the remaining local training stages (recorded 2026-10-02 09:40 PDT / 16:40 UTC)
+
+The laptop now hibernates and loses power frequently and its charger power-caps the GPU (about 30 W, steps of 100 s or more). Hibernation drops the CUDA context, so a training stage interrupted mid-way restarts from its last checkpoint: `train_qwen25vl3b_v3_s43` attempt 1 died at step 139/280, one step before the step-140 save, losing about 2.5 h; the InternVL3-2B seed-44 mixed-unit training lost two intervals the same way (both stages later completed on retry from their checkpoint-70). For the remaining training stages (Qwen2.5-VL-3B and SmolVLM2-2.2B, seeds 43 and 44, all eight adapters) `--save_steps` is lowered from 70 to 10 (`tools/run_backbone_seeds3_local.py`, `SAVE_STEPS`). Only the checkpoint frequency changes: the data order, learning-rate schedule, number of steps (4 epochs, stop at step 280 = 70 x k, k = 4 fixed from seed 42), and the evaluated checkpoint (`checkpoint-280`) are the same; a resumed run restores the optimizer, scheduler and RNG state of the checkpoint (transformers `resume_from_checkpoint`). `train_qwen25vl3b_v3_s43` is restarted from its existing checkpoint-70 under the new interval (its steps 71-78 of the second attempt, about 10 minutes, are redone). Intermediate checkpoints may be deleted after the step-280 checkpoint exists. No decision rule changes.
+
+
+## 6. SmolVLM2-2.2B seeds 43/44 move to the A100 again (recorded 2026-10-05 05:53 UTC / 2026-10-04 22:53 PDT, before any SmolVLM2-2.2B seed-43/44 stage has run on either machine)
+
+The A100 container has its GPU back. The laptop has about 34 local stages left after Qwen2.5-VL-3B seed 44, and it keeps losing time to power loss and reboots. The user decided to split the remaining work by whole groups:
+- Qwen2.5-VL-3B seed 44 stays local: it was already running, with train_qwen25vl3b_v3_s44 complete and the mixed-unit training in progress. Seeds 43 and 44 of Qwen2.5-VL-3B are therefore local, like its seed 42, so this backbone has no hardware confound.
+- SmolVLM2-2.2B seeds 43 and 44 run on the A100-40GB with the ERRATA 3 runner (`a100/seeds3_local_runner.py --part smol_s43|smol_s44`, from bundle `dist/a100_seeds3_local_20260930.tar.gz`, sha 6c9a3128...). The code, pools, recipe, NF4 evaluation, fixed k = 4 (280 steps, checkpoint-280 evaluated) and the base cells reused from seed 42 are unchanged. The A100 trainer saves every 10 steps, which matches ERRATA 5.
+- For SmolVLM2-2.2B, the hardware confound described in ERRATA 3 applies again: seed 42 ran locally and seeds 43/44 run on the A100. This is stated as a limitation wherever its three-seed label is reported. The A100 snapshot revision is recorded in each stopping.json.
+- The local queue is stopped as soon as its first SmolVLM2 stage starts (`tools/seeds3_local_stop_after_qwen25.sh`). Any local SmolVLM2 seed-43/44 output is discarded. On the A100, `run_seeds3_local.sh` is NOT used, because it would also run the Qwen2.5-VL-3B parts. Only the two smol parts run, followed by `pack_seeds3_local.sh`. Pixtral-12B seed 44, Idefics3-8B seeds 43/44 (`resume_seeds3.sh`) and the UnitDyn pilot run after them.
+No decision rule changes.

@@ -1,0 +1,95 @@
+{
+  "protocol": "courtdyn-revision-controls-v1+a100-v1",
+  "label": "mixunit",
+  "seq": "Q2_top_480-510",
+  "arms": [
+    "m_height",
+    "cm_height",
+    "px_height"
+  ],
+  "frame_mode": "full",
+  "model_path": "$A100/base_models/hf/hub/models--mistral-experimental--pixtral-12b/snapshots/c2756cbbb9422eba9f6c5c439a214b0392dfc998",
+  "adapter": "$A100/models/courtdyn-pixtral_12b-mixunit-r2ep4-s43/checkpoint-140",
+  "precision": "nf4",
+  "max_pixels": 200704,
+  "max_new_tokens": 128,
+  "decoding": "greedy",
+  "strict_parse": true,
+  "input_manifest_sha256": "5e006494d9ec7fe49e0173b744b62c53c9cba19b6d8ccc00e4e48d57f909ee6c",
+  "input_cells": [
+    {
+      "arm": "m_height",
+      "file": "Q2_top_480-510\\m_height.json",
+      "sha256": "5fbde08d7c365789bf8227b0e41c48c3d3933b22284f0901b80446550f124bca",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q2_top_480-510"
+    },
+    {
+      "arm": "cm_height",
+      "file": "Q2_top_480-510\\cm_height.json",
+      "sha256": "91216450cd42720965cd60541cc4375792613b11d87e1637050fc79c2cd04909",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q2_top_480-510"
+    },
+    {
+      "arm": "px_height",
+      "file": "Q2_top_480-510\\px_height.json",
+      "sha256": "e2738a87e784b26744df1fe3bd4b33f71e21125d0f665a9d6652f1b35ee959f0",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q2_top_480-510"
+    }
+  ],
+  "arithmetic": false,
+  "arithmetic_sha256": null,
+  "score": "per-item scale-aware T-MRA; invalid parses score zero over all items",
+  "code_sha256": {
+    "a100/eval_controls.py": "8edf5ff2988bf27de370628728713d83109214dbaac475469c5fe91d44f702bf",
+    "a100/model_families.py": "91ae2d0d6010d41f396cae4d3e4922a1d5cbbcb7ab08f19bd90f73bc409784e8",
+    "a100/config.py": "fe86fe33ebb34fd2fdf731518d5216f03858286017668dc2c9d1d45fc4e1792c",
+    "eval/run_bench.py": "d32de2cde55e99d1a78e6d9c22eec1f6dd9f994af671544c45a596ace4134c5d"
+  },
+  "adapter_sha256": "69ff892896ca227f50f0a9f0e95e6c8deb3821440df1adae5556e3c6cd47dbbf",
+  "runtime": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "gpu": {
+    "name": "NVIDIA A100-PCIE-40GB",
+    "memory_used_mib": 9153,
+    "memory_total_mib": 40960,
+    "compute_processes": 1
+  },
+  "loader": {
+    "model_family": "pixtral",
+    "precision": "nf4",
+    "generation_suffix": "\nGive ONLY the final answer in the required format. Do not explain.",
+    "max_new_tokens": 128,
+    "do_sample": false,
+    "loader": "a100.eval_controls.build_infer",
+    "processor_policy": {
+      "size": {
+        "longest_edge": 512
+      }
+    },
+    "processor_observed": {
+      "size": {
+        "height": null,
+        "width": null,
+        "longest_edge": 512,
+        "shortest_edge": null,
+        "max_height": null,
+        "max_width": null
+      },
+      "do_resize": true,
+      "patch_size": {
+        "height": 16,
+        "width": 16
+      }
+    },
+    "dtype": "torch.bfloat16"
+  },
+  "started_at": "2026-09-29T15:23:40.816806+00:00"
+}

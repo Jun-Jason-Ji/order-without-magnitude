@@ -1,0 +1,74 @@
+{
+  "protocol": "courtdyn-backbone2-r2-dev-v1+a100-v1",
+  "label": "v3_s44_step140",
+  "seq": "Q1_side_0-30",
+  "arms": [
+    "legacy_m"
+  ],
+  "frame_mode": "full",
+  "model_path": "$A100/base_models/hf/hub/models--google--gemma-3-12b-it/snapshots/96b6f1eccf38110c56df3a15bffe176da04bfd80",
+  "adapter": "$A100/models/courtdyn-gemma3_12b-v3-r2ep4-s44/checkpoint-140",
+  "precision": "nf4",
+  "max_pixels": 200704,
+  "max_new_tokens": 128,
+  "decoding": "greedy",
+  "strict_parse": true,
+  "input_manifest_sha256": "283e1a9047fd70a025776041ad7721cf4b0b1644778bfc9b1d6032c842f8d711",
+  "input_cells": [
+    {
+      "arm": "legacy_m",
+      "file": "Q1_side_0-30/legacy_m.json",
+      "sha256": "e6adfb0ea78dff1bf0aada7cc2bc8e6acc962e1db29f66080c6ca766a3a832a5",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q1_side_0-30",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q1_side_0-30"
+    }
+  ],
+  "arithmetic": false,
+  "arithmetic_sha256": null,
+  "score": "per-item scale-aware T-MRA; invalid parses score zero over all items",
+  "code_sha256": {
+    "a100/eval_controls.py": "8edf5ff2988bf27de370628728713d83109214dbaac475469c5fe91d44f702bf",
+    "a100/model_families.py": "91ae2d0d6010d41f396cae4d3e4922a1d5cbbcb7ab08f19bd90f73bc409784e8",
+    "a100/config.py": "fe86fe33ebb34fd2fdf731518d5216f03858286017668dc2c9d1d45fc4e1792c",
+    "eval/run_bench.py": "d32de2cde55e99d1a78e6d9c22eec1f6dd9f994af671544c45a596ace4134c5d"
+  },
+  "adapter_sha256": "12fb55f3e187413b133ae07d6d26e8c61af6655ecc519f0d2b910235f10acbe8",
+  "runtime": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "gpu": {
+    "name": "NVIDIA A100-PCIE-40GB",
+    "memory_used_mib": 8521,
+    "memory_total_mib": 40960,
+    "compute_processes": 1
+  },
+  "loader": {
+    "model_family": "gemma3",
+    "precision": "nf4",
+    "generation_suffix": "\nGive ONLY the final answer in the required format. Do not explain.",
+    "max_new_tokens": 128,
+    "do_sample": false,
+    "loader": "a100.eval_controls.build_infer",
+    "processor_policy": {
+      "do_pan_and_scan": false
+    },
+    "processor_observed": {
+      "size": {
+        "height": 896,
+        "width": 896,
+        "longest_edge": null,
+        "shortest_edge": null,
+        "max_height": null,
+        "max_width": null
+      },
+      "do_resize": true,
+      "do_pan_and_scan": false
+    },
+    "dtype": "torch.bfloat16"
+  },
+  "started_at": "2026-09-30T10:04:13.802884+00:00"
+}

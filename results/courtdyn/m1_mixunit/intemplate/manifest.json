@@ -1,0 +1,48 @@
+{
+ "summary": {
+  "protocol": "courtdyn-m1-intemplate-v1",
+  "note": "explicit-arm rows, question replaced by training wording"
+ },
+ "source_sha256": {
+  "event_holdout_v3": "28b9e15e1599136a6217271d2a5b98c5aab7708220332ace035322644a0cbf4f"
+ },
+ "cells": [
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "legacy_m",
+   "items": 280,
+   "file": "Q1_top_0-30/legacy_m.json",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false,
+   "sha256": "4754c5d55d4629f594967049f25165ca8e19f1e2d41892632797b4568141bd6f"
+  },
+  {
+   "seq": "Q1_top_0-30",
+   "arm": "legacy_cm",
+   "items": 280,
+   "file": "Q1_top_0-30/legacy_cm.json",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+   "event_overlap": false,
+   "sha256": "f65ebf2336c97ba82b5caf3cf303e206ac7217a49b071c3acb55e6fd6303f0d8"
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "legacy_m",
+   "items": 280,
+   "file": "Q2_top_480-510/legacy_m.json",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false,
+   "sha256": "7813db06324135314f292f727f0bbca6c54a84ec66b405d65ad552bfc0ef98bf"
+  },
+  {
+   "seq": "Q2_top_480-510",
+   "arm": "legacy_cm",
+   "items": 280,
+   "file": "Q2_top_480-510/legacy_cm.json",
+   "image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+   "event_overlap": false,
+   "sha256": "7e490049f64f80eb490034182c7ebc5a49fa9dbb6f1fd51e711319a10d66900f"
+  }
+ ],
+ "arithmetic_file": null
+}

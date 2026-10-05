@@ -1,0 +1,11 @@
+{
+ "backbone": "qwen25vl3b",
+ "seed": 44,
+ "k_star": 4,
+ "degenerate_at_cap": false,
+ "schedule": "fixed to seed-42 selection (dev stopping rule not re-run)",
+ "seed42_stopping": "results\\courtdyn\\backbone2_r2\\qwen25vl3b\\stopping.json",
+ "prereg_rules_sha256": "a259c9e07ecf2b095fcf67ae66113dbb8addcc53e7e91041cecfb725042bf2cb",
+ "recorded_at_utc": "2026-10-04T17:21:49.368975+00:00",
+ "test_cells_evaluated_before_this": false
+}

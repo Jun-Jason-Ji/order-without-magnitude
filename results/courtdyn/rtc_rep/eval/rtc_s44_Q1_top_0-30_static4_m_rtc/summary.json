@@ -1,0 +1,28 @@
+{
+  "rtc_m": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 0,
+      "parse_rate": 0.0,
+      "tmra_all_items": 0.0,
+      "tmra_parsed": null,
+      "spearman": null,
+      "n_distinct": 0,
+      "prediction_median": null,
+      "reference_median": null,
+      "degenerate": true
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 0,
+      "parse_rate": 0.0,
+      "tmra_all_items": 0.0,
+      "tmra_parsed": null,
+      "spearman": null,
+      "n_distinct": 0,
+      "prediction_median": null,
+      "reference_median": null,
+      "degenerate": true
+    }
+  }
+}

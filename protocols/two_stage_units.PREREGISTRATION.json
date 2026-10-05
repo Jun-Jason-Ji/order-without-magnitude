@@ -1,0 +1,24 @@
+{
+ "written_at_utc": "2026-09-25T08:55:15.451408+00:00",
+ "stage2_inference_run_before_this": false,
+ "predictions_text": "Preregistered predictions (written 2026-09-25, before any stage-2 inference)\n---------------------------------------------------------------------------\nFrom the text probe, not from any stage-2 output:\n\n  P1  pixels, every checkpoint: median converted/metre ratio within 5% of\n      27.498, and two-stage T-MRA within 5 points of the exact-conversion\n      ceiling for each family.  (The probe shows K applied correctly.)\n  P2  centimetres, the three adapters: median converted/metre ratio far from\n      100 -- the probe puts it at 10 -- and two-stage T-MRA at least 20 points\n      below the ceiling for each family.  (The probe shows a tenfold error.)\n  P3  centimetres, the unadapted backbone: median ratio within 5% of 100 and\n      T-MRA within 5 points of its own ceiling.  (The probe shows x100 correct.)\n\nEach is scored as stated; none is adjusted after the fact.  A failed prediction\nis reported as failed.",
+ "predictions_sha256": "8d576aeefe0da9667502c754d4295dd8d3b6735808202f4c927cb4421ca32b67",
+ "script_sha256": "22905ea0ac68b1df9e9bb67c0e066c516638944e325b42d8b0359e5c2d20ca1e",
+ "note": "Local record only; not externally timestamped. Written before any stage-2 output existed.",
+ "amendments": [
+  {
+   "at_utc": "2026-09-25T08:55:47.689437+00:00",
+   "stage2_inference_run_before_this": false,
+   "change": "Completion guard fixed (require summary.json + all three arms, not m_height alone). No change to predictions, prompts, or scoring.",
+   "predictions_sha256_unchanged": true,
+   "script_sha256_now": "ee7f68c7a83045cd3a3753d365a3b5f8e166e3ecf594f38869ce1d0577968fab"
+  },
+  {
+   "at_utc": "2026-09-25T09:07:29.610429+00:00",
+   "stage2_inference_run_before_this": false,
+   "basis": "stage-1 data only (base_nf4 m_height.jsonl), inspected before any stage-2 output",
+   "observation": "Base metre arm is degenerate: speed 113/113 parsed answers = 0.1 (1 distinct, 27 unparsed); path 3 distinct values (0.3 x67, 0.1 x62, 0.0 x4), Spearman 0.12.",
+   "consequence": "P3 kept as written, but its T-MRA clause is uninformative for the base because its exact-conversion ceiling sits near the floor. Only the P3 ratio clause (median stage2/stage1 within 5% of 100) is interpretable, and it will be reported with this caveat. P1 and P2 unaffected (adapter stage-1 inputs are non-degenerate)."
+  }
+ ]
+}

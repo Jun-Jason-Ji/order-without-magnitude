@@ -1,0 +1,80 @@
+{
+  "plain_U1": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 41.785714285714285,
+      "tmra_parsed": 41.785714285714285,
+      "spearman": 0.2885170481973186,
+      "n_distinct": 8,
+      "prediction_median": 1.8,
+      "reference_median": 7.57871865454897,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 38.214285714285715,
+      "tmra_parsed": 38.214285714285715,
+      "spearman": 0.29742951984343746,
+      "n_distinct": 4,
+      "prediction_median": 1.1,
+      "reference_median": 3.8362962084168393,
+      "degenerate": false
+    }
+  },
+  "plain_U2": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 42.92857142857143,
+      "tmra_parsed": 42.92857142857143,
+      "spearman": 0.1665139418223189,
+      "n_distinct": 42,
+      "prediction_median": 1500.0,
+      "reference_median": 2309.9933719867377,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 47.214285714285715,
+      "tmra_parsed": 47.214285714285715,
+      "spearman": 0.3251770202816598,
+      "n_distinct": 7,
+      "prediction_median": 1.3,
+      "reference_median": 3.4961872367839733,
+      "degenerate": false
+    }
+  },
+  "plain_pxK": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 29.714285714285715,
+      "tmra_parsed": 29.714285714285715,
+      "spearman": 0.03538033516485474,
+      "n_distinct": 13,
+      "prediction_median": 111.1,
+      "reference_median": 63.31294719233397,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 34.357142857142854,
+      "tmra_parsed": 34.357142857142854,
+      "spearman": 0.40948241597745716,
+      "n_distinct": 6,
+      "prediction_median": 11.1,
+      "reference_median": 29.555550576135758,
+      "degenerate": false
+    }
+  }
+}

@@ -1,7 +1,8 @@
-# Validation scope
+# Validation scope (2.0.0)
 
-The source candidate passed inventory, SHA-256, Python syntax, metadata and restricted-field checks (113 payload files, 18,018 JSON keys).
-The release ZIP is checked by CRC and SHA-256; synthetic CPU smoke runs are recorded in validation/publication_smoke.json.
-Execution provenance records completed P1/P2 author-side runs. Historical failure receipts are preserved alongside the narrowly reviewed target-module-order correction; they are not rewritten.
-Preparation-time PREPARED_NOT_RUN and public_release:false fields in original receipts describe those receipts at creation, not the later publication status. See RELEASE.json for this version identity.
-Fresh GPU installation and full independent licensed-input reproduction have not been certified. No model weights or item-level evaluation inputs are bundled.
+- 1282 files, 19.8 MB; SHA-256 of every file in `manifests/bundle_inventory.json` and `SHA256SUMS.txt`.
+- 25 candidate files withheld because they carry source-derived keys or are per-item rows (listed in the inventory under `withheld`).
+- Forbidden file types and local path / token strings: none found.
+- Preregistrations: 12, rules hashes verified: 10/10 (the rest use an older structured schema without a single rules text).
+- Code is copied byte-for-byte from the authors' repository; the v1.1.0 files are identical to the published v1.1.0.
+- Full GPU reproduction is not certified by this bundle.

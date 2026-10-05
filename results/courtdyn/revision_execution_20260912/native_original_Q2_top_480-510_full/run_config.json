@@ -1,0 +1,108 @@
+{
+  "protocol": "courtdyn-revision-controls-v1",
+  "seq": "Q2_top_480-510",
+  "arms": [
+    "m_height",
+    "cm_height",
+    "px_height",
+    "m_noheight",
+    "cm_noheight",
+    "px_noheight"
+  ],
+  "frame_mode": "full",
+  "input_cells": [
+    {
+      "arm": "m_height",
+      "file": "Q2_top_480-510\\m_height.json",
+      "sha256": "5fbde08d7c365789bf8227b0e41c48c3d3933b22284f0901b80446550f124bca"
+    },
+    {
+      "arm": "cm_height",
+      "file": "Q2_top_480-510\\cm_height.json",
+      "sha256": "91216450cd42720965cd60541cc4375792613b11d87e1637050fc79c2cd04909"
+    },
+    {
+      "arm": "px_height",
+      "file": "Q2_top_480-510\\px_height.json",
+      "sha256": "e2738a87e784b26744df1fe3bd4b33f71e21125d0f665a9d6652f1b35ee959f0"
+    },
+    {
+      "arm": "m_noheight",
+      "file": "Q2_top_480-510\\m_noheight.json",
+      "sha256": "9f99614f60243f57cf2c8d39101f8a015ad87d4dfc1ef7a7b41ef926c8cbfc9b"
+    },
+    {
+      "arm": "cm_noheight",
+      "file": "Q2_top_480-510\\cm_noheight.json",
+      "sha256": "5eaf5caf81546360997bee67e3ab3788fe2395826628f59187493b0b64ead01b"
+    },
+    {
+      "arm": "px_noheight",
+      "file": "Q2_top_480-510\\px_noheight.json",
+      "sha256": "eefc75054c8e560adba2913e82ebfd31b79b35cc258f5ce59f12bf0eab3c22c5"
+    }
+  ],
+  "input_manifest_sha256": "5e006494d9ec7fe49e0173b744b62c53c9cba19b6d8ccc00e4e48d57f909ee6c",
+  "arithmetic": true,
+  "arithmetic_sha256": "0d790a000d6d48c4c7caf6ac249135d5f3ff93bfe32ad582490a43781d768ef1",
+  "model_path": "$HF_HUB\\models--Qwen--Qwen3.5-4B\\snapshots\\851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+  "adapter": "$REPO\\models\\courtdyn-native-sft",
+  "max_pixels": 200704,
+  "max_new_tokens": 128,
+  "load_4bit": true,
+  "decoding": "greedy",
+  "strict_parse": true,
+  "score": "per-item scale-aware T-MRA; invalid parses receive zero in all-item score",
+  "adapter_sha256": "405f50ab442890e21fab7b976c4a4f81153c7f01aafc4f41a8ea8577570067b6",
+  "adapter_config_sha256": "5930c9a3d934dd65e9769a23ccaf92412ab9132bd816ea14de3ba96fa21fdfbf",
+  "model_config_sha256": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+  "code_sha256": {
+    "tools/run_courtdyn_revision_controls.py": "07f3cb7bc6b4af450df5487bab43976fa67b685dc43a21273a00e4e1ce4f4ac6",
+    "eval/run_bench.py": "d32de2cde55e99d1a78e6d9c22eec1f6dd9f994af671544c45a596ace4134c5d"
+  },
+  "runtime": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "generation_suffix": "\nGive ONLY the final answer in the required format. Do not explain.",
+  "vram_cap_fraction": 0.93,
+  "training_protocol_sha256": "b3a63800674e643a7194e6d1f48e44daacc3e539c0d52eb0e0d3ac3e44e0780e",
+  "training_protocol": {
+    "schema_version": "sft-training-protocol-v1",
+    "qa_source": "$REPO\\results\\courtdyn\\courtdyn_native_sft_train.json",
+    "qa_source_sha256": "42c5e3d655e9b45095033577924373817b4479bbf5decb7c073fc59f683b4e2a",
+    "image_root": "$REPO\\data\\courtdyn",
+    "selected_samples": 1400,
+    "ordered_sample_sequence_sha256": "1136be1f2cee8cb1a2a3d661abb6f563a4e51e400ea452e92e56916bd68198ef",
+    "allow_drop_invalid": false,
+    "model_path": "$HF_HUB\\models--Qwen--Qwen3.5-4B\\snapshots\\851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "model_config": {
+      "config.json": {
+        "bytes": 3161,
+        "sha256": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670"
+      }
+    },
+    "model_family": "qwen_vl",
+    "processor_policy": {
+      "max_pixels": 200704
+    },
+    "init_adapter": null,
+    "init_adapter_files": {},
+    "init_adapter_validation": {},
+    "seed": 42,
+    "num_samples_request": 0,
+    "max_steps": -1,
+    "num_train_epochs": 1.0,
+    "learning_rate": 0.0001,
+    "gradient_accumulation_steps": 16,
+    "max_pixels": 200704,
+    "vision_lora": false,
+    "allow_base_init": true,
+    "budget_slice": "diagnostic",
+    "initialization_seed_applied_before_model_load": true,
+    "soccer_synloc_training_gate": false
+  }
+}

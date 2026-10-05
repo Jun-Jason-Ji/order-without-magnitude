@@ -1,0 +1,26 @@
+{
+ "written_at_utc": "2026-09-25T10:40:42.304021+00:00",
+ "training_or_eval_run_before_this": false,
+ "decision_rule_text": "Preregistered decision rule (recorded before training)\n------------------------------------------------------\nPrimary statistic: the paired centimetre/metre prediction ratio R (median of\nitemwise ratios, Eq. pairedratio of the manuscript) in the four cells\n{Q1, Q2} x {speed, path}.  The published v3 seed-42 adapter gives R =\n1.38 / 1.00 / 1.57 / 1.00 on the explicit arms; the exact factor is 100.\n\n  S  \"supervision explains it\":      >= 3 of 4 cells have R >= 10\n  N  \"supervision does not explain\": >= 3 of 4 cells have R <= 3\n  I  otherwise: intermediate, reported as a distribution, no verdict forced\n\nApplied separately to\n  E  the explicit-coordinate arms (the published comparison), and\n  T  the in-template arms (training wording), against the v3 s42 adapter\n     evaluated on the same in-template arms.\n\nInterpretation fixed in advance\n  E=S           unit non-response in the paper is a consequence of single-unit\n                supervision; the paper's claim must be reframed around it.\n  E=N and T=S   mixed supervision teaches the unit only in its trained wording;\n                the explicit-arm failure is a failure to transfer across\n                question templates, and the claim is reframed accordingly.\n  E=N and T=N   metre-only supervision does not explain the centimetre failure;\n                the confound is ruled out for the metric-unit contrast.\n  any I         reported as intermediate; no reframing is claimed from it.\n\nReported without a verdict: metre-arm rho and T-MRA against v3 s42 (mixing\nhalves the metre targets, so a metre cost is possible and is reported, not\ntested); px/m ratio (an unseen unit); first-frame drop; text-probe accuracy.",
+ "decision_rule_sha256": "292d509326a3e0e43375a5038d0f38ec2645fe448e3360011a6d29ebd9fb1275",
+ "script_sha256": "590118b71e7f4ce4ff419eae72b3d2bf552dc2a6bd07fbe5258e382a282e1f9d",
+ "inputs_receipt_sha256": "f6c544a12270d82cbc299b807181ac2328d2c0c448a283065eac29e99abfa0ec",
+ "published_v3_s42_explicit_R": {
+  "Q1_speed": 1.38,
+  "Q1_path": 1.0,
+  "Q2_speed": 1.57,
+  "Q2_path": 1.0
+ },
+ "note": "Local record only; not externally timestamped. Written before training or any evaluation of the M1 adapter.",
+ "amendments": [
+  {
+   "at_utc": "2026-09-26T05:27:39.999340+00:00",
+   "status": "POST HOC with respect to seed 42 (written after seed-42 results were seen); PRIOR with respect to seeds 43 and 44 (neither trained nor evaluated).",
+   "reason": "Seed-42 speed cells returned only 2 distinct centimetre answers. The project's standing red line (degenerate = at most 2 distinct parsed answers; never enters a cited interval), which predates M1 and is coded in a100/analyze.py, was not written into the M1 rule.",
+   "degeneracy_rule": "A cell whose centimetre arm has <= 2 distinct parsed answers is DEGENERATE: its R is reported but not counted toward S or N.",
+   "verdict_with_degeneracy": "Per seed and wording: S if >= 3 of the 4 cells are non-degenerate with R >= 10; N if >= 3 of 4 are non-degenerate with R <= 3; otherwise 'limited' when fewer than 3 cells are non-degenerate, else I. The seed-42 verdict is reported both ways: as preregistered (S) and with the degeneracy rule applied.",
+   "seed_aggregation": "Across seeds 42/43/44, a claim is made per family: path (or speed) supports 'supervision explains it' if its non-degenerate R >= 10 in at least 2 of the 3 seeds on both events.",
+   "note": "Local record, not externally timestamped."
+  }
+ ]
+}

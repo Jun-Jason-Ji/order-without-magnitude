@@ -1,0 +1,52 @@
+{
+ "protocol": "courtdyn-soccer-venue-v1",
+ "sequences": [
+  {
+   "name": "SNGS-034",
+   "game_id": "2",
+   "action": "Goal",
+   "camera_motion_px_median": 20.972745895385742,
+   "candidates": 490,
+   "K_px_per_m": 20.842517667528817,
+   "path_m_median": 1.7282138444914432,
+   "items_per_family": 140,
+   "tracks_used": 19
+  },
+  {
+   "name": "SNGS-056",
+   "game_id": "3",
+   "action": "Goal",
+   "camera_motion_px_median": 0.6641667485237122,
+   "candidates": 313,
+   "K_px_per_m": 30.37833557505159,
+   "path_m_median": 0.35037025899653945,
+   "items_per_family": 140,
+   "tracks_used": 14
+  },
+  {
+   "name": "SNGS-096",
+   "game_id": "5",
+   "action": "Substitution",
+   "camera_motion_px_median": 24.37635612487793,
+   "candidates": 494,
+   "K_px_per_m": 26.13561524073291,
+   "path_m_median": 1.360086237522757,
+   "items_per_family": 140,
+   "tracks_used": 22
+  }
+ ],
+ "cells": {
+  "SNGS-034/m_height.json": "7f52df17c6e8ee51ea002cbaad1f91241e703a2ad7ea25b75550b6247c87dc3e",
+  "SNGS-034/cm_height.json": "ad05a8c046350a01ff6d5c0f17e8982e45b42d6b98102cb37046c565203bff22",
+  "SNGS-034/px_height.json": "176ff19f24e3f1e02ad8890ce6fc369bcf6d70350bdd27372c0036c9187af046",
+  "SNGS-056/m_height.json": "bcbdb016eeb6bb6432687a6308eafc56a4c17b1aa6e1baba57d62ef74ed9b4eb",
+  "SNGS-056/cm_height.json": "5cc7f89b270162180a65be06aec117f7e28212066cc7290286fb66da7de34ab7",
+  "SNGS-056/px_height.json": "99e898c8a5f5cd6641963243abaac214c57762095f1ac183b28215efb049d274",
+  "SNGS-096/m_height.json": "f34bb06b056f57e655ff8f24280f8e15397259a035823ae10f2f6f9a2f0036ba",
+  "SNGS-096/cm_height.json": "9d0de506ed68e2523f62cbee06ac61b3f442a2881f1941784084a1febe75e2ac",
+  "SNGS-096/px_height.json": "d90279b3c4cd7fdf475cdf842e19b460674bf9e2c23d659bfdb307c0e982373b"
+ },
+ "private_root": "E:\\datasets\\SoccerNet\\derived_private\\courtdyn_venue",
+ "template_prefix": "The 4 frames are consecutive samples from one soccer clip spanning 2.0 seconds, in chronological order. Assume a typical player on this pitch is 1.80 m tall. Each supplied frame is 960 pixels wide and 540 pixels high. Pixel answers refer to this original canvas before any resizing. Physical units describe floor-plane motion; pixels describe projected image-plane motion. ",
+ "note": "Frames and pools are private (SoccerNet NDA); only this receipt and aggregate results live in the repository."
+}

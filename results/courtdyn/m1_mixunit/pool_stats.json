@@ -1,0 +1,47 @@
+{
+ "source": "results/courtdyn/m1_mixunit/mixunit_v3_pool.json",
+ "source_sha256": "bce015ff8fb8688748a0d54e051358366d176389dae980bed53f1b8c4fd90335",
+ "n_items": 1120,
+ "n_cm": 560,
+ "n_cm_by_meta": 560,
+ "families": {
+  "speed": {
+   "n_cm": 280,
+   "n_m": 280,
+   "cm_target_median": 110.0,
+   "m_target_median": 1.05,
+   "cm_first_digit_majority": "1",
+   "cm_first_digit_majority_share": 0.5035714285714286,
+   "cm_first_digit_counts": {
+    "1": 141,
+    "2": 20,
+    "3": 15,
+    "4": 9,
+    "5": 14,
+    "6": 8,
+    "7": 19,
+    "8": 25,
+    "9": 29
+   }
+  },
+  "path": {
+   "n_cm": 280,
+   "n_m": 280,
+   "cm_target_median": 215.0,
+   "m_target_median": 2.2,
+   "cm_first_digit_majority": "1",
+   "cm_first_digit_majority_share": 0.37142857142857144,
+   "cm_first_digit_counts": {
+    "1": 104,
+    "2": 86,
+    "3": 42,
+    "4": 13,
+    "5": 13,
+    "6": 8,
+    "7": 4,
+    "8": 9,
+    "9": 1
+   }
+  }
+ }
+}

@@ -1,0 +1,89 @@
+[
+ {
+  "record": "results/courtdyn/backbone2",
+  "written_at_utc": "2026-09-26T05:30:25.657716+00:00",
+  "rules_sha256": "42ed2ead18d80a34bf120fd4149327e69bd79e0fde793a3cd3fb07637505a907",
+  "hash_verified": true,
+  "note": null
+ },
+ {
+  "record": "results/courtdyn/backbone2_r2",
+  "written_at_utc": "2026-09-27T00:59:14.019153+00:00",
+  "rules_sha256": "003f2e1a80e4153cced6a2b512c1aee3bb9fd936ceea821ab8dcea07d3b1c7a4",
+  "hash_verified": true,
+  "note": null
+ },
+ {
+  "record": "results/courtdyn/backbone3_internvl",
+  "written_at_utc": "2026-09-28T02:33:17.327749+00:00",
+  "rules_sha256": "8408a84bd433285e8c623957fd268fb962ba565f8ecee87db37e39b09e110bd6",
+  "hash_verified": true,
+  "note": null
+ },
+ {
+  "record": "results/courtdyn/backbone4_a100",
+  "written_at_utc": "2026-09-28T03:14:10.959668+00:00",
+  "rules_sha256": "eecca80879ffe4f417dbd6aead881c7b6bb788a87364ba5f08e0390f52f3c05e",
+  "hash_verified": true,
+  "note": null
+ },
+ {
+  "record": "results/courtdyn/backbone4_ext",
+  "written_at_utc": "2026-09-28T23:37:45.149954+00:00",
+  "rules_sha256": "171b9dc9fb63bd855f75052311dd8ada73f648bb6b006cc43cf987b3e886d0ca",
+  "hash_verified": true,
+  "note": null
+ },
+ {
+  "record": "results/courtdyn/backbone_llama32",
+  "written_at_utc": "2026-10-05T11:39:41.186226+00:00",
+  "rules_sha256": "0faa698bbb217db5a5b62a3f0fc92aa8e97508677889a58406085a6f41930c4c",
+  "hash_verified": true,
+  "note": null
+ },
+ {
+  "record": "results/courtdyn/backbone_seeds3",
+  "written_at_utc": "2026-09-29T13:44:21.878793+00:00",
+  "rules_sha256": "a259c9e07ecf2b095fcf67ae66113dbb8addcc53e7e91041cecfb725042bf2cb",
+  "hash_verified": true,
+  "note": null,
+  "errata": "protocols/backbone_seeds3.ERRATA.md"
+ },
+ {
+  "record": "results/courtdyn/m1_fine",
+  "written_at_utc": "2026-09-28T07:04:33.207285+00:00",
+  "rules_sha256": "cc345e0aeea9fe48afa684a4380ce582117c4310d8a2de9060018a1cd1075fc2",
+  "hash_verified": true,
+  "note": null,
+  "errata": "protocols/m1_fine.ERRATA.md"
+ },
+ {
+  "record": "results/courtdyn/m1_mixunit",
+  "written_at_utc": "2026-09-25T10:40:42.304021+00:00",
+  "rules_sha256": null,
+  "hash_verified": null,
+  "note": "older schema: rules are structured fields, no single rules text"
+ },
+ {
+  "record": "results/courtdyn/repr_probe",
+  "written_at_utc": "2026-09-28T06:55:38.389218+00:00",
+  "rules_sha256": "0d88f0b53a7c3b403468de823098154bff33be9cfb4ca918dd5f9ee06043f9cb",
+  "hash_verified": true,
+  "note": null
+ },
+ {
+  "record": "results/courtdyn/rtc",
+  "written_at_utc": "2026-09-28T08:19:28.541415+00:00",
+  "rules_sha256": "230fff51289d3c31f9566c59a517c0c0e3c8524f0f90e6143861f018c0c52fd6",
+  "hash_verified": true,
+  "note": null,
+  "errata": "protocols/rtc.ERRATA.md"
+ },
+ {
+  "record": "results/courtdyn/two_stage_units",
+  "written_at_utc": "2026-09-25T08:55:15.451408+00:00",
+  "rules_sha256": null,
+  "hash_verified": null,
+  "note": "older schema: rules are structured fields, no single rules text"
+ }
+]

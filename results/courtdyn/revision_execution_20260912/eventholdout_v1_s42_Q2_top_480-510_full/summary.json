@@ -1,0 +1,54 @@
+{
+  "m_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 74.21428571428571,
+      "tmra_parsed": 74.21428571428571
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 72.07142857142857,
+      "tmra_parsed": 72.07142857142857
+    }
+  },
+  "cm_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 20.428571428571427,
+      "tmra_parsed": 20.428571428571427
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 21.357142857142858,
+      "tmra_parsed": 21.357142857142858
+    }
+  },
+  "px_height": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 23.428571428571427,
+      "tmra_parsed": 23.428571428571427
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 23.428571428571427,
+      "tmra_parsed": 23.428571428571427
+    }
+  },
+  "arithmetic": {
+    "n": 12,
+    "correct": 9
+  }
+}

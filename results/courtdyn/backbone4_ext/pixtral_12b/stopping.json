@@ -1,0 +1,10 @@
+{
+ "backbone": "pixtral_12b",
+ "k_star": 2,
+ "degenerate_at_cap": false,
+ "seed": 43,
+ "fixed_schedule": true,
+ "dev_rule_rerun": false,
+ "source": "seed-42 round-4 selection (results/courtdyn/backbone4_a100/<key>/stopping.json)",
+ "recorded_at_utc": "2026-09-29T12:01:36.464173+00:00"
+}

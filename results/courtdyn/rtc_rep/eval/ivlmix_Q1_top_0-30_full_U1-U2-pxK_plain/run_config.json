@@ -1,0 +1,89 @@
+{
+  "protocol": "courtdyn-rtc-units-v1+a100-v1",
+  "label": "ivlmix",
+  "seq": "Q1_top_0-30",
+  "arms": [
+    "plain_U1",
+    "plain_U2",
+    "plain_pxK"
+  ],
+  "frame_mode": "full",
+  "model_path": "$HF_HUB\\models--OpenGVLab--InternVL3-2B-hf\\snapshots\\cb57a075cb75a2e6d1b668b128d48bb00ae321d2",
+  "adapter": "$REPO\\models\\courtdyn-internvl3_2b-mixunit-r2ep4-s42\\checkpoint-140",
+  "precision": "nf4",
+  "max_pixels": 200704,
+  "max_new_tokens": 128,
+  "decoding": "greedy",
+  "strict_parse": true,
+  "input_manifest_sha256": "838d7317a935a3e75ace36b05e26a5b22cc3f21b4988fbb6b8692d15334b8d9b",
+  "input_cells": [
+    {
+      "arm": "plain_U1",
+      "file": "Q1_top_0-30/plain_U1.json",
+      "sha256": "4f6e2168914b7dba05218718bb6c7119ea3670b6a899a86b79a61adc0878eedc",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+      "resolved_image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30"
+    },
+    {
+      "arm": "plain_U2",
+      "file": "Q1_top_0-30/plain_U2.json",
+      "sha256": "98f6c41ab90dcc52006d2dd3a67321fc4dbc22725fa27bf02fbd0bfd7c94c823",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+      "resolved_image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30"
+    },
+    {
+      "arm": "plain_pxK",
+      "file": "Q1_top_0-30/plain_pxK.json",
+      "sha256": "4a2391595e2efd8caf5152299d99dae37eb82069411e1f4199352415b4bfa062",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30",
+      "resolved_image_root": "$REPO\\data\\courtdyn\\frames_Q1_top_0-30"
+    }
+  ],
+  "arithmetic": false,
+  "arithmetic_sha256": null,
+  "score": "per-item scale-aware T-MRA; invalid parses score zero over all items",
+  "code_sha256": {
+    "a100/eval_controls.py": "8edf5ff2988bf27de370628728713d83109214dbaac475469c5fe91d44f702bf",
+    "a100/model_families.py": "91ae2d0d6010d41f396cae4d3e4922a1d5cbbcb7ab08f19bd90f73bc409784e8",
+    "a100/config.py": "fe86fe33ebb34fd2fdf731518d5216f03858286017668dc2c9d1d45fc4e1792c",
+    "eval/run_bench.py": "d32de2cde55e99d1a78e6d9c22eec1f6dd9f994af671544c45a596ace4134c5d"
+  },
+  "adapter_sha256": "cbab019ab5b0dc082b8b58a35d84e63f225ad41dea67df967de3b1c762c6c147",
+  "runtime": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "memory_used_mib": 2212,
+    "memory_total_mib": 8151,
+    "compute_processes": 1
+  },
+  "loader": {
+    "model_family": "internvl",
+    "precision": "nf4",
+    "generation_suffix": "\nGive ONLY the final answer in the required format. Do not explain.",
+    "max_new_tokens": 128,
+    "do_sample": false,
+    "loader": "a100.eval_controls.build_infer",
+    "processor_policy": {
+      "max_patches": 1
+    },
+    "processor_observed": {
+      "size": {
+        "height": 448,
+        "width": 448,
+        "longest_edge": null,
+        "shortest_edge": null,
+        "max_height": null,
+        "max_width": null
+      },
+      "do_resize": true
+    },
+    "dtype": "torch.bfloat16"
+  },
+  "started_at": "2026-09-30T04:00:51.344178+00:00"
+}

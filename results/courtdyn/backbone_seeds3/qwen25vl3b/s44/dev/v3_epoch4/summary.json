@@ -1,0 +1,28 @@
+{
+  "legacy_m": {
+    "dynamics_path_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 43.07142857142857,
+      "tmra_parsed": 43.07142857142857,
+      "spearman": 0.04895896103556111,
+      "n_distinct": 6,
+      "prediction_median": 2.5,
+      "reference_median": 3.400675426391481,
+      "degenerate": false
+    },
+    "dynamics_speed_player": {
+      "n": 140,
+      "parsed": 140,
+      "parse_rate": 1.0,
+      "tmra_all_items": 52.357142857142854,
+      "tmra_parsed": 52.357142857142854,
+      "spearman": 0.10586002191929718,
+      "n_distinct": 5,
+      "prediction_median": 1.1,
+      "reference_median": 1.4167692430680408,
+      "degenerate": false
+    }
+  }
+}

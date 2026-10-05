@@ -1,0 +1,86 @@
+[
+  {
+    "question": "A distance is 0.2 meters. One meter equals 100 centimeters. Express that distance in centimeters. Output only the number, one decimal place.",
+    "target": 20.0,
+    "raw_answer": "2.0",
+    "prediction": 2.0,
+    "correct": false
+  },
+  {
+    "question": "A distance is 0.2 meters. One meter equals 1000 millimeters. Express that distance in millimeters. Output only the number, one decimal place.",
+    "target": 200.0,
+    "raw_answer": "20.0",
+    "prediction": 20.0,
+    "correct": false
+  },
+  {
+    "question": "A distance is 0.5 meters. One meter equals 100 centimeters. Express that distance in centimeters. Output only the number, one decimal place.",
+    "target": 50.0,
+    "raw_answer": "5.0",
+    "prediction": 5.0,
+    "correct": false
+  },
+  {
+    "question": "A distance is 0.5 meters. One meter equals 1000 millimeters. Express that distance in millimeters. Output only the number, one decimal place.",
+    "target": 500.0,
+    "raw_answer": "500.0",
+    "prediction": 500.0,
+    "correct": true
+  },
+  {
+    "question": "A distance is 1.0 meters. One meter equals 100 centimeters. Express that distance in centimeters. Output only the number, one decimal place.",
+    "target": 100.0,
+    "raw_answer": "10.0",
+    "prediction": 10.0,
+    "correct": false
+  },
+  {
+    "question": "A distance is 1.0 meters. One meter equals 1000 millimeters. Express that distance in millimeters. Output only the number, one decimal place.",
+    "target": 1000.0,
+    "raw_answer": "10.0",
+    "prediction": 10.0,
+    "correct": false
+  },
+  {
+    "question": "A distance is 2.5 meters. One meter equals 100 centimeters. Express that distance in centimeters. Output only the number, one decimal place.",
+    "target": 250.0,
+    "raw_answer": "25.0",
+    "prediction": 25.0,
+    "correct": false
+  },
+  {
+    "question": "A distance is 2.5 meters. One meter equals 1000 millimeters. Express that distance in millimeters. Output only the number, one decimal place.",
+    "target": 2500.0,
+    "raw_answer": "2500.0",
+    "prediction": 2500.0,
+    "correct": true
+  },
+  {
+    "question": "A distance is 4.0 meters. One meter equals 100 centimeters. Express that distance in centimeters. Output only the number, one decimal place.",
+    "target": 400.0,
+    "raw_answer": "40.0",
+    "prediction": 40.0,
+    "correct": false
+  },
+  {
+    "question": "A distance is 4.0 meters. One meter equals 1000 millimeters. Express that distance in millimeters. Output only the number, one decimal place.",
+    "target": 4000.0,
+    "raw_answer": "40.0",
+    "prediction": 40.0,
+    "correct": false
+  },
+  {
+    "question": "A distance is 8.0 meters. One meter equals 100 centimeters. Express that distance in centimeters. Output only the number, one decimal place.",
+    "target": 800.0,
+    "raw_answer": "80.0",
+    "prediction": 80.0,
+    "correct": false
+  },
+  {
+    "question": "A distance is 8.0 meters. One meter equals 1000 millimeters. Express that distance in millimeters. Output only the number, one decimal place.",
+    "target": 8000.0,
+    "raw_answer": "800.0",
+    "prediction": 800.0,
+    "correct": false
+  }
+]

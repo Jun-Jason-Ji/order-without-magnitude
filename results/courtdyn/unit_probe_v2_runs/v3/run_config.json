@@ -1,0 +1,25 @@
+{
+ "protocol": "courtdyn-unit-probe-v2",
+ "label": "v3",
+ "probe": "$REPO\\results\\courtdyn\\unit_probe_v2.json",
+ "probe_sha256": "4615ff158b86c2c657c2540c970cae7bc5cb0f41a33ae62d3e01280d077d6658",
+ "n_items": 392,
+ "published_only": false,
+ "model_path": "$HF_HUB\\models--Qwen--Qwen3.5-4B\\snapshots\\851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+ "adapter": "$REPO\\models\\courtdyn-revision-v3-eventholdout-s42",
+ "precision": "nf4",
+ "decoding": "greedy",
+ "max_new_tokens": 128,
+ "text_only": true,
+ "correct_abs_tolerance": 0.05,
+ "code_sha256": {
+  "tools/run_unit_probe.py": "626295e75876b39ab23738d2f3a4367130ae2237e58276c31d75fa7ccf3d929c",
+  "tools/build_unit_probe.py": "c62f56fe33dd431355ae5df1b113a15b325ae889b7f257e7a7d736896612d0be",
+  "a100/eval_controls.py": "5eeff3dd100e5d299c62245de79aa5ea7661bbcbd6436ff073b158e0d210a0dc"
+ },
+ "adapter_sha256": "a84f04696a68647a7394547a5cc5f9abbc21ea736abab2a16583664b1f05a831",
+ "loader": "eval.run_bench.load_model",
+ "generation_suffix": "\nGive ONLY the final answer in the required format. Do not explain.",
+ "started_at": "2026-09-25T08:38:04.234757+00:00",
+ "finished_at": "2026-09-25T08:44:48.543575+00:00"
+}

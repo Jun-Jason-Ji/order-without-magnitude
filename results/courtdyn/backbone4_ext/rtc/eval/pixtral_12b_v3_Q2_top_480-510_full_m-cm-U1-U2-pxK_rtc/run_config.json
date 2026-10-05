@@ -1,0 +1,111 @@
+{
+  "protocol": "courtdyn-rtc-units-v1+a100-v1",
+  "label": "pixtral_12b_v3",
+  "seq": "Q2_top_480-510",
+  "arms": [
+    "rtc_m",
+    "rtc_cm",
+    "rtc_U1",
+    "rtc_U2",
+    "rtc_pxK"
+  ],
+  "frame_mode": "full",
+  "model_path": "$A100/base_models/hf/hub/models--mistral-experimental--pixtral-12b/snapshots/c2756cbbb9422eba9f6c5c439a214b0392dfc998",
+  "adapter": "$A100/models/courtdyn-pixtral_12b-v3-r2ep4-s42/checkpoint-140",
+  "precision": "nf4",
+  "max_pixels": 200704,
+  "max_new_tokens": 128,
+  "decoding": "greedy",
+  "strict_parse": true,
+  "input_manifest_sha256": "838d7317a935a3e75ace36b05e26a5b22cc3f21b4988fbb6b8692d15334b8d9b",
+  "input_cells": [
+    {
+      "arm": "rtc_m",
+      "file": "Q2_top_480-510/rtc_m.json",
+      "sha256": "b5ddcccf3088c12758c5d4151d12a4e8158741dd4b0f92546e6c3541c96e996c",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q2_top_480-510"
+    },
+    {
+      "arm": "rtc_cm",
+      "file": "Q2_top_480-510/rtc_cm.json",
+      "sha256": "27e24acc9291c0119c07f695b9f2d25284d7173f414318b54f7ebc44509029de",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q2_top_480-510"
+    },
+    {
+      "arm": "rtc_U1",
+      "file": "Q2_top_480-510/rtc_U1.json",
+      "sha256": "5a7a6cbf4fcc5ee15171600052fa0e89ab48c4fa32c758e1a319ccbecfa695ca",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q2_top_480-510"
+    },
+    {
+      "arm": "rtc_U2",
+      "file": "Q2_top_480-510/rtc_U2.json",
+      "sha256": "a80ae029a117a31642451eab3ff90866265fb70a1a1d1575b907ab7ea8592ab9",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q2_top_480-510"
+    },
+    {
+      "arm": "rtc_pxK",
+      "file": "Q2_top_480-510/rtc_pxK.json",
+      "sha256": "a43d5a6c5e0420dcabf346ae16f7a6271d8853460cb2ffbc4235b87277d93a8a",
+      "manifest_image_root": "$REPO\\data\\courtdyn\\frames_Q2_top_480-510",
+      "resolved_image_root": "$A100/data/courtdyn/frames_Q2_top_480-510"
+    }
+  ],
+  "arithmetic": false,
+  "arithmetic_sha256": null,
+  "score": "per-item scale-aware T-MRA; invalid parses score zero over all items",
+  "code_sha256": {
+    "a100/eval_controls.py": "8edf5ff2988bf27de370628728713d83109214dbaac475469c5fe91d44f702bf",
+    "a100/model_families.py": "91ae2d0d6010d41f396cae4d3e4922a1d5cbbcb7ab08f19bd90f73bc409784e8",
+    "a100/config.py": "fe86fe33ebb34fd2fdf731518d5216f03858286017668dc2c9d1d45fc4e1792c",
+    "eval/run_bench.py": "d32de2cde55e99d1a78e6d9c22eec1f6dd9f994af671544c45a596ace4134c5d"
+  },
+  "adapter_sha256": "88b367fcb47127362ee49c83ec84bba9eb1adc854b99e00ecb5b3c300f23dab5",
+  "runtime": {
+    "torch": "2.11.0+cu128",
+    "transformers": "5.14.1",
+    "peft": "0.20.0",
+    "bitsandbytes": "0.50.0",
+    "accelerate": "1.14.0"
+  },
+  "gpu": {
+    "name": "NVIDIA A100-PCIE-40GB",
+    "memory_used_mib": 9153,
+    "memory_total_mib": 40960,
+    "compute_processes": 1
+  },
+  "loader": {
+    "model_family": "pixtral",
+    "precision": "nf4",
+    "generation_suffix": "\nGive ONLY the final answer in the required format. Do not explain.",
+    "max_new_tokens": 128,
+    "do_sample": false,
+    "loader": "a100.eval_controls.build_infer",
+    "processor_policy": {
+      "size": {
+        "longest_edge": 512
+      }
+    },
+    "processor_observed": {
+      "size": {
+        "height": null,
+        "width": null,
+        "longest_edge": 512,
+        "shortest_edge": null,
+        "max_height": null,
+        "max_width": null
+      },
+      "do_resize": true,
+      "patch_size": {
+        "height": 16,
+        "width": 16
+      }
+    },
+    "dtype": "torch.bfloat16"
+  },
+  "started_at": "2026-09-29T19:36:36.937074+00:00"
+}

@@ -1,0 +1,8 @@
+{
+ "written_at_utc": "2026-09-26T05:30:25.657716+00:00",
+ "training_or_eval_run_before_this": false,
+ "rules": "Second-backbone replication, decided per backbone (smol, qwen25vl3b).\nCells: {Q1_top_0-30, Q2_top_480-510} x {speed, path} = 4. A cell is DEGENERATE if the arm in\nquestion has <= 2 distinct parsed answers; degenerate cells never count toward a verdict, and if\nfewer than 3 of 4 cells are non-degenerate the verdict is LIMITED.\n\nR1 dissociation replicates (metre-only adapter, explicit arms): in >= 3 of 4 non-degenerate cells,\n   metre Spearman rho >= 0.30 AND paired cm/m ratio R <= 3.  Fails if >= 3 cells have R >= 10.\nR2 M1 replicates (mixed-unit adapter): R >= 10 in >= 3 of 4 non-degenerate cells, reported\n   separately for explicit (E) and in-template (T) arms.  Fails if >= 3 cells have R <= 3.\nR3 arithmetic: on the 246 diagnostic items, the metre-only adapter is below the bare backbone\n   (exact McNemar p < 0.01), and the mixed-unit adapter is not (p >= 0.01 or above the backbone).\nR4 temporal: first-frame repetition lowers metre rho in >= 3 of 4 defined cells for the\n   metre-only adapter.\nAnything else is reported as intermediate.  A failed replication is reported as failed and the\npaper's claims are scoped to the backbone(s) on which they hold.",
+ "rules_sha256": "42ed2ead18d80a34bf120fd4149327e69bd79e0fde793a3cd3fb07637505a907",
+ "script_sha256": "bb8355fb3235fd20f102bdad9737486731fbb67dbf5431c7452a505d7c0190f6",
+ "note": "Local record, not externally timestamped."
+}
