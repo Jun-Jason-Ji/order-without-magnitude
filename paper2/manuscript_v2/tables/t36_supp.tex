@@ -4,7 +4,6 @@
 \setlength{\tabcolsep}{3pt}
 \caption{Zero-shot sweep of public backbones on the explicit unit cells.}
 \label{tab:t36}
-\resizebox{\linewidth}{!}{%
 \begin{tabular}{llcccccc}
 \toprule
 Model & clip & family & distinct & $\rho$ & $R_{\mathrm{cm}}$ & $R_{\mathrm{px}}$ ($K$) & live \\
@@ -46,7 +45,7 @@ smolvlm2-2b & Q1 & path & 4 & -0.22 & 7.3 & 731.4 (27) & yes \\
 smolvlm2-2b & Q2 & speed & 4 & -0.00 & 1.2 & 1.0 (27) & yes \\
 smolvlm2-2b & Q2 & path & 2 & -0.24 & 5.7 & 1015.8 (27) & no \\
 \bottomrule
-\end{tabular}}
+\end{tabular}
 \par\vspace{3pt}\begin{flushleft}\footnotesize distinct: parsed metre answers; $\rho$: metre rank correlation; $R_{\mathrm{cm}}$, $R_{\mathrm{px}}$: median paired ratios (exact 100 and the clip's $K\approx27$); live: both arms $\ge3$ distinct answers; invalid: harness failure (thinking mode left on), not a model result.\end{flushleft}
 \end{table}
 % caption trimmed by tools/trim_table_captions.py

@@ -1,0 +1,43 @@
+{
+ "method": "The preregistered analysis (tools/repr_probe_analyze.py) selects the (layer, pooling) feature once on\nall overhead items and then scores H1 on the same items, with a permutation null that keeps the\nselected feature and penalty.  Here every step is repeated inside each outer fold:",
+ "seed": 20261005,
+ "models": {
+  "base": {
+   "path": {
+    "n_items": 280,
+    "nested_cv_spearman": 0.7919062378711099,
+    "perm_p99": 0.24373965593584462,
+    "perms": 200,
+    "H1_holds": true,
+    "fold_selections": [
+     {
+      "feature": "img_L16",
+      "alpha": 1.0
+     },
+     {
+      "feature": "img_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L12",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     }
+    ],
+    "H3": {
+     "rho_full_q2_oof": 0.7544597756445302,
+     "rho_static4_oof": 0.3588856574315017,
+     "motion_dependent": true
+    },
+    "seconds": 391.5
+   }
+  }
+ }
+}

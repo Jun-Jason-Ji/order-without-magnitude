@@ -78,6 +78,18 @@ def main() -> int:
              f"${f(-w['point'], 1)}$ [${f(-w['hi'], 1)}$, ${f(-w['lo'], 1)}$]")
     lowest = min(v["rho"]["window"]["lo"] for v in boot["seeds"].values())
     want("lowest seed rho lower limit", f"is ${f(lowest)}$")
+    ts, tp = nat["speed"]["metre_margin"]["track"], nat["path"]["metre_margin"]["track"]
+    want("track-clustered margin CIs", f"[${f(ts['lo'], 1)}$, ${f(ts['hi'], 1)}$] and [${f(tp['lo'], 1)}$, ${f(tp['hi'], 1)}$] points")
+    gate("track-clustered margins exclude zero", ts["lo"] > 0 and tp["lo"] > 0, f"{ts['lo']}, {tp['lo']}")
+    gate("track clusters = 10", ts["clusters"] == 10, str(ts["clusters"]))
+
+    # ---------------------------------------------------------------- per-item conversion ratios (post hoc)
+    ir = j(CD / "m1_mixunit" / "item_ratios.json")
+    sp, sq = ir["summary_path"], ir["summary_speed"]
+    pct = lambda x: f"{round(100 * x):d}"
+    want("item ratios: path within x2", f"${pct(sp['share_within_factor2_range'][0])}$--${pct(sp['share_within_factor2_range'][1])}\\%$ of path items")
+    want("item ratios: path within 25%", f"within $25\\%$ in ${pct(sp['share_within_25pct_range'][0])}$--${pct(sp['share_within_25pct_range'][1])}\\%$")
+    want("item ratios: speed within 25%", f"at most ${pct(sq['share_within_25pct_range'][1])}\\%$")
 
     # ---------------------------------------------------------------- M1
     nums = j(CD / "paper2_v2_numbers.json")
@@ -355,7 +367,18 @@ def main() -> int:
          st["v3"]["speed/H3"].get("True", 0) == 10 and st["v3"]["path/H3"].get("True", 0) == 10
          and st["native"]["path/H3"].get("True", 0) == 10 and st["native"]["speed/H3"].get("True", 0) == 9
          and all(st[m][f"{fam}/H3"].get("True", 0) == 0 for m in ("base", "mixunit") for fam in ("speed", "path")), "")
-    want("probe text", "10 of 10 fold seeds in both families (CourtDyn-native: 10 and 9)")
+    # nested re-analysis (post hoc): the main text states that H1 holds and H3 drops in all four models
+    nested = j(CD / "repr_probe" / "nested_reanalysis.json")["models"]
+    cells = [nested[m][fam] for m in ("base", "native", "v3", "mixunit") for fam in ("speed", "path")]
+    gate("nested probe: 8 cells with 200 permutations", len(cells) == 8 and all(c["perms"] == 200 for c in cells), "")
+    gate("nested probe: H1 holds in every cell", all(c["H1_holds"] for c in cells), "")
+    gate("nested probe: motion-dependent in every cell", all(c["H3"]["motion_dependent"] for c in cells), "")
+    drops = [c["H3"]["rho_full_q2_oof"] - c["H3"]["rho_static4_oof"] for c in cells]
+    want("nested probe: drop range", f"drops by ${min(drops):.2f}$--${max(drops):.2f}$ under first-frame repetition")
+    import repr_probe_nested_table as NT
+    gate("repr_probe_nested.tex regenerated", NT.build() == (TEX.parent / "tables" / "repr_probe_nested.tex").read_text(encoding="utf-8"), "")
+    gate("probe contrast claim removed", "appears only after metre-only fine-tuning" not in flat
+         and "keep it (0 of 10)" not in flat, "")
     # T36 (descriptive)
     t36 = j(CD / "t36" / "summary.json")["models"]
     live = lambda m: [c for c in t36[m]["cells"] if not c.get("missing") and c["live_unit"]]

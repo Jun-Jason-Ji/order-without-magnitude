@@ -211,7 +211,7 @@ def t36_tex(models):
          r"answers. INVALID: the bf16 Qwen3.5-4B cell was run through a loader that left the model's "
          r"thinking mode on, so no answer was produced within the token budget; it is a harness failure, "
          r"not a model result.}",
-         r"\label{tab:t36}", r"\resizebox{\linewidth}{!}{%", r"\begin{tabular}{llcccccc}", r"\toprule",
+         r"\label{tab:t36}", r"\begin{tabular}{llcccccc}", r"\toprule",
          r"Model & clip & family & distinct & $\rho$ & $R_{\mathrm{cm}}$ & $R_{\mathrm{px}}$ ($K$) & live \\", r"\midrule"]
     for m, e in models.items():
         for c in e["cells"]:
@@ -221,7 +221,7 @@ def t36_tex(models):
             live = "invalid" if e.get("invalid") else ("yes" if c["live_unit"] else "no")
             L.append(f"{m} & {c['seq'].split('_')[0]} & {c['family']} & {a['distinct']} & {f(a['rho'])} & "
                      f"{f(c['R_cm'], 1)} & {f(c['R_px'], 1)} ({f(c['R_px_reference'], 0)}) & {live} \\\\")
-    L += [r"\bottomrule", r"\end{tabular}}", r"\end{table}"]
+    L += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
     return "\n".join(L) + "\n"
 
 

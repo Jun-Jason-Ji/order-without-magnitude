@@ -273,10 +273,12 @@ For a scalar answer we use the tolerance-based mean relative accuracy
 with $\Theta = \{0.50, 0.55, \ldots, 0.95\}$, on a $0$--$100$ scale, with $(T,\epsilon)=(0.30,1.0)$ for speed and
 $(0.50,2.0)$ for path, both multiplied by the unit factor in the other arms (100 for
 centimetres, the clip's pixel factor $K$ for pixels). Each T-MRA is read against a
-\emph{test-label constant}: the best single answer for that clip and family,
-chosen with knowledge of the test labels. Because it uses the labels, it is a
-diagnostic reference rather than a predictor, and exceeding it is a strict
-criterion. Rank
+\emph{test-label constant}, one answer for the whole clip and family chosen
+with knowledge of the test labels: the median of the test labels in the
+primary cells and their intervals (``median constant''), and the single answer
+that maximises T-MRA where a table says ``best''. Because it uses the labels,
+it is a diagnostic reference rather than a predictor, and exceeding it is a
+strict criterion. Rank
 agreement is Spearman's \rhosp{} between prediction and reference, per clip and
 family, never pooled. Unit response is the paired ratio
 \begin{equation}
@@ -366,7 +368,10 @@ On the event-disjoint clip the CourtDyn-native checkpoint ranks speed and path
 with $\rho=0.76$ [$0.70$, $0.82$] and $0.76$ [$0.67$, $0.83$], and its metre
 T-MRA ($80.4$/$73.1$) exceeds the median constant of the same clip by $16.6$
 [$7.4$, $22.0$] and $19.8$ [$11.1$, $28.2$] points (Tables~\ref{tab:nativecore}
-and~\ref{tab:bootstrap}). The ordering does not depend on one seed or one label
+and~\ref{tab:bootstrap}). Adjacent two-second windows share frames; clustering
+the bootstrap by player track instead (ten clusters) widens the margin
+intervals to [$4.6$, $23.1$] and [$6.4$, $26.5$] points, and neither includes
+zero. The ordering does not depend on one seed or one label
 convention: across the three matched pools and three seeds, metre $\rho$ spans
 $0.66$--$0.80$ in all 18 cells (Table~\ref{tab:seeds}), and the lowest lower
 bootstrap limit among them is $0.57$.
@@ -458,8 +463,11 @@ T-MRA rises from $21.6$--$23.4$ under the direct prompt to $63.9$--$77.8$,
 within $0.2$ points of the ceiling (Table~\ref{tab:two_stage}). H3 holds. H2
 holds in five of six cells; for v3 path the shortfall is $17.7$ points, a partial
 recovery. The magnitude the adapters read from the image is therefore good
-enough to support a correct pixel answer; what is missing is the step that
-applies the unit to it.
+enough to support a correct pixel answer once the factor is stated and applied
+in a text turn. The direct pixel question does not state $K$, so the gain
+combines the stated factor, the intermediate reading and the two-turn format;
+the experiment identifies a remedy, not the internal step at which the unit is
+lost.
 
 \input{tables/two_stage}
 
@@ -479,8 +487,15 @@ other two, against $1.00$ for the metre-only adapter; the centimetre answers
 keep ranking the motion ($\rho_{\mathrm{cm}}=0.64$--$0.70$, close to the metre
 arm), and their medians follow the metre answers rather than the centimetre
 training median. The same holds in the training wording (ratios $69$--$100$).
+A median near $100$ could also arise from two separately calibrated output
+mappings, so we add the item level: the centimetre answer divided by $100$
+times the metre answer lies within a factor of two of exact conversion in
+$99$--$100\%$ of path items across the six seed--clip cells, and within $25\%$
+in $19$--$89\%$ of them, the lower values at seed 43; for speed the share
+within $25\%$ is at most $1\%$ (\supp{5}). Path conversion is therefore
+item-wise, with a precision that varies by seed.
 Mixed-unit training also restores text arithmetic: on the 246 diagnostic items
-the adapter answers $83.7\%$ [$78.6$, $87.8$], indistinguishable from the
+the adapter answers $83.7\%$ [$78.6$, $87.8$], close to the
 unadapted backbone ($80.5\%$, $p=0.15$) and far above the metre-only v3 adapter
 ($58.1\%$, $p=9.7\times10^{-14}$). The arithmetic damage of
 Section~\ref{sec:locate} is therefore also a consequence of metre-only
@@ -566,8 +581,9 @@ mode is $79$. The adapters answer exactly these values: $110$ in $44$--$100\%$
 of the items of each speed cell across the three seeds ($100$ otherwise), and
 $100$ or $104$ after the 1\,cm/s retraining ($65$--$67\%$). Conditioning the
 same prediction on the adapter's own metre reading of each item does not
-improve it (at most $14\%$ agreement), so the centimetre speed channel does
-not read the image at all. The path targets spread over more first digits
+improve it (at most $14\%$ agreement), so the centimetre speed output is set
+by the unit's answer prior rather than by the item: it collapses to one or two
+values whatever the reading. The path targets spread over more first digits
 ($37\%$ share the majority first digit, against $50\%$ for speed); their
 prefix-greedy value, $140$, is one of several answers the adapters give,
 alongside converted values. Whether the strength of this prefix prior
@@ -615,17 +631,21 @@ A preregistered probe asked whether the reference quantity can be read
 linearly from the hidden states of the unadapted backbone and of the
 CourtDyn-native, metre-only v3 and mixed-unit adapters, and whether that readout
 depends on the motion in the frames. It can be read in every model (10 of 10
-cross-validation fold seeds in both families, against a permutation null). Its
-motion dependence, however, appears only after metre-only fine-tuning: under
-first-frame repetition the readout of the v3 adapter loses its correlation in
-10 of 10 fold seeds in both families (CourtDyn-native: 10 and 9), while the
-unadapted backbone's and the mixed-unit adapter's keep it (0 of 10). Whether
-the readout is closer to the image-plane or the floor-plane quantity is not
-stable across fold seeds and is not interpreted; the preregistered single-seed
-analysis and the post hoc ten-seed check are both in \supp{5}. The probe
-agrees with the behavioural picture: metre-only
-fine-tuning makes the internally readable quantity motion-dependent without
-making the numeric output unit-dependent.
+cross-validation fold seeds in both families, against a permutation null). The
+preregistered pipeline selected the layer and pooling on all overhead items and
+scored the first-frame control with a probe fit on those same items; under it,
+the readout lost its correlation under first-frame repetition only after
+metre-only fine-tuning. A post hoc re-analysis that selects the feature and
+penalty inside each training fold, repeats the whole procedure in the
+permutation null, and scores the first-frame items with the probe that held
+them out (\supp{5}) removes that contrast: decodability holds in every model,
+and the correlation drops by $0.40$--$0.92$ under first-frame repetition in
+all four, the unadapted backbone included. The probe therefore does not
+separate the models. A motion-dependent readout of the reference quantity
+exists in each of them, and what metre-only fine-tuning changes is the numeric
+output, not the existence of that readout. Whether the readout is closer to
+the image-plane or the floor-plane quantity is not stable across fold seeds
+and is not interpreted.
 
 \subsection{A second sport, zero-shot}
 \label{sec:soccer}
@@ -816,7 +836,8 @@ backbone it was developed on; elsewhere the format costs the reading.
   and audited per checkpoint.
 \item \textbf{What is identified.} Rank agreement without unit response is a
   behavioural dissociation; the probe of Section~\ref{sec:probe} shows a
-  motion-dependent readout, not a measurement mechanism. Why mixed supervision
+  motion-dependent readout in every model, not a measurement mechanism and
+  not a difference between the models. Why mixed supervision
   converts path but not speed is not identified; the prefix-prior account of
   Section~\ref{sec:prior} is post hoc.
 \item \textbf{References.} The court homography is inflated by about $1\%$,
@@ -971,7 +992,7 @@ released records.
   and Gemma3-12B specified before those runs.
 \item \textbf{Representation probe} (Section~\ref{sec:probe}): the readout,
   motion-dependence and scale hypotheses as stated; the ten-fold-seed
-  stability check is post hoc.
+  stability check and the nested re-analysis are post hoc.
 \end{itemize}
 
 No rule was recorded for the soccer evaluation or for the zero-shot sweep,

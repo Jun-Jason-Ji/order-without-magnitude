@@ -1,0 +1,294 @@
+{
+ "method": "nested feature+penalty selection inside outer 5-fold grouped CV; 200 within-clip label permutations repeating the full procedure; H3 from the same held-out folds (see tools/repr_probe_nested.py)",
+ "seed": 20261005,
+ "models": {
+  "base": {
+   "path": {
+    "n_items": 280,
+    "nested_cv_spearman": 0.7919062378711099,
+    "perm_p99": 0.24373965593584462,
+    "perms": 200,
+    "H1_holds": true,
+    "fold_selections": [
+     {
+      "feature": "img_L16",
+      "alpha": 1.0
+     },
+     {
+      "feature": "img_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L12",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     }
+    ],
+    "H3": {
+     "rho_full_q2_oof": 0.7544597756445302,
+     "rho_static4_oof": 0.3588856574315017,
+     "motion_dependent": true
+    },
+    "seconds": 391.5
+   },
+   "speed": {
+    "n_items": 280,
+    "nested_cv_spearman": 0.7406552197276569,
+    "perm_p99": 0.21597059000388116,
+    "perms": 200,
+    "H1_holds": true,
+    "fold_selections": [
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L20",
+      "alpha": 1000.0
+     }
+    ],
+    "H3": {
+     "rho_full_q2_oof": 0.6739717040956901,
+     "rho_static4_oof": 0.15250049200760973,
+     "motion_dependent": true
+    },
+    "seconds": 393.1
+   }
+  },
+  "mixunit": {
+   "path": {
+    "n_items": 280,
+    "nested_cv_spearman": 0.8219060738748489,
+    "perm_p99": 0.23807715477420432,
+    "perms": 200,
+    "H1_holds": true,
+    "fold_selections": [
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L20",
+      "alpha": 1000.0
+     }
+    ],
+    "H3": {
+     "rho_full_q2_oof": 0.7592880103212263,
+     "rho_static4_oof": 0.01666703111674794,
+     "motion_dependent": true
+    },
+    "seconds": 393.2
+   },
+   "speed": {
+    "n_items": 280,
+    "nested_cv_spearman": 0.7966697825956235,
+    "perm_p99": 0.2192920172086741,
+    "perms": 200,
+    "H1_holds": true,
+    "fold_selections": [
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     }
+    ],
+    "H3": {
+     "rho_full_q2_oof": 0.7451488049681837,
+     "rho_static4_oof": 0.17102621853884675,
+     "motion_dependent": true
+    },
+    "seconds": 390.4
+   }
+  },
+  "native": {
+   "path": {
+    "n_items": 280,
+    "nested_cv_spearman": 0.832903116475611,
+    "perm_p99": 0.2414274453209132,
+    "perms": 200,
+    "H1_holds": true,
+    "fold_selections": [
+     {
+      "feature": "last_L24",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L32",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L32",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L32",
+      "alpha": 100.0
+     },
+     {
+      "feature": "last_L24",
+      "alpha": 1000.0
+     }
+    ],
+    "H3": {
+     "rho_full_q2_oof": 0.7836522271544467,
+     "rho_static4_oof": 0.11226957643611556,
+     "motion_dependent": true
+    },
+    "seconds": 392.1
+   },
+   "speed": {
+    "n_items": 280,
+    "nested_cv_spearman": 0.7602396532025736,
+    "perm_p99": 0.22505789068009244,
+    "perms": 200,
+    "H1_holds": true,
+    "fold_selections": [
+     {
+      "feature": "last_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L32",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L32",
+      "alpha": 10000.0
+     },
+     {
+      "feature": "img_L20",
+      "alpha": 1000.0
+     }
+    ],
+    "H3": {
+     "rho_full_q2_oof": 0.7443703395945859,
+     "rho_static4_oof": 0.07429096236688461,
+     "motion_dependent": true
+    },
+    "seconds": 392.0
+   }
+  },
+  "v3": {
+   "path": {
+    "n_items": 280,
+    "nested_cv_spearman": 0.8094489178980053,
+    "perm_p99": 0.2457571707365072,
+    "perms": 200,
+    "H1_holds": true,
+    "fold_selections": [
+     {
+      "feature": "last_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L32",
+      "alpha": 100.0
+     }
+    ],
+    "H3": {
+     "rho_full_q2_oof": 0.7524742516017582,
+     "rho_static4_oof": -0.17130174280028865,
+     "motion_dependent": true
+    },
+    "seconds": 392.5
+   },
+   "speed": {
+    "n_items": 280,
+    "nested_cv_spearman": 0.7949390753890812,
+    "perm_p99": 0.2213761363574243,
+    "perms": 200,
+    "H1_holds": true,
+    "fold_selections": [
+     {
+      "feature": "last_L20",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "last_L16",
+      "alpha": 1000.0
+     },
+     {
+      "feature": "img_L20",
+      "alpha": 1000.0
+     }
+    ],
+    "H3": {
+     "rho_full_q2_oof": 0.7554787780717677,
+     "rho_static4_oof": 0.0891517788808467,
+     "motion_dependent": true
+    },
+    "seconds": 393.4
+   }
+  }
+ }
+}

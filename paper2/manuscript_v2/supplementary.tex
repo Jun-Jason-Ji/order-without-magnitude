@@ -23,7 +23,7 @@ secondary analyses behind the main text. S1 documents training and provenance fo
 every checkpoint; S2 the prompts, the text probe and the paired analyses; S3 the benchmark
 construction and references; S4 the cross-question consistency check, the matched-label
 comparison and the ordering results by viewpoint; S5 the per-backbone, read-then-convert,
-probe and zero-shot results. Analyses of the earlier version of this study that the main
+probe and zero-shot results and the per-item conversion ratios. Analyses of the earlier version of this study that the main
 text no longer uses are archived with the released records (end of S4). References to the
 main text are given in words.
 
@@ -999,7 +999,7 @@ Qwen3.5-4B.
 
 \input{tables/rtc_supp}
 
-\subsection{Representation probe: verdict stability}
+\subsection{Representation probe: verdict stability and nested re-analysis}
 \label{supp:probe}
 
 The probe asks whether the reference quantity can be read linearly from the
@@ -1023,7 +1023,29 @@ depended on the fold assignment, the analysis was repeated post hoc over ten
 fold seeds, and Table~\ref{tab:probe} reports how often each verdict was
 reached.
 
+The preregistered pipeline has a selection step outside the cross-validation:
+the layer--pooling pair is chosen on all overhead items before H1 is scored on
+the same items, the permutation null keeps that chosen feature and penalty,
+and the first-frame items of H3 are scored by a probe fit on all items,
+including their own four-frame versions. A post hoc re-analysis
+(\texttt{tools/repr\_probe\_nested.py}) repeats every step inside an outer
+five-fold grouped cross-validation: within each training fold the feature is
+selected by inner cross-validated $R^2$ and the penalty by inner
+cross-validation, the 200 within-clip label permutations repeat this whole
+procedure, and the first-frame$\times4$ items of each held-out fold are scored
+by that fold's probe, so full and static predictions come from identical
+training exposure. Table~\ref{tab:probe_nested} sets the two pipelines side
+by side. H1 holds in every model and family under both. H3 does not: under
+the preregistered pipeline the unadapted backbone and the mixed-unit adapter
+kept their correlation under first-frame repetition ($\rho_{\mathrm{static}}$
+$0.52$--$0.63$), whereas under the nested pipeline the correlation drops by
+$0.40$--$0.92$ in all four models. The earlier contrast between models was
+produced by scoring static items with a probe that had seen them, and the
+main text no longer relies on it.
+
 \input{tables/repr_probe_supp}
+
+\input{tables/repr_probe_nested}
 
 \subsection{Zero-shot sweep of public backbones}
 \label{supp:t36}
@@ -1043,6 +1065,23 @@ thinking mode on, so no answer was produced within the token budget; the
 cell is marked rather than rerun.
 
 \input{tables/t36_supp}
+
+\subsection{Per-item conversion of the mixed-unit adapters}
+\label{supp:item_ratios}
+
+The preregistered unit-response rule judges a cell by the median paired
+ratio $R$. A median near $100$ is also compatible with two separately
+calibrated output mappings, so Table~\ref{tab:item_ratios} reports, for each
+seed, test clip and family, the distribution of the item-level ratio
+$r_i = \hat y_{\mathrm{cm},i}/(100\,\hat y_{\mathrm{m},i})$ and the share of
+items within a factor of two and within 25\% of exact conversion (post hoc,
+from the recorded predictions). For path, $r_i$ lies within a factor of two in
+99--100\% of items in all six cells; the share within 25\% is 69--89\% at
+seeds 42 and 44 and 19--27\% at seed 43, whose median ratio is $76$. For speed
+the centimetre answers take one to three values, so $r_i$ is never within 25\%
+of exact conversion in more than 1\% of items.
+
+\input{tables/mixunit_item_ratios}
 
 % ===========================================================================
 
