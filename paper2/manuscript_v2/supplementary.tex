@@ -12,19 +12,20 @@
 \renewcommand{\thetable}{S\arabic{table}}
 \renewcommand{\thefigure}{S\arabic{figure}}
 \renewcommand{\theequation}{S\arabic{equation}}
-\title{Supplementary Material for\\ ``Order without Magnitude: Single-Unit Fine-Tuning Makes
+\title{Supplementary Material for\\ ``Order without Magnitude: Single-Unit Fine-Tuning Can Make
 Vision--Language Models Rank Motion but Ignore the Requested Unit''}
-\author{Jun Ji, Bowen Tan, Yi Li, Xiaolei Zhang, Yi Sui}
+\author{Jun Ji, Bowen Tan, Yizhou Zhao, Yi Li, Xiaolei Zhang, Yi Sui}
 \date{}
 \begin{document}
 \maketitle
 \noindent This supplement collects the protocol details, provenance records and
 secondary analyses behind the main text. S1 documents training and provenance for
 every checkpoint; S2 the prompts, the text probe and the paired analyses; S3 the benchmark
-construction and references; S4 additional analyses across checkpoints, cameras and a
-second basketball venue. Several analyses here were run before the seed sweep, the
-mixed-unit control and the backbone replications of the main text; where a later result
-qualifies one of them, the section says so. References to the main text are given in words.
+construction and references; S4 the cross-question consistency check, the matched-label
+comparison and the ordering results by viewpoint; S5 the per-backbone, read-then-convert,
+probe and zero-shot results. Analyses of the earlier version of this study that the main
+text no longer uses are archived with the released records (end of S4). References to the
+main text are given in words.
 
 \section{Training details and provenance}
 \label{app:adapters}
@@ -221,7 +222,7 @@ v3 / Q2 & path & 21.21 & 4.285 & 64.14 & 1.395 \\
 \end{table}
 
 
-\subsection{Adapters added in this revision}
+\subsection{Adapters for the seed, control and backbone experiments}
 \label{app:revision_adapters}
 
 \textbf{Seeds.} Seeds 43 and 44 of the CourtDyn-native, v1 and v3 pools reuse
@@ -247,11 +248,11 @@ taken at that backbone's $k^*$.
 
 \subsection{Additional frozen transfer checkpoints}
 
-For context, \ref{app:additional} evaluates three previously trained
-checkpoints over the same backbone. Their names identify different training
-procedures, not separate backbone families. We provide their configurations
-here so that interpreting the present comparisons does not require reading
-another manuscript.
+Three previously trained checkpoints over the same backbone appear in the
+archived analyses of the earlier version of this study and in the released
+records. Their names identify different training procedures, not separate
+backbone families; their configurations are given here so that those records
+can be read without another manuscript.
 
 \textbf{source-SFT.} One epoch on 20k sport-stratified geometry-generated QA
 from calibrated racket-sport images: 1,250 steps, batch 1 with accumulation 16,
@@ -337,7 +338,7 @@ T-MRA (main text) uses unrounded references and parsed numbers; a valid
 answer must be a finite numeric string in its entirety. Invalid parses would
 score zero in the all-item score; none occurs here. Spearman uses these exact
 references. $R$ is the paired ratio of the main text, with the metre
-arm under the same height condition as denominator; all 140 denominators are positive.
+arm under the same height condition as denominator; all 140 denominators are positive (Table~\ref{tab:explicit_unit_controls}).
 
 The no-image arithmetic probe uses metre inputs
 $\{0.2,0.5,1.0,2.5,4.0,8.0\}$, each requested in centimetres and millimetres
@@ -433,7 +434,7 @@ therefore differs slightly from the v3 result in
 the main text. Predictions and sample membership are the
 same; only the reference-answer convention changes.
 
-\paragraph{Post-review sensitivity analysis} To describe the paired data more
+\paragraph{Sensitivity analysis} To describe the paired data more
 fully, we recomputed ratios and their interquartile ranges on common valid
 items. All 16 adapter pixel-unit cells have 140 common parsed predictions and
 140 positive full-arm denominators. We also resampled whole 5 s bins of window
@@ -499,7 +500,7 @@ pixels: unlike $S$, $C$ is not invariant to a common rescaling of both
 predictions. We report $C$ only as compatibility with the requested decimal
 precision, not as an accuracy threshold, a prespecified equivalence margin,
 or a unit-invariant measure of consistency.
-All listed pairs have finite predictions and positive speed denominators.
+All listed pairs (Table~\ref{tab:cross-question}) have finite predictions and positive speed denominators.
 Using 2.0 s and its corresponding bound of 0.15 instead of 0.1501 leaves
 every listed pair's classification unchanged. A shared unknown coordinate
 scale cancels from $S$, so uniform rescaling alone cannot account for its
@@ -673,8 +674,7 @@ the four presented frames changes Q2 speed/path correlations from
 $0.764$/$0.760$ to $0.760$/$0.761$; Q1 changes from $0.706$/$0.680$ to
 $0.703$/$0.656$ (140 items per cell; \ref{app:native_boxheight}). This
 single-covariate rank adjustment does not control all confounding or identify
-a motion mechanism. The historical auxiliary source-SFT/GRPO summaries
-remain in \ref{app:additional}.
+a motion mechanism. The historical source-SFT/GRPO summaries are archived with the released records.
 
 \subsection{Question-pool quality}
 
@@ -697,19 +697,8 @@ than the roughly $0.5$ gap between the two viewpoints. This sensitivity analysis
 it does not exclude other item-quality effects or certify the unaudited families.
 
 % ===========================================================================
-\subsection{Zoom and vision-side minimal pairs}
+\subsection{Vision-side minimal pairs}
 
-\paragraph{P3: $2\times$ zoom}
-The image is cropped to a half-width, half-height rectangle centred on the
-player's four-frame trajectory and rendered back to the same width. Pixel
-displacement doubles; the world quantity, the question text (including the
-height sentence) and the ground truth are unchanged. If the model reads pixel
-displacement without normalising, predictions should double; if it uses a ruler
-or reads world quantities, they should not move. We recorded both
-criteria in an internal plan before running the arm, together with the rule that an intermediate outcome is reported as a
-distribution rather than forced into a binary verdict.
-
-\paragraph{P4: vision-side minimal pairs}
 The usual minimal pair swaps the two options in the text of a single image,
 which blocks only half of the degenerate strategies. We instead pair two clips
 that share no frames, whose question text is byte-identical and whose answer is
@@ -723,7 +712,7 @@ We test an image-based reference on Q4\_side\_480--510. At a nominal
 $597\times336$ resolution approximating the configured pixel budget, a colour
 threshold locates the overlaid red box; its height and the prompt's height cue
 provide the v1 scale. This image size is hard-coded in the oracle, not a logged
-processor output for every model. A post-review CPU replay of the local
+processor output for every model. A later CPU replay of the local
 Qwen3.5-4B processor with the configured pixel cap produced a $20\times36$
 patch grid with patch size 16, corresponding to $576\times320$ pixels.
 Historical inference grids were not saved; the replay is not a historical
@@ -838,53 +827,6 @@ All other visual cells parse completely. This establishes sensitivity to
 the tested temporal input change within two events, not a specific motion
 mechanism or cross-game replication.
 
-\subsection{Additional checkpoints and cameras}
-\label{app:additional}
-
-The remaining analyses extend the coverage of the main result using transfer
-checkpoints and public models. They are retained as secondary evidence and
-do not supply a prerequisite result from another paper. Model provenance and
-the Human-M3 source-frame overlap are disclosed in \ref{app:shared}.
-
-\subsection{The original checkpoint on Q1\_top: a cross-view observation}
-\label{app:q1_crossview}
-
-Q1\_top is an unused camera view for the original CourtDyn-native checkpoint,
-but its opening event also appears in that checkpoint's Q1\_side training clip
-(event-level split audit of the main text). It is therefore a cross-view observation and not
-an independent event-level test, and no claim in the main text rests on it. We
-report it here because it was collected under exactly the legacy protocol of
-the main text and because withholding a measured cell would be its
-own distortion. The matched adapters of
-Section~\ref{sec:matched_label_results} evaluate the same clip without this
-overlap, and those results---not the ones below---carry the Q1 evidence.
-
-Under v3 metre scoring the speed/path T-MRA scores are $69.3$/$52.9$ against
-test-distribution constants of $43.0$/$35.0$; pixel-unit scores are
-$16.6$/$12.1$ against $43.8$/$35.1$, with paired pixel/full ratios of
-$1.08$/$0.62$ and pixel-unit correlations of $0.68$/$0.60$. Under the
-first-frame repetition control the metre correlations change from
-$0.71$ to $0.02$ and from $0.68$ to $-0.04$ ($\Delta\rho=+0.69$/$+0.72$),
-with distinct predictions falling from $11$ and $13$ to $3$.
-
-The direction of every one of these effects matches the event-disjoint Q2 cell
-of the main text, which is the reason we treat the overlap as
-affecting the strength of the evidence rather than its sign. Combining the two
-clips would let a contaminated cell widen a reported range, so ranges in the
-main text are computed from Q2 alone. Figure~\ref{fig:nativecore_both} plots
-both clips together for completeness, with the overlapped pair shaded.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{fig_native_core.pdf}
-\caption{Both clips of the original checkpoint under the legacy prompts:
-  (a) advantage over the test-distribution constant, (b) median paired
-  ratios. Shading marks the Q1 cells, whose opening event appears in
-  training through another camera. The main text uses the unshaded cells
-  only.}
-\label{fig:nativecore_both}
-\end{figure}
-
 \subsection{Ordering and first-frame sensitivity by viewpoint}
 \label{sec:e1a}
 
@@ -940,358 +882,10 @@ Q2\_side is flat; on the original side clip the control scores higher.
 This prediction was written down before the side-view controls were run, and it
 held.
 
-\subsection{Which ruler scores it, and why the answer matters}
-\label{sec:whichruler}
 
-The natural next question---does the model have a sense of absolute
-scale?---turns out to depend on a choice the benchmark designer makes, and the
-dependence is large enough to be a finding in its own right.
+\noindent The remaining analyses of the earlier version of this study (additional checkpoints and cameras, the choice of reference ruler, scale and unit comparisons across checkpoints, the zoom intervention, paired families, reproduction arms and a second basketball venue) are archived verbatim with the released code (\texttt{legacy\_analyses\_v1\_S4.tex} in the repository) and are not needed for the claims of the main text.
 
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{fig2_constant_vs_gt.pdf}
-\caption{Model T-MRA minus that clip's constant-median baseline, plotted against
-  the baseline itself, under both ground truths ($56$ cells each: 7 clips
-  $\times$ 4 models $\times$ 2 families). Points above zero beat a predictor
-  with no image input but access to the test answer distribution. The horizontal
-  coordinate is also subtracted in the vertical coordinate, so any downward
-  trend is not by itself evidence of a causal effect of distribution width. Plotted from recorded outputs and stated references using AI-assisted Python code (see the AI-use declaration of the main text).}
-\label{fig:constant}
-\end{figure}
-
-Recomputing every cell under both ground truths with the same scoring function
-(Figure~\ref{fig:constant}),
-$8$ of $56$ cells exceed their own clip's constant baseline under v1 and $9$ of
-$56$ under v3; the base model exceeds it in none. That agreement is the robust
-part. The disagreement is not: individual cells move substantially and some
-change sign. The source-SFT path cell on Q1\_top is $10.9$ points \emph{below}
-the constant baseline under v1 and $13.9$ points \emph{above} it under v3.
-
-The relationship between rank agreement and tolerance score therefore depends
-on the scoring convention. Under v3, some high-correlation cells also exceed
-the constant baseline. The supported methodological observation is that a
-box-height heuristic and a court-grounded reference can reverse evaluations
-of the same predictions. A prompt stating a typical height does not uniquely
-prescribe the v1 calculation. We therefore recommend reporting both the
-prompted scale cue and the scoring convention rather than attributing the
-entire discrepancy to instruction following.
-
-Two results about scale are independent of this choice, because both are
-within-arm comparisons.
-
-\emph{Deleting the height sentence.} We delete ``assume a typical player is
-1.93\,m tall'' from the prompt entirely. Across all three overhead clips and
-both adapters (12 cells), the predicted median moves by a factor of $0.97$ to
-$1.10$, and in seven of the twelve cells it does not move at all: $0.40 \to
-0.40$, $1.00 \to 1.00$, $1.90 \to 1.90$, $4.10 \to 4.10$. This is limited sensitivity of the output median to deleting this cue;
-it does not establish whether the cue was internally represented.
-
-One cell deserves recording rather than averaging away. On Q1\_top the
-source-SFT speed correlation falls from $\rho = 0.59$ to $0.43$, the only
-sizeable \rhosp{} movement in the twelve, while its predicted median is
-unchanged at $0.40$. Thus the rank statistic and the output median can respond
-differently to deleting the sentence.
-
-\emph{Post-hoc no-prior decomposition.} For source-SFT and GRPO-v3 on
-Q1/Q2 speed and path, all eight cells have 140 common finite predictions in
-the full, no-prior and pixel arms, with positive ratio denominators. The
-no-prior prompts differ from full only by deleting the height sentence;
-images and inference configurations match. Median paired no-prior/full
-ratios range from $0.983$ to $1.000$, but deleting the sentence changes v3
-T-MRA by $-3.50$ to $+4.93$ points. Median paired pixel/no-prior ratios
-remain $1.00$--$1.79$, far below the nominal rendered-coordinate factor
-of about 27. Thus deleting the height sentence alone does not explain the
-weak pixel response in these two auxiliary models. The pixel arm still
-changes quantity wording and leaves coordinates unspecified. The legacy
-no-prior outputs used here cover source-SFT and GRPO-v3; the new native
-controls are reported separately in the main text.
-
-\emph{A counterfactual height cue.} Replacing the stated height of 1.93 m by 1.45 m and rescaling the v1
-speed/path reference by $0.751$ tests responsiveness to that heuristic.
-A predictor explicitly implementing v1 would scale its numeric output likewise. The ratios of prediction medians are $1.692$ for
-base, $1.000$ for source-SFT and $1.100$ for GRPO, and source-SFT's score
-\emph{rises} ($+13.9$ speed, $+7.7$ path).
-
-\subsection{Scale and unit comparisons across checkpoints}
-\label{sec:scale_transfer}
-
-We test an explicit scale cue and a requested-unit change on two overhead
-clips. Both arms use the same source frames and item identities as full.
-The scale cue and pixel ground truth use the $960\times540$ rendered canvas;
-this convention was not specified explicitly in the original model prompts.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{fig5_ruler_and_units.pdf}
-\caption{Median paired prediction ratios for the four adapters.
-  (a) A clip-level scale cue yields ratios of $0.67$--$1.00$.
-  (b) Pixel-unit prompts yield $0.62$--$2.00$, relative to approximately
-  $K\approx27$ under the rendered-image convention. Panel (b) uses a
-  logarithmic axis. These ratios do not identify an internal mechanism. Plotted from recorded outputs and stated references using AI-assisted Python code (see the AI-use declaration of the main text).}
-\label{fig:ruler}
-\end{figure}
-
-\paragraph{The ruler arm} We replace the height sentence with
-``In these frames, one meter on the floor spans about 27 pixels.'' The underlying
-clip-level $K$ is the median rendered-pixel path length divided by homography
-path length over eligible path items; it is not a per-item box-height cue.
-The numerical factors are $27.061$ and $27.498$ pixels/m, both rounded to 27
-in the prompts. The builder requires an interquartile range divided by the
-median of at most $5\%$. Full and ruler predictions are both scored against
-v3. This controls the scoring convention but not ambiguity about model-side
-image resizing.
-
-For the three transfer checkpoints, $8$ of $12$ cells have a median paired
-prediction ratio of $1.00$; the remaining four give $0.79$--$0.96$. $\Delta$T-MRA scatters between $-8.1$ and
-$+13.0$ with no systematic improvement. Supplying this cue does not systematically improve the score. This does not
-separate coordinate interpretation, instruction following and arithmetic.
-The base model is the apparent exception (ratios $1.88$ and $12.00$), but it
-simultaneously drives \rhosp{} from $+0.11$ to $-0.19$; its changing magnitude does not accompany improved rank agreement.
-Figure~\ref{fig:ruler} presents the four adapters, including CourtDyn-native.
-
-\paragraph{The unit-swap arm} We re-ask the identical items, on identical
-frames, with the answer unit and the ground truth expressed in rendered pixels.
-The tolerance is scaled by $K$ so the two arms remain comparable.
-Table~\ref{tab:unitswap} reports the outcome.
-
-\begin{table}[t]
-\centering
-\caption{Unit swap, per clip (Q1 / Q2), $K = 27.06$ / $27.50$ rendered pixels
-  per metre. Substantial rank agreement remains for adapted models; $R$ denotes the
-  median paired ratio in the main text.}
-\label{tab:unitswap}
-\small
-\begin{tabular}{llll}
-\toprule
-Model & Family & Pixel-unit \rhosp{} & $R$ (pixel/full) \\
-\midrule
-source-SFT        & speed & $0.52$ / $0.58$ & $2.00$ / $1.50$ \\
-source-SFT        & path  & $0.77$ / $0.66$ & $1.00$ / $1.00$ \\
-GRPO-v3           & speed & $0.64$ / $0.57$ & $1.30$ / $1.36$ \\
-GRPO-v3           & path  & $0.75$ / $0.68$ & $1.03$ / $1.00$ \\
-target-SFT-token  & speed & $0.52$ / $0.64$ & $1.30$ / $1.10$ \\
-target-SFT-token  & path  & $0.77$ / $0.71$ & $1.27$ / $1.25$ \\
-\midrule
-Qwen2.5-VL-7B     & speed & $0.13$ / $0.00$ & $0.87$ / $0.87$ \\
-Qwen2.5-VL-7B     & path  & $-0.01$ / $-0.14$ & $1.00$ / $1.00$ \\
-\midrule
-CourtDyn-native   & speed & $0.68$ / $0.70$ & $1.08$ / $1.11$ \\
-CourtDyn-native   & path  & $0.60$ / $0.73$ & $0.62$ / $0.62$ \\
-\midrule
-\multicolumn{2}{l}{\emph{nominal rendered-image reference $K$}} & --- & $27.1$ / $27.5$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The transfer checkpoints retain positive rank agreement ($0.52$--$0.77$),
-compared with $0.34$--$0.80$ under v3 metre scoring. These ranges do not prove
-unchanged correlations. Median paired prediction ratios of $1.00$--$2.00$
-remain far below approximately $27$ under the rendered-image convention.
-Pixel-unit ground-truth medians are $29.6$--$88.5$; the corresponding model
-output medians are $0.6$--$4.9$.
-
-This is evidence for weak responsiveness to the requested unit while retaining
-ordering. The original prompts do not state which image coordinate system to
-use after preprocessing. Thus $K$ defines our evaluation convention rather
-than a uniquely communicated model-side conversion. The result does not
-identify an absent internal magnitude representation.
-
-\paragraph{Public-model comparison}
-We also ran public Qwen2.5-VL-7B through both arms. The handed ruler
-gives median paired prediction ratios of $0.87$ in all four ruler cells
-and $0.87$--$1.00$ in the unit swap, compared with approximately $27$ under
-the rendered-image convention. This particular public model does not provide a successful unit-conversion
-comparison; its task-level degeneracy precludes conclusions about stronger models.
-
-It does not, however, independently replicate the behavioural conjunction, and we will not
-present it as though it did. The 7B is \emph{degenerate} on these arms: it emits
-essentially a single number (median $1.5$ in metres, $1.3$ once a ruler is
-handed over), the distinct-prediction count falls to one or two, and Spearman's
-\rhosp{} is undefined in three of the four ruler cells for want of variation.
-Its pixel-unit \rhosp{} is $-0.14$ to $0.13$---indistinguishable from zero,
-unlike the $0.52$--$0.77$ of the adapters. This weak task performance does not independently reproduce the conjunction
-of retained ordering and limited unit response.
-
-The supported conclusion is restricted to these prompts, camera clips and
-adapters: positive rank agreement coexists with unit responses much smaller
-than the rendered-pixel reference factor. Output priors and instruction or
-coordinate interpretation remain alternative explanations.
-
-\paragraph{Token-level supervision} The target-SFT-token arm has zoom ratios
-of $1.16$--$1.81$ and first-frame sensitivity of similar magnitude to the other
-transfer checkpoints. This arm supplies no evidence that its particular static
-supervision recipe resolves unit responsiveness; it does not test every form
-of token-level or multi-unit supervision.
-
-\subsection{Pixels or metres: the zoom intervention}
-\label{sec:zoom}
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{fig4_zoom_ratio.pdf}
-\caption{Median $\mathrm{pred(zoom)}/\mathrm{pred(full)}$ per model and family,
-  one point per clip. Ratios are reported per clip against the planned reference criteria.
-  The 7B group is shaded: its ratio of $1.00$ is degenerate. Plotted from recorded outputs and stated references using AI-assisted Python code (see the AI-use declaration of the main text).}
-\label{fig:zoom}
-\end{figure}
-
-Under P3, doubling pixel displacement while holding the world quantity fixed
-gives median paired prediction ratios of $1.42$ and $1.05$ (source-SFT speed and path),
-$1.21$ and $1.00$ (GRPO), and $1.00$ and $0.87$ (Qwen2.5-VL-7B), summarised in
-Figure~\ref{fig:zoom}. The fraction of items whose ratio exceeds $1.5$ is
-$34\%$, $21\%$, $33\%$, $10\%$, $15\%$ and $5\%$ respectively.
-
-The planned binary criteria did not yield a decisive classification, so we
-report the distribution. These results do not by themselves exclude either
-mechanistic endpoint: mixtures, output quantisation and degenerate constant
-answers can yield intermediate or near-unit ratios. Concentration on a few
-numeric values is consistent with an answer-prior account, without identifying
-it uniquely.
-
-The 7B's ratio of $1.00$ must not be read as ruler use: it emits a constant
-$1.5$ in both arms, so the ratio is degenerate. The criterion is only meaningful
-where the predictions vary.
-
-\paragraph{An unplanned result: cropping restores the side views}
-The zoom arm also raises \rhosp{} itself, and far more on side views than
-overhead: source-SFT speed $0.42 \to 0.57$, path $0.54 \to 0.70$; GRPO
-$0.47 \to 0.58$ and $0.53 \to 0.69$; the 7B path arm $0.01 \to 0.35$. The median
-$\Delta\rho$ is $+0.06$ overhead and $+0.36$ on side views, where the same
-clip's \rhosp{} rises from $0.0$--$0.2$ to $0.43$--$0.50$---the overhead range.
-
-These results show that side-view rank agreement can improve after the
-combined crop-and-magnification intervention. They do not isolate projective
-geometry from apparent size and surrounding content. Centring the crop on
-the trajectory both magnifies the target and deletes everything outside the
-crop, so we ran a third arm to compare these two components.
-
-\paragraph{Decomposing the crop}
-The \emph{declutter} arm applies the identical crop rectangle (the same function
-produces it, so the retained pixels and the dropped items match the zoom arm
-item for item) but renders it at the \emph{full} arm's scale, $480 \times 270$,
-centred on a $960 \times 540$ black canvas. Apparent size is then exactly that
-of the full arm and the retained content exactly that of the zoom arm, so with
-all three arms scored on their common items,
-$\rho(\text{declutter}) - \rho(\text{full})$ compares the content-and-layout change
-and $\rho(\text{zoom}) - \rho(\text{declutter})$ compares magnification conditional on that crop.
-
-On the side clip the split is lopsided: the content term has median $+0.260$
-(range $+0.16$ to $+0.34$ over the four model $\times$ family cells) and the
-size term median $+0.081$ ($+0.06$ to $+0.17$). The content contrast accounts descriptively for roughly $70\%$ of the
-recovery along this sequence of interventions. It is not an independently
-identified causal fraction: the black canvas also changes layout and centring. On the three overhead clips both terms are near zero (medians
-$+0.071$ and $+0.005$), consistent with the small overhead effect above; in
-five of twelve overhead cells the size term is in fact \emph{negative}, i.e.\
-magnification slightly hurts.
-
-This comparison suggests a contribution beyond magnification alone;
-it does not establish independent effects of resolution and perspective geometry. One boundary must be kept in the wording. The
-black border removes \emph{everything} outside the crop---distracting players,
-but also the court lines and the background, which are exactly the perspective
-cues. The content term is therefore the effect of \emph{surrounding content},
-not of \emph{other players}; isolating the players alone would need a fourth arm
-that paints them out while keeping the court, which we did not run.
-
-Note also that this does not conflict with the item-quality audit of
-the main text: removing low-quality \emph{items} barely moves
-\rhosp{}, whereas changing the \emph{image} moves it a great deal. The two
-operate on different objects.
-
-\subsection{Paired families}
-\label{sec:paired}
-
-On the vision-side minimal pairs (chance $25$), the protocol behaves as
-designed. Under a blank image the paired score is exactly $0.0$, because a constant answer necessarily scores zero when the pair is scored
-jointly. This conclusion follows from the pair construction and the present
-blank-image evaluations.
-
-The capability itself, however, is not established. Paired accuracy on
-accel\_vis is $3.4$ (base), $22.4$ (source-SFT), $25.9$ (GRPO) and $32.8$
-(target-SFT-token); magnifying by $4.5\times$ does not rescue it
-($19.0 / 15.5 / 17.2 / 24.1$). On faster, only Q2\_top rises meaningfully
-(GRPO $41.4$, 7B $32.9$, SFT $30.0$); Q1\_top is at most $17.2$ everywhere.
-These results do not establish a dynamics-comparison ability: most cells sit
-at or below chance.
-
-\subsection{Reproduction arms}
-\label{sec:repro}
-
-To assess the scope beyond our adapters, two public models were run
-through the same protocols. Qwen2.5-VL-7B reaches $\rho \le 0.25$ on every clip,
-shows only small first-frame differences ($\Delta\rho = 0.06$--$0.28$) and a
-zoom ratio locked at $1.00$. SmolVLM2-2.2B scores \emph{higher} on a blank image
-than on the real one (speed T-MRA $76.9$ vs $31.4$) and $0.0$ paired under a
-blank.
-
-Both show weak task performance compatible with an answer-prior account.
-Neither establishes the combination of positive rank agreement and weak unit
-responsiveness observed for the task-trained model. These results do not
-show that the public models use no multi-frame content. They are zero-shot
-comparisons; the trained replications on SmolVLM2-2.2B, Qwen2.5-VL-3B and
-InternVL3-2B, with decision rules recorded before training, are reported in the
-main text.
-
-\subsection{A second venue and an inconclusive camera comparison}
-\label{sec:secondvenue}
-
-Everything above comes from one basketball venue (the soccer evaluation of the
-main text is a second sport). On Human-M3~\cite{humanm3} basketball
-sequences, we evaluated source-SFT, GRPO and a public comparison model.
-This is an auxiliary transfer
-analysis, not an external replication of CourtDyn-native. Ground truth is the
-dataset's own 3D world coordinates---no height ruler, no homography, and hence
-none of the factor-of-two ambiguity of \ref{sec:whichruler}. Crucially,
-the same world motion is captured simultaneously by several cameras with
-different geometry, so viewpoint can be varied on \emph{identical} items with
-byte-identical ground truth.
-
-\begin{figure}[t]
-\centering
-\includegraphics[width=\linewidth]{fig3_multiview.pdf}
-\caption{Human-M3: coupling between pixel and world displacement per camera,
-  with model rank correlations overlaid. Plotted from recorded outputs and stated references using AI-assisted Python code (see the AI-use declaration of the main text).}
-\label{fig:multiview}
-\end{figure}
-
-\paragraph{Observed behaviour} Figure~\ref{fig:multiview} overlays the model
-correlations on the per-camera pixel--world coupling. In this auxiliary
-evaluation, across 28 model $\times$ family $\times$ camera rows, $26$ fall below
-their own camera's constant baseline (deficits $-1.9$ to $-63.5$), and the two positive values are $+2.9$ and $+0.6$. We have not established
-their statistical significance. The predominance of deficits also occurs
-outside the CourtDyn homography setting.
-
-The transfer checkpoints also show a first-frame effect. On the camera with the
-highest full-frame \rhosp{} (basketball2, camera~0), removing motion lowers
-\rhosp{} in all four cells: $0.48 \to 0.28$, $0.50 \to 0.13$, $0.44 \to 0.18$
-and $0.46 \to 0.17$, i.e.\ $\Delta\rho$ of $0.20$, $0.37$, $0.26$ and $0.29$.
-The magnitude, however, is about half of what the overhead CourtDyn clips give
-($0.46$--$0.93$), the internally planned threshold of $0.3$ is cleared by one cell
-of four, and the control's \rhosp{} does not reach zero ($0.13$--$0.28$ versus
-$0.01$ to $-0.17$ overhead). We therefore write that multi-frame use replicates
-\emph{in direction at roughly half the size}, and not that it replicates fully.
-
-\paragraph{Camera criterion} An internal plan recorded before running specified the
-prediction that model \rhosp{} should track the per-camera coupling between
-pixel and world displacement, with the alternative that flat model \rhosp{}
-across cameras would challenge the image-plane interpretation in that plan.
-Neither outcome was obtained. The rank correlations between model \rhosp{} and that coupling are
-$+0.63$, $-0.40$, $+0.40$ and $-0.06$ across the four model--family
-combinations: two are negative. The camera with the weakest coupling ($0.13$)
-is indeed the one where both models' speed correlation collapses to $-0.00$ and
-$0.03$, which points the right way; but the camera with the strongest coupling
-($0.77$) shows model \rhosp{} of only $0.17$--$0.24$, the lowest in the table,
-which points the wrong way. Nor is model \rhosp{} flat (speed ranges $0.00$ to
-$0.34$ within one sequence).
-
-This is a rank comparison over only four cameras. Its mixed signs provide
-no consistent independent support for the image-plane account, and the small
-sample does not support a decisive mechanistic conclusion in either direction.
-The internally dated plan and frozen criterion are released, but should not be
-confused with an independently timestamped public preregistration. The
-CourtDyn interventions remain the basis for the bounded behavioural claim.
-
-% ===========================================================================
-\section{Results added in this revision}
+\section{Per-backbone, read-then-convert, probe and zero-shot results}
 \label{supp:revision}
 
 \subsection{Per-backbone results at seed 42}
@@ -1385,15 +979,68 @@ seed.
 \subsection{Read-then-convert}
 \label{supp:rtc}
 
+The read-then-convert (RTC) adapter is trained on the mixed-unit pool with
+every target rewritten as ``\emph{reading in metres} m $\rightarrow$
+\emph{value unit}'', so that one answer carries the metre reading and the
+converted value. The decisive test is conversion to units absent from
+training: km/h and ft/s for speed, ft and mm for path, on both test clips
+(eight cells). A cell converts when the paired ratio of the converted answer
+to the metre reading lies within $[f/1.5,\,1.5f]$ of the exact factor $f$,
+the arm is non-degenerate and the metre reading keeps $\rho\ge0.30$; the
+preregistered hypothesis H1 holds with at least six of eight cells. Two
+controls were recorded with it: the metre-only and mixed-unit adapters
+prompted in the RTC output format without RTC training (H6, the format
+control), and the RTC adapter's metre ranking against the metre-only
+adapter's (H4). The replication at seeds 43 and 44 and on InternVL3-2B,
+Pixtral-12B and Gemma3-12B was specified before those runs.
+Table~\ref{tab:rtc} gives the hypotheses per adapter and the per-cell
+ratios; the main text summarises the outcome as a prompting effect of
+Qwen3.5-4B.
+
 \input{tables/rtc_supp}
 
 \subsection{Representation probe: verdict stability}
 \label{supp:probe}
 
+The probe asks whether the reference quantity can be read linearly from the
+hidden states, and whether that readout depends on the motion in the frames.
+For each of the unadapted backbone, CourtDyn-native, the metre-only v3 and
+the mixed-unit adapter, one forward pass over the explicit metre prompt of
+all 280 speed and path items of five clips yields hidden states at layers 4,
+8, \ldots, 32 under two poolings (mean over the image tokens, and the last
+prompt token). A ridge regression on the standardised features predicts the
+log-metric target, with the penalty chosen by inner grouped cross-validation
+(groups: clip and 2-second window start) and the layer--pooling pair selected
+once per model by cross-validated $R^2$ on the overhead clips. H1
+(decodability) holds when the grouped cross-validated Spearman correlation on
+the overhead clips is at least $0.30$ and exceeds the 99th percentile of 200
+within-clip label permutations. H3 (motion dependence) applies the probe fit
+on full-frame items to the first-frame$\times4$ features of the Q2 clip and
+holds when the correlation drops by at least $0.30$. H2 asks whether the
+image-plane or the floor-plane quantity is the better-explained target. The
+preregistered analysis used one cross-validation fold seed; because H2
+depended on the fold assignment, the analysis was repeated post hoc over ten
+fold seeds, and Table~\ref{tab:probe} reports how often each verdict was
+reached.
+
 \input{tables/repr_probe_supp}
 
 \subsection{Zero-shot sweep of public backbones}
 \label{supp:t36}
+
+Nine public backbones (Qwen3.5-4B in NF4 and bf16, Qwen2.5-VL-3B and -7B,
+InternVL3-2B and -8B, Gemma3-4B, LLaVA-OneVision-7B and SmolVLM2-2.2B) answer
+the explicit metre, centimetre and pixel cells of both test clips without
+any fine-tuning, under the same prompts, image policies and greedy decoding
+as the adapters, plus the first-frame$\times4$ control on the metre arm and
+the 12-item text conversion probe. Table~\ref{tab:t36} reports, per
+backbone and cell, the number of distinct parsed metre answers, the metre
+rank correlation, the paired centimetre/metre and pixel/metre answer ratios,
+and whether both the metre and centimetre arms are live. No decision rule
+was recorded for this sweep; it is descriptive. One cell is invalid: the bf16
+Qwen3.5-4B run was loaded through a generic path that left the model's
+thinking mode on, so no answer was produced within the token budget; the
+cell is marked rather than rerun.
 
 \input{tables/t36_supp}
 

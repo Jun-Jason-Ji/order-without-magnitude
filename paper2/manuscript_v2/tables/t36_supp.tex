@@ -37,16 +37,16 @@ qwen35-4b & Q1 & speed & 1 & -- & 1.0 & 3.0 (27) & no \\
 qwen35-4b & Q1 & path & 3 & 0.25 & 0.0 & 0.0 (27) & no \\
 qwen35-4b & Q2 & speed & 1 & -- & 1.0 & 3.0 (27) & no \\
 qwen35-4b & Q2 & path & 3 & 0.32 & 0.0 & 0.0 (27) & no \\
-qwen35-4b-bf16 & Q1 & speed & 0 & -- & -- & -- (--) & INVALID \\
-qwen35-4b-bf16 & Q1 & path & 0 & -- & -- & -- (--) & INVALID \\
-qwen35-4b-bf16 & Q2 & speed & 0 & -- & -- & -- (--) & INVALID \\
-qwen35-4b-bf16 & Q2 & path & 0 & -- & -- & -- (--) & INVALID \\
+qwen35-4b-bf16 & Q1 & speed & 0 & -- & -- & -- (--) & invalid \\
+qwen35-4b-bf16 & Q1 & path & 0 & -- & -- & -- (--) & invalid \\
+qwen35-4b-bf16 & Q2 & speed & 0 & -- & -- & -- (--) & invalid \\
+qwen35-4b-bf16 & Q2 & path & 0 & -- & -- & -- (--) & invalid \\
 smolvlm2-2b & Q1 & speed & 5 & 0.22 & 1.6 & 1.0 (27) & yes \\
 smolvlm2-2b & Q1 & path & 4 & -0.22 & 7.3 & 731.4 (27) & yes \\
 smolvlm2-2b & Q2 & speed & 4 & -0.00 & 1.2 & 1.0 (27) & yes \\
 smolvlm2-2b & Q2 & path & 2 & -0.24 & 5.7 & 1015.8 (27) & no \\
 \bottomrule
 \end{tabular}}
-\par\vspace{3pt}\begin{flushleft}\footnotesize distinct: parsed metre answers; $\rho$: metre rank correlation; $R_{\mathrm{cm}}$, $R_{\mathrm{px}}$: median paired ratios (exact 100 and the clip's $K\approx27$); live: both arms $\ge3$ distinct answers. INVALID: harness failure (thinking mode left on), not a model result.\end{flushleft}
+\par\vspace{3pt}\begin{flushleft}\footnotesize distinct: parsed metre answers; $\rho$: metre rank correlation; $R_{\mathrm{cm}}$, $R_{\mathrm{px}}$: median paired ratios (exact 100 and the clip's $K\approx27$); live: both arms $\ge3$ distinct answers; invalid: harness failure (thinking mode left on), not a model result.\end{flushleft}
 \end{table}
 % caption trimmed by tools/trim_table_captions.py

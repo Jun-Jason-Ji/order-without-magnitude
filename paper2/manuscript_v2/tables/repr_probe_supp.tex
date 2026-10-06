@@ -3,16 +3,17 @@
 \centering\footnotesize
 \caption{Representation probe: verdict frequency over 10 fold seeds.}
 \label{tab:probe}
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lcccccc}
 \toprule
 Model & H1 speed & H1 path & H3 speed & H3 path & H2 path & H2 speed \\
 \midrule
-unadapted & 10/10 & 10/10 & 0/10 & 0/10 & UNTESTABLE 7, floor-plane 3 & UNTESTABLE 10 \\
+unadapted & 10/10 & 10/10 & 0/10 & 0/10 & untestable 7, floor-plane 3 & untestable 10 \\
 CourtDyn-native & 10/10 & 10/10 & 9/10 & 10/10 & excluded 10 & excluded 10 \\
-metre-only v3 & 10/10 & 10/10 & 10/10 & 10/10 & image-plane 7, UNTESTABLE 2, floor-plane 1 & UNTESTABLE 10 \\
-mixed-unit & 10/10 & 10/10 & 0/10 & 0/10 & UNTESTABLE 8, floor-plane 2 & UNTESTABLE 8, image-plane 2 \\
+metre-only v3 & 10/10 & 10/10 & 10/10 & 10/10 & image-plane 7, untestable 2, floor-plane 1 & untestable 10 \\
+mixed-unit & 10/10 & 10/10 & 0/10 & 0/10 & untestable 8, floor-plane 2 & untestable 8, image-plane 2 \\
 \bottomrule
-\end{tabular}
+\end{tabular}}
 \par\vspace{3pt}\begin{flushleft}\footnotesize Counts over 10 cross-validation fold seeds. H1: the linear readout beats the permutation null; H3: the readout loses its correlation under first-frame repetition; H2: image-plane vs.\ floor-plane quantity (untestable when the control does not separate them).\end{flushleft}
 \end{table}
 % caption trimmed by tools/trim_table_captions.py

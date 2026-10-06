@@ -75,7 +75,27 @@ def seed_labels_tex(sb):
             L.append(r"\expandafter\def\csname seedlabel-" + f"{key}-{r}" + r"\endcsname{" + text + "}")
             L.append(r"\expandafter\def\csname seeddetail-" + f"{key}-{r}" + r"\endcsname{"
                      + seed_detail(e["per_seed"][r]) + "}")
+    L.append(r"\providecommand{\seedtally}{" + seed_tally(sb) + "}")
     return "\n".join(L) + "\n"
+
+
+WORDS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten",
+         "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen",
+         "nineteen", "twenty"]
+num = lambda n: WORDS[n] if n <= 20 else str(n)
+
+
+def seed_tally(sb):
+    """One sentence counting the labels over all rule x backbone combinations (multiplicity summary)."""
+    labs = [sb[key]["labels"][r] for key in ORDER for r, _ in RULES]
+    n = len(labs)
+    c = {k: labs.count(k) for k in ("holds at all three seeds", "holds at two of three seeds",
+                                     "fails across seeds", "seed-dependent", "not established")}
+    assert sum(c.values()) == n, (c, n)
+    return (f"Of the {n} rule--backbone combinations ({num(len(RULES))} rules on {num(len(ORDER))} backbones), "
+            f"{num(c['holds at all three seeds'])} hold at all three seeds, {num(c['holds at two of three seeds'])} at two of three, "
+            f"{num(c['fails across seeds'])} fail across seeds, {num(c['seed-dependent'])} are seed-dependent and "
+            f"{c['not established']} are not established.")
 
 
 def seeds_tex(sb):
@@ -90,7 +110,7 @@ def seeds_tex(sb):
              r"one or more and fails at one or more); n.e.\ = not established. "
              r"Seeds 43 and 44 use the schedule selected at seed 42 (dev rule not re-run). "
              r"$^\dagger$SmolVLM2-2.2B is degenerate at the four-epoch cap: descriptive only.}",
-             r"\label{tab:seeds}", r"\resizebox{\linewidth}{!}{%", r"\begin{tabular}{lcccccc}", r"\toprule",
+             r"\label{tab:backbone_seeds}", r"\resizebox{\linewidth}{!}{%", r"\begin{tabular}{lcccccc}", r"\toprule",
              r"Backbone & seeds & R1 & R2-E & R2-T & R3 & R4 \\", r"\midrule"]
     for key in ORDER:
         e = sb[key]
@@ -198,7 +218,7 @@ def t36_tex(models):
             if c.get("missing"):
                 continue
             a = c["arms"]["m_height"]
-            live = "INVALID" if e.get("invalid") else ("yes" if c["live_unit"] else "no")
+            live = "invalid" if e.get("invalid") else ("yes" if c["live_unit"] else "no")
             L.append(f"{m} & {c['seq'].split('_')[0]} & {c['family']} & {a['distinct']} & {f(a['rho'])} & "
                      f"{f(c['R_cm'], 1)} & {f(c['R_px'], 1)} ({f(c['R_px_reference'], 0)}) & {live} \\\\")
     L += [r"\bottomrule", r"\end{tabular}}", r"\end{table}"]
@@ -230,17 +250,17 @@ def probe_tex(pb):
          r"readout loses its correlation when the four frames are replaced by the first frame; H2: whether the "
          r"readout is better explained by the image-plane or the floor-plane quantity (untestable when the "
          r"control condition does not separate them).}",
-         r"\label{tab:probe}", r"\begin{tabular}{lcccccc}", r"\toprule",
+         r"\label{tab:probe}", r"\resizebox{\linewidth}{!}{%", r"\begin{tabular}{lcccccc}", r"\toprule",
          r"Model & H1 speed & H1 path & H3 speed & H3 path & H2 path & H2 speed \\", r"\midrule"]
     names = {"base": "unadapted", "native": "CourtDyn-native", "v3": "metre-only v3", "mixunit": "mixed-unit"}
     for m in ("base", "native", "v3", "mixunit"):
         e = pb[m]
-        lab = lambda k: "excluded" if k == "None" else k
+        lab = lambda k: "excluded" if k == "None" else k.lower()     # verdict labels printed as plain words
         h2p = ", ".join(f"{lab(k)} {v}" for k, v in sorted(e["H2_path"].items(), key=lambda kv: -kv[1]))
         h2s = ", ".join(f"{lab(k)} {v}" for k, v in sorted(e["H2_speed"].items(), key=lambda kv: -kv[1]))
         L.append(f"{names[m]} & {e['H1_speed_true']}/{n} & {e['H1_path_true']}/{n} & {e['H3_speed_true']}/{n} & "
                  f"{e['H3_path_true']}/{n} & {h2p} & {h2s} \\\\")
-    L += [r"\bottomrule", r"\end{tabular}", r"\end{table}"]
+    L += [r"\bottomrule", r"\end{tabular}}", r"\end{table}"]
     return "\n".join(L) + "\n"
 
 

@@ -213,7 +213,7 @@ game~\cite{teamtrack2024}: seven 30-second clips (three overhead, four side
 cameras) and $4{,}705$ questions. Each question shows four frames sampled over
 2.0 seconds, with the target player in a red box, and asks for a speed (m/s) or
 a path length (m); a timing family and two categorical families are described
-in \supp{3}; the categorical families are analysed in \supp{4}. Answers integrate smoothed tracking positions over the window.
+in \supp{3} and are not used here. Answers integrate smoothed tracking positions over the window.
 
 Converting image motion to metres requires a scale reference. The prompt
 supplies a height cue (``assume a typical player on this court is 1.93\,m
@@ -271,7 +271,8 @@ For a scalar answer we use the tolerance-based mean relative accuracy
 \mathbf{1}\!\left[\frac{|\hat{y}-y| - T}{\max(|y|, \epsilon)} < 1-\theta\right],
 \end{equation}
 with $\Theta = \{0.50, 0.55, \ldots, 0.95\}$, on a $0$--$100$ scale, with $(T,\epsilon)=(0.30,1.0)$ for speed and
-$(0.50,2.0)$ for path, scaled with the unit. Each T-MRA is read against a
+$(0.50,2.0)$ for path, both multiplied by the unit factor in the other arms (100 for
+centimetres, the clip's pixel factor $K$ for pixels). Each T-MRA is read against a
 \emph{test-label constant}: the best single answer for that clip and family,
 chosen with knowledge of the test labels. Because it uses the labels, it is a
 diagnostic reference rather than a predictor, and exceeding it is a strict
@@ -295,7 +296,7 @@ data.
 \label{sec:setup}
 
 \paragraph{Backbone and adapters}
-All adapters start from public Qwen3.5-4B with NF4 4-bit loading, LoRA
+All adapters start from public Qwen3.5-4B~\cite{qwen3_2025,qwen35_4b_card} with NF4 4-bit loading, LoRA
 ($r=16$, $\alpha=32$) on the language tower and a frozen vision tower, one
 epoch at learning rate $10^{-4}$ (\ref{app:training}). CourtDyn-native was
 trained on 1,400 v1 speed/path answers from four side clips and one overhead
@@ -695,7 +696,7 @@ replication.
 Under this criterion Qwen2.5-VL-3B (epoch four), InternVL3-2B, Pixtral-12B,
 Idefics3-8B and Gemma3-12B (epoch two) all read motion; SmolVLM2-2.2B does
 not. Their per-cell numbers at seed 42 are in \supp{5}; Table~\ref{tab:backbones}
-gives the verdicts, and Table~\ref{tab:seeds} repeats the rules at seeds 43
+gives the verdicts, and Table~\ref{tab:backbone_seeds} repeats the rules at seeds 43
 and 44 with the schedule selected at seed 42 (\ref{app:prereg}) for every
 trained backbone, together with the label across seeds fixed before seeds 43
 and 44 were run.
@@ -712,7 +713,8 @@ is marked as such.
 
 Taken together (Fig.~\ref{fig:unitsrank}), the rules replicate on some
 backbones and not on others, and we state each by its label across seeds
-(Table~\ref{tab:seeds}). The unit non-response of the metre-only adapter (R1)
+(Table~\ref{tab:backbone_seeds}). \seedtally{} The rules are judged by replication across seeds rather than by
+per-cell significance tests. The unit non-response of the metre-only adapter (R1)
 \seedlabel{pixtral_12b}{R1} on Pixtral-12B, a family unrelated to Qwen
 (\seeddetail{pixtral_12b}{R1}). It
 \seedlabel{internvl3_2b}{R1} on InternVL3-2B (\seeddetail{internvl3_2b}{R1})
@@ -800,7 +802,7 @@ backbone it was developed on; elsewhere the format costs the reading.
 
 \begin{enumerate}
 \item \textbf{Backbone.} The full set of results comes from one 4B backbone.
-  The other backbones were run at three seeds each (Table~\ref{tab:seeds});
+  The other backbones were run at three seeds each (Table~\ref{tab:backbone_seeds});
   on Gemma3-12B the unit non-response
   \seedlabel{gemma3_12b}{R1}, on Idefics3-8B it \seedlabel{idefics3_8b}{R1}
   (\seeddetail{idefics3_8b}{R1}), and SmolVLM2-2.2B is degenerate at the
@@ -860,9 +862,9 @@ public, commercial, or not-for-profit sectors.
 \section*{Data availability}
 Code, protocols, deterministic scorers, analysis scripts and aggregate results
 are archived on Zenodo~\cite{owm_software2026}
-(concept DOI \texttt{10.5281/}\allowbreak\texttt{zenodo.22667999}, all versions) with
-the repository
-\texttt{Jun-Jason-Ji/}\allowbreak\texttt{order-without-magnitude}. Source imagery
+(concept DOI \url{10.5281/zenodo.22667999} for all versions; version 2.0.0,
+archived at submission, has DOI \url{10.5281/zenodo.23171323}) with the
+repository \url{Jun-Jason-Ji/order-without-magnitude}. Source imagery
 and the generated question pools are not redistributed: we found no stated
 licence for the basketball tracking dataset~\cite{teamtrack2024}, and
 SoccerNet-GSR~\cite{soccernetgsr2024} is distributed under a non-disclosure
@@ -962,7 +964,7 @@ released records.
   alone, and five aggregate labels (holds at all three seeds; at two of three
   with no failure; fails across seeds; seed-dependent; not established). The
   record was written before any of these runs; all seeds were complete at
-  submission (Table~\ref{tab:seeds}).
+  submission (Table~\ref{tab:backbone_seeds}).
 \item \textbf{Read-then-convert} (Section~\ref{sec:rtc}): the hypotheses as
   stated there, the conversion band tightened to $[f/1.5,\,1.5f]$ before any
   run, and the replication at seeds 43 and 44 and on InternVL3-2B, Pixtral-12B
