@@ -6,6 +6,6 @@
   "scope": "code, preregistered protocols and aggregate results",
   "repository": "https://github.com/Jun-Jason-Ji/order-without-magnitude",
   "associated_manuscript": "Order without Magnitude: Single-Unit Fine-Tuning Can Make Vision-Language Models Rank Motion but Ignore the Requested Unit",
-  "associated_manuscript_sha256": "0db0fc2a9083eda1ffc3d86df0a5810fdc606f457129fadb103e3dd1b1c7df1f",
-  "built_utc": "2026-10-06T09:01:48+00:00"
+  "associated_manuscript_sha256": "2083d7cdcabd1496f5642c9a1720b423c192b4c45415ab830f9e9c46db516b63",
+  "built_utc": "2026-10-06T09:33:56+00:00"
 }

@@ -1,4 +1,4 @@
-| cell | n | distinct cm | median r | IQR | within x2 | within 25% |
+| cell | n | distinct cm | median r | IQR | within x2 | within x1.25 |
 |---|---|---|---|---|---|---|
 | s42/Q1/speed | 140 | 2 | 1.83 | [1.83, 2.28] | 74% | 0% |
 | s42/Q1/path | 140 | 8 | 1.00 | [1.00, 1.14] | 100% | 86% |

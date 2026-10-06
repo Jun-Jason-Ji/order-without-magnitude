@@ -73,13 +73,14 @@ are replaced by copies of the first; both replicate on InternVL3-2B. Their
 numbers barely follow the unit: centimetre/metre prediction ratios are $1.00$--$1.67$ where the exact
 factor is $100$, also on Pixtral-12B, from an unrelated family; on
 Gemma3-12B it depends on the seed. A
-392-item text probe shows that the adapters still apply a
+392-item text probe shows that the adapters apply a
 stated pixel factor correctly; routing their own metre answer through a
 text-only turn triples pixel-unit scores without retraining, and a
 read-then-convert format extends this to unseen units on this backbone only. Single-unit
-supervision causes the failure: training on the same items with half the
-targets in centimetres restores the conversion for path length in all three
-seeds and restores text arithmetic to the unadapted level. For speed it does
+supervision is the operative cause for path length: training on the same pool
+with half the targets in centimetres yields conversion-consistent centimetre
+answers in all three seeds and restores text arithmetic to the unadapted
+level. For speed it does
 not; the centimetre answers collapse onto the median of the centimetre training
 targets, so the numeric channel learns a per-unit answer distribution rather
 than a conversion. Zero-shot on three soccer matches, the metre-only adapter
@@ -129,11 +130,12 @@ this benchmark:
   instead of metres, the same adapters change their answer by a median factor
   of $1.00$--$1.67$ instead of $100$; asked for pixels, by $1.40$--$1.85$ instead
   of about $27$ (Section~\ref{sec:units}).
-\item \textbf{The break is between reading and converting.} On a 392-item text
-  probe the adapters multiply a stated metre value by a supplied pixel factor
-  correctly, yet do not apply it to the value they read from the image; passing
-  their own metre answer through a second, text-only turn recovers the
-  pixel-unit score to the exact-conversion ceiling (Section~\ref{sec:locate}).
+\item \textbf{The conversion applied to stated numbers is not applied to
+  readings.} On a 392-item text probe the adapters multiply a stated metre
+  value by a supplied pixel factor correctly, yet do not apply it to the value
+  they read from the image; passing their own metre answer, with the factor
+  stated, through a second, text-only turn recovers the pixel-unit score to
+  the exact-conversion ceiling (Section~\ref{sec:locate}).
 \item \textbf{The cause is single-unit supervision, and it is partial.}
   Retraining on the same items with half the targets in centimetres restores the
   centimetre conversion for path length in all three seeds and restores text
@@ -490,9 +492,10 @@ training median. The same holds in the training wording (ratios $69$--$100$).
 A median near $100$ could also arise from two separately calibrated output
 mappings, so we add the item level: the centimetre answer divided by $100$
 times the metre answer lies within a factor of two of exact conversion in
-$99$--$100\%$ of path items across the six seed--clip cells, and within $25\%$
-in $19$--$89\%$ of them, the lower values at seed 43; for speed the share
-within $25\%$ is at most $1\%$ (\supp{5}). Path conversion is therefore
+$99$--$100\%$ of path items across the six seed--clip cells, and within a
+factor of $1.25$ in $19$--$89\%$ of them, the lower values at seed 43; for
+speed the share within a factor of $1.25$ is at most $1\%$ (\supp{5}). Path
+conversion is therefore
 item-wise, with a precision that varies by seed.
 Mixed-unit training also restores text arithmetic: on the 246 diagnostic items
 the adapter answers $83.7\%$ [$78.6$, $87.8$], close to the
@@ -549,13 +552,14 @@ stay far from the centimetre training median of $215$.
 
 The two families thus bound what mixed supervision teaches
 (Fig.~\ref{fig:collapse}). Where it succeeds,
-the adapter converts its own reading; where it fails, it has learned the
-distribution of answers that come with the word ``centimetres'' and returns the
-centre of that distribution. The same account explains the metre-only adapters'
-behaviour in Section~\ref{sec:units}, whose answers stay in the metre range
-whatever unit is asked: in both cases the numeric output is anchored to a
-per-unit answer distribution learned in fine-tuning, and only where the
-supervision ties the two units to the same items does a conversion emerge.
+the adapter's centimetre answers are conversion-consistent with its metre
+answers item by item; where it fails, it has learned the distribution of
+answers that come with the word ``centimetres'' and returns the centre of that
+distribution. The same account explains the metre-only adapters' behaviour in
+Section~\ref{sec:units}, whose answers stay in the metre range whatever unit is
+asked: in both cases the numeric output is anchored to a per-unit answer
+distribution learned in fine-tuning, and only when both units are supervised
+within the same pool do conversion-consistent answers emerge.
 
 Why path and speed differ is not the resolution of the targets. Both families
 come from the same windows with the same relative spread, but every
@@ -615,11 +619,14 @@ all three seeds, the family that mixed supervision could not repair, and its
 metre ranking is not inferior to the metre-only adapter's at one seed of
 three.
 
-On the other backbones the format trades reading for conversion. The
-RTC-trained InternVL3-2B, Pixtral-12B and Gemma3-12B adapters return ratios at
-the exact factor in most cells, but their metre answers lose their ordering or
-collapse, so they convert in zero, one and three cells of eight; Pixtral's
-metre path readings take two distinct values. The format control converts nothing on
+On the other backbones the format does not transfer, and for different
+reasons. The RTC-trained InternVL3-2B adapter returns $0.10$--$0.30$ of the
+exact factor in all eight unseen-unit cells, a conversion failure; the
+Pixtral-12B adapter returns the factor in six cells, but its metre path
+readings take two distinct values and its metre ranking is at most $0.35$;
+the Gemma3-12B adapter returns $0.72$--$1.00$ of the factor in six cells and
+$0.28$ in two, with rankings of $0.10$--$0.42$. They convert in zero,
+one and three cells of eight. The format control converts nothing on
 the three metre-only adapters and five cells on Pixtral's mixed-unit adapter.
 Per-cell ratios and rank correlations are in \supp{5}. We therefore report RTC
 as a prompting effect of this backbone, not as a training method.
@@ -808,8 +815,9 @@ revealed it.
 
 \paragraph{Implications for training}
 Single-unit supervision is a property of most domain fine-tuning sets. Where
-units matter, mixing units on the same items restores conversion for some
-quantities and not others, and costs metre accuracy on speed; routing the
+units matter, mixing units within the training pool yields
+conversion-consistent answers for some quantities and not others, and costs
+metre accuracy on speed; routing the
 model's own reading through a text-only conversion restores the pixel unit at no
 training cost, because the arithmetic on stated numbers is intact where the
 supervision did not damage it. Asking for the reading and the converted value
@@ -853,9 +861,10 @@ backbone it was developed on; elsewhere the format costs the reading.
 
 Fine-tuned VLMs in this study read the order of motion from video and attach to
 it a magnitude that belongs to the unit they were trained in. Mixed-unit
-supervision shows that the unit non-response is caused by single-unit training,
-repairs it where the supervision ties the units to the same items, and exposes
-the other outcome, an answer distribution per unit, where it does not. A
+supervision shows that single-unit training is the operative cause of the unit
+non-response for path length, where it makes the answers
+conversion-consistent, and exposes the other outcome, an answer distribution
+per unit, for speed. A
 tolerance score, even one well above chance, does not distinguish these; a
 constant baseline, a rank correlation, a unit intervention and a first-frame
 control do, and none needs new annotation. The protocol applies unchanged to

@@ -67,3 +67,13 @@ placeholders) and the preregistered rules are included; per-item prediction rows
 frames, hidden-state features and adapter weights are not. Backbone weights are the public
 checkpoints named with their revisions in protocols/; Gemma 3 and the Llama 3.2 record are subject
 to their own licences. Nothing here grants access to TeamTrack or SoccerNet-GSR data.
+
+## Version 2.0.0
+
+The same boundary applies to every new record (rounds 1-6 of the backbone replication, RTC, the
+hidden-state probe, the mixed-unit control, the soccer venue and the zero-shot sweep): verdicts,
+per-cell summaries, stopping and schedule records, run receipts (local paths replaced by
+placeholders) and the preregistered rules are included; per-item prediction rows, question pools,
+frames, hidden-state features and adapter weights are not. Backbone weights are the public
+checkpoints named with their revisions in protocols/; Gemma 3 and the Llama 3.2 record are subject
+to their own licences. Nothing here grants access to TeamTrack or SoccerNet-GSR data.

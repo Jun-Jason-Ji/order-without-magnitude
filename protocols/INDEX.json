@@ -39,7 +39,8 @@
   "written_at_utc": "2026-10-05T11:39:41.186226+00:00",
   "rules_sha256": "0faa698bbb217db5a5b62a3f0fc92aa8e97508677889a58406085a6f41930c4c",
   "hash_verified": true,
-  "note": null
+  "note": null,
+  "errata": "protocols/backbone_llama32.ERRATA.md"
  },
  {
   "record": "results/courtdyn/backbone_seeds3",

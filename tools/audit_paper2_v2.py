@@ -88,8 +88,8 @@ def main() -> int:
     sp, sq = ir["summary_path"], ir["summary_speed"]
     pct = lambda x: f"{round(100 * x):d}"
     want("item ratios: path within x2", f"${pct(sp['share_within_factor2_range'][0])}$--${pct(sp['share_within_factor2_range'][1])}\\%$ of path items")
-    want("item ratios: path within 25%", f"within $25\\%$ in ${pct(sp['share_within_25pct_range'][0])}$--${pct(sp['share_within_25pct_range'][1])}\\%$")
-    want("item ratios: speed within 25%", f"at most ${pct(sq['share_within_25pct_range'][1])}\\%$")
+    want("item ratios: path within x1.25", f"factor of $1.25$ in ${pct(sp['share_within_25pct_range'][0])}$--${pct(sp['share_within_25pct_range'][1])}\\%$")
+    want("item ratios: speed within x1.25", f"speed the share within a factor of $1.25$ is at most ${pct(sq['share_within_25pct_range'][1])}\\%$")
 
     # ---------------------------------------------------------------- M1
     nums = j(CD / "paper2_v2_numbers.json")
@@ -350,6 +350,22 @@ def main() -> int:
                              rep_["seed44"]["hypotheses"]["H6_format_control_m1s44"][1]) == (6, 5, 6), "")
     gate("RTC H3 fixed x3", all(x["H3_speed_cm_rtc"][0] == "fixed" for x in (r42, rep_["seed43"]["hypotheses"], rep_["seed44"]["hypotheses"])), "")
     gate("RTC H4 holds at one seed of three", [x["H4_metre_noninferiority"][0] for x in (r42, rep_["seed43"]["hypotheses"], rep_["seed44"]["hypotheses"])].count("holds") == 1, "")
+    # RTC other backbones: the per-cell unseen-unit ratios of the generated table back the main-text sentence
+    rows = {}
+    for line in (TEX.parent / "tables" / "rtc_supp.tex").read_text(encoding="utf-8").splitlines():
+        cells = [c.strip() for c in line.split("&")]
+        if len(cells) == 8 and cells[0] in ("InternVL3-2B", "Pixtral-12B", "Gemma3-12B"):
+            rows.setdefault(cells[0], []).extend(float(re.match(r"[-\d.]+", c).group()) for c in cells[2:6])
+    conv = lambda r: 1 / 1.5 <= r <= 1.5
+    iv, px, gm = rows["InternVL3-2B"], rows["Pixtral-12B"], rows["Gemma3-12B"]
+    gate("RTC InternVL3 unseen ratios 0.10-0.30", len(iv) == 8 and min(iv) >= 0.10 and max(iv) <= 0.30, str(iv))
+    want("RTC InternVL3 text", "returns $0.10$--$0.30$ of the exact factor in all eight unseen-unit cells")
+    gate("RTC Pixtral factor in 6 cells", sum(map(conv, px)) == 6, str(px))
+    gate("RTC Gemma 0.72-1.00 in 6 cells, 0.28 in 2", sum(map(conv, gm)) == 6 and
+         all(0.72 <= r <= 1.0 for r in gm if conv(r)) and [r for r in gm if not conv(r)] == [0.28, 0.28], str(gm))
+    want("RTC Gemma text", "returns $0.72$--$1.00$ of the factor in six cells and $0.28$ in two")
+    gate("causal wording scoped", "causes the failure" not in flat and "ties the two units" not in flat
+         and "ties the units" not in flat and "converts its own reading" not in flat, "")
     gate("RTC other backbones H1 0/1/3", (rep_["internvl3_2b"]["hypotheses"]["H1_unseen_units_rtc"][1], ext_["pixtral_12b"]["hypotheses"]["H1_unseen_units_rtc"][1],
                                           ext_["gemma3_12b"]["hypotheses"]["H1_unseen_units_rtc"][1]) == (0, 1, 3), "")
     gate("RTC format control 0 on the three metre-only adapters, 5 on pixtral mix",
